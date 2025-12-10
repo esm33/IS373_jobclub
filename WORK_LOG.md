@@ -198,6 +198,128 @@ The repository will be transformed from a personal portfolio into a **Job Club**
 - Terms of service
 
 ### Technical Foundation:
+
+---
+
+### December 10, 2025 - Build Fix & Onboarding Implementation
+
+**Time:** 3:00 PM - 4:30 PM  
+**Contributor:** Adriana (via GitHub Copilot)
+
+#### Actions Completed:
+
+1. ✅ Pulled latest changes from GitHub
+   - Received `.eleventy.js` configuration fix from team
+   - Commit: 1e20ecb "Configure Eleventy with custom filters and fix build setup"
+   - Resolved previous build issues (duplicate layouts, missing filters)
+
+2. ✅ Successfully started development server
+   - Site now builds without errors
+   - Running at `http://localhost:8080/`
+   - All pages rendering correctly
+   - Minor warnings about CommonJS modules (non-blocking)
+
+3. ✅ Created Onboarding Page
+   - **File:** `src/onboarding.njk`
+   - **URL:** `/onboarding/`
+   - **Features:**
+     * Clean, professional form design
+     * Sectioned layout (Personal Info, Academic Info, Professional Links, Career Goal)
+     * Real-time URL validation with visual feedback
+     * Form validation for all required fields
+     * Success/error messaging
+     * localStorage data persistence
+     * Auto-redirect after successful submission
+
+4. ✅ Collected All Required Student Information:
+   - Name (text input)
+   - Email (email input with validation)
+   - Major (text input)
+   - Graduation Year (dropdown: 2025-2029)
+   - LinkedIn Profile (URL with validation)
+   - GitHub Profile (URL with validation)
+   - Personal Website (URL with validation)
+   - Calendly Link (URL with validation)
+   - Career Goal (textarea for aspirations)
+
+5. ✅ Updated Navigation Bar
+   - Added "Join" link to desktop navigation
+   - Added "Join" to mobile menu (item 07)
+   - Active state highlighting (Swiss red)
+   - Consistent with site's Swiss design style
+
+6. ✅ Added Events Navigation
+   - Added "Events" link to desktop navigation (between Projects and About)
+   - Added "Events" to mobile menu (item 05)
+   - Updated mobile menu numbering accordingly
+
+#### Technical Implementation:
+
+**Onboarding Form Features:**
+- Responsive design with gradient background
+- Three-section form organization
+- HTML5 validation (required fields, email format, URL format)
+- JavaScript validation with visual feedback:
+  * Green border for valid URLs
+  * Red border for invalid URLs
+  * Error message display
+  * Success message with auto-redirect
+- Data stored in localStorage (temporary, ready for backend integration)
+- Accessibility: Proper labels, focus states, keyboard navigation
+
+**Navigation Updates:**
+- Desktop: Linear horizontal menu with red underline for active page
+- Mobile: Full-screen overlay with numbered items (01-07)
+- Both menus now include:
+  1. Home
+  2. Town Hall
+  3. Blog
+  4. Projects
+  5. Events
+  6. About
+  7. Join
+
+#### Next Steps Identified:
+
+**PRIORITY: Events System Architecture**
+- [ ] Research Sanity CMS integration for event storage
+- [ ] Design event schema (date, time, location, RSVP, capacity)
+- [ ] Create events page to display upcoming events
+- [ ] Build event registration system
+- [ ] Connect to student profiles for RSVP tracking
+
+**Backend Integration Needed:**
+- [ ] Replace localStorage with actual database
+- [ ] Set up Sanity CMS for content management
+- [ ] Create API endpoints for form submission
+- [ ] Implement user authentication
+- [ ] Build admin dashboard for student management
+
+**Events Page Requirements:**
+- [ ] Display upcoming events in grid/list layout
+- [ ] Event details (title, date, time, location, description)
+- [ ] RSVP functionality
+- [ ] Calendar integration (export to Google Calendar, iCal)
+- [ ] Event capacity tracking
+- [ ] Past events archive
+
+#### Files Created:
+- `src/onboarding.njk` - Complete onboarding form (300+ lines)
+
+#### Files Modified:
+- `src/_includes/layouts/base.njk` - Added Join and Events navigation links
+- `WORK_LOG.md` - This session entry
+
+#### Questions for Team:
+1. Do we have a Sanity CMS account set up?
+2. Who will manage event creation (admin users)?
+3. Should events integrate with Discord?
+4. Do we need event categories (workshops, networking, speakers)?
+5. Should we track attendance or just RSVPs?
+
+---
+
+### Technical Foundation:
 - Repository successfully cloned and ready for development
 - Current tech stack (Eleventy, TailwindCSS, Docker) can be leveraged
 - All dependencies listed in package.json

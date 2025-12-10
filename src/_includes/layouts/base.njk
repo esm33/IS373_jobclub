@@ -184,9 +184,21 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/events/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if '/events/' in page.url %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
+                            <span>Events</span>
+                            {% if '/events/' in page.url %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
+                        </a>
+                    </li>
+                    <li>
                         <a href="/about/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if page.url == '/about/' %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
                             <span>About</span>
                             {% if page.url == '/about/' %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/onboarding/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if '/onboarding/' in page.url %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
+                            <span>Join</span>
+                            {% if '/onboarding/' in page.url %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
                         </a>
                     </li>
                 </ul>
@@ -278,12 +290,32 @@
                     </li>
                     <li class="mb-6" style="border-top: 1px solid var(--swiss-gray-300); padding-top: 1.5rem;">
                         <a 
+                            href="/events/" 
+                            class="block font-bold uppercase tracking-wider"
+                            style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if '/events/' in page.url %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
+                        >
+                            <span style="display: block; margin-bottom: 0.25rem;">05</span>
+                            <span>Events</span>
+                        </a>
+                    </li>
+                    <li class="mb-6" style="border-top: 1px solid var(--swiss-gray-300); padding-top: 1.5rem;">
+                        <a 
                             href="/about/" 
                             class="block font-bold uppercase tracking-wider"
                             style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if page.url == '/about/' %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
                         >
-                            <span style="display: block; margin-bottom: 0.25rem;">05</span>
+                            <span style="display: block; margin-bottom: 0.25rem;">06</span>
                             <span>About</span>
+                        </a>
+                    </li>
+                    <li class="mb-6" style="border-top: 1px solid var(--swiss-gray-300); padding-top: 1.5rem;">
+                        <a 
+                            href="/onboarding/" 
+                            class="block font-bold uppercase tracking-wider"
+                            style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if '/onboarding/' in page.url %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
+                        >
+                            <span style="display: block; margin-bottom: 0.25rem;">07</span>
+                            <span>Join</span>
                         </a>
                     </li>
                 </ul>
