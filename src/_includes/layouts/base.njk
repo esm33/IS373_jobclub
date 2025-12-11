@@ -144,200 +144,112 @@
     }
     </script>
 </head>
-<body class="font-sans antialiased text-neutral-900 bg-white min-h-screen flex flex-col">
-    <!-- Swiss International Typographic Style Navigation -->
-    <header data-component="header" data-testid="main-header" class="sticky top-0 z-50 no-print" style="background-color: var(--swiss-white); border-bottom: 3px solid var(--swiss-black);">
-        <nav style="max-width: 1440px; margin: 0 auto; padding-left: 1rem; padding-right: 1rem;">
-            <div class="flex items-center justify-between" style="height: 64px;">
-                <!-- Swiss Logo/Wordmark - EverydayAI by Keith Williams -->
-                <a href="/" style="display: inline-block; line-height: 1; text-decoration: none; z-index: 60; position: relative; transition: opacity 0.2s;" class="group hover:opacity-80">
-                    <!-- Single Line Lockup with Perfect Swiss Typography -->
-                    <span class="font-black" style="font-size: clamp(1.25rem, 3vw, 1.5rem); color: var(--swiss-black); letter-spacing: -0.03em; line-height: 1;">
-                        EVERYDAY<span style="color: var(--swiss-red); font-weight: 900;">AI</span><span style="color: var(--swiss-gray-500); font-weight: 400; font-size: 0.45em; vertical-align: top; margin-left: 0.15em; letter-spacing: 0.1em;"> BY KEITH WILLIAMS</span>
-                    </span>
-                </a>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+    <!-- Material Design Navigation -->
+    <header data-component="header" data-testid="main-header" class="navbar no-print">
+        <div class="navbar-content">
+            <!-- Logo/Brand -->
+            <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="material-icons-round text-3xl" style="color: var(--primary);">work</span>
+                <span class="font-bold text-xl" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+                    Job Club
+                </span>
+            </a>
 
-                <!-- Desktop Navigation - Swiss Minimal -->
-                <ul class="hidden lg:flex items-center" style="gap: var(--space-3xl);">
-                    <li>
-                        <a href="/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if page.url == '/' %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
-                            <span>Home</span>
-                            {% if page.url == '/' %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/townhall/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if '/townhall/' in page.url %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
-                            <span>Town Hall</span>
-                            {% if '/townhall/' in page.url %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/blog/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if '/blog/' in page.url %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
-                            <span>Blog</span>
-                            {% if '/blog/' in page.url %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/projects/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if '/projects/' in page.url %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
-                            <span>Projects</span>
-                            {% if '/projects/' in page.url %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/events/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if '/events/' in page.url %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
-                            <span>Events</span>
-                            {% if '/events/' in page.url %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/about/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if page.url == '/about/' %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
-                            <span>About</span>
-                            {% if page.url == '/about/' %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/onboarding/" class="font-bold uppercase tracking-wider relative" style="font-size: 0.75rem; color: {% if '/onboarding/' in page.url %}var(--swiss-red){% else %}var(--swiss-black){% endif %}; letter-spacing: 0.15em; transition: color 0.2s;">
-                            <span>Join</span>
+            <!-- Desktop Navigation -->
+            <ul class="hidden lg:flex nav-links">
+                <li>
+                    <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/resources/" class="nav-link {% if '/resources/' in page.url %}active{% endif %}">
+                        Resource Library
+                    </a>
+                </li>
+                <li>
+                    <a href="/privacy/" class="nav-link {% if '/privacy/' in page.url %}active{% endif %}">
+                        Privacy Policy
+                    </a>
+                </li>
+                <li>
+                    <a href="/events/" class="nav-link {% if '/events/' in page.url %}active{% endif %}">
+                        Events
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/" class="nav-link {% if page.url == '/about/' %}active{% endif %}">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="/onboarding/" class="btn btn-primary">
+                        Join Now
+                    </a>
+                </li>
+            </ul>
                             {% if '/onboarding/' in page.url %}<span style="position: absolute; bottom: -8px; left: 0; width: 100%; height: 2px; background-color: var(--swiss-red);"></span>{% endif %}
                         </a>
                     </li>
                 </ul>
 
-                <!-- Swiss Hamburger Menu Button - Refined Elegance -->
-                <button 
-                    type="button" 
-                    data-testid="mobile-menu-button"
-                    class="lg:hidden relative z-60 inline-flex items-center justify-center menu-button group"
-                    style="width: 48px; height: 48px; background-color: transparent; border: 1px solid var(--swiss-black); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);"
-                    aria-expanded="false"
-                    aria-controls="mobile-menu"
-                    aria-label="Toggle navigation menu"
-                >
-                    <!-- Swiss Hamburger Icon - Precise Geometry -->
-                    <span class="relative" style="width: 24px; height: 16px; display: inline-block;">
-                        <span 
-                            class="menu-line menu-line-top"
-                            style="position: absolute; left: 0; top: 0; width: 100%; height: 1px; background-color: var(--swiss-black); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); transform-origin: center;"
-                        ></span>
-                        <span 
-                            class="menu-line menu-line-middle"
-                            style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 100%; height: 1px; background-color: var(--swiss-black); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);"
-                        ></span>
-                        <span 
-                            class="menu-line menu-line-bottom"
-                            style="position: absolute; left: 0; bottom: 0; width: 100%; height: 1px; background-color: var(--swiss-black); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); transform-origin: center;"
-                        ></span>
-                    </span>
-                </button>
-            </div>
-        </nav>
-
-        <!-- Full Screen Swiss Mobile Menu Overlay -->
-        <div 
-            data-testid="mobile-menu"
-            id="mobile-menu"
-            class="lg:hidden fixed inset-0 z-40 hidden"
-            style="background-color: var(--swiss-white); top: 64px; padding: 2rem 1rem; opacity: 0; transition: opacity 0.3s ease;"
-        >
-            <!-- Swiss Grid Mobile Navigation -->
-            <nav>
-                <!-- Section Number -->
-                <p class="text-xs font-bold uppercase tracking-widest mb-8" style="color: var(--swiss-gray-600); letter-spacing: 0.15em;">
-                    01 — Navigation
-                </p>
-
-                <!-- Swiss Menu Items - Definition List Style -->
-                <ul style="border-left: 4px solid var(--swiss-red); padding-left: 1.5rem;">
-                    <li class="mb-6">
-                        <a 
-                            href="/" 
-                            class="block font-bold uppercase tracking-wider"
-                            style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if page.url == '/' %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
-                        >
-                            <span style="display: block; margin-bottom: 0.25rem;">01</span>
-                            <span>Home</span>
-                        </a>
-                    </li>
-                    <li class="mb-6" style="border-top: 1px solid var(--swiss-gray-300); padding-top: 1.5rem;">
-                        <a 
-                            href="/townhall/" 
-                            class="block font-bold uppercase tracking-wider"
-                            style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if '/townhall/' in page.url %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
-                        >
-                            <span style="display: block; margin-bottom: 0.25rem;">02</span>
-                            <span>Town Hall</span>
-                        </a>
-                    </li>
-                    <li class="mb-6" style="border-top: 1px solid var(--swiss-gray-300); padding-top: 1.5rem;">
-                        <a 
-                            href="/blog/" 
-                            class="block font-bold uppercase tracking-wider"
-                            style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if '/blog/' in page.url %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
-                        >
-                            <span style="display: block; margin-bottom: 0.25rem;">03</span>
-                            <span>Blog</span>
-                        </a>
-                    </li>
-                    <li class="mb-6" style="border-top: 1px solid var(--swiss-gray-300); padding-top: 1.5rem;">
-                        <a 
-                            href="/projects/" 
-                            class="block font-bold uppercase tracking-wider"
-                            style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if '/projects/' in page.url %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
-                        >
-                            <span style="display: block; margin-bottom: 0.25rem;">04</span>
-                            <span>Projects</span>
-                        </a>
-                    </li>
-                    <li class="mb-6" style="border-top: 1px solid var(--swiss-gray-300); padding-top: 1.5rem;">
-                        <a 
-                            href="/events/" 
-                            class="block font-bold uppercase tracking-wider"
-                            style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if '/events/' in page.url %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
-                        >
-                            <span style="display: block; margin-bottom: 0.25rem;">05</span>
-                            <span>Events</span>
-                        </a>
-                    </li>
-                    <li class="mb-6" style="border-top: 1px solid var(--swiss-gray-300); padding-top: 1.5rem;">
-                        <a 
-                            href="/about/" 
-                            class="block font-bold uppercase tracking-wider"
-                            style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if page.url == '/about/' %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
-                        >
-                            <span style="display: block; margin-bottom: 0.25rem;">06</span>
-                            <span>About</span>
-                        </a>
-                    </li>
-                    <li class="mb-6" style="border-top: 1px solid var(--swiss-gray-300); padding-top: 1.5rem;">
-                        <a 
-                            href="/onboarding/" 
-                            class="block font-bold uppercase tracking-wider"
-                            style="font-size: clamp(1.5rem, 5vw, 2.5rem); line-height: 1.2; letter-spacing: -0.01em; {% if '/onboarding/' in page.url %}color: var(--swiss-red); transform: translateX(0.5rem);{% else %}color: var(--swiss-black);{% endif %} transition: all 0.2s;"
-                        >
-                            <span style="display: block; margin-bottom: 0.25rem;">07</span>
-                            <span>Join</span>
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Swiss Divider -->
-                <div style="border-top: 2px solid var(--swiss-black); margin: 2rem 0;"></div>
-
-                <!-- Additional Info -->
-                <div style="padding-left: 1.5rem;">
-                    <p class="text-xs uppercase tracking-widest font-bold mb-2" style="color: var(--swiss-gray-600); letter-spacing: 0.15em;">
-                        Quick Access
-                    </p>
-                    <a 
-                        href="/about-site/" 
-                        class="block text-sm font-bold uppercase tracking-wider mb-3"
-                        style="color: var(--swiss-gray-700); letter-spacing: 0.1em;"
-                    >
-                        About this Site
-                    </a>
-                </div>
-            </nav>
+            <!-- Mobile Menu Button -->
+            <button 
+                type="button" 
+                data-testid="mobile-menu-button"
+                class="lg:hidden w-12 h-12 flex items-center justify-center menu-button"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="material-icons-round text-3xl" style="color: var(--text);">menu</span>
+            </button>
         </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div 
+        data-testid="mobile-menu"
+        id="mobile-menu"
+        class="lg:hidden fixed inset-0 z-40 hidden"
+        style="background-color: var(--surface); top: 64px; padding: var(--space-xl);"
+    >
+        <nav>
+            <ul class="space-y-4">
+                <li>
+                    <a href="/" class="block nav-link text-lg {% if page.url == '/' %}active{% endif %}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/resources/" class="block nav-link text-lg {% if '/resources/' in page.url %}active{% endif %}">
+                        Resource Library
+                    </a>
+                </li>
+                <li>
+                    <a href="/privacy/" class="block nav-link text-lg {% if '/privacy/' in page.url %}active{% endif %}">
+                        Privacy Policy
+                    </a>
+                </li>
+                <li>
+                    <a href="/events/" class="block nav-link text-lg {% if '/events/' in page.url %}active{% endif %}">
+                        Events
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/" class="block nav-link text-lg {% if page.url == '/about/' %}active{% endif %}">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="/onboarding/" class="btn btn-primary w-full">
+                        Join Now
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     </header>
 
     <!-- Main Content -->

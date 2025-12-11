@@ -6,82 +6,90 @@ eleventyNavigation:
   key: Onboarding
 ---
 
-<div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-2xl mx-auto">
+<div class="min-h-screen section-padding" style="background: linear-gradient(135deg, var(--primary-bg) 0%, var(--bg) 50%, var(--secondary-bg) 100%); padding-top: 100px;">
+  <div class="container max-w-3xl">
     <!-- Header -->
-    <div class="text-center mb-8">
-      <h1 class="text-4xl font-bold text-gray-900 mb-2">Welcome to Job Club</h1>
-      <p class="text-lg text-gray-600">Complete your profile to get started</p>
+    <div class="text-center mb-12 animate-fade-in">
+      <h1 class="text-5xl font-bold mb-4" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+        Welcome to Job Club
+      </h1>
+      <p class="text-xl" style="color: var(--text); opacity: 0.7;">
+        Complete your profile to get started on your career journey
+      </p>
     </div>
 
     <!-- Onboarding Form -->
-    <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-      <form id="onboardingForm" class="space-y-6">
+    <div class="card animate-slide-up">
+      <form id="onboardingForm" class="space-y-material">
         
         <!-- Personal Information Section -->
-        <div class="border-b border-gray-200 pb-6">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4">Personal Information</h2>
+        <div class="pb-6" style="border-bottom: 1px solid rgba(0,0,0,0.08);">
+          <h2 class="text-2xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+            Personal Information
+          </h2>
           
           <!-- Name -->
-          <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-              Full Name <span class="text-red-500">*</span>
+          <div class="mb-6">
+            <label for="name" class="form-label">
+              Full Name <span style="color: var(--primary);">*</span>
             </label>
             <input
               type="text"
               id="name"
               name="name"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              class="form-input"
               placeholder="John Doe"
             />
           </div>
 
           <!-- Email -->
-          <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-              Email Address <span class="text-red-500">*</span>
+          <div class="mb-6">
+            <label for="email" class="form-label">
+              Email Address <span style="color: var(--primary);">*</span>
             </label>
             <input
               type="email"
               id="email"
               name="email"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              class="form-input"
               placeholder="john.doe@njit.edu"
             />
           </div>
         </div>
 
         <!-- Academic Information Section -->
-        <div class="border-b border-gray-200 pb-6">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4">Academic Information</h2>
+        <div class="pb-6" style="border-bottom: 1px solid rgba(0,0,0,0.08);">
+          <h2 class="text-2xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+            Academic Information
+          </h2>
           
           <!-- Major -->
-          <div class="mb-4">
-            <label for="major" class="block text-sm font-medium text-gray-700 mb-2">
-              Major <span class="text-red-500">*</span>
+          <div class="mb-6">
+            <label for="major" class="form-label">
+              Major <span style="color: var(--primary);">*</span>
             </label>
             <input
               type="text"
               id="major"
               name="major"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              class="form-input"
               placeholder="Computer Science"
             />
           </div>
 
           <!-- Graduation Year -->
-          <div class="mb-4">
-            <label for="gradYear" class="block text-sm font-medium text-gray-700 mb-2">
-              Expected Graduation Year <span class="text-red-500">*</span>
+          <div class="mb-6">
+            <label for="gradYear" class="form-label">
+              Expected Graduation Year <span style="color: var(--primary);">*</span>
             </label>
             <select
               id="gradYear"
               name="gradYear"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              class="form-select"
             >
               <option value="">Select year...</option>
               <option value="2025">2025</option>
@@ -94,65 +102,67 @@ eleventyNavigation:
         </div>
 
         <!-- Professional Links Section -->
-        <div class="border-b border-gray-200 pb-6">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4">Professional Links</h2>
+        <div class="pb-6" style="border-bottom: 1px solid rgba(0,0,0,0.08);">
+          <h2 class="text-2xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+            Professional Links
+          </h2>
           
           <!-- LinkedIn -->
-          <div class="mb-4">
-            <label for="linkedin" class="block text-sm font-medium text-gray-700 mb-2">
-              LinkedIn Profile <span class="text-red-500">*</span>
+          <div class="mb-6">
+            <label for="linkedin" class="form-label">
+              LinkedIn Profile <span style="color: var(--primary);">*</span>
             </label>
             <input
               type="url"
               id="linkedin"
               name="linkedin"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              class="form-input"
               placeholder="https://linkedin.com/in/yourprofile"
             />
           </div>
 
           <!-- GitHub -->
-          <div class="mb-4">
-            <label for="github" class="block text-sm font-medium text-gray-700 mb-2">
-              GitHub Profile <span class="text-red-500">*</span>
+          <div class="mb-6">
+            <label for="github" class="form-label">
+              GitHub Profile <span style="color: var(--primary);">*</span>
             </label>
             <input
               type="url"
               id="github"
               name="github"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              class="form-input"
               placeholder="https://github.com/yourusername"
             />
           </div>
 
           <!-- Personal Website -->
-          <div class="mb-4">
-            <label for="website" class="block text-sm font-medium text-gray-700 mb-2">
-              Personal Website <span class="text-red-500">*</span>
+          <div class="mb-6">
+            <label for="website" class="form-label">
+              Personal Website <span style="color: var(--primary);">*</span>
             </label>
             <input
               type="url"
               id="website"
               name="website"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              class="form-input"
               placeholder="https://yourportfolio.com"
             />
           </div>
 
           <!-- Calendly -->
-          <div class="mb-4">
-            <label for="calendly" class="block text-sm font-medium text-gray-700 mb-2">
-              Calendly Link <span class="text-red-500">*</span>
+          <div class="mb-6">
+            <label for="calendly" class="form-label">
+              Calendly Link <span style="color: var(--primary);">*</span>
             </label>
             <input
               type="url"
               id="calendly"
               name="calendly"
               required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              class="form-input"
               placeholder="https://calendly.com/yourusername"
             />
           </div>
@@ -160,38 +170,46 @@ eleventyNavigation:
 
         <!-- Career Goal Section -->
         <div class="pb-6">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4">Career Goal</h2>
+          <h2 class="text-2xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+            Career Goal
+          </h2>
           
-          <div class="mb-4">
-            <label for="careerGoal" class="block text-sm font-medium text-gray-700 mb-2">
-              What's your career goal? <span class="text-red-500">*</span>
+          <div class="mb-6">
+            <label for="careerGoal" class="form-label">
+              What's your career goal? <span style="color: var(--primary);">*</span>
             </label>
             <textarea
               id="careerGoal"
               name="careerGoal"
               required
-              rows="4"
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
-              placeholder="Tell us about your career aspirations..."
+              rows="5"
+              class="form-textarea"
+              placeholder="Tell us about your career aspirations and what you hope to achieve..."
             ></textarea>
           </div>
         </div>
 
         <!-- Error Message -->
-        <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-          <p class="text-sm font-medium">Please fill in all required fields correctly.</p>
+        <div id="errorMessage" class="hidden" style="background-color: #FFEBEE; border: 1px solid #EF5350; color: #C62828; padding: 1rem; border-radius: 12px;">
+          <div class="flex items-center gap-2">
+            <span class="material-icons-round">error</span>
+            <p class="font-medium">Please fill in all required fields correctly.</p>
+          </div>
         </div>
 
         <!-- Success Message -->
-        <div id="successMessage" class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-          <p class="text-sm font-medium">✓ Profile submitted successfully! Welcome to Job Club.</p>
+        <div id="successMessage" class="hidden" style="background-color: #E8F5E9; border: 1px solid #66BB6A; color: #2E7D32; padding: 1rem; border-radius: 12px;">
+          <div class="flex items-center gap-2">
+            <span class="material-icons-round">check_circle</span>
+            <p class="font-medium">Profile submitted successfully! Welcome to Job Club.</p>
+          </div>
         </div>
 
         <!-- Submit Button -->
-        <div class="pt-4">
+        <div class="pt-6">
           <button
             type="submit"
-            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            class="btn btn-primary w-full text-lg py-4"
           >
             Complete Profile
           </button>
@@ -200,8 +218,8 @@ eleventyNavigation:
     </div>
 
     <!-- Footer Note -->
-    <p class="text-center text-sm text-gray-500 mt-6">
-      Already have an account? <a href="/" class="text-blue-600 hover:text-blue-700 font-medium">Return to home</a>
+    <p class="text-center text-sm mt-8" style="color: var(--text); opacity: 0.7;">
+      Already have an account? <a href="/" class="font-medium hover:underline" style="color: var(--primary);">Return to home</a>
     </p>
   </div>
 </div>
