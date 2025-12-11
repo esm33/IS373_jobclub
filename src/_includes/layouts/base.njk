@@ -169,11 +169,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/privacy/" class="nav-link {% if '/privacy/' in page.url %}active{% endif %}">
-                        Privacy Policy
-                    </a>
-                </li>
-                <li>
                     <a href="/events/" class="nav-link {% if '/events/' in page.url %}active{% endif %}">
                         Events
                     </a>
@@ -225,11 +220,6 @@
                 <li>
                     <a href="/resources/" class="block nav-link text-lg {% if '/resources/' in page.url %}active{% endif %}">
                         Resource Library
-                    </a>
-                </li>
-                <li>
-                    <a href="/privacy/" class="block nav-link text-lg {% if '/privacy/' in page.url %}active{% endif %}">
-                        Privacy Policy
                     </a>
                 </li>
                 <li>
@@ -351,7 +341,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4" style="padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
                 <div>
                     <p class="text-xs uppercase tracking-widest font-bold" style="color: var(--swiss-gray-500); letter-spacing: 0.15em;">
-                        &copy; {{ '' | currentYear }} {{ site.author }}
+                        &copy; {{ '' | currentYear }} {{ site.author }} / 
+                        <a href="/privacy/" class="hover:underline" style="color: var(--swiss-white); transition: color 0.2s;">Privacy Policy</a>
                     </p>
                 </div>
                 <div class="md:text-right">

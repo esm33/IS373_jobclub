@@ -6,186 +6,246 @@ eleventyNavigation:
   key: Onboarding
 ---
 
-<div class="min-h-screen section-padding" style="background: linear-gradient(135deg, var(--primary-bg) 0%, var(--bg) 50%, var(--secondary-bg) 100%); padding-top: 100px;">
+<div class="min-h-screen section-padding" style="background: linear-gradient(180deg, #E8DEF8 0%, #FEF7FF 20%, #E0F2F1 100%); padding-top: 100px; padding-bottom: 100px;">
   <div class="container max-w-3xl">
     <!-- Header -->
-    <div class="text-center mb-12 animate-fade-in">
-      <h1 class="text-5xl font-bold mb-4" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+    <div class="text-center mb-16 animate-fade-in">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background: linear-gradient(135deg, rgba(103, 80, 164, 0.1) 0%, rgba(0, 191, 165, 0.1) 100%); border: 1px solid rgba(103, 80, 164, 0.2);">
+        <span class="material-icons-round" style="color: var(--primary); font-size: 1.25rem;">how_to_reg</span>
+        <span class="text-sm font-medium" style="color: var(--primary);">Member Registration</span>
+      </div>
+      <h1 class="text-6xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; line-height: 1.1;">
         Welcome to Job Club
       </h1>
-      <p class="text-xl" style="color: var(--text); opacity: 0.7;">
+      <p class="text-xl max-w-2xl mx-auto" style="color: var(--text); opacity: 0.8;">
         Complete your profile to get started on your career journey
       </p>
     </div>
 
     <!-- Onboarding Form -->
-    <div class="card animate-slide-up">
+    <div class="card animate-slide-up" style="box-shadow: 0 8px 32px rgba(103, 80, 164, 0.15), 0 2px 8px rgba(0, 0, 0, 0.05); border-radius: 32px; padding: 48px;">
       <form id="onboardingForm" class="space-y-material">
         
         <!-- Personal Information Section -->
-        <div class="pb-6" style="border-bottom: 1px solid rgba(0,0,0,0.08);">
-          <h2 class="text-2xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
-            Personal Information
-          </h2>
+        <div class="pb-8" style="border-bottom: 2px solid rgba(103, 80, 164, 0.1);">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #6750A4 0%, #7E57C2 100%);">
+              <span class="material-icons-round text-white">person</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Personal Information
+            </h2>
+          </div>
           
           <!-- Name -->
-          <div class="mb-6">
-            <label for="name" class="form-label">
+          <div class="mb-8">
+            <label for="name" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
               Full Name <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="form-input"
-              placeholder="John Doe"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: var(--primary); opacity: 0.5; font-size: 1.25rem;">person_outline</span>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="form-input"
+                placeholder="John Doe"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(103, 80, 164, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- Email -->
-          <div class="mb-6">
-            <label for="email" class="form-label">
+          <div class="mb-8">
+            <label for="email" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
               Email Address <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="form-input"
-              placeholder="john.doe@njit.edu"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: var(--primary); opacity: 0.5; font-size: 1.25rem;">email</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="form-input"
+                placeholder="john.doe@njit.edu"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(103, 80, 164, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
         </div>
 
         <!-- Academic Information Section -->
-        <div class="pb-6" style="border-bottom: 1px solid rgba(0,0,0,0.08);">
-          <h2 class="text-2xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
-            Academic Information
-          </h2>
+        <div class="pb-8" style="border-bottom: 2px solid rgba(103, 80, 164, 0.1);">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #00BFA5 0%, #1DE9B6 100%);">
+              <span class="material-icons-round text-white">school</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Academic Information
+            </h2>
+          </div>
           
           <!-- Major -->
-          <div class="mb-6">
-            <label for="major" class="form-label">
+          <div class="mb-8">
+            <label for="major" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
               Major <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="text"
-              id="major"
-              name="major"
-              required
-              class="form-input"
-              placeholder="Computer Science"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #00BFA5; opacity: 0.5; font-size: 1.25rem;">school</span>
+              <input
+                type="text"
+                id="major"
+                name="major"
+                required
+                class="form-input"
+                placeholder="Computer Science"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(0, 191, 165, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- Graduation Year -->
-          <div class="mb-6">
-            <label for="gradYear" class="form-label">
+          <div class="mb-8">
+            <label for="gradYear" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
               Expected Graduation Year <span style="color: var(--primary);">*</span>
             </label>
-            <select
-              id="gradYear"
-              name="gradYear"
-              required
-              class="form-select"
-            >
-              <option value="">Select year...</option>
-              <option value="2025">2025</option>
-              <option value="2026">2026</option>
-              <option value="2027">2027</option>
-              <option value="2028">2028</option>
-              <option value="2029">2029</option>
-            </select>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #00BFA5; opacity: 0.5; font-size: 1.25rem; pointer-events: none; z-index: 10;">event</span>
+              <select
+                id="gradYear"
+                name="gradYear"
+                required
+                class="form-select"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(0, 191, 165, 0.2); transition: all 0.3s ease; font-size: 1rem; appearance: none; background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2300BFA5%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.25rem; padding-right: 3rem;"
+              >
+                <option value="">Select year...</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+              </select>
+            </div>
           </div>
         </div>
 
         <!-- Professional Links Section -->
-        <div class="pb-6" style="border-bottom: 1px solid rgba(0,0,0,0.08);">
-          <h2 class="text-2xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
-            Professional Links
-          </h2>
+        <div class="pb-8" style="border-bottom: 2px solid rgba(103, 80, 164, 0.1);">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #FF6F00 0%, #FFA726 100%);">
+              <span class="material-icons-round text-white">link</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Professional Links
+            </h2>
+          </div>
           
           <!-- LinkedIn -->
-          <div class="mb-6">
-            <label for="linkedin" class="form-label">
+          <div class="mb-8">
+            <label for="linkedin" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
               LinkedIn Profile <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="url"
-              id="linkedin"
-              name="linkedin"
-              required
-              class="form-input"
-              placeholder="https://linkedin.com/in/yourprofile"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #FF6F00; opacity: 0.5; font-size: 1.25rem;">work_outline</span>
+              <input
+                type="url"
+                id="linkedin"
+                name="linkedin"
+                required
+                class="form-input"
+                placeholder="https://linkedin.com/in/yourprofile"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(255, 111, 0, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- GitHub -->
-          <div class="mb-6">
-            <label for="github" class="form-label">
+          <div class="mb-8">
+            <label for="github" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
               GitHub Profile <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="url"
-              id="github"
-              name="github"
-              required
-              class="form-input"
-              placeholder="https://github.com/yourusername"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #FF6F00; opacity: 0.5; font-size: 1.25rem;">code</span>
+              <input
+                type="url"
+                id="github"
+                name="github"
+                required
+                class="form-input"
+                placeholder="https://github.com/yourusername"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(255, 111, 0, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- Personal Website -->
-          <div class="mb-6">
-            <label for="website" class="form-label">
+          <div class="mb-8">
+            <label for="website" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
               Personal Website <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="url"
-              id="website"
-              name="website"
-              required
-              class="form-input"
-              placeholder="https://yourportfolio.com"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #FF6F00; opacity: 0.5; font-size: 1.25rem;">language</span>
+              <input
+                type="url"
+                id="website"
+                name="website"
+                required
+                class="form-input"
+                placeholder="https://yourportfolio.com"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(255, 111, 0, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- Calendly -->
-          <div class="mb-6">
-            <label for="calendly" class="form-label">
+          <div class="mb-8">
+            <label for="calendly" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
               Calendly Link <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="url"
-              id="calendly"
-              name="calendly"
-              required
-              class="form-input"
-              placeholder="https://calendly.com/yourusername"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #FF6F00; opacity: 0.5; font-size: 1.25rem;">calendar_month</span>
+              <input
+                type="url"
+                id="calendly"
+                name="calendly"
+                required
+                class="form-input"
+                placeholder="https://calendly.com/yourusername"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(255, 111, 0, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
         </div>
 
         <!-- Career Goal Section -->
-        <div class="pb-6">
-          <h2 class="text-2xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
-            Career Goal
-          </h2>
+        <div class="pb-8">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);">
+              <span class="material-icons-round text-white">flag</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Career Goal
+            </h2>
+          </div>
           
-          <div class="mb-6">
-            <label for="careerGoal" class="form-label">
+          <div class="mb-8">
+            <label for="careerGoal" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
               What's your career goal? <span style="color: var(--primary);">*</span>
             </label>
-            <textarea
-              id="careerGoal"
-              name="careerGoal"
-              required
-              rows="5"
-              class="form-textarea"
-              placeholder="Tell us about your career aspirations and what you hope to achieve..."
-            ></textarea>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-4" style="color: #9C27B0; opacity: 0.5; font-size: 1.25rem;">edit_note</span>
+              <textarea
+                id="careerGoal"
+                name="careerGoal"
+                required
+                rows="6"
+                class="form-textarea"
+                placeholder="Tell us about your career aspirations and what you hope to achieve..."
+                style="padding-left: 3.5rem; padding-top: 1rem; border-radius: 16px; border: 2px solid rgba(156, 39, 176, 0.2); transition: all 0.3s ease; font-size: 1rem; resize: vertical; min-height: 140px;"
+              ></textarea>
+            </div>
           </div>
         </div>
 
@@ -206,12 +266,16 @@ eleventyNavigation:
         </div>
 
         <!-- Submit Button -->
-        <div class="pt-6">
+        <div class="pt-8">
           <button
             type="submit"
-            class="btn btn-primary w-full text-lg py-4"
+            class="btn btn-primary w-full text-lg py-5 shadow-lg hover:shadow-xl transition-all duration-300"
+            style="border-radius: 100px; font-family: 'Google Sans', sans-serif; font-weight: 600; font-size: 1.125rem; background: linear-gradient(135deg, #6750A4 0%, #7E57C2 100%); box-shadow: 0 4px 16px rgba(103, 80, 164, 0.4);"
           >
-            Complete Profile
+            <span class="flex items-center justify-center gap-2">
+              Complete Profile
+              <span class="material-icons-round">arrow_forward</span>
+            </span>
           </button>
         </div>
       </form>
@@ -223,6 +287,57 @@ eleventyNavigation:
     </p>
   </div>
 </div>
+
+<style>
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(103, 80, 164, 0.1) !important;
+  }
+  
+  .form-input:hover,
+  .form-select:hover,
+  .form-textarea:hover {
+    border-color: rgba(103, 80, 164, 0.4) !important;
+  }
+  
+  .btn-primary:hover span {
+    transform: translateX(2px);
+    transition: transform 0.3s ease;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+</style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
