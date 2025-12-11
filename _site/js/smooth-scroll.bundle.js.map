@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/js/smooth-scroll.js"],
+  "sourcesContent": ["// Smooth scroll for same-page anchor links only using event delegation\n// Event delegation is more efficient and works with dynamically added elements\ndocument.addEventListener(\"click\", (e) => {\n  // Check if the clicked element is an anchor link\n  const anchor = e.target.closest('a[href^=\"#\"]:not([href=\"#\"])');\n\n  if (!anchor) {\n    return;\n  }\n\n  const targetId = anchor.getAttribute(\"href\");\n  const targetElement = document.querySelector(targetId);\n\n  if (targetElement) {\n    e.preventDefault();\n    targetElement.scrollIntoView({\n      behavior: \"smooth\",\n      block: \"start\",\n    });\n\n    // Update URL without jumping\n    history.pushState(null, null, targetId);\n  }\n});\n"],
+  "mappings": "MAEA,SAAS,iBAAiB,QAAUA,GAAM,CAExC,IAAMC,EAASD,EAAE,OAAO,QAAQ,8BAA8B,EAE9D,GAAI,CAACC,EACH,OAGF,IAAMC,EAAWD,EAAO,aAAa,MAAM,EACrCE,EAAgB,SAAS,cAAcD,CAAQ,EAEjDC,IACFH,EAAE,eAAe,EACjBG,EAAc,eAAe,CAC3B,SAAU,SACV,MAAO,OACT,CAAC,EAGD,QAAQ,UAAU,KAAM,KAAMD,CAAQ,EAE1C,CAAC",
+  "names": ["e", "anchor", "targetId", "targetElement"]
+}

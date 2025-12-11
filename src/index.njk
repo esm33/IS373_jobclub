@@ -6,64 +6,64 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
 
 {% import "components/card.njk" as card %}
 
-{# Material Design Hero - Polished #}
+{# Material Design 3 Hero #}
 <section
   data-component="hero"
   data-section="home"
   data-testid="hero-section"
   class="relative overflow-hidden"
-  style="background: linear-gradient(180deg, #E8DEF8 0%, #FEF7FF 30%, #E0F2F1 100%); padding-top: 160px; padding-bottom: 120px; min-height: 600px;"
+  style="background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%); padding-top: var(--md-spacing-20); padding-bottom: var(--md-spacing-20); min-height: 650px;"
 >
   
   <div class="container relative z-10">
     <div class="text-center max-w-4xl mx-auto">
       {# Badge #}
-      <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full" style="background: rgba(103, 80, 164, 0.1); backdrop-filter: blur(10px);">
-        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--primary);">rocket_launch</span>
-        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--primary);">Job Club Community</span>
+      <div class="inline-flex items-center mb-8" style="gap: var(--md-spacing-2); padding: var(--md-spacing-2) var(--md-spacing-4); border-radius: var(--md-shape-corner-full); background-color: var(--md-primary-container); backdrop-filter: blur(10px);">
+        <span class="material-icons-round" style="font-size: 18px; color: var(--md-on-primary-container);">rocket_launch</span>
+        <span class="md-label-large" style="color: var(--md-on-primary-container);">Job Club Community</span>
       </div>
       
       {# Main Heading #}
-      <h1 class="font-bold mb-6 animate-fade-in" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; line-height: 1.1; font-size: clamp(3rem, 8vw, 5rem); letter-spacing: -0.02em;">
+      <h1 class="md-display-large font-bold animate-fade-in" style="margin-bottom: var(--md-spacing-6); color: var(--md-primary);">
         {{ site.author }}
       </h1>
       
       {# Subheading #}
-      <p class="text-xl mb-10 leading-relaxed mx-auto" style="color: var(--text); opacity: 0.7; max-width: 700px; font-size: clamp(1.125rem, 2vw, 1.375rem); line-height: 1.6;">
+      <p class="md-title-large mx-auto" style="margin-bottom: var(--md-spacing-10); color: var(--md-on-surface-variant); max-width: 700px;">
         Build your future with AI education, real connections, and career opportunities. Join our community of students, employers, and innovators.
       </p>
       
       {# CTA Buttons with Icons #}
-      <div class="flex flex-wrap gap-4 justify-center mb-16">
-        <a href="/townhall/" class="btn btn-primary inline-flex items-center gap-2" style="padding: 1rem 2.5rem; font-size: 1rem; border-radius: 100px; box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3);">
+      <div class="flex flex-wrap justify-center" style="gap: var(--md-spacing-4); margin-bottom: var(--md-spacing-16);">
+        <a href="/townhall/" class="btn btn-primary" style="padding: var(--md-spacing-4) var(--md-spacing-8);">
           <span>Join Town Hall</span>
-          <span class="material-icons-round" style="font-size: 1.25rem;">arrow_forward</span>
+          <span class="material-icons-round" style="font-size: 20px;">arrow_forward</span>
         </a>
-        <a href="/about/" class="btn btn-outlined inline-flex items-center gap-2" style="padding: 1rem 2.5rem; font-size: 1rem; border-radius: 100px; border-width: 2px;">
-          <span class="material-icons-round" style="font-size: 1.25rem;">description</span>
+        <a href="/about/" class="btn btn-outlined" style="padding: var(--md-spacing-4) var(--md-spacing-8);">
+          <span class="material-icons-round" style="font-size: 20px;">description</span>
           <span>Learn More</span>
         </a>
       </div>
       
       {# Stats Row #}
-      <div class="grid grid-cols-3 gap-12 max-w-3xl mx-auto">
+      <div class="grid grid-cols-3 max-w-3xl mx-auto" style="gap: var(--md-spacing-12);">
         <div class="animate-slide-up" style="animation-delay: 0.1s;">
-          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;">
+          <div class="md-display-medium font-bold" style="margin-bottom: var(--md-spacing-2); color: var(--md-primary);">
             23+
           </div>
-          <p class="text-sm uppercase tracking-wide" style="color: var(--text); opacity: 0.6; font-weight: 600; letter-spacing: 0.1em;">Years at NJIT</p>
+          <p class="md-label-medium uppercase" style="color: var(--md-on-surface-variant);">Years at NJIT</p>
         </div>
         <div class="animate-slide-up" style="animation-delay: 0.2s;">
-          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #00BFA5; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;">
+          <div class="md-display-medium font-bold" style="margin-bottom: var(--md-spacing-2); color: var(--md-secondary);">
             10k+
           </div>
-          <p class="text-sm uppercase tracking-wide" style="color: var(--text); opacity: 0.6; font-weight: 600; letter-spacing: 0.1em;">Students Taught</p>
+          <p class="md-label-medium uppercase" style="color: var(--md-on-surface-variant);">Students Taught</p>
         </div>
         <div class="animate-slide-up" style="animation-delay: 0.3s;">
-          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;">
+          <div class="md-display-medium font-bold" style="margin-bottom: var(--md-spacing-2); color: var(--md-primary);">
             100+
           </div>
-          <p class="text-sm uppercase tracking-wide" style="color: var(--text); opacity: 0.6; font-weight: 600; letter-spacing: 0.1em;">Companies</p>
+          <p class="md-label-medium uppercase" style="color: var(--md-on-surface-variant);">Companies</p>
         </div>
       </div>
     </div>
@@ -79,15 +79,15 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
 >
   <div class="container">
     {# Section Header #}
-    <div class="text-center mb-20">
-      <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background: rgba(3, 218, 198, 0.1);">
-        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--secondary);">explore</span>
-        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--secondary);">Choose Your Journey</span>
+    <div class="text-center" style="margin-bottom: var(--md-spacing-20);">
+      <div class="inline-flex items-center" style="gap: var(--md-spacing-2); margin-bottom: var(--md-spacing-6); padding: var(--md-spacing-2) var(--md-spacing-4); border-radius: var(--md-shape-corner-full); background-color: var(--md-secondary-container);">
+        <span class="material-icons-round" style="font-size: 18px; color: var(--md-on-secondary-container);">explore</span>
+        <span class="md-label-large" style="color: var(--md-on-secondary-container);">Choose Your Journey</span>
       </div>
-      <h2 class="font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; letter-spacing: -0.01em;">
+      <h2 class="md-display-small font-bold" style="margin-bottom: var(--md-spacing-6); color: var(--md-on-surface);">
         Find Your Path
       </h2>
-      <p class="mx-auto" style="color: var(--text); opacity: 0.7; max-width: 700px; font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.6;">
+      <p class="md-title-large mx-auto" style="color: var(--md-on-surface-variant); max-width: 700px;">
         Different audiences need different entry points. Pick the path that matches where you are and what you need.
       </p>
     </div>
@@ -99,12 +99,12 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
       <article 
           data-path-card
           data-index="1"
-          class="card group"
-          style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 2.5rem; border-radius: 28px; background: linear-gradient(135deg, rgba(103, 80, 164, 0.03) 0%, rgba(255, 255, 255, 1) 100%);">
+          class="card-elevated group"
+          style="cursor: pointer; padding: var(--md-spacing-8); border-radius: var(--md-shape-corner-extra-large);">
           
           <div class="flex items-start gap-4 mb-6">
-            <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #6750A4 0%, #7E57C2 100%); box-shadow: 0 4px 12px rgba(103, 80, 164, 0.25);">
-              <span class="material-icons-round text-white" style="font-size: 1.5rem;">school</span>
+            <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); box-shadow: 0 6px 20px rgba(103, 80, 164, 0.35), 0 2px 8px rgba(103, 80, 164, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">school</span>
             </div>
             <div>
               <h3 class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.75rem; line-height: 1.2;">
@@ -146,11 +146,11 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
           data-path-card
           data-index="2"
           class="card group"
-          style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 2.5rem; border-radius: 28px; background: linear-gradient(135deg, rgba(3, 218, 198, 0.03) 0%, rgba(255, 255, 255, 1) 100%);">
+          style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 3rem; border-radius: 32px; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
           
           <div class="flex items-start gap-4 mb-6">
-            <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #00BFA5 0%, #1DE9B6 100%); box-shadow: 0 4px 12px rgba(3, 218, 198, 0.25);">
-              <span class="material-icons-round text-white" style="font-size: 1.5rem;">business</span>
+            <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #00BFA5 0%, #64FFDA 100%); box-shadow: 0 6px 20px rgba(0, 191, 165, 0.35), 0 2px 8px rgba(0, 191, 165, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">business</span>
             </div>
             <div>
               <h3 class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.75rem; line-height: 1.2;">
@@ -192,11 +192,11 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
           data-path-card
           data-index="3"
           class="card group"
-          style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 2.5rem; border-radius: 28px; background: linear-gradient(135deg, rgba(103, 80, 164, 0.03) 0%, rgba(255, 255, 255, 1) 100%);">
+          style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 3rem; border-radius: 32px; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
           
           <div class="flex items-start gap-4 mb-6">
-            <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%); box-shadow: 0 4px 12px rgba(156, 39, 176, 0.25);">
-              <span class="material-icons-round text-white" style="font-size: 1.5rem;">psychology</span>
+            <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #9C27B0 0%, #CE93D8 100%); box-shadow: 0 6px 20px rgba(156, 39, 176, 0.35), 0 2px 8px rgba(156, 39, 176, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">psychology</span>
             </div>
             <div>
               <h3 class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.75rem; line-height: 1.2;">
@@ -238,11 +238,11 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
           data-path-card
           data-index="4"
           class="card group"
-          style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 2.5rem; border-radius: 28px; background: linear-gradient(135deg, rgba(3, 218, 198, 0.03) 0%, rgba(255, 255, 255, 1) 100%);">
+          style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 3rem; border-radius: 32px; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
           
           <div class="flex items-start gap-4 mb-6">
-            <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #FF6F00 0%, #FFA726 100%); box-shadow: 0 4px 12px rgba(255, 111, 0, 0.25);">
-              <span class="material-icons-round text-white" style="font-size: 1.5rem;">lightbulb</span>
+            <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #FF6F00 0%, #FFB74D 100%); box-shadow: 0 6px 20px rgba(255, 111, 0, 0.35), 0 2px 8px rgba(255, 111, 0, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">lightbulb</span>
             </div>
             <div>
               <h3 class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.75rem; line-height: 1.2;">
@@ -303,9 +303,9 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       
       {# Card 1 #}
-      <article class="card" style="padding: 2.5rem; text-align: center; border-radius: 28px;">
-        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, #6750A4 0%, #7E57C2 100%);">
-          <span class="material-icons-round text-white" style="font-size: 2rem;">groups</span>
+      <article class="card" style="padding: 3rem; text-align: center; border-radius: 32px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
+        <div class="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); box-shadow: 0 6px 20px rgba(103, 80, 164, 0.3), 0 2px 8px rgba(103, 80, 164, 0.15);">
+          <span class="material-icons-round text-white" style="font-size: 2.25rem;">groups</span>
         </div>
         <h3 class="font-bold mb-4" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.5rem;">
           Community First
@@ -316,9 +316,9 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
       </article>
 
       {# Card 2 #}
-      <article class="card" style="padding: 2.5rem; text-align: center; border-radius: 28px;">
-        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, #00BFA5 0%, #1DE9B6 100%);">
-          <span class="material-icons-round text-white" style="font-size: 2rem;">psychology</span>
+      <article class="card" style="padding: 3rem; text-align: center; border-radius: 32px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
+        <div class="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, #00BFA5 0%, #64FFDA 100%); box-shadow: 0 6px 20px rgba(0, 191, 165, 0.3), 0 2px 8px rgba(0, 191, 165, 0.15);">
+          <span class="material-icons-round text-white" style="font-size: 2.25rem;">psychology</span>
         </div>
         <h3 class="font-bold mb-4" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.5rem;">
           Skills That Matter
@@ -329,9 +329,9 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
       </article>
 
       {# Card 3 #}
-      <article class="card" style="padding: 2.5rem; text-align: center; border-radius: 28px;">
-        <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, #FF6F00 0%, #FFA726 100%);">
-          <span class="material-icons-round text-white" style="font-size: 2rem;">insights</span>
+      <article class="card" style="padding: 3rem; text-align: center; border-radius: 32px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
+        <div class="w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-6" style="background: linear-gradient(135deg, #FF6F00 0%, #FFB74D 100%); box-shadow: 0 6px 20px rgba(255, 111, 0, 0.3), 0 2px 8px rgba(255, 111, 0, 0.15);">
+          <span class="material-icons-round text-white" style="font-size: 2.25rem;">insights</span>
         </div>
         <h3 class="font-bold mb-4" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.5rem;">
           Real Impact
@@ -365,11 +365,11 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
     <div class="space-y-6 max-w-4xl mx-auto">
       
       {# Principle 1 #}
-      <article class="card group" style="padding: 2.5rem; border-radius: 28px; background: white;">
+      <article class="card group" style="padding: 3rem; border-radius: 32px; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
         <div class="flex items-start gap-6">
           <div class="flex-shrink-0">
-            <div class="w-16 h-16 rounded-2xl flex items-center justify-center" style="background: rgba(103, 80, 164, 0.1);">
-              <span class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--primary); font-size: 1.75rem;">01</span>
+            <div class="w-20 h-20 rounded-3xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(103, 80, 164, 0.1) 0%, rgba(103, 80, 164, 0.05) 100%);">
+              <span class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--primary); font-size: 2rem;">01</span>
             </div>
           </div>
           <div>
@@ -384,11 +384,11 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
       </article>
 
       {# Principle 2 #}
-      <article class="card group" style="padding: 2.5rem; border-radius: 28px; background: white;">
+      <article class="card group" style="padding: 3rem; border-radius: 32px; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
         <div class="flex items-start gap-6">
           <div class="flex-shrink-0">
-            <div class="w-16 h-16 rounded-2xl flex items-center justify-center" style="background: rgba(103, 80, 164, 0.1);">
-              <span class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--primary); font-size: 1.75rem;">02</span>
+            <div class="w-20 h-20 rounded-3xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(103, 80, 164, 0.1) 0%, rgba(103, 80, 164, 0.05) 100%);">
+              <span class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--primary); font-size: 2rem;">02</span>
             </div>
           </div>
           <div>
@@ -403,11 +403,11 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
       </article>
 
       {# Principle 3 #}
-      <article class="card group" style="padding: 2.5rem; border-radius: 28px; background: white;">
+      <article class="card group" style="padding: 3rem; border-radius: 32px; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
         <div class="flex items-start gap-6">
           <div class="flex-shrink-0">
-            <div class="w-16 h-16 rounded-2xl flex items-center justify-center" style="background: rgba(103, 80, 164, 0.1);">
-              <span class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--primary); font-size: 1.75rem;">03</span>
+            <div class="w-20 h-20 rounded-3xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(103, 80, 164, 0.1) 0%, rgba(103, 80, 164, 0.05) 100%);">
+              <span class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--primary); font-size: 2rem;">03</span>
             </div>
           </div>
           <div>
@@ -422,11 +422,11 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
       </article>
 
       {# Principle 4 #}
-      <article class="card group" style="padding: 2.5rem; border-radius: 28px; background: white;">
+      <article class="card group" style="padding: 3rem; border-radius: 32px; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
         <div class="flex items-start gap-6">
           <div class="flex-shrink-0">
-            <div class="w-16 h-16 rounded-2xl flex items-center justify-center" style="background: rgba(103, 80, 164, 0.1);">
-              <span class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--primary); font-size: 1.75rem;">04</span>
+            <div class="w-20 h-20 rounded-3xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(103, 80, 164, 0.1) 0%, rgba(103, 80, 164, 0.05) 100%);">
+              <span class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--primary); font-size: 2rem;">04</span>
             </div>
           </div>
           <div>
@@ -475,8 +475,8 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
     {# Blog Cards Grid #}
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       {% for post in collections.blog | limit(3) %}
-      <article class="card group" style="padding: 2rem; border-radius: 24px; cursor: pointer;">
-        <time datetime="{{ post.date | dateToISO }}" class="text-xs uppercase tracking-wide font-semibold mb-4 block" style="color: var(--primary);">
+      <article class="card group" style="padding: 2.5rem; border-radius: 32px; cursor: pointer; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+        <time datetime="{{ post.date | dateToISO }}" class="text-xs uppercase tracking-wide font-semibold mb-4 block" style="color: var(--primary); letter-spacing: 0.1em;">
           {{ post.date | readableDate }}
         </time>
         <h3 class="font-bold mb-3 group-hover:text-primary transition-colors" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.25rem; line-height: 1.3;">

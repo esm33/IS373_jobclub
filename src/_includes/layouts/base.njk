@@ -247,116 +247,187 @@
         {{ content | safe }}
     </main>
 
-    <!-- Swiss International Typographic Style Footer -->
-    <footer data-component="footer" data-testid="main-footer" class="no-print" style="background-color: var(--swiss-black); color: var(--swiss-white); border-top: 3px solid var(--swiss-red);">
-        <div style="max-width: 1440px; margin: 0 auto; padding-left: var(--swiss-grid-margin); padding-right: var(--swiss-grid-margin);">
-            <!-- Main Footer Content - Swiss Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-12" style="padding-top: var(--space-5xl); padding-bottom: var(--space-4xl); gap: var(--space-3xl); border-bottom: 1px solid var(--swiss-gray-700);">
+    <!-- Material Design Footer -->
+    <footer data-component="footer" data-testid="main-footer" class="no-print" style="background-color: #FFFFFF; border-top: 1px solid #E8E8E8;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 80px 32px 48px;">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12" style="margin-bottom: 64px;">
                 <!-- Brand Column -->
-                <div class="md:col-span-5">
-                    <!-- Swiss Logo/Wordmark - Footer Version -->
-                    <div style="line-height: 1; margin-bottom: var(--space-xl);">
-                        <span class="font-black" style="font-size: var(--fluid-h2); color: var(--swiss-white); letter-spacing: -0.03em; line-height: 1; display: block;">
-                            EVERYDAY<span style="color: var(--swiss-red); font-weight: 900;">AI</span>
-                        </span>
-                        <span style="color: var(--swiss-gray-500); font-weight: 400; font-size: 0.75rem; letter-spacing: 0.1em; display: block; margin-top: 0.5rem; text-transform: uppercase;">
-                            BY KEITH WILLIAMS
-                        </span>
-                    </div>
-                    <p class="leading-relaxed" style="color: var(--swiss-gray-400); max-width: 400px;">
+                <div>
+                    <a href="/" class="inline-flex items-center gap-3 mb-4 group">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                            <span class="material-icons-round" style="color: white; font-size: 24px;">work</span>
+                        </div>
+                        <span style="font-family: 'Google Sans', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: -0.02em;">Job Club</span>
+                    </a>
+                    <p style="color: #5F6368; font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 280px;">
                         {{ site.description }}
                     </p>
                 </div>
 
-                <!-- Navigation as Definition List - Very Swiss -->
-                <div class="md:col-span-4">
-                    <dl>
-                        <dt class="text-xs uppercase tracking-widest font-bold" style="color: var(--swiss-gray-500); margin-bottom: var(--space-lg); letter-spacing: 0.15em;">
-                            Navigation
-                        </dt>
-                        <dd>
-                            <ul style="display: flex; flex-direction: column; gap: var(--space-md);">
-                                <li><a href="/" class="font-medium hover:underline" style="color: var(--swiss-white); transition: color 0.2s;">Home</a></li>
-                                <li><a href="/townhall/" class="font-medium hover:underline" style="color: var(--swiss-white); transition: color 0.2s;">Town Hall</a></li>
-                                <li><a href="/blog/" class="font-medium hover:underline" style="color: var(--swiss-white); transition: color 0.2s;">Blog</a></li>
-                                <li><a href="/projects/" class="font-medium hover:underline" style="color: var(--swiss-white); transition: color 0.2s;">Projects</a></li>
-                                <li><a href="/about/" class="font-medium hover:underline" style="color: var(--swiss-white); transition: color 0.2s;">About</a></li>
-                                <li><a href="/about-site/" class="font-medium hover:underline" style="color: var(--swiss-gray-400); transition: color 0.2s;">About this Site</a></li>
-                            </ul>
-                        </dd>
-                    </dl>
+                <!-- Navigation -->
+                <div>
+                    <h3 style="font-family: 'Google Sans', sans-serif; font-size: 12px; font-weight: 600; color: #80868B; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 20px;">
+                        Navigate
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="footer-link">Home</a></li>
+                        <li><a href="/resources/" class="footer-link">Resource Library</a></li>
+                        <li><a href="/events/" class="footer-link">Events</a></li>
+                        <li><a href="/about/" class="footer-link">About</a></li>
+                        <li><a href="/onboarding/" class="footer-link">Join Now</a></li>
+                    </ul>
                 </div>
 
-                <!-- Social Links -->
-                <div class="md:col-span-3">
-                    <dl>
-                        <dt class="text-xs uppercase tracking-widest font-bold" style="color: var(--swiss-gray-500); margin-bottom: var(--space-lg); letter-spacing: 0.15em;">
-                            Connect
-                        </dt>
-                        <dd>
-                            <div class="flex" style="gap: var(--space-lg);">
-                            {% if site.social.github %}
-                            <a href="{{ site.social.github }}" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               aria-label="GitHub"
-                               style="color: var(--swiss-gray-400); transition: color 0.2s;"
-                               class="hover:text-white">
-                                <svg style="height: 24px; width: 24px;" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                </svg>
-                            </a>
-                            {% endif %}
-                            {% if site.social.linkedin %}
-                            <a href="{{ site.social.linkedin }}" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               aria-label="LinkedIn"
-                               style="color: var(--swiss-gray-400); transition: color 0.2s;"
-                               class="hover:text-white">
-                                <svg style="height: 24px; width: 24px;" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                            </a>
-                            {% endif %}
-                            {% if site.social.twitter %}
-                            <a href="{{ site.social.twitter }}" 
-                               target="_blank" 
-                               rel="noopener noreferrer" 
-                               aria-label="Twitter"
-                               style="color: var(--swiss-gray-400); transition: color 0.2s;"
-                               class="hover:text-white">
-                                <svg style="height: 24px; width: 24px;" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                                </svg>
-                            </a>
-                            {% endif %}
-                        </div>
-                        </dd>
-                    </dl>
+                <!-- Connect -->
+                <div>
+                    <h3 style="font-family: 'Google Sans', sans-serif; font-size: 12px; font-weight: 600; color: #80868B; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 20px;">
+                        Connect
+                    </h3>
+                    <div class="flex gap-3">
+                        {% if site.social.github %}
+                        <a href="{{ site.social.github }}" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           aria-label="GitHub"
+                           class="social-icon-minimal">
+                            <svg style="height: 20px; width: 20px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        {% endif %}
+                        {% if site.social.linkedin %}
+                        <a href="{{ site.social.linkedin }}" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           aria-label="LinkedIn"
+                           class="social-icon-minimal">
+                            <svg style="height: 20px; width: 20px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        {% endif %}
+                        {% if site.social.twitter %}
+                        <a href="{{ site.social.twitter }}" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           aria-label="Twitter"
+                           class="social-icon-minimal">
+                            <svg style="height: 20px; width: 20px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
 
-            <!-- Copyright Bar - Swiss Minimal -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" style="padding-top: var(--space-xl); padding-bottom: var(--space-xl);">
-                <div>
-                    <p class="text-xs uppercase tracking-widest font-bold" style="color: var(--swiss-gray-500); letter-spacing: 0.15em;">
-                        &copy; {{ '' | currentYear }} {{ site.author }} / 
-                        <a href="/privacy/" class="hover:underline" style="color: var(--swiss-white); transition: color 0.2s;">Privacy Policy</a>
-                    </p>
-                </div>
-                <div class="md:text-right">
-                    <p class="text-xs" style="color: var(--swiss-gray-500);">
-                        Built with 
-                        <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline" style="color: var(--swiss-white); transition: color 0.2s;">Eleventy</a> 
-                        / 
-                        <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="font-bold hover:underline" style="color: var(--swiss-white); transition: color 0.2s;">Tailwind CSS</a>
-                        / International Typographic Style
-                    </p>
-                </div>
+            <!-- Divider -->
+            <div style="height: 1px; background-color: #E8E8E8; margin-bottom: 24px;"></div>
+
+            <!-- Copyright Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <p style="color: #80868B; font-size: 12px; line-height: 1.5;">
+                    © {{ '' | currentYear }} {{ site.author }}. Built with 
+                    <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer" class="copyright-link">Eleventy</a> and 
+                    <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="copyright-link">Tailwind CSS</a>.
+                </p>
+                <a href="/privacy/" style="color: #5F6368; font-size: 12px; font-weight: 500; transition: color 0.2s ease;" class="hover:text-primary">Privacy Policy</a>
             </div>
         </div>
+        
+        <!-- Scroll to Top FAB -->
+        <button 
+            id="scrollToTop" 
+            class="scroll-top-fab"
+            aria-label="Scroll to top"
+            style="position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, var(--primary), var(--accent)); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3); opacity: 0; pointer-events: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000;">
+            <span class="material-icons-round" style="color: white; font-size: 24px;">arrow_upward</span>
+        </button>
     </footer>
+
+    <!-- Footer Styles -->
+    <style>
+        .footer-link {
+            color: #3C4043;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-block;
+            position: relative;
+        }
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        
+        .social-icon-minimal {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #F8F9FA;
+            color: #5F6368;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .social-icon-minimal:hover {
+            background-color: #E8DEF8;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(103, 80, 164, 0.15);
+        }
+        
+        .copyright-link {
+            color: #5F6368;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .copyright-link:hover {
+            color: var(--primary);
+        }
+        
+        .scroll-top-fab:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 8px 16px rgba(103, 80, 164, 0.4);
+        }
+        
+        .scroll-top-fab.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        @media (max-width: 768px) {
+            .scroll-top-fab {
+                width: 48px;
+                height: 48px;
+                bottom: 16px;
+                right: 16px;
+            }
+        }
+    </style>
+    
+    <!-- Scroll to Top Script -->
+    <script>
+        (function() {
+            const scrollBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollBtn.classList.add('visible');
+                } else {
+                    scrollBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        })();
+    </script>
 
     <!-- Swiss Mobile Menu - Vanilla JavaScript (CSP-safe) -->
     <script src="{{ '/js/mobile-menu.bundle.js' | baseUrl }}"></script>

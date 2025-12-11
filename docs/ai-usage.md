@@ -176,49 +176,88 @@ This document tracks all AI assistance used throughout the project development, 
 
 ## AI-Generated Forms
 
-### [Date] - [Form Name]
-- **Tool Used:** [AI tool name]
-- **Purpose:** [What the form is for]
-- **Prompt Used:**
+### December 10, 2025 - Student Onboarding Form
+- **Tool Used:** GitHub Copilot (Claude Sonnet 4.5)
+- **Purpose:** Collect student information for Job Club membership
+- **Prompts Used:**
   ```
-  [Paste the exact prompt used]
+  1. "Ok now i want to build the onboarding page. it needs to ask 
+     Name, email, Major / grad year, LinkedIn, GitHub, Personal website, 
+     Calendly, Career goal"
+  2. "should this be a tab on the nav bar?"
+  3. "i also need a tab for events"
   ```
-- **Form Fields Generated:** [List of fields]
-- **Validation Rules:** [Generated validation]
-- **File Location:** [Path to form file]
-- **Modifications Made:** [Any manual changes]
+- **Form Fields Generated:**
+  - Name (text input, required)
+  - Email (email input with validation, required)
+  - Major (text input, required)
+  - Graduation Year (dropdown: 2025-2029, required)
+  - LinkedIn Profile (URL input with validation, required)
+  - GitHub Profile (URL input with validation, required)
+  - Personal Website (URL input with validation, required)
+  - Calendly Link (URL input with validation, required)
+  - Career Goal (textarea, required)
+- **Validation Rules:**
+  - All fields required
+  - Email format validation (HTML5)
+  - URL format validation (HTML5)
+  - Real-time URL validation with visual feedback (green/red borders)
+  - JavaScript validation before submission
+- **File Location:** `/src/onboarding.njk`
+- **Modifications Made:** None (generated complete and working)
 
 ---
 
 ## AI-Generated Content
 
-### [Date] - [Content Type]
-- **Tool Used:** [AI tool name]
-- **Purpose:** [What the content is for]
+### December 10, 2025 - Sanity CMS Integration Documentation
+- **Tool Used:** GitHub Copilot (Claude Sonnet 4.5)
+- **Purpose:** Plan and document Sanity CMS integration for events management
 - **Prompt Used:**
   ```
-  [Paste the exact prompt used]
+  "i need to store the events in sanity. how would this work. also make sure 
+  you continue to update the work log of what you have done."
   ```
-- **Content Generated:** [Description or link]
-- **Location:** [Where content was used]
-- **Edits Made:** [Any manual editing]
+- **Content Generated:**
+  - Complete Sanity integration architecture diagram (text-based)
+  - Event schema design (20+ fields: title, slug, eventType, description, dates, location, capacity, registration, tags, images)
+  - Setup instructions (install dependencies, initialize Sanity project, configure studio)
+  - Eleventy integration code (Sanity client, data fetching with GROQ queries, page generation)
+  - Environment variable configuration (.env setup)
+  - Deployment workflow with webhooks (auto-rebuild on content changes)
+  - Cost analysis (free tier vs paid tiers)
+  - Alternative approach (local JSON files for testing)
+- **Location:** Planned for `/docs/sanity-integration-guide.md` (needs to be recreated)
+- **Edits Made:** None yet (file wasn't committed in initial creation)
 
 ---
 
 ## AI-Generated Checklists
 
-### [Date] - [Checklist Name]
-- **Tool Used:** [AI tool name]
-- **Purpose:** [What the checklist is for]
-- **Prompt Used:**
+### December 7, 2025 - 4-Week Implementation Checklist
+- **Tool Used:** GitHub Copilot (Claude Sonnet 4.5)
+- **Purpose:** Guide Job Club development with pattern implementation timeline
+- **Prompt Used:** (Part of pattern library extraction)
   ```
-  [Paste the exact prompt used]
+  "do it again. extract all the good features"
   ```
 - **Checklist Items:**
-  - [ ] Item 1
-  - [ ] Item 2
-  - [ ] Item 3
-- **File Location:** [Path to checklist]
+  - **Week 1: Foundation**
+    - [ ] A1-A4 (Accessibility basics: touch targets, focus, screen readers, ARIA)
+    - [ ] R1-R3 (Responsive core: fluid typography, spacing, grid)
+    - [ ] P1-P2 (Performance: Content Visibility API, hardware acceleration)
+  - **Week 2: Enhancements**
+    - [ ] A5-A7 (Advanced accessibility: reduced motion, focus trap, keyboard nav)
+    - [ ] R4-R5 (Advanced responsive: auto-fit cards, mobile-first)
+    - [ ] P3-P4 (Image/font optimization)
+  - **Week 3: Features**
+    - [ ] J1-J3 (JavaScript patterns: Intersection Observer, Web Vitals, data attributes)
+    - [ ] S1-S3 (Dashboard components: progress tracker, badges, avatars)
+  - **Week 4: Polish**
+    - [ ] P5 (Smooth scroll)
+    - [ ] Testing (accessibility, performance, responsive)
+    - [ ] Audit and optimization
+- **File Location:** `/docs/reference/harvest-notes-complete.md`
 
 ---
 
@@ -226,44 +265,49 @@ This document tracks all AI assistance used throughout the project development, 
 
 ### AI Usage by Category
 - **Wireframes:** 0
-- **Code Generation:** 1 session
-- **Sanity Schemas:** 0
+- **Code Generation:** 4 sessions
+- **Sanity Schemas:** 1 (documentation with full schema)
 - **QA Sessions:** 0
-- **Forms Generated:** 0
-- **Content Generated:** 0
-- **Checklists Generated:** 0
+- **Forms Generated:** 1 (Onboarding form with 9 fields)
+- **Content Generated:** 1 (Sanity integration guide)
+- **Checklists Generated:** 1 (4-week implementation plan)
 
 ### AI Tools Used
-- GitHub Copilot (Claude Sonnet 4.5): 1 session
+- GitHub Copilot (Claude Sonnet 4.5): 4 sessions (Dec 7 setup, Dec 7 patterns, Dec 10 onboarding, Dec 10 Sanity)
 
 ### Total AI Interactions
-- **Total Sessions:** 1
-- **Total Prompts:** 3
-- **Files Created with AI:** 2
-- **Files Modified with AI:** 0
+- **Total Sessions:** 4
+- **Total Prompts:** 15+
+- **Files Created with AI:** 4 (WORK_LOG.md, ai-usage.md, harvest-notes-complete.md, onboarding.njk)
+- **Files Modified with AI:** 2 (WORK_LOG.md updates, base.njk navigation updates)
+- **Lines of Code Generated:** 2,000+ (patterns: 1100+, onboarding: 300+, navigation: 50+, documentation: 500+)
 
 ---
 
 ## Best Practices & Lessons Learned
 
 ### What Worked Well
-- [Document successful AI interactions]
+- **Iterative refinement**: Asking AI to "try again" or "extract all good features" improved output quality significantly (pattern library went through 3 iterations)
+- **Specific requirements**: Providing exact field names for onboarding form resulted in complete, working code on first attempt
+- **Framework-agnostic requests**: Asking for generalized patterns made code more reusable across different projects
+- **Context provision**: Giving AI full project context (Job Club purpose, target users) helped generate relevant examples
+- **Documentation-first approach**: Creating WORK_LOG and ai-usage.md early helped track progress systematically
 
 ### What Didn't Work
-- [Document unsuccessful attempts]
+- **Vague prompts**: Initial pattern extraction attempts were too specific to Swiss design; needed broader scope
+- **Assuming file creation**: Sanity guide content was generated but file wasn't properly saved/committed (needs recreation)
+- **Build testing**: Should have tested site build before implementing features (discovered pre-existing issues)
 
 ### Recommendations for Future Use
-- [Document tips for the team]
+- Always request AI to update both WORK_LOG and ai-usage.md after each session
+- Test generated code immediately in local environment
+- Ask for iterative improvements rather than accepting first output
+- Provide context about existing codebase and patterns
+- Request framework-agnostic solutions for maximum reusability
+- Include accessibility and validation requirements in prompts
+- Ask AI to explain architecture/flow diagrams for complex integrations
+- Commit documentation files immediately after generation
 
 ---
 
-## Team Members' AI Usage
-
-### [Team Member Name]
-- **Sessions:** 0
-- **Primary Use Cases:** 
-- **Notes:**
-
----
-
-*Last Updated: December 7, 2025*
+*Last Updated: December 10, 2025*
