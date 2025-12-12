@@ -144,8 +144,9 @@ class OnboardingForm {
    * Get API endpoint URL
    */
   getApiEndpoint() {
-    // Use Zapier webhook directly
-    return 'https://hooks.zapier.com/hooks/catch/25364210/ufk1n3z/';
+    // Use environment variable for webhook URL
+    // In production, this should be set via build environment variables
+    return process.env.EMAIL_WEBHOOK_URL || '/api/submit-onboarding';
   }
   
   /**
