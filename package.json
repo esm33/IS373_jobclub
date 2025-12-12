@@ -82,6 +82,8 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@sanity/client": "^7.13.2",
+    "dotenv": "^17.2.3",
     "web-vitals": "^5.1.0"
   }
 }

@@ -1,153 +1,237 @@
 ---
 layout: layouts/base.njk
-title: Upcoming Events
-description: Join us for workshops, office hours, meetups, guest speakers, and hack nights at NJIT Job Club
-eleventyNavigation:
-  key: Events
+permalink: /events/
+pageTitle: "Events - Job Club NJIT"
+title: "Events"
+description: "Join our workshops, meetups, and networking events to accelerate your AI career journey."
 ---
 
-{# Hero Section #}
-<section class="relative overflow-hidden" style="background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%); padding-top: 140px; padding-bottom: 100px;">
-  <div class="container">
-    <div class="text-center max-w-4xl mx-auto">
-      {# Badge #}
-      <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background: rgba(103, 80, 164, 0.1); backdrop-filter: blur(10px);">
-        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--primary);">event</span>
-        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--primary);">Community Events</span>
-      </div>
-      
-      {# Main Heading #}
-      <h1 class="font-bold mb-6 animate-fade-in" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; line-height: 1.1; font-size: clamp(3rem, 8vw, 4.5rem); letter-spacing: -0.02em;">
+<main>
+  <!-- Hero Section -->
+  <section style="padding: 120px 0 80px; background: linear-gradient(135deg, var(--primary) 0%, #667eea 100%); color: white; position: relative; overflow: hidden;">
+    <div class="container relative z-10">
+      <h1 class="font-bold mb-6 animate-fade-in" style="font-family: 'Google Sans', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1;">
         Upcoming Events
       </h1>
-      
-      {# Subheading #}
-      <p class="text-xl mb-8 leading-relaxed mx-auto" style="color: var(--text); opacity: 0.7; max-width: 700px; font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.6;">
-        Connect, learn, and grow with the Job Club community through workshops, office hours, and networking events.
+      <p class="text-xl mb-8" style="max-width: 600px; opacity: 0.95; line-height: 1.6;">
+        Connect, learn, and grow with hands-on workshops, guest speakers, and networking opportunities designed to accelerate your AI career.
       </p>
       
-      {# Event Type Filters #}
-      <div class="flex flex-wrap gap-3 justify-center">
-        <button class="event-filter active" data-filter="all" style="padding: 0.75rem 1.5rem; border-radius: 100px; border: 2px solid var(--primary); background: var(--primary); color: white; font-weight: 600; transition: all 0.3s;">
+      <!-- Event Type Filters -->
+      <div class="flex flex-wrap gap-3 mb-6" id="eventFilters">
+        <button class="filter-btn active" data-filter="all" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid white; padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
           All Events
         </button>
-        <button class="event-filter" data-filter="workshop" style="padding: 0.75rem 1.5rem; border-radius: 100px; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-weight: 600; transition: all 0.3s;">
+        <button class="filter-btn" data-filter="workshop" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
           🛠️ Workshops
         </button>
-        <button class="event-filter" data-filter="office-hours" style="padding: 0.75rem 1.5rem; border-radius: 100px; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-weight: 600; transition: all 0.3s;">
-          🕐 Office Hours
+        <button class="filter-btn" data-filter="office-hours" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
+          💼 Office Hours
         </button>
-        <button class="event-filter" data-filter="meetup" style="padding: 0.75rem 1.5rem; border-radius: 100px; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-weight: 600; transition: all 0.3s;">
+        <button class="filter-btn" data-filter="meetup" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
           🤝 Meetups
         </button>
-        <button class="event-filter" data-filter="guest-speaker" style="padding: 0.75rem 1.5rem; border-radius: 100px; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-weight: 600; transition: all 0.3s;">
+        <button class="filter-btn" data-filter="guest-speaker" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
           🎤 Guest Speakers
         </button>
-        <button class="event-filter" data-filter="hack-night" style="padding: 0.75rem 1.5rem; border-radius: 100px; border: 2px solid var(--primary); background: transparent; color: var(--primary); font-weight: 600; transition: all 0.3s;">
+        <button class="filter-btn" data-filter="hack-night" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
           💻 Hack Nights
         </button>
       </div>
     </div>
-  </div>
-</section>
-
-{# Events Grid Section #}
-<section class="section-padding" style="background-color: #FEFBFF; padding-top: 80px; padding-bottom: 120px;">
-  <div class="container">
     
-    {# Loading State #}
-    <div id="eventsLoading" class="text-center py-20">
-      <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2" style="border-color: var(--primary);"></div>
-      <p class="mt-4" style="color: var(--text); opacity: 0.6;">Loading events...</p>
+    <!-- Decorative Background -->
+    <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; opacity: 0.1; background: radial-gradient(circle, white 1px, transparent 1px); background-size: 50px 50px;"></div>
+  </section>
+  
+  <!-- Events Listing Section -->
+  <section style="padding: 80px 0; background: var(--bg);">
+    <div class="container">
+      {% if events and events.length > 0 %}
+      <!-- Events Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="eventsGrid">
+        {% for event in events %}
+        <article class="event-card" data-event-type="{{ event.eventType }}" style="background: var(--bg-secondary); border-radius: 24px; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border);">
+          <!-- Event Type Badge -->
+          <div style="padding: 1.5rem 1.5rem 0;">
+            <span class="event-type-badge" style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; display: inline-block;">
+              {% if event.eventType == 'workshop' %}🛠️ Workshop
+              {% elif event.eventType == 'office-hours' %}💼 Office Hours
+              {% elif event.eventType == 'meetup' %}🤝 Meetup
+              {% elif event.eventType == 'guest-speaker' %}🎤 Guest Speaker
+              {% elif event.eventType == 'hack-night' %}💻 Hack Night
+              {% else %}📅 Event{% endif %}
+            </span>
+            
+            {% if event.featured %}
+            <span style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; display: inline-block; margin-left: 0.5rem;">
+              ⭐ Featured
+            </span>
+            {% endif %}
+          </div>
+          
+          <!-- Event Content -->
+          <div style="padding: 1.5rem;">
+            <h2 class="text-2xl font-bold mb-3" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              <a href="/events/{{ event.slug }}/" style="color: var(--text); text-decoration: none;">
+                {{ event.title }}
+              </a>
+            </h2>
+            
+            <p style="color: var(--text); opacity: 0.7; margin-bottom: 1.5rem; line-height: 1.6;">
+              {{ event.description | truncate(150) }}
+            </p>
+            
+            <!-- Event Meta -->
+            <div class="space-y-2 mb-6" style="font-size: 0.875rem;">
+              <div class="flex items-center gap-2">
+                <span class="material-icons-round" style="font-size: 1.25rem; color: var(--primary);">schedule</span>
+                <span style="color: var(--text); opacity: 0.8;">
+                  {{ event.date | readableDate }}
+                </span>
+              </div>
+              
+              <div class="flex items-center gap-2">
+                <span class="material-icons-round" style="font-size: 1.25rem; color: var(--primary);">place</span>
+                <span style="color: var(--text); opacity: 0.8;">
+                  {% if event.location.isVirtual %}
+                    🌐 Virtual Event
+                  {% else %}
+                    {{ event.location.venue }}
+                  {% endif %}
+                </span>
+              </div>
+              
+              {% if event.capacity %}
+              <div class="flex items-center gap-2">
+                <span class="material-icons-round" style="font-size: 1.25rem; color: var(--primary);">people</span>
+                <span style="color: var(--text); opacity: 0.8;">
+                  {{ event.capacity }} spots available
+                </span>
+              </div>
+              {% endif %}
+            </div>
+            
+            <!-- Tags -->
+            {% if event.tags and event.tags.length > 0 %}
+            <div class="flex flex-wrap gap-2 mb-6">
+              {% for tag in event.tags | head(3) %}
+              <span style="background: var(--bg); color: var(--text); padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem; border: 1px solid var(--border);">
+                {{ tag }}
+              </span>
+              {% endfor %}
+            </div>
+            {% endif %}
+            
+            <!-- Action Buttons -->
+            <div class="flex gap-3">
+              <a href="/events/{{ event.slug }}/" class="btn" style="flex: 1; background: var(--primary); color: white; padding: 0.75rem 1.5rem; border-radius: 100px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s;">
+                Learn More
+              </a>
+              {% if event.registrationRequired and event.registrationLink %}
+              <a href="{{ event.registrationLink }}" target="_blank" class="btn" style="background: var(--bg); color: var(--primary); border: 2px solid var(--primary); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; text-decoration: none; transition: all 0.3s;">
+                Register
+              </a>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      
+      <!-- Empty State for Filters -->
+      <div id="noEventsMessage" style="display: none; text-align: center; padding: 4rem 2rem;">
+        <span class="material-icons-round" style="font-size: 4rem; color: var(--primary); opacity: 0.5; margin-bottom: 1rem;">event_busy</span>
+        <h3 class="text-2xl font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+          No events found
+        </h3>
+        <p style="color: var(--text); opacity: 0.7;">
+          Try selecting a different event type or check back soon for new events.
+        </p>
+      </div>
+      
+      {% else %}
+      <!-- No Events Yet -->
+      <div style="text-align: center; padding: 4rem 2rem;">
+        <span class="material-icons-round" style="font-size: 4rem; color: var(--primary); opacity: 0.5; margin-bottom: 1rem;">event</span>
+        <h2 class="text-3xl font-bold mb-4" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+          Events Coming Soon
+        </h2>
+        <p class="text-xl" style="color: var(--text); opacity: 0.7; max-width: 600px; margin: 0 auto;">
+          We're planning exciting workshops, guest speakers, and networking events. Check back soon or <a href="/onboarding/" style="color: var(--primary); text-decoration: underline;">join our community</a> to get notified.
+        </p>
+      </div>
+      {% endif %}
     </div>
-    
-    {# No Events State #}
-    <div id="noEvents" class="hidden text-center py-20">
-      <span class="material-icons-round mb-4" style="font-size: 4rem; color: var(--primary); opacity: 0.3;">event_busy</span>
-      <h3 class="text-2xl font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: var(--text);">No Events Found</h3>
-      <p style="color: var(--text); opacity: 0.6;">Check back soon for upcoming events!</p>
+  </section>
+  
+  <!-- Call to Action -->
+  <section style="padding: 80px 0; background: linear-gradient(135deg, var(--primary) 0%, #667eea 100%); color: white;">
+    <div class="container text-center">
+      <h2 class="text-4xl font-bold mb-4" style="font-family: 'Google Sans', sans-serif;">
+        Want to Host an Event?
+      </h2>
+      <p class="text-xl mb-8" style="max-width: 600px; margin: 0 auto 2rem; opacity: 0.95;">
+        Have an idea for a workshop or want to share your expertise? We'd love to hear from you!
+      </p>
+      <a href="mailto:jobclub@njit.edu" class="btn" style="background: white; color: var(--primary); padding: 1rem 2rem; font-size: 1.125rem; border-radius: 100px; font-weight: 600; text-decoration: none; display: inline-block;">
+        Propose an Event
+      </a>
     </div>
-    
-    {# Events Grid #}
-    <div id="eventsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {# Events will be dynamically inserted here #}
-    </div>
-  </div>
-</section>
-
-{# CTA Section #}
-<section style="padding: 80px 0; background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); color: white;">
-  <div class="container text-center">
-    <h2 class="font-bold mb-6" style="font-family: 'Google Sans', sans-serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1;">
-      Want to Host an Event?
-    </h2>
-    <p class="text-xl mb-8 max-w-2xl mx-auto" style="opacity: 0.9;">
-      Have an idea for a workshop, talk, or community event? We'd love to hear from you!
-    </p>
-    <a href="mailto:kwilliams@njit.edu?subject=Event Proposal" class="btn inline-flex items-center gap-2" style="background: white; color: var(--primary); padding: 1rem 2.5rem; font-size: 1rem; border-radius: 100px; font-weight: 600;">
-      <span class="material-icons-round">email</span>
-      <span>Propose an Event</span>
-    </a>
-  </div>
-</section>
+  </section>
+</main>
 
 <style>
-  .event-filter:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(103, 80, 164, 0.2);
-  }
-  
-  .event-filter.active {
-    background: var(--primary) !important;
-    color: white !important;
-  }
-  
-  .event-card {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(103, 80, 164, 0.08);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.04);
-  }
-  
   .event-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(103, 80, 164, 0.15);
+    box-shadow: 0 20px 40px rgba(103, 80, 164, 0.2);
   }
   
-  .event-type-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 100px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  .filter-btn:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-2px);
   }
   
-  .event-type-workshop { background: rgba(103, 80, 164, 0.1); color: #6750A4; }
-  .event-type-office-hours { background: rgba(0, 191, 165, 0.1); color: #00BFA5; }
-  .event-type-meetup { background: rgba(255, 111, 0, 0.1); color: #FF6F00; }
-  .event-type-guest-speaker { background: rgba(156, 39, 176, 0.1); color: #9C27B0; }
-  .event-type-hack-night { background: rgba(33, 150, 243, 0.1); color: #2196F3; }
-  
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-fade-in {
-    animation: fade-in 0.6s ease-out;
+  .filter-btn.active {
+    background: white !important;
+    color: var(--primary) !important;
+    border-color: white !important;
   }
 </style>
 
-<script src="/js/events.js"></script>
+<script>
+  // Event Filtering
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const eventCards = document.querySelectorAll('.event-card');
+    const noEventsMessage = document.getElementById('noEventsMessage');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active state
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Get filter value
+        const filter = button.getAttribute('data-filter');
+        
+        // Filter events
+        let visibleCount = 0;
+        eventCards.forEach(card => {
+          const eventType = card.getAttribute('data-event-type');
+          if (filter === 'all' || eventType === filter) {
+            card.style.display = 'block';
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Show/hide empty state
+        if (noEventsMessage) {
+          noEventsMessage.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+      });
+    });
+  });
+</script>

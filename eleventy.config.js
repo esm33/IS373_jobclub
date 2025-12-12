@@ -70,6 +70,21 @@ export default function(eleventyConfig) {
     return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   });
 
+  // Add time filter for events
+  eleventyConfig.addFilter("time", (dateObj) => {
+    return new Date(dateObj).toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZone: "America/New_York"
+    });
+  });
+
+  // Add truncate filter
+  eleventyConfig.addFilter("truncate", (str, length = 150) => {
+    if (!str || str.length <= length) return str;
+    return str.substring(0, length).trim() + "...";
+  });
+
   // Collections
   eleventyConfig.addCollection("blog", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/blog/**/*.md").sort((a, b) => {
