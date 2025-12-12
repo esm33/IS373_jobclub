@@ -6,64 +6,64 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
 
 {% import "components/card.njk" as card %}
 
-{# Material Design 3 Hero #}
+{# Material Design Hero - Polished #}
 <section
   data-component="hero"
   data-section="home"
   data-testid="hero-section"
   class="relative overflow-hidden"
-  style="background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%); padding-top: var(--md-spacing-20); padding-bottom: var(--md-spacing-20); min-height: 650px;"
+  style="background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%); padding-top: 160px; padding-bottom: 140px; min-height: 650px;"
 >
   
   <div class="container relative z-10">
     <div class="text-center max-w-4xl mx-auto">
       {# Badge #}
-      <div class="inline-flex items-center mb-8" style="gap: var(--md-spacing-2); padding: var(--md-spacing-2) var(--md-spacing-4); border-radius: var(--md-shape-corner-full); background-color: var(--md-primary-container); backdrop-filter: blur(10px);">
-        <span class="material-icons-round" style="font-size: 18px; color: var(--md-on-primary-container);">rocket_launch</span>
-        <span class="md-label-large" style="color: var(--md-on-primary-container);">Job Club Community</span>
+      <div class="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full" style="background: rgba(103, 80, 164, 0.1); backdrop-filter: blur(10px);">
+        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--primary);">rocket_launch</span>
+        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--primary);">Job Club Community</span>
       </div>
       
       {# Main Heading #}
-      <h1 class="md-display-large font-bold animate-fade-in" style="margin-bottom: var(--md-spacing-6); color: var(--md-primary);">
+      <h1 class="font-bold mb-6 animate-fade-in" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; line-height: 1.1; font-size: clamp(3rem, 8vw, 5rem); letter-spacing: -0.02em;">
         {{ site.author }}
       </h1>
       
       {# Subheading #}
-      <p class="md-title-large mx-auto" style="margin-bottom: var(--md-spacing-10); color: var(--md-on-surface-variant); max-width: 700px;">
+      <p class="text-xl mb-10 leading-relaxed mx-auto" style="color: var(--text); opacity: 0.7; max-width: 700px; font-size: clamp(1.125rem, 2vw, 1.375rem); line-height: 1.6;">
         Build your future with AI education, real connections, and career opportunities. Join our community of students, employers, and innovators.
       </p>
       
       {# CTA Buttons with Icons #}
-      <div class="flex flex-wrap justify-center" style="gap: var(--md-spacing-4); margin-bottom: var(--md-spacing-16);">
-        <a href="/townhall/" class="btn btn-primary" style="padding: var(--md-spacing-4) var(--md-spacing-8);">
+      <div class="flex flex-wrap gap-4 justify-center mb-16">
+        <a href="/townhall/" class="btn btn-primary inline-flex items-center gap-2" style="padding: 1rem 2.5rem; font-size: 1rem; border-radius: 100px; box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3);">
           <span>Join Town Hall</span>
-          <span class="material-icons-round" style="font-size: 20px;">arrow_forward</span>
+          <span class="material-icons-round" style="font-size: 1.25rem;">arrow_forward</span>
         </a>
-        <a href="/about/" class="btn btn-outlined" style="padding: var(--md-spacing-4) var(--md-spacing-8);">
-          <span class="material-icons-round" style="font-size: 20px;">description</span>
+        <a href="/about/" class="btn btn-outlined inline-flex items-center gap-2" style="padding: 1rem 2.5rem; font-size: 1rem; border-radius: 100px; border-width: 2px;">
+          <span class="material-icons-round" style="font-size: 1.25rem;">description</span>
           <span>Learn More</span>
         </a>
       </div>
       
       {# Stats Row #}
-      <div class="grid grid-cols-3 max-w-3xl mx-auto" style="gap: var(--md-spacing-12);">
+      <div class="grid grid-cols-3 gap-12 max-w-3xl mx-auto">
         <div class="animate-slide-up" style="animation-delay: 0.1s;">
-          <div class="md-display-medium font-bold" style="margin-bottom: var(--md-spacing-2); color: var(--md-primary);">
+          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;">
             23+
           </div>
-          <p class="md-label-medium uppercase" style="color: var(--md-on-surface-variant);">Years at NJIT</p>
+          <p class="text-sm uppercase tracking-wide" style="color: var(--text); opacity: 0.6; font-weight: 600; letter-spacing: 0.1em;">Years at NJIT</p>
         </div>
         <div class="animate-slide-up" style="animation-delay: 0.2s;">
-          <div class="md-display-medium font-bold" style="margin-bottom: var(--md-spacing-2); color: var(--md-secondary);">
+          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #00BFA5; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;">
             10k+
           </div>
-          <p class="md-label-medium uppercase" style="color: var(--md-on-surface-variant);">Students Taught</p>
+          <p class="text-sm uppercase tracking-wide" style="color: var(--text); opacity: 0.6; font-weight: 600; letter-spacing: 0.1em;">Students Taught</p>
         </div>
         <div class="animate-slide-up" style="animation-delay: 0.3s;">
-          <div class="md-display-medium font-bold" style="margin-bottom: var(--md-spacing-2); color: var(--md-primary);">
+          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;">
             100+
           </div>
-          <p class="md-label-medium uppercase" style="color: var(--md-on-surface-variant);">Companies</p>
+          <p class="text-sm uppercase tracking-wide" style="color: var(--text); opacity: 0.6; font-weight: 600; letter-spacing: 0.1em;">Companies</p>
         </div>
       </div>
     </div>
@@ -79,15 +79,15 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
 >
   <div class="container">
     {# Section Header #}
-    <div class="text-center" style="margin-bottom: var(--md-spacing-20);">
-      <div class="inline-flex items-center" style="gap: var(--md-spacing-2); margin-bottom: var(--md-spacing-6); padding: var(--md-spacing-2) var(--md-spacing-4); border-radius: var(--md-shape-corner-full); background-color: var(--md-secondary-container);">
-        <span class="material-icons-round" style="font-size: 18px; color: var(--md-on-secondary-container);">explore</span>
-        <span class="md-label-large" style="color: var(--md-on-secondary-container);">Choose Your Journey</span>
+    <div class="text-center mb-20">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background: rgba(3, 218, 198, 0.1);">
+        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--secondary);">explore</span>
+        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--secondary);">Choose Your Journey</span>
       </div>
-      <h2 class="md-display-small font-bold" style="margin-bottom: var(--md-spacing-6); color: var(--md-on-surface);">
+      <h2 class="font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; letter-spacing: -0.01em;">
         Find Your Path
       </h2>
-      <p class="md-title-large mx-auto" style="color: var(--md-on-surface-variant); max-width: 700px;">
+      <p class="mx-auto" style="color: var(--text); opacity: 0.7; max-width: 700px; font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.6;">
         Different audiences need different entry points. Pick the path that matches where you are and what you need.
       </p>
     </div>
@@ -99,8 +99,8 @@ description: Director of Enterprise AI at NJIT building the future of AI educati
       <article 
           data-path-card
           data-index="1"
-          class="card-elevated group"
-          style="cursor: pointer; padding: var(--md-spacing-8); border-radius: var(--md-shape-corner-extra-large);">
+          class="card group"
+          style="cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 3rem; border-radius: 32px; background: white; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02); border: 1px solid rgba(0, 0, 0, 0.04);">
           
           <div class="flex items-start gap-4 mb-6">
             <div class="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); box-shadow: 0 6px 20px rgba(103, 80, 164, 0.35), 0 2px 8px rgba(103, 80, 164, 0.2);">
