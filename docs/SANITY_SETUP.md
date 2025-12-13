@@ -1,6 +1,8 @@
 # Sanity CMS Setup Guide - Job Club
 
-This guide walks you through setting up Sanity CMS for the Job Club onboarding system.
+**Status:** ✅ TESTED & WORKING - Onboarding form → dev-server → Sanity CMS → data saved successfully
+
+This guide walks you through setting up Sanity CMS for the Job Club onboarding system. The form submission flow has been tested end-to-end with real Sanity credentials.
 
 ---
 
