@@ -48,6 +48,7 @@ eleventyNavigation:
                 type="text"
                 id="name"
                 name="name"
+                value="John Doe"
                 required
                 class="form-input"
                 placeholder="John Doe"
@@ -67,6 +68,7 @@ eleventyNavigation:
                 type="email"
                 id="email"
                 name="email"
+                value="john.doe@njit.edu"
                 required
                 class="form-input"
                 placeholder="john.doe@njit.edu"
@@ -98,6 +100,7 @@ eleventyNavigation:
                 type="text"
                 id="major"
                 name="major"
+                value="Computer Science"
                 required
                 class="form-input"
                 placeholder="Computer Science"
@@ -122,7 +125,7 @@ eleventyNavigation:
               >
                 <option value="">Select year...</option>
                 <option value="2025">2025</option>
-                <option value="2026">2026</option>
+                <option value="2026" selected>2026</option>
                 <option value="2027">2027</option>
                 <option value="2028">2028</option>
                 <option value="2029">2029</option>
@@ -153,6 +156,7 @@ eleventyNavigation:
                 type="url"
                 id="linkedin"
                 name="linkedin"
+                value="https://linkedin.com/in/johndoe"
                 required
                 class="form-input"
                 placeholder="https://linkedin.com/in/yourprofile"
@@ -172,6 +176,7 @@ eleventyNavigation:
                 type="url"
                 id="github"
                 name="github"
+                value="https://github.com/johndoe"
                 required
                 class="form-input"
                 placeholder="https://github.com/yourusername"
@@ -191,6 +196,7 @@ eleventyNavigation:
                 type="url"
                 id="website"
                 name="website"
+                value="https://johndoe.com"
                 required
                 class="form-input"
                 placeholder="https://yourportfolio.com"
@@ -210,6 +216,7 @@ eleventyNavigation:
                 type="url"
                 id="calendly"
                 name="calendly"
+                value="https://calendly.com/johndoe"
                 required
                 class="form-input"
                 placeholder="https://calendly.com/yourusername"
@@ -243,8 +250,79 @@ eleventyNavigation:
                 rows="6"
                 class="form-textarea"
                 placeholder="Tell us about your career aspirations and what you hope to achieve..."
-                style="padding-left: 3.5rem; padding-top: 1rem; border-radius: 16px; border: 2px solid rgba(156, 39, 176, 0.2); transition: all 0.3s ease; font-size: 1rem; resize: vertical; min-height: 140px;"
+                style="padding-left: 3.5rem; padding-top: 1rem; border-radius: 16px; border: 2px solid rgba(156, 39, 176, 0.2); transition: all 0.3s ease; font-size: 1rem; resize: vertical; min-height: 140px;">I want to become a full-stack software engineer at a leading tech company, working on products that impact millions of users.</textarea>
               ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Information Section -->
+        <div class="pb-8">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #D32F2F 0%, #EF5350 100%); box-shadow: 0 6px 20px rgba(211, 47, 47, 0.35), 0 2px 8px rgba(211, 47, 47, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">info</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Additional Information
+            </h2>
+          </div>
+
+          <!-- Years of Experience -->
+          <div class="mb-8">
+            <label for="experience" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Years of Experience (Optional)
+            </label>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #D32F2F; opacity: 0.5; font-size: 1.25rem;">work_history</span>
+              <input
+                type="number"
+                id="experience"
+                name="experience"
+                value="2"
+                min="0"
+                max="70"
+                class="form-input"
+                placeholder="2"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(211, 47, 47, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="mb-8">
+            <label for="skills" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Key Skills (Optional)
+            </label>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #D32F2F; opacity: 0.5; font-size: 1.25rem;">star</span>
+              <input
+                type="text"
+                id="skills"
+                name="skills"
+                value="JavaScript, React, Python, Node.js"
+                class="form-input"
+                placeholder="e.g., JavaScript, React, Python, Data Analysis"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(211, 47, 47, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
+          </div>
+
+          <!-- Company Interests -->
+          <div class="mb-8">
+            <label for="companies" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Interested Companies (Optional)
+            </label>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #D32F2F; opacity: 0.5; font-size: 1.25rem;">business</span>
+              <input
+                type="text"
+                id="companies"
+                name="companies"
+                value="Google, Microsoft, Meta"
+                class="form-input"
+                placeholder="e.g., Google, Microsoft, Amazon, Startup XYZ"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(211, 47, 47, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
             </div>
           </div>
         </div>
