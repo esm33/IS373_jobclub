@@ -1,26 +1,26 @@
 import { createClient } from '@sanity/client';
 import 'dotenv/config';
 
-// Initialize Sanity client
-const client = createClient({
-  projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET || 'production',
-  token: process.env.SANITY_WRITE_TOKEN,
-  apiVersion: '2024-12-13', // Changed to force fresh data fetch
-  useCdn: false // Use fresh data for build
-});
-
 /**
  * Fetch all published events from Sanity
  * Returns events sorted by date (upcoming first)
  */
 export default async function() {
   try {
-    // Check if Sanity is configured
+    // Check if Sanity is configured BEFORE creating client
     if (!process.env.SANITY_PROJECT_ID) {
       console.warn('⚠️  Sanity not configured. Using sample events data.');
       return getSampleEvents();
     }
+
+    // Initialize Sanity client only if credentials are available
+    const client = createClient({
+      projectId: process.env.SANITY_PROJECT_ID,
+      dataset: process.env.SANITY_DATASET || 'production',
+      token: process.env.SANITY_WRITE_TOKEN,
+      apiVersion: '2024-12-13', // Changed to force fresh data fetch
+      useCdn: false // Use fresh data for build
+    });
 
     // Query for published events (temporarily removed date filter for debugging)
     const query = `*[_type == "event" && status == "published"] | order(date asc) {
