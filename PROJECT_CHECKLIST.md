@@ -15,7 +15,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 
 ## 🎉 Events System
 
-### ✅ Onboarding Form (COMPLETED)
+### ⚠️ Onboarding Form (SCAFFOLDED - NOT PRODUCTION READY)
 - [x] Create `src/onboarding.njk` page ✅
 - [x] Form fields:
   - [x] Name (text) ✅
@@ -31,23 +31,30 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [x] localStorage persistence ✅
 - [x] Success/error messaging ✅
 - [x] Responsive Material Design styling ✅
+- [ ] **END-TO-END TESTING** (form → Sanity → verify data saves) ❌
+- [ ] **PRODUCTION DEPLOYMENT** (needs live Sanity credentials) ❌
 
-### ✅ Sanity Schema (COMPLETED)
+### ⚠️ Sanity Schema (SCAFFOLDED - NOT PRODUCTION READY)
 - [x] Create `sanity/schemas/memberProfile.js` ✅
 - [x] All required fields ✅
 - [x] Onboarding status (new, in-progress, completed) ✅
 - [x] Missing prerequisites flags ✅
 - [x] Timestamps ✅
 - [x] Admin notes ✅
+- [ ] **NO DATA IN SANITY YET** ❌
+- [ ] **STUDIO NOT DEPLOYED** (only works locally) ❌
+- [ ] **NOT TESTED WITH REAL SUBMISSIONS** ❌
 
-### ✅ Backend API (COMPLETED)
+### ⚠️ Backend API (SCAFFOLDED - NOT TESTED)
 - [x] Create `api/submit-onboarding.js` serverless function ✅
 - [x] Sanity client integration ✅
 - [x] Email validation ✅
 - [x] URL validation ✅
 - [x] Error handling ✅
+- [ ] **NOT TESTED END-TO-END** ❌
+- [ ] **NO PRODUCTION SANITY CREDENTIALS SET** ❌
 
-### ⏳ Personalized Onboarding Email (AUTOMATION REQUIRED)
+### ⏳ Personalized Onboarding Email (BLOCKED - NEEDS SOLUTION)
 **After form submission, automation must send:**
 - [ ] Personalized onboarding checklist
 - [ ] Guides for missing assets:
@@ -59,13 +66,14 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [ ] Job Club resources links
 
 **Implementation Options:**
-- [ ] Zapier: Sanity Webhook → Email (SendGrid/Mailgun)
-- [ ] Make: Sanity Webhook → Conditional logic → Email
-- [ ] Netlify Functions + SendGrid API
+- [ ] ❌ Zapier: **BLOCKED** (requires premium plan for needed features)
+- [ ] Make.com: Free tier allows webhooks + conditionals (1000 ops/month)
+- [ ] n8n (self-hosted): Free forever, requires $5/mo server
+- [ ] Build into `api/submit-onboarding.js`: Add SendGrid API calls directly
 
-**Status:** 0/6 complete
+**Status:** 0/6 complete - **DECISION NEEDED ON PLATFORM**
 
-### ⏳ Discord Integration (AUTOMATION REQUIRED)
+### ⏳ Discord Integration (BLOCKED - NEEDS SOLUTION)
 **After form submission, automation must:**
 - [ ] Add user to CRM (HubSpot/Airtable/Notion)
 - [ ] Post intro message to #jobclub-intros Discord channel
@@ -77,9 +85,14 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [ ] Automation: Form Submit → Discord POST
 - [ ] Format intro message template
 
-**Status:** 0/3 complete
+**Status:** 0/3 complete - **BLOCKED BY AUTOMATION PLATFORM DECISION**
+**Options:** Make.com, n8n, or build into serverless function
 
-**Onboarding Section Status:** 11/20 complete (55%)
+**Onboarding Section Status:** 11/25 complete (44%) - **NOT PRODUCTION READY**
+**Blockers:**
+- Sanity not deployed/tested
+- Automation platform decision needed (Zapier blocked)
+- No end-to-end testing completed
 
 ---
 
@@ -275,7 +288,7 @@ All Job Club core pages must adopt EAiKW layout patterns:
   - [ ] Navigation
 
 **EAiKW Adaptation Status:** 2/11 complete (18%)
-### ✅ Basic Configuration (COMPLETED)
+### ⚠️ Basic Configuration (SCAFFOLDED - NOT PRODUCTION READY)
 - [x] Sanity project structure in `/sanity` folder ✅
 - [x] Schema index file ✅
 - [x] Event schema ✅
@@ -283,6 +296,8 @@ All Job Club core pages must adopt EAiKW layout patterns:
 - [x] Package.json with dependencies ✅
 - [x] Sanity config file ✅
 - [x] Environment variables setup (`.env.example`) ✅
+- [ ] **PRODUCTION CREDENTIALS NOT SET** ❌
+- [ ] **NO CONTENT CREATED** (0 events, 0 members) ❌
 
 ### ⏳ Required Schemas (Job Club)
 - [x] `memberProfile.js` ✅
@@ -290,19 +305,23 @@ All Job Club core pages must adopt EAiKW layout patterns:
 - [ ] `resource.js` (for guides)
 - [ ] `author.js` (optional, for resource authors)
 
-### ✅ Deployment & Configuration
+### ⏳ Deployment & Configuration (NOT PRODUCTION READY)
 - [x] Initialize Sanity project (`sanity init`) ✅ Project ID: 2nqkaqwe
 - [x] Sanity Studio running locally ✅ http://localhost:3333/
-- [ ] Deploy Sanity Studio to hosted URL (optional, local works)
-- [ ] Configure CORS for production domain
+- [ ] **Deploy Sanity Studio to hosted URL** (NEEDED for team collaboration) ❌
+- [ ] **Configure CORS for production domain** ❌
+- [ ] **Add production credentials to hosting platform** ❌
+- [ ] **Create at least 2-3 test events** ❌
+- [ ] **Test onboarding form → Sanity data flow** ❌
 - [ ] Set up Sanity webhooks for:
   - [ ] Build triggers (new content → rebuild site)
   - [ ] Discord notifications (optional)
 - [ ] Create custom desk structure
 - [ ] Set up roles and permissions
-- [ ] Document Sanity Studio usage
-9/15 complete (60
-**Sanity Status:** 8/15 complete (53%)
+- [ ] Document Sanity Studio usage for team
+
+**Sanity Status:** 2/13 complete (15%) - **NOT PRODUCTION READY**
+**Critical Missing:** Studio deployment, production credentials, content creation, testing
 - [ ] Linting setup (ESLint)
 - [ ] Playwright tests (min. 2–3)
   - [ ] Onboarding form test
