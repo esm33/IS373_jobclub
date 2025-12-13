@@ -1,6 +1,6 @@
 # Job Club NJIT - Project Checklist
 
-**Last Updated:** December 12, 2025
+**Last Updated:** December 13, 2025
 
 This document tracks all requirements (general + Job Club-specific) and implementation status.
 
@@ -15,7 +15,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 
 ## 🎉 Events System
 
-### ⚠️ Onboarding Form (SCAFFOLDED - NOT PRODUCTION READY)
+### ✅ Onboarding Form (COMPLETE - TESTED & WORKING)
 - [x] Create `src/onboarding.njk` page ✅
 - [x] Form fields:
   - [x] Name (text) ✅
@@ -31,28 +31,29 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [x] localStorage persistence ✅
 - [x] Success/error messaging ✅
 - [x] Responsive Material Design styling ✅
-- [ ] **END-TO-END TESTING** (form → Sanity → verify data saves) ❌
-- [ ] **PRODUCTION DEPLOYMENT** (needs live Sanity credentials) ❌
+- [x] **END-TO-END TESTING** (form → Sanity → verify data saves) ✅
+- [ ] **PRODUCTION DEPLOYMENT** (ready with live Sanity credentials) ⏳
 
-### ⚠️ Sanity Schema (SCAFFOLDED - NOT PRODUCTION READY)
+### ✅ Sanity Schema (TESTED & WORKING)
 - [x] Create `sanity/schemas/memberProfile.js` ✅
 - [x] All required fields ✅
 - [x] Onboarding status (new, in-progress, completed) ✅
 - [x] Missing prerequisites flags ✅
 - [x] Timestamps ✅
 - [x] Admin notes ✅
-- [ ] **NO DATA IN SANITY YET** ❌
-- [ ] **STUDIO NOT DEPLOYED** (only works locally) ❌
-- [ ] **NOT TESTED WITH REAL SUBMISSIONS** ❌
+- [x] **DATA SAVING TO SANITY** ✅
+- [x] **TESTED WITH REAL SUBMISSIONS** ✅
+- [ ] **STUDIO DEPLOYED** (works locally + shared with team) ⏳
 
-### ⚠️ Backend API (SCAFFOLDED - NOT TESTED)
+### ✅ Backend API (TESTED & WORKING)
 - [x] Create `api/submit-onboarding.js` serverless function ✅
+- [x] Create `dev-server.js` for local testing ✅
 - [x] Sanity client integration ✅
 - [x] Email validation ✅
 - [x] URL validation ✅
 - [x] Error handling ✅
-- [ ] **NOT TESTED END-TO-END** ❌
-- [ ] **NO PRODUCTION SANITY CREDENTIALS SET** ❌
+- [x] **TESTED END-TO-END** ✅
+- [x] **PRODUCTION SANITY CREDENTIALS SET** ✅
 
 ### ⏳ Personalized Onboarding Email (BLOCKED - NEEDS SOLUTION)
 **After form submission, automation must send:**
@@ -734,16 +735,17 @@ Create a site that onboards students into AI-ready professionals through:
 
 ## 📊 Project Statistics
 
-**Overall Progress:** ~15% Complete
+**Overall Progress:** ~20% Complete
 
 ### Completed Sections:
 - ✅ Events System Backend & Frontend (95%)
-- ✅ Student Onboarding Form (100%)
-- ✅ Basic Sanity Schemas (100%)
+- ✅ Student Onboarding Form (100%) - **Now with working API & Sanity integration**
+- ✅ Basic Sanity Schemas (100%) - **Tested and saving data**
+- ✅ API Backend with Dev Server (100%) - **Tested locally, ready for production**
 
 ### In Progress:
-- 🔄 Sanity CMS Setup (needs deployment)
-- 🔄 Testing & Deployment (basic setup done)
+- 🔄 Sanity CMS Deployment (working locally, ready to deploy)
+- 🔄 Testing & Deployment (form submission tested successfully)
 
 ### Not Started:
 - ❌ Discord Integration
