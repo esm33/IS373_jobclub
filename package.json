@@ -39,7 +39,10 @@
     "docker:dev": "docker compose --profile dev up --build",
     "docker:prod": "docker compose --profile production up -d --build",
     "docker:stop": "docker compose --profile dev --profile production down",
-    "docker:clean": "docker compose --profile dev --profile production down -v"
+    "docker:clean": "docker compose --profile dev --profile production down -v",
+    "sanity:studio": "cd sanity && npm run dev",
+    "populate:events": "node scripts/populate-events.js",
+    "deploy:sanity": "npm run populate:events && npm run build"
   },
   "keywords": [
     "eleventy",
