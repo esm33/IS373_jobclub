@@ -3,6 +3,7 @@ export default {
   title: 'Event',
   type: 'document',
   fields: [
+    // Basic Information
     {
       name: 'title',
       title: 'Event Title',
@@ -11,7 +12,7 @@ export default {
     },
     {
       name: 'slug',
-      title: 'Slug',
+      title: 'URL Slug',
       type: 'slug',
       options: {
         source: 'title',
@@ -20,66 +21,58 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'eventType',
-      title: 'Event Type',
-      type: 'string',
-      options: {
-        list: [
-          { title: 'Workshop', value: 'workshop' },
-          { title: 'Office Hours', value: 'office-hours' },
-          { title: 'Meetup', value: 'meetup' },
-          { title: 'Guest Speaker', value: 'guest-speaker' },
-          { title: 'Hack Night', value: 'hack-night' },
-          { title: 'Town Hall', value: 'town-hall' }
-        ],
-        layout: 'dropdown'
-      },
-      validation: Rule => Rule.required()
-    },
-    {
       name: 'description',
-      title: 'Description',
+      title: 'Short Description',
       type: 'text',
+      description: 'Brief description for event cards and meta tags (150-200 characters)',
       validation: Rule => Rule.required().min(50).max(500)
     },
     {
       name: 'fullDescription',
       title: 'Full Description',
       type: 'text',
-      description: 'Detailed description for the event page'
+      description: 'Detailed description for event detail page',
+      validation: Rule => Rule.required().min(100).max(2000)
     },
+    
+    // Event Type
+    {
+      name: 'eventType',
+      title: 'Event Type',
+      type: 'string',
+      options: {
+        list: [
+          { title: '🛠️ Workshop', value: 'workshop' },
+          { title: '💼 Office Hours', value: 'office-hours' },
+          { title: '🤝 Meetup', value: 'meetup' },
+          { title: '🎤 Guest Speaker', value: 'guest-speaker' },
+          { title: '💻 Hack Night', value: 'hack-night' }
+        ],
+        layout: 'radio'
+      },
+      validation: Rule => Rule.required()
+    },
+    
+    // Date & Time
     {
       name: 'date',
-      title: 'Event Date',
+      title: 'Start Date & Time',
       type: 'datetime',
       validation: Rule => Rule.required()
     },
     {
       name: 'endDate',
-      title: 'End Date/Time',
+      title: 'End Date & Time',
       type: 'datetime',
-      description: 'Optional - if event has a specific end time'
+      validation: Rule => Rule.required().min(Rule.valueOfField('date'))
     },
+    
+    // Location
     {
       name: 'location',
       title: 'Location',
       type: 'object',
       fields: [
-        {
-          name: 'venue',
-          title: 'Venue Name',
-          type: 'string'
-        },
-        {
-          name: 'address',
-          title: 'Address',
-          type: 'string'
-        },
-        {
-          name: 'room',
-          title: 'Room/Building',
-          type: 'string'
-        },
         {
           name: 'isVirtual',
           title: 'Virtual Event',
@@ -87,31 +80,64 @@ export default {
           initialValue: false
         },
         {
+          name: 'venue',
+          title: 'Venue Name',
+          type: 'string',
+          description: 'e.g., "NJIT Campus" or "Zoom"'
+        },
+        {
+          name: 'room',
+          title: 'Room/Space',
+          type: 'string',
+          description: 'e.g., "GITC 3700"'
+        },
+        {
+          name: 'address',
+          title: 'Full Address',
+          type: 'text',
+          description: 'Complete address for physical events'
+        },
+        {
           name: 'virtualLink',
-          title: 'Virtual Event Link',
+          title: 'Virtual Meeting Link',
           type: 'url',
-          description: 'Zoom, Google Meet, etc.'
+          description: 'Zoom/Google Meet link for virtual events',
+          hidden: ({ parent }) => !parent?.isVirtual
         }
-      ]
+      ],
+      validation: Rule => Rule.required()
     },
+    
+    // Registration
     {
       name: 'capacity',
       title: 'Capacity',
       type: 'number',
-      description: 'Maximum number of attendees (optional)'
+      description: 'Maximum number of attendees (leave blank for unlimited)',
+      validation: Rule => Rule.min(1).max(500)
     },
     {
       name: 'registrationRequired',
       title: 'Registration Required',
       type: 'boolean',
-      initialValue: false
+      initialValue: true
     },
     {
       name: 'registrationLink',
       title: 'Registration Link',
       type: 'url',
-      description: 'External registration link (Google Forms, Eventbrite, etc.)'
+      description: 'External form link (Google Forms, Eventbrite, etc.)',
+      hidden: ({ document }) => !document?.registrationRequired
     },
+    {
+      name: 'registrationDeadline',
+      title: 'Registration Deadline',
+      type: 'datetime',
+      description: 'Last date to register (optional)',
+      hidden: ({ document }) => !document?.registrationRequired
+    },
+    
+    // Speakers/Hosts
     {
       name: 'speakers',
       title: 'Speakers/Hosts',
@@ -122,13 +148,15 @@ export default {
           fields: [
             {
               name: 'name',
-              title: 'Name',
-              type: 'string'
+              title: 'Full Name',
+              type: 'string',
+              validation: Rule => Rule.required()
             },
             {
               name: 'title',
-              title: 'Title/Role',
-              type: 'string'
+              title: 'Job Title',
+              type: 'string',
+              validation: Rule => Rule.required()
             },
             {
               name: 'company',
@@ -138,12 +166,26 @@ export default {
             {
               name: 'bio',
               title: 'Short Bio',
-              type: 'text'
+              type: 'text',
+              validation: Rule => Rule.max(500)
+            },
+            {
+              name: 'photoUrl',
+              title: 'Photo URL',
+              type: 'url',
+              description: 'LinkedIn photo or professional headshot'
+            },
+            {
+              name: 'linkedinUrl',
+              title: 'LinkedIn Profile',
+              type: 'url'
             }
           ]
         }
       ]
     },
+    
+    // Tags & Categories
     {
       name: 'tags',
       title: 'Tags',
@@ -151,15 +193,55 @@ export default {
       of: [{ type: 'string' }],
       options: {
         layout: 'tags'
+      },
+      description: 'Topics covered (e.g., React, AI, Career, Networking)'
+    },
+    {
+      name: 'targetAudience',
+      title: 'Target Audience',
+      type: 'array',
+      of: [
+        {
+          type: 'string'
+        }
+      ],
+      options: {
+        list: [
+          { title: 'All Students', value: 'all' },
+          { title: 'Beginners', value: 'beginners' },
+          { title: 'Intermediate', value: 'intermediate' },
+          { title: 'Advanced', value: 'advanced' },
+          { title: 'Freshmen', value: 'freshmen' },
+          { title: 'Sophomores', value: 'sophomores' },
+          { title: 'Juniors', value: 'juniors' },
+          { title: 'Seniors', value: 'seniors' },
+          { title: 'Graduate Students', value: 'graduate' }
+        ]
       }
+    },
+    
+    // Additional Details
+    {
+      name: 'prerequisites',
+      title: 'Prerequisites',
+      type: 'text',
+      description: 'Any required skills or items to bring'
+    },
+    {
+      name: 'materialsProvided',
+      title: 'Materials Provided',
+      type: 'text',
+      description: 'What attendees will receive (slides, code, food, etc.)'
     },
     {
       name: 'featured',
       title: 'Featured Event',
       type: 'boolean',
-      description: 'Show this event prominently on the homepage',
+      description: 'Show prominently on events page',
       initialValue: false
     },
+    
+    // Status & Tracking
     {
       name: 'status',
       title: 'Event Status',
@@ -168,8 +250,9 @@ export default {
         list: [
           { title: 'Draft', value: 'draft' },
           { title: 'Published', value: 'published' },
-          { title: 'Cancelled', value: 'cancelled' },
-          { title: 'Completed', value: 'completed' }
+          { title: 'Registration Closed', value: 'registration-closed' },
+          { title: 'Completed', value: 'completed' },
+          { title: 'Cancelled', value: 'cancelled' }
         ],
         layout: 'radio'
       },
@@ -177,12 +260,29 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'imageUrl',
-      title: 'Event Image URL',
-      type: 'url',
-      description: 'Featured image for the event'
+      name: 'publishedAt',
+      title: 'Published Date',
+      type: 'datetime',
+      description: 'When to make this event visible on the website'
+    },
+    
+    // SEO
+    {
+      name: 'metaTitle',
+      title: 'Meta Title',
+      type: 'string',
+      description: 'SEO title (leave blank to use event title)',
+      validation: Rule => Rule.max(60)
+    },
+    {
+      name: 'metaDescription',
+      title: 'Meta Description',
+      type: 'text',
+      description: 'SEO description (leave blank to use short description)',
+      validation: Rule => Rule.max(160)
     }
   ],
+  
   preview: {
     select: {
       title: 'title',
@@ -190,36 +290,40 @@ export default {
       date: 'date',
       status: 'status'
     },
-    prepare(selection) {
-      const { title, eventType, date, status } = selection;
-      const typeEmoji = {
+    prepare({ title, eventType, date, status }) {
+      const eventTypeEmojis = {
         'workshop': '🛠️',
-        'office-hours': '🕐',
+        'office-hours': '💼',
         'meetup': '🤝',
         'guest-speaker': '🎤',
-        'hack-night': '💻',
-        'town-hall': '🏛️'
+        'hack-night': '💻'
       };
-      const statusEmoji = {
-        'draft': '📝',
-        'published': '✅',
-        'cancelled': '❌',
-        'completed': '✔️'
-      };
+      
+      const formattedDate = date 
+        ? new Date(date).toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: 'numeric', 
+            year: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit'
+          })
+        : 'No date';
+      
       return {
-        title: `${typeEmoji[eventType] || '📅'} ${title}`,
-        subtitle: `${new Date(date).toLocaleDateString()} • ${statusEmoji[status] || ''} ${status}`
+        title: `${eventTypeEmojis[eventType] || '📅'} ${title}`,
+        subtitle: `${formattedDate} • ${status || 'draft'}`
       };
     }
   },
+  
   orderings: [
     {
-      title: 'Date, Newest First',
+      title: 'Date (Newest First)',
       name: 'dateDesc',
       by: [{ field: 'date', direction: 'desc' }]
     },
     {
-      title: 'Date, Oldest First',
+      title: 'Date (Oldest First)',
       name: 'dateAsc',
       by: [{ field: 'date', direction: 'asc' }]
     },
@@ -229,4 +333,4 @@ export default {
       by: [{ field: 'eventType', direction: 'asc' }]
     }
   ]
-}
+};
