@@ -147,6 +147,9 @@ class OnboardingForm {
     // Use the local API endpoint for form submission
     // In development: http://localhost:3002/api/submit-onboarding
     // In production: same domain /api/submit-onboarding
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      return 'http://localhost:3002/api/submit-onboarding';
+    }
     return '/api/submit-onboarding';
   }
   
