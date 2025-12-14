@@ -1,0 +1,182 @@
+---
+layout: layouts/base.njk
+title: Resource Library
+description: Guides, templates, and resources to help you build your career in the AI era
+---
+
+{% import "components/card.njk" as card %}
+
+<section style="padding-top: 120px; padding-bottom: var(--space-5xl);">
+  <div style="max-width: 1440px; margin: 0 auto; padding-left: var(--swiss-grid-margin); padding-right: var(--swiss-grid-margin);">
+    
+    {# Section Header #}
+    <div class="swiss-grid mb-12" style="border-left: 4px solid var(--swiss-red); padding-left: var(--space-md);">
+      <div class="swiss-col-8">
+        <p class="text-sm font-bold uppercase tracking-wider mb-2" style="color: var(--swiss-gray-600);">RESOURCES</p>
+        <h1 class="font-bold mb-4" style="font-size: var(--fluid-h1); line-height: 1.1; letter-spacing: -0.02em;">{{ title }}</h1>
+        <p class="text-lg" style="color: var(--swiss-gray-700); max-width: 60ch;">{{ description }}</p>
+      </div>
+    </div>
+    
+    {# Structural divider #}
+    <div class="swiss-divider mb-12"></div>
+    
+    {# Resources Grid #}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      {# Resource 1: LinkedIn Optimization Guide #}
+      <article class="card" style="padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%);">
+            <span class="material-icons-round text-white" style="font-size: 1.5rem;">person</span>
+          </div>
+          <div>
+            <h3 class="font-bold" style="font-size: 1.25rem; color: var(--text);">LinkedIn Optimization Guide</h3>
+            <p class="text-sm" style="color: var(--text); opacity: 0.6; margin-top: 0.25rem;">Professional Profile</p>
+          </div>
+        </div>
+        
+        <p class="mb-6 leading-relaxed" style="color: var(--text); opacity: 0.7;">
+          Learn how to create a compelling LinkedIn profile that gets noticed by recruiters and employers. Includes profile photo best practices, headline formulas, and optimization strategies.
+        </p>
+        
+        <div class="space-y-3 mb-6">
+          <div style="padding: 1rem; background-color: #F5F5F5; border-radius: 12px;">
+            <h4 class="font-semibold text-sm mb-2" style="color: var(--text);">What You'll Learn:</h4>
+            <ul class="text-sm space-y-1" style="color: var(--text); opacity: 0.7;">
+              <li>✓ Profile photo best practices</li>
+              <li>✓ Headline formula that works</li>
+              <li>✓ About section templates</li>
+              <li>✓ Experience descriptions</li>
+              <li>✓ Skills endorsement strategy</li>
+            </ul>
+          </div>
+        </div>
+        
+        <a href="#" class="inline-flex items-center gap-2 font-semibold" style="color: var(--primary); transition: all 0.3s;">
+          <span>Download Guide</span>
+          <span class="material-icons-round" style="font-size: 1.25rem;">arrow_forward</span>
+        </a>
+      </article>
+      
+      {# Resource 2: GitHub Profile Setup Guide #}
+      <article class="card" style="padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #00BFA5 0%, #64FFDA 100%);">
+            <span class="material-icons-round text-white" style="font-size: 1.5rem;">code</span>
+          </div>
+          <div>
+            <h3 class="font-bold" style="font-size: 1.25rem; color: var(--text);">GitHub Profile Setup Guide</h3>
+            <p class="text-sm" style="color: var(--text); opacity: 0.6; margin-top: 0.25rem;">Portfolio & Contributions</p>
+          </div>
+        </div>
+        
+        <p class="mb-6 leading-relaxed" style="color: var(--text); opacity: 0.7;">
+          Transform your GitHub into a powerful portfolio. Learn how to showcase your projects, optimize your contribution graph, and make your code visible to employers.
+        </p>
+        
+        <div class="space-y-3 mb-6">
+          <div style="padding: 1rem; background-color: #F5F5F5; border-radius: 12px;">
+            <h4 class="font-semibold text-sm mb-2" style="color: var(--text);">What You'll Learn:</h4>
+            <ul class="text-sm space-y-1" style="color: var(--text); opacity: 0.7;">
+              <li>✓ README.md template & best practices</li>
+              <li>✓ Pinned repositories strategy</li>
+              <li>✓ Profile customization tips</li>
+              <li>✓ Project documentation</li>
+              <li>✓ Contribution graph optimization</li>
+            </ul>
+          </div>
+        </div>
+        
+        <a href="#" class="inline-flex items-center gap-2 font-semibold" style="color: var(--secondary); transition: all 0.3s;">
+          <span>Download Guide</span>
+          <span class="material-icons-round" style="font-size: 1.25rem;">arrow_forward</span>
+        </a>
+      </article>
+      
+      {# Resource 3: Personal Portfolio Website Template #}
+      <article class="card" style="padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #FF6F00 0%, #FFB74D 100%);">
+            <span class="material-icons-round text-white" style="font-size: 1.5rem;">language</span>
+          </div>
+          <div>
+            <h3 class="font-bold" style="font-size: 1.25rem; color: var(--text);">Portfolio Website Template</h3>
+            <p class="text-sm" style="color: var(--text); opacity: 0.6; margin-top: 0.25rem;">Build Your Web Presence</p>
+          </div>
+        </div>
+        
+        <p class="mb-6 leading-relaxed" style="color: var(--text); opacity: 0.7;">
+          Ready-made templates and frameworks for building a professional portfolio website. Includes design patterns, section layouts, and deployment instructions.
+        </p>
+        
+        <div class="space-y-3 mb-6">
+          <div style="padding: 1rem; background-color: #F5F5F5; border-radius: 12px;">
+            <h4 class="font-semibold text-sm mb-2" style="color: var(--text);">What You'll Learn:</h4>
+            <ul class="text-sm space-y-1" style="color: var(--text); opacity: 0.7;">
+              <li>✓ Portfolio structure & sections</li>
+              <li>✓ Design best practices</li>
+              <li>✓ Technical implementation</li>
+              <li>✓ SEO optimization</li>
+              <li>✓ Hosting & deployment</li>
+            </ul>
+          </div>
+        </div>
+        
+        <a href="#" class="inline-flex items-center gap-2 font-semibold" style="color: #FF6F00; transition: all 0.3s;">
+          <span>Download Guide</span>
+          <span class="material-icons-round" style="font-size: 1.25rem;">arrow_forward</span>
+        </a>
+      </article>
+      
+      {# Resource 4: AI Skills for Career Success #}
+      <article class="card" style="padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #9C27B0 0%, #CE93D8 100%);">
+            <span class="material-icons-round text-white" style="font-size: 1.5rem;">psychology</span>
+          </div>
+          <div>
+            <h3 class="font-bold" style="font-size: 1.25rem; color: var(--text);">AI Skills for Career Success</h3>
+            <p class="text-sm" style="color: var(--text); opacity: 0.6; margin-top: 0.25rem;">Future-Proof Your Career</p>
+          </div>
+        </div>
+        
+        <p class="mb-6 leading-relaxed" style="color: var(--text); opacity: 0.7;">
+          Understand which AI skills actually matter for long-term career success. Learn critical thinking, prompt engineering, and how to stay ahead of automation.
+        </p>
+        
+        <div class="space-y-3 mb-6">
+          <div style="padding: 1rem; background-color: #F5F5F5; border-radius: 12px;">
+            <h4 class="font-semibold text-sm mb-2" style="color: var(--text);">What You'll Learn:</h4>
+            <ul class="text-sm space-y-1" style="color: var(--text); opacity: 0.7;">
+              <li>✓ AI literacy fundamentals</li>
+              <li>✓ Prompt engineering basics</li>
+              <li>✓ Critical thinking in AI era</li>
+              <li>✓ Skill prioritization matrix</li>
+              <li>✓ Continuous learning strategies</li>
+            </ul>
+          </div>
+        </div>
+        
+        <a href="#" class="inline-flex items-center gap-2 font-semibold" style="color: #9C27B0; transition: all 0.3s;">
+          <span>Download Guide</span>
+          <span class="material-icons-round" style="font-size: 1.25rem;">arrow_forward</span>
+        </a>
+      </article>
+      
+    </div>
+    
+    {# Call to Action #}
+    <div class="text-center mt-20" style="padding: 3rem; background-color: #F5F5F5; border-radius: 24px;">
+      <h3 class="font-bold mb-4" style="font-size: 1.5rem; color: var(--text);">More Resources Coming Soon</h3>
+      <p class="mb-6" style="color: var(--text); opacity: 0.7; max-width: 60ch; margin: 0 auto;">
+        We're continuously adding new guides on Calendly setup, interview preparation, salary negotiation, and more. Check back regularly for updates.
+      </p>
+      <a href="/onboarding/" class="inline-flex items-center gap-2 font-semibold" style="color: var(--primary);">
+        <span>Join Job Club for Updates</span>
+        <span class="material-icons-round" style="font-size: 1.25rem;">arrow_forward</span>
+      </a>
+    </div>
+    
+  </div>
+</section>
