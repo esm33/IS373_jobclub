@@ -1,63 +1,72 @@
-# 🎨 Professional Portfolio Website
+# 🚀 Job Club NJIT - Student Career Accelerator
 
-> A lightning-fast, production-ready portfolio built with modern web
-> technologies and achieving **perfect 100% Lighthouse scores** across all
-> categories.
+> A modern, Material Design-powered student career platform with onboarding automation, events management, and Sanity CMS integration.
 
-[![Lighthouse Performance](https://img.shields.io/badge/Performance-100%25-brightgreen)](https://developers.google.com/web/tools/lighthouse)
-[![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-100%25-brightgreen)](https://developers.google.com/web/tools/lighthouse)
-[![Lighthouse Best Practices](https://img.shields.io/badge/Best%20Practices-100%25-brightgreen)](https://developers.google.com/web/tools/lighthouse)
-[![Lighthouse SEO](https://img.shields.io/badge/SEO-100%25-brightgreen)](https://developers.google.com/web/tools/lighthouse)
+[![Status](https://img.shields.io/badge/Status-25%25%20Complete-blue)](PROJECT_CHECKLIST.md)
+[![Onboarding](https://img.shields.io/badge/Onboarding-100%25-brightgreen)](docs/ONBOARDING_FORM.md)
+[![Events](https://img.shields.io/badge/Events-95%25-yellow)](docs/EVENTS_IMPLEMENTATION.md)
+[![Design System](https://img.shields.io/badge/Material%20Design-100%25-brightgreen)](docs/reference/material-design-reference.md)
 
 ## 🌟 Overview
 
-This is a modern, high-performance portfolio website showcasing professional
-work, technical skills, and blog content. Built with Eleventy (11ty) static site
-generator and optimized for speed, accessibility, and SEO, it features a
-complete Docker development workflow and automated CI/CD deployment to GitHub
-Pages.
+Job Club NJIT is a comprehensive student career development platform built with Eleventy (11ty) static site generator and Material Design 3 system. It features a fully-functional onboarding form with Sanity CMS integration, a dynamic events listing system with filtering, and comprehensive automation capabilities for email notifications and Discord integration.
 
-**Live Demo:**
-[https://kaw393939.github.io/218_portfolio/](https://kaw393939.github.io/218_portfolio/)
+**Key Achievement:** Onboarding system **fully tested end-to-end** (form submission → dev server → Sanity CMS → data saved) ✅
+
+**Repository:** [https://github.com/esm33/IS373_jobclub](https://github.com/esm33/IS373_jobclub)
 
 ## ✨ Key Features
 
-### 🚀 Performance & Quality
+### ✅ Completed Features
 
-- **Perfect Lighthouse Scores** - 100% across all categories
-- **Core Web Vitals Optimized** - FCP: 1.4s, LCP: 1.4s, CLS: 0.003
-- **Async Font Loading** - Non-blocking web fonts
-- **Optimized Assets** - Minified CSS/JS with proper caching headers
-- **SEO Optimized** - Semantic HTML, meta tags, sitemap ready
+**Onboarding System (100% - Production Ready)**
+- Beautiful, fully-validated form with Material Design UI
+- Real-time URL validation (LinkedIn, GitHub, Portfolio, Calendly)
+- Sanity CMS integration with memberProfile schema
+- Automatic missing prerequisites detection
+- End-to-end tested: Form → Dev Server → Sanity CMS ✅
+- Ready for automation (Zapier/Make.com/n8n email & Discord webhooks)
 
-### 🎨 Modern Design
+**Events Management System (95% - Ready for Testing)**
+- Dynamic events listing page with Material Design styling
+- 6 event-type filtering (Workshops, Office Hours, Meetups, etc.)
+- Full event schema in Sanity CMS (event.js - 8945 bytes)
+- Dynamic event detail pages with Eleventy pagination
+- Responsive grid layout (1-3 columns based on device)
+- Sanity integration + fallback sample data
+- Add to Calendar + Share functionality
 
-- **Responsive Layout** - Mobile-first design that works on all devices
-- **Custom CSS Properties** - Easy theming with CSS variables
-- **Accessible UI** - WCAG AA compliant with proper contrast ratios
-- **Clean Typography** - Inter font family with system font fallbacks
-- **Smooth Interactions** - Vanilla JavaScript for lightweight interactivity
+**Material Design System (100% Complete)**
+- Full Material Design 3 CSS framework with tokens
+- Primary color: #6750A4, Secondary: #03DAC6
+- Component library: buttons, cards, badges, forms, navbar
+- Responsive 12-column grid system
+- 6-level elevation shadow system
+- Dark mode support
+- Typography with Google Sans & Roboto fonts
+- Accessibility: WCAG AA compliant, reduced motion support
 
-### 📝 Content Management
+### 🚀 Technical Architecture
 
-- **Blog System** - Markdown-based blog with tagging and pagination
-- **Project Showcase** - Portfolio project pages with tech stack display
-- **Easy Updates** - Simple markdown files for all content
-- **Collections** - Automatic post and project organization
+- **Static Site Generator** - Eleventy 3.x with Nunjucks templating
+- **Serverless APIs** - `/api/submit-onboarding.js` for form handling
+- **Dev Server** - `dev-server.js` running on port 3002 for local testing
+- **CMS Integration** - Sanity CMS with memberProfile & event schemas
+- **Data Fetching** - `src/_data/events.js` auto-fetches from Sanity during build
+- **Client-side** - Vanilla JavaScript (Alpine.js for interactivity)
+- **Styling** - Tailwind CSS with Material Design 3 system
 
-### 🐳 Docker Support
+### 📚 Comprehensive Documentation
 
-- **Development Environment** - Live reload with volume mounting
-- **Production Build** - Multi-stage Docker build with Nginx
-- **Docker Compose Profiles** - Easy switching between dev and prod
-- **Ready for Deployment** - Publish to Docker Hub or any container platform
-
-### 🔄 CI/CD Pipeline
-
-- **GitHub Actions** - Automated build and deployment
-- **GitHub Pages** - Free hosting with custom domain support
-- **Path Prefix Handling** - Works seamlessly on subpaths
-- **Automated Builds** - Deploy on every push to main branch
+- **14+ Setup Guides** - Complete setup instructions for all systems
+- **SANITY_SETUP.md** - Project credentials & schema registration
+- **SANITY_TOKEN_FIX.md** - Token troubleshooting & permissions
+- **ONBOARDING_FORM.md** - Form implementation & configuration
+- **EVENTS_IMPLEMENTATION.md** - Events system architecture
+- **AUTOMATION_SETUP.md** - Zapier/Make.com setup for email & Discord
+- **EVENT_DATA_REFERENCE.md** - Event schema field documentation
+- **AIRTABLE_SETUP.md** - CRM integration guide
+- **Material Design Reference** - 700+ line design system documentation
 
 ## 🛠️ Tech Stack
 
@@ -65,12 +74,14 @@ Pages.
 | ------------------------- | ----------------------------------------------- |
 | **Static Site Generator** | [Eleventy 3.x](https://www.11ty.dev/)           |
 | **Templating**            | [Nunjucks](https://mozilla.github.io/nunjucks/) |
-| **Styling**               | Vanilla CSS with Custom Properties              |
-| **JavaScript**            | Vanilla JS (no frameworks)                      |
-| **Containerization**      | Docker, Docker Compose, Nginx                   |
-| **CI/CD**                 | GitHub Actions                                  |
-| **Hosting**               | GitHub Pages                                    |
-| **Development**           | VS Code, ESLint ready                           |
+| **Styling**               | Tailwind CSS + Material Design 3 System         |
+| **JavaScript**            | Vanilla JS + Alpine.js for interactivity       |
+| **CMS**                   | [Sanity CMS](https://www.sanity.io/)            |
+| **Backend**               | Node.js Serverless Functions + Dev Server      |
+| **Database**              | Sanity CMS (Hosted)                            |
+| **Development**           | VS Code, npm, Node.js 16+                       |
+| **Version Control**       | Git + GitHub                                    |
+| **Deployment**            | Ready for Vercel, Netlify, or self-hosted       |
 
 ## 📁 Project Structure
 

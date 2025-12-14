@@ -6,291 +6,415 @@ eleventyNavigation:
   key: Onboarding
 ---
 
-<div class="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
-  <div class="max-w-2xl mx-auto">
+<div class="min-h-screen section-padding" style="background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%); padding-top: 120px; padding-bottom: 120px;">
+  <div class="container max-w-3xl">
     <!-- Header -->
-    <div class="text-center mb-8">
-      <h1 class="text-4xl font-bold text-gray-900 mb-2">Welcome to Job Club</h1>
-      <p class="text-lg text-gray-600">Complete your profile to get started</p>
+    <div class="text-center mb-16 animate-fade-in">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6" style="background: linear-gradient(135deg, rgba(103, 80, 164, 0.1) 0%, rgba(0, 191, 165, 0.1) 100%); border: 1px solid rgba(103, 80, 164, 0.2);">
+        <span class="material-icons-round" style="color: var(--primary); font-size: 1.25rem;">how_to_reg</span>
+        <span class="text-sm font-medium" style="color: var(--primary);">Member Registration</span>
+      </div>
+      <h1 class="text-6xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; line-height: 1.1;">
+        Welcome to Job Club
+      </h1>
+      <p class="text-xl max-w-2xl mx-auto" style="color: var(--text); opacity: 0.8;">
+        Complete your profile to get started on your career journey
+      </p>
     </div>
 
     <!-- Onboarding Form -->
-    <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-      <form id="onboardingForm" class="space-y-6">
+    <div class="card animate-slide-up" style="box-shadow: 0 8px 32px rgba(103, 80, 164, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04); border-radius: 40px; padding: 56px; background: white; border: 1px solid rgba(0, 0, 0, 0.04);">
+      <form id="onboardingForm" class="space-y-material">
         
         <!-- Personal Information Section -->
-        <div class="border-b border-gray-200 pb-6">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4">Personal Information</h2>
+        <div class="pb-8" style="border-bottom: 2px solid rgba(103, 80, 164, 0.1);">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); box-shadow: 0 6px 20px rgba(103, 80, 164, 0.35), 0 2px 8px rgba(103, 80, 164, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">person</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Personal Information
+            </h2>
+          </div>
           
           <!-- Name -->
-          <div class="mb-4">
-            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
-              Full Name <span class="text-red-500">*</span>
+          <div class="mb-8">
+            <label for="name" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Full Name <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              placeholder="John Doe"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: var(--primary); opacity: 0.5; font-size: 1.25rem;">person_outline</span>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value="John Doe"
+                required
+                class="form-input"
+                placeholder="John Doe"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(103, 80, 164, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- Email -->
-          <div class="mb-4">
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-              Email Address <span class="text-red-500">*</span>
+          <div class="mb-8">
+            <label for="email" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Email Address <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              placeholder="john.doe@njit.edu"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: var(--primary); opacity: 0.5; font-size: 1.25rem;">email</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value="john.doe@njit.edu"
+                required
+                class="form-input"
+                placeholder="john.doe@njit.edu"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(103, 80, 164, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
         </div>
 
         <!-- Academic Information Section -->
-        <div class="border-b border-gray-200 pb-6">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4">Academic Information</h2>
+        <div class="pb-8" style="border-bottom: 2px solid rgba(103, 80, 164, 0.1);">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #00BFA5 0%, #64FFDA 100%); box-shadow: 0 6px 20px rgba(0, 191, 165, 0.35), 0 2px 8px rgba(0, 191, 165, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">school</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Academic Information
+            </h2>
+          </div>
           
           <!-- Major -->
-          <div class="mb-4">
-            <label for="major" class="block text-sm font-medium text-gray-700 mb-2">
-              Major <span class="text-red-500">*</span>
+          <div class="mb-8">
+            <label for="major" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Major <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="text"
-              id="major"
-              name="major"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              placeholder="Computer Science"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #00BFA5; opacity: 0.5; font-size: 1.25rem;">school</span>
+              <input
+                type="text"
+                id="major"
+                name="major"
+                value="Computer Science"
+                required
+                class="form-input"
+                placeholder="Computer Science"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(0, 191, 165, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- Graduation Year -->
-          <div class="mb-4">
-            <label for="gradYear" class="block text-sm font-medium text-gray-700 mb-2">
-              Expected Graduation Year <span class="text-red-500">*</span>
+          <div class="mb-8">
+            <label for="gradYear" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Expected Graduation Year <span style="color: var(--primary);">*</span>
             </label>
-            <select
-              id="gradYear"
-              name="gradYear"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-            >
-              <option value="">Select year...</option>
-              <option value="2025">2025</option>
-              <option value="2026">2026</option>
-              <option value="2027">2027</option>
-              <option value="2028">2028</option>
-              <option value="2029">2029</option>
-            </select>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #00BFA5; opacity: 0.5; font-size: 1.25rem; pointer-events: none; z-index: 10;">event</span>
+              <select
+                id="gradYear"
+                name="gradYear"
+                required
+                class="form-select"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(0, 191, 165, 0.2); transition: all 0.3s ease; font-size: 1rem; appearance: none; background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27%2300BFA5%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.25rem; padding-right: 3rem;"
+              >
+                <option value="">Select year...</option>
+                <option value="2025">2025</option>
+                <option value="2026" selected>2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+              </select>
+            </div>
           </div>
         </div>
 
         <!-- Professional Links Section -->
-        <div class="border-b border-gray-200 pb-6">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4">Professional Links</h2>
+        <div class="pb-8" style="border-bottom: 2px solid rgba(103, 80, 164, 0.1);">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #FF6F00 0%, #FFB74D 100%); box-shadow: 0 6px 20px rgba(255, 111, 0, 0.35), 0 2px 8px rgba(255, 111, 0, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">link</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Professional Links
+            </h2>
+          </div>
           
           <!-- LinkedIn -->
-          <div class="mb-4">
-            <label for="linkedin" class="block text-sm font-medium text-gray-700 mb-2">
-              LinkedIn Profile <span class="text-red-500">*</span>
+          <div class="mb-8">
+            <label for="linkedin" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              LinkedIn Profile <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="url"
-              id="linkedin"
-              name="linkedin"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              placeholder="https://linkedin.com/in/yourprofile"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #FF6F00; opacity: 0.5; font-size: 1.25rem;">work_outline</span>
+              <input
+                type="url"
+                id="linkedin"
+                name="linkedin"
+                value="https://linkedin.com/in/johndoe"
+                required
+                class="form-input"
+                placeholder="https://linkedin.com/in/yourprofile"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(255, 111, 0, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- GitHub -->
-          <div class="mb-4">
-            <label for="github" class="block text-sm font-medium text-gray-700 mb-2">
-              GitHub Profile <span class="text-red-500">*</span>
+          <div class="mb-8">
+            <label for="github" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              GitHub Profile <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="url"
-              id="github"
-              name="github"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              placeholder="https://github.com/yourusername"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #FF6F00; opacity: 0.5; font-size: 1.25rem;">code</span>
+              <input
+                type="url"
+                id="github"
+                name="github"
+                value="https://github.com/johndoe"
+                required
+                class="form-input"
+                placeholder="https://github.com/yourusername"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(255, 111, 0, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- Personal Website -->
-          <div class="mb-4">
-            <label for="website" class="block text-sm font-medium text-gray-700 mb-2">
-              Personal Website <span class="text-red-500">*</span>
+          <div class="mb-8">
+            <label for="website" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Personal Website <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="url"
-              id="website"
-              name="website"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              placeholder="https://yourportfolio.com"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #FF6F00; opacity: 0.5; font-size: 1.25rem;">language</span>
+              <input
+                type="url"
+                id="website"
+                name="website"
+                value="https://johndoe.com"
+                required
+                class="form-input"
+                placeholder="https://yourportfolio.com"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(255, 111, 0, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
 
           <!-- Calendly -->
-          <div class="mb-4">
-            <label for="calendly" class="block text-sm font-medium text-gray-700 mb-2">
-              Calendly Link <span class="text-red-500">*</span>
+          <div class="mb-8">
+            <label for="calendly" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Calendly Link <span style="color: var(--primary);">*</span>
             </label>
-            <input
-              type="url"
-              id="calendly"
-              name="calendly"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              placeholder="https://calendly.com/yourusername"
-            />
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #FF6F00; opacity: 0.5; font-size: 1.25rem;">calendar_month</span>
+              <input
+                type="url"
+                id="calendly"
+                name="calendly"
+                value="https://calendly.com/johndoe"
+                required
+                class="form-input"
+                placeholder="https://calendly.com/yourusername"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(255, 111, 0, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
         </div>
 
         <!-- Career Goal Section -->
-        <div class="pb-6">
-          <h2 class="text-xl font-semibold text-gray-900 mb-4">Career Goal</h2>
+        <div class="pb-8">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #9C27B0 0%, #CE93D8 100%); box-shadow: 0 6px 20px rgba(156, 39, 176, 0.35), 0 2px 8px rgba(156, 39, 176, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">flag</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Career Goal
+            </h2>
+          </div>
           
-          <div class="mb-4">
-            <label for="careerGoal" class="block text-sm font-medium text-gray-700 mb-2">
-              What's your career goal? <span class="text-red-500">*</span>
+          <div class="mb-8">
+            <label for="careerGoal" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              What's your career goal? <span style="color: var(--primary);">*</span>
             </label>
-            <textarea
-              id="careerGoal"
-              name="careerGoal"
-              required
-              rows="4"
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
-              placeholder="Tell us about your career aspirations..."
-            ></textarea>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-4" style="color: #9C27B0; opacity: 0.5; font-size: 1.25rem;">edit_note</span>
+              <textarea
+                id="careerGoal"
+                name="careerGoal"
+                required
+                rows="6"
+                class="form-textarea"
+                placeholder="Tell us about your career aspirations and what you hope to achieve..."
+                style="padding-left: 3.5rem; padding-top: 1rem; border-radius: 16px; border: 2px solid rgba(156, 39, 176, 0.2); transition: all 0.3s ease; font-size: 1rem; resize: vertical; min-height: 140px;">I want to become a full-stack software engineer at a leading tech company, working on products that impact millions of users.</textarea>
+              ></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Information Section -->
+        <div class="pb-8">
+          <div class="flex items-center gap-3 mb-8">
+            <div class="w-16 h-16 rounded-full flex items-center justify-center" style="background: linear-gradient(135deg, #D32F2F 0%, #EF5350 100%); box-shadow: 0 6px 20px rgba(211, 47, 47, 0.35), 0 2px 8px rgba(211, 47, 47, 0.2);">
+              <span class="material-icons-round text-white" style="font-size: 1.75rem;">info</span>
+            </div>
+            <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Additional Information
+            </h2>
+          </div>
+
+          <!-- Years of Experience -->
+          <div class="mb-8">
+            <label for="experience" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Years of Experience (Optional)
+            </label>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #D32F2F; opacity: 0.5; font-size: 1.25rem;">work_history</span>
+              <input
+                type="number"
+                id="experience"
+                name="experience"
+                value="2"
+                min="0"
+                max="70"
+                class="form-input"
+                placeholder="2"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(211, 47, 47, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
+          </div>
+
+          <!-- Skills -->
+          <div class="mb-8">
+            <label for="skills" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Key Skills (Optional)
+            </label>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #D32F2F; opacity: 0.5; font-size: 1.25rem;">star</span>
+              <input
+                type="text"
+                id="skills"
+                name="skills"
+                value="JavaScript, React, Python, Node.js"
+                class="form-input"
+                placeholder="e.g., JavaScript, React, Python, Data Analysis"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(211, 47, 47, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
+          </div>
+
+          <!-- Company Interests -->
+          <div class="mb-8">
+            <label for="companies" class="form-label" style="font-size: 0.95rem; font-weight: 600; margin-bottom: 0.75rem; display: block; color: #1F1F1F;">
+              Interested Companies (Optional)
+            </label>
+            <div class="relative">
+              <span class="material-icons-round absolute left-4 top-1/2 transform -translate-y-1/2" style="color: #D32F2F; opacity: 0.5; font-size: 1.25rem;">business</span>
+              <input
+                type="text"
+                id="companies"
+                name="companies"
+                value="Google, Microsoft, Meta"
+                class="form-input"
+                placeholder="e.g., Google, Microsoft, Amazon, Startup XYZ"
+                style="padding-left: 3.5rem; height: 56px; border-radius: 16px; border: 2px solid rgba(211, 47, 47, 0.2); transition: all 0.3s ease; font-size: 1rem;"
+              />
+            </div>
           </div>
         </div>
 
         <!-- Error Message -->
-        <div id="errorMessage" class="hidden bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg">
-          <p class="text-sm font-medium">Please fill in all required fields correctly.</p>
+        <div id="errorMessage" class="hidden" style="background-color: #FFEBEE; border: 1px solid #EF5350; color: #C62828; padding: 1rem; border-radius: 12px;">
+          <div class="flex items-center gap-2">
+            <span class="material-icons-round">error</span>
+            <p class="font-medium">Please fill in all required fields correctly.</p>
+          </div>
         </div>
 
         <!-- Success Message -->
-        <div id="successMessage" class="hidden bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg">
-          <p class="text-sm font-medium">✓ Profile submitted successfully! Welcome to Job Club.</p>
+        <div id="successMessage" class="hidden" style="background-color: #E8F5E9; border: 1px solid #66BB6A; color: #2E7D32; padding: 1rem; border-radius: 12px;">
+          <div class="flex items-center gap-2">
+            <span class="material-icons-round">check_circle</span>
+            <p class="font-medium">Profile submitted successfully! Welcome to Job Club.</p>
+          </div>
         </div>
 
         <!-- Submit Button -->
-        <div class="pt-4">
+        <div class="pt-8">
           <button
             type="submit"
-            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            class="btn btn-primary w-full text-lg py-5 shadow-lg hover:shadow-xl transition-all duration-300"
+            style="border-radius: 100px; font-family: 'Google Sans', sans-serif; font-weight: 600; font-size: 1.125rem; background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); box-shadow: 0 6px 20px rgba(103, 80, 164, 0.4); height: 64px;"
           >
-            Complete Profile
+            <span class="flex items-center justify-center gap-2">
+              Complete Profile
+              <span class="material-icons-round">arrow_forward</span>
+            </span>
           </button>
         </div>
       </form>
     </div>
 
     <!-- Footer Note -->
-    <p class="text-center text-sm text-gray-500 mt-6">
-      Already have an account? <a href="/" class="text-blue-600 hover:text-blue-700 font-medium">Return to home</a>
+    <p class="text-center text-sm mt-8" style="color: var(--text); opacity: 0.7;">
+      Already have an account? <a href="/" class="font-medium hover:underline" style="color: var(--primary);">Return to home</a>
     </p>
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('onboardingForm');
-    const errorMessage = document.getElementById('errorMessage');
-    const successMessage = document.getElementById('successMessage');
+<style>
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(103, 80, 164, 0.1) !important;
+  }
+  
+  .form-input:hover,
+  .form-select:hover,
+  .form-textarea:hover {
+    border-color: rgba(103, 80, 164, 0.4) !important;
+  }
+  
+  .btn-primary:hover span {
+    transform: translateX(2px);
+    transition: transform 0.3s ease;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+</style>
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Hide previous messages
-      errorMessage.classList.add('hidden');
-      successMessage.classList.add('hidden');
-
-      // Get form data
-      const formData = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        major: document.getElementById('major').value.trim(),
-        gradYear: document.getElementById('gradYear').value,
-        linkedin: document.getElementById('linkedin').value.trim(),
-        github: document.getElementById('github').value.trim(),
-        website: document.getElementById('website').value.trim(),
-        calendly: document.getElementById('calendly').value.trim(),
-        careerGoal: document.getElementById('careerGoal').value.trim()
-      };
-
-      // Validate all fields are filled
-      const allFieldsFilled = Object.values(formData).every(value => value !== '');
-      
-      if (!allFieldsFilled) {
-        errorMessage.classList.remove('hidden');
-        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        return;
-      }
-
-      // URL validation for professional links
-      const urlFields = ['linkedin', 'github', 'website', 'calendly'];
-      const validUrls = urlFields.every(field => {
-        try {
-          new URL(formData[field]);
-          return true;
-        } catch {
-          return false;
-        }
-      });
-
-      if (!validUrls) {
-        errorMessage.textContent = 'Please enter valid URLs for all professional links.';
-        errorMessage.classList.remove('hidden');
-        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        return;
-      }
-
-      // Store data in localStorage
-      localStorage.setItem('jobClubProfile', JSON.stringify(formData));
-      
-      // Show success message
-      successMessage.classList.remove('hidden');
-      successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-      // Log to console (in production, this would be an API call)
-      console.log('Profile submitted:', formData);
-
-      // Redirect after 2 seconds
-      setTimeout(() => {
-        window.location.href = '/';
-      }, 2000);
-    });
-
-    // Real-time URL validation
-    const urlInputs = ['linkedin', 'github', 'website', 'calendly'];
-    urlInputs.forEach(inputId => {
-      const input = document.getElementById(inputId);
-      input.addEventListener('blur', function() {
-        if (this.value.trim() !== '') {
-          try {
-            new URL(this.value);
-            this.classList.remove('border-red-500');
-            this.classList.add('border-green-500');
-          } catch {
-            this.classList.remove('border-green-500');
-            this.classList.add('border-red-500');
-          }
-        }
-      });
-    });
-  });
-</script>
+<script src="/js/onboarding.js"></script>

@@ -66,6 +66,16 @@ export default function(eleventyConfig) {
     return array.join(separator);
   });
 
+  eleventyConfig.addNunjucksFilter("head", (array, n = 1) => {
+    if (!Array.isArray(array)) return array;
+    return array.slice(0, n);
+  });
+
+  eleventyConfig.addNunjucksFilter("tail", (array, n = 1) => {
+    if (!Array.isArray(array)) return array;
+    return array.slice(-n);
+  });
+
   return {
     dir: {
       input: "src",

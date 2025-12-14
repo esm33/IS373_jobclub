@@ -1,0 +1,359 @@
+---
+pagination:
+  data: events
+  size: 1
+  alias: event
+permalink: "events/{{ event.slug }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ event.title }}"
+  pageTitle: "{{ event.metaTitle or event.title }} - Job Club NJIT"
+  description: "{{ event.metaDescription or event.description }}"
+  eventTypeLabel: >
+    {%- if event.eventType == 'workshop' -%}Workshop
+    {%- elif event.eventType == 'office-hours' -%}Office Hours
+    {%- elif event.eventType == 'meetup' -%}Meetup
+    {%- elif event.eventType == 'guest-speaker' -%}Guest Speaker
+    {%- elif event.eventType == 'hack-night' -%}Hack Night
+    {%- else -%}Event{%- endif -%}
+  eventTypeEmoji: >
+    {%- if event.eventType == 'workshop' -%}🛠️
+    {%- elif event.eventType == 'office-hours' -%}💼
+    {%- elif event.eventType == 'meetup' -%}🤝
+    {%- elif event.eventType == 'guest-speaker' -%}🎤
+    {%- elif event.eventType == 'hack-night' -%}💻
+    {%- else -%}📅{%- endif -%}
+---
+
+<main>
+  <!-- Event Hero Section -->
+  <section style="padding: 120px 0 80px; background: linear-gradient(135deg, var(--primary) 0%, #667eea 100%); color: white; position: relative; overflow: hidden;">
+    <div class="container relative z-10">
+      <!-- Event Type Badge -->
+      <div class="mb-4">
+        <span class="event-type-badge" style="background: rgba(255, 255, 255, 0.2); color: white; padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600;">
+          {{ eventTypeEmoji }} {{ eventTypeLabel }}
+        </span>
+        {% if event.featured %}
+        <span style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; margin-left: 0.5rem;">
+          ⭐ Featured
+        </span>
+        {% endif %}
+      </div>
+      
+      <!-- Event Title -->
+      <h1 class="font-bold mb-6 animate-fade-in" style="font-family: 'Google Sans', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1;">
+        {{ event.title }}
+      </h1>
+      
+      <!-- Quick Info -->
+      <div class="flex flex-wrap gap-6 mb-6" style="font-size: 1.125rem;">
+        <div class="flex items-center gap-2">
+          <span class="material-icons-round">schedule</span>
+          <span id="eventDateTime">{{ event.date | readableDate }}</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-icons-round">place</span>
+          <span id="eventLocation">
+            {% if event.location.isVirtual %}
+              🌐 Virtual Event
+            {% else %}
+              {{ event.location.venue }}
+            {% endif %}
+          </span>
+        </div>
+        {% if event.capacity %}
+        <div class="flex items-center gap-2">
+          <span class="material-icons-round">people</span>
+          <span>{{ event.capacity }} spots</span>
+        </div>
+        {% endif %}
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4">
+        {% if event.registrationRequired and event.registrationLink %}
+        <a href="{{ event.registrationLink }}" target="_blank" class="btn inline-flex items-center gap-2" style="background: white; color: var(--primary); padding: 1rem 2rem; font-size: 1.125rem; border-radius: 100px; font-weight: 600;">
+          <span class="material-icons-round">how_to_reg</span>
+          <span>Register Now</span>
+        </a>
+        {% endif %}
+        
+        <button id="addToCalendarBtn" class="btn inline-flex items-center gap-2" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid white; padding: 1rem 2rem; font-size: 1.125rem; border-radius: 100px; font-weight: 600;">
+          <span class="material-icons-round">event</span>
+          <span>Add to Calendar</span>
+        </button>
+        
+        <button id="shareBtn" class="btn inline-flex items-center gap-2" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid white; padding: 1rem 2rem; font-size: 1.125rem; border-radius: 100px; font-weight: 600;">
+          <span class="material-icons-round">share</span>
+          <span>Share</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Decorative Background -->
+    <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; opacity: 0.1; background: radial-gradient(circle, white 1px, transparent 1px); background-size: 50px 50px;"></div>
+  </section>
+  
+  <!-- Event Details Section -->
+  <section style="padding: 80px 0;">
+    <div class="container">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+          <!-- Description -->
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              About This Event
+            </h2>
+            <div class="prose prose-lg" style="color: var(--text); line-height: 1.8; white-space: pre-line;">
+              {{ event.fullDescription or event.description }}
+            </div>
+          </div>
+          
+          <!-- Prerequisites -->
+          {% if event.prerequisites %}
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Prerequisites
+            </h2>
+            <div class="prose" style="color: var(--text); line-height: 1.8; white-space: pre-line;">
+              {{ event.prerequisites }}
+            </div>
+          </div>
+          {% endif %}
+          
+          <!-- Materials Provided -->
+          {% if event.materialsProvided %}
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              What's Provided
+            </h2>
+            <div class="prose" style="color: var(--text); line-height: 1.8; white-space: pre-line;">
+              {{ event.materialsProvided }}
+            </div>
+          </div>
+          {% endif %}
+          
+          <!-- Speakers -->
+          {% if event.speakers and event.speakers.length > 0 %}
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+              Speakers & Hosts
+            </h2>
+            <div class="space-y-6">
+              {% for speaker in event.speakers %}
+              <div class="flex gap-4 p-6 rounded-xl" style="background: var(--bg-secondary);">
+                {% if speaker.photoUrl %}
+                <img src="{{ speaker.photoUrl }}" alt="{{ speaker.name }}" class="w-20 h-20 rounded-full object-cover">
+                {% else %}
+                <div class="w-20 h-20 rounded-full flex items-center justify-center" style="background: var(--primary); color: white; font-size: 2rem; font-weight: 600;">
+                  {{ speaker.name[0] }}
+                </div>
+                {% endif %}
+                <div>
+                  <h3 class="text-xl font-bold mb-1" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+                    {{ speaker.name }}
+                  </h3>
+                  <p class="mb-2" style="color: var(--primary); font-weight: 600;">
+                    {{ speaker.title }}{% if speaker.company %} • {{ speaker.company }}{% endif %}
+                  </p>
+                  {% if speaker.bio %}
+                  <p style="color: var(--text); opacity: 0.7;">{{ speaker.bio }}</p>
+                  {% endif %}
+                  {% if speaker.linkedinUrl %}
+                  <a href="{{ speaker.linkedinUrl }}" target="_blank" class="inline-flex items-center gap-1 mt-2" style="color: var(--primary); font-weight: 600;">
+                    <span>View LinkedIn</span>
+                    <span class="material-icons-round" style="font-size: 1rem;">arrow_forward</span>
+                  </a>
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+        
+        <!-- Sidebar -->
+        <div>
+          <!-- Event Info Card -->
+          <div class="event-card sticky top-8">
+            <div style="padding: 2rem;">
+              <h3 class="text-xl font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+                Event Information
+              </h3>
+              
+              <div class="space-y-4">
+                <!-- Date & Time -->
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="material-icons-round" style="color: var(--primary);">schedule</span>
+                    <span class="font-semibold" style="color: var(--text);">Date & Time</span>
+                  </div>
+                  <p id="sidebarDateTime" style="color: var(--text); opacity: 0.7; padding-left: 2rem;">
+                    {{ event.date | readableDate }}<br>
+                    {{ event.date | readableDate }}
+                    {% if event.endDate %}<br>to {{ event.endDate | readableDate }}{% endif %}
+                  </p>
+                </div>
+                
+                <!-- Location -->
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="material-icons-round" style="color: var(--primary);">place</span>
+                    <span class="font-semibold" style="color: var(--text);">Location</span>
+                  </div>
+                  {% if event.location.isVirtual %}
+                  <p style="color: var(--text); opacity: 0.7; padding-left: 2rem;">
+                    🌐 Virtual Event<br>
+                    {% if event.location.virtualLink and event.registrationRequired == false %}
+                    <a href="{{ event.location.virtualLink }}" target="_blank" style="color: var(--primary); text-decoration: underline;">Join Meeting</a>
+                    {% else %}
+                    Link provided after registration
+                    {% endif %}
+                  </p>
+                  {% else %}
+                  <p style="color: var(--text); opacity: 0.7; padding-left: 2rem;">
+                    {{ event.location.venue }}<br>
+                    {% if event.location.room %}{{ event.location.room }}<br>{% endif %}
+                    {% if event.location.address %}{{ event.location.address }}{% endif %}
+                  </p>
+                  {% endif %}
+                </div>
+                
+                <!-- Capacity -->
+                {% if event.capacity %}
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="material-icons-round" style="color: var(--primary);">people</span>
+                    <span class="font-semibold" style="color: var(--text);">Capacity</span>
+                  </div>
+                  <p style="color: var(--text); opacity: 0.7; padding-left: 2rem;">
+                    {{ event.capacity }} attendees maximum
+                  </p>
+                </div>
+                {% endif %}
+                
+                <!-- Target Audience -->
+                {% if event.targetAudience and event.targetAudience.length > 0 %}
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="material-icons-round" style="color: var(--primary);">group</span>
+                    <span class="font-semibold" style="color: var(--text);">Who Should Attend</span>
+                  </div>
+                  <div style="padding-left: 2rem;">
+                    {% for audience in event.targetAudience %}
+                    <span style="display: inline-block; background: var(--bg-secondary); color: var(--text); padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.875rem; margin: 0.25rem 0.25rem 0.25rem 0;">
+                      {{ audience | capitalize }}
+                    </span>
+                    {% endfor %}
+                  </div>
+                </div>
+                {% endif %}
+                
+                <!-- Tags -->
+                {% if event.tags and event.tags.length > 0 %}
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="material-icons-round" style="color: var(--primary);">label</span>
+                    <span class="font-semibold" style="color: var(--text);">Topics</span>
+                  </div>
+                  <div class="flex flex-wrap gap-2" style="padding-left: 2rem;">
+                    {% for tag in event.tags %}
+                    <span style="background: var(--bg-secondary); color: var(--text); padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.875rem;">
+                      {{ tag }}
+                    </span>
+                    {% endfor %}
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+              
+              <div class="mt-8 pt-6" style="border-top: 1px solid var(--border);">
+                <a href="/events/" class="flex items-center gap-2" style="color: var(--primary); font-weight: 600;">
+                  <span class="material-icons-round">arrow_back</span>
+                  <span>Back to All Events</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  // Event data for calendar functionality
+  const eventData = {
+    title: {{ event.title | dump | safe }},
+    description: {{ event.description | dump | safe }},
+    location: {{ event.location | dump | safe }},
+    date: {{ event.date | dump | safe }},
+    endDate: {{ event.endDate | dump | safe }},
+    eventType: {{ event.eventType | dump | safe }}
+  };
+  
+  // Add to Calendar functionality
+  document.getElementById('addToCalendarBtn')?.addEventListener('click', function() {
+    const startDate = new Date(eventData.date);
+    const endDate = eventData.endDate ? new Date(eventData.endDate) : new Date(startDate.getTime() + 60 * 60 * 1000);
+    
+    // Format dates for iCal
+    const formatDate = (date) => {
+      return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    };
+    
+    const location = eventData.location.isVirtual 
+      ? 'Virtual Event' 
+      : `${eventData.location.venue || ''}${eventData.location.room ? ', ' + eventData.location.room : ''}`;
+    
+    // Create iCal format
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Job Club NJIT//Events//EN
+BEGIN:VEVENT
+UID:${Date.now()}@jobclub.njit.edu
+DTSTAMP:${formatDate(new Date())}
+DTSTART:${formatDate(startDate)}
+DTEND:${formatDate(endDate)}
+SUMMARY:${eventData.title}
+DESCRIPTION:${eventData.description}
+LOCATION:${location}
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+    
+    // Create download link
+    const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = `${eventData.title.replace(/[^a-z0-9]/gi, '-').toLowerCase()}.ics`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+  
+  // Share functionality
+  document.getElementById('shareBtn')?.addEventListener('click', async function() {
+    const shareData = {
+      title: eventData.title,
+      text: eventData.description,
+      url: window.location.href
+    };
+    
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.log('Share cancelled');
+      }
+    } else {
+      // Fallback: copy link
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Event link copied to clipboard!');
+      });
+    }
+  });
+</script>

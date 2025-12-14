@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>How I Built This Site in 10 Hours (And What That Means for You) | Keith Williams - Portfolio</title>
+    <meta name="description" content="You&#39;re reading this on a Swiss design system I built with AI in one evening. If I can do this—what can you do with AI tools in your field?">
+    <meta name="author" content="Keith Williams">
+    
+    
+    <meta name="keywords" content="AI web development, building with AI, AI productivity, agentic AI, vibe coding, AI tools for developers, professional development AI, AI collaboration">
+    
+    <link rel="canonical" href="https://www.eaikw.com/blog/welcome/">
+    
+    
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="How I Built This Site in 10 Hours (And What That Means for You)">
+    <meta property="og:description" content="10 hours. 45,000 words. Swiss design system. Automated testing. CI/CD. All with AI. If this is possible—what can you build in your field?">
+    <meta property="og:url" content="https://www.eaikw.com/blog/welcome/">
+    <meta property="og:site_name" content="Keith Williams - Portfolio">
+    <meta property="og:locale" content="en_US">
+    
+    <meta property="og:image" content="https://www.eaikw.com/images/og-default.png">
+    <meta property="og:image:alt" content="Keith Williams - Portfolio - Professional portfolio showcasing modern web development expertise and innovative projects">
+    
+    
+    <meta property="article:published_time" content="2025-01-01">
+    <meta property="article:author" content="Keith Williams">
+    <meta property="article:tag" content="AI"><meta property="article:tag" content="meta"><meta property="article:tag" content="collaboration"><meta property="article:tag" content="AI productivity"><meta property="article:tag" content="development">
+    
+    
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How I Built This Site in 10 Hours (And What That Means for You)">
+    <meta name="twitter:description" content="10 hours. 45,000 words. Swiss design system. Automated testing. CI/CD. All with AI. If this is possible—what can you build in your field?">
+    
+    <meta name="twitter:image" content="https://www.eaikw.com/images/og-default.png">
+    
+    
+    <meta name="twitter:site" content="https://twitter.com/everydayaikw">
+    <meta name="twitter:creator" content="https://twitter.com/everydayaikw">
+    
+    
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/print.css" media="print">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    
+    <link rel="alternate" type="application/rss+xml" title="Keith Williams - Portfolio RSS Feed" href="https://www.eaikw.com/feed.xml">
+    
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://www.eaikw.com/#person",
+          "name": "Keith Williams",
+          "url": "https://www.eaikw.com",
+          "description": "Professional portfolio showcasing modern web development expertise and innovative projects",
+          "sameAs": ["https://www.linkedin.com/in/keithwilliams5/", "https://github.com/kaw393939", "https://twitter.com/everydayaikw", "https://www.youtube.com/@EAIKW"],
+          "jobTitle": "Director of Information Systems & Technology",
+          "worksFor": {
+            "@type": "EducationalOrganization",
+            "name": "New Jersey Institute of Technology"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.eaikw.com/#organization",
+          "name": "EverydayAI Community",
+          "url": "https://www.eaikw.com",
+          "description": "Students teaching Newark residents how to use AI every day—for health, legal help, education, budgets, and productivity.",
+          "founder": {
+            "@id": "https://www.eaikw.com/#person"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.eaikw.com/#website",
+          "url": "https://www.eaikw.com",
+          "name": "Keith Williams - Portfolio",
+          "description": "Professional portfolio showcasing modern web development expertise and innovative projects",
+          "publisher": {
+            "@id": "https://www.eaikw.com/#person"
+          }
+        }
+        ,
+        {
+          "@type": "BlogPosting",
+          "@id": "https://www.eaikw.com/blog/welcome/#article",
+          "headline": "How I Built This Site in 10 Hours (And What That Means for You)",
+          "description": "You&#39;re reading this on a Swiss design system I built with AI in one evening. If I can do this—what can you do with AI tools in your field?",
+          "datePublished": "2025-01-01",
+          "dateModified": "2025-01-01",
+          "author": {
+            "@id": "https://www.eaikw.com/#person"
+          },
+          "publisher": {
+            "@id": "https://www.eaikw.com/#person"
+          },
+          "image": "https://www.eaikw.com/images/og-default.png",
+          "url": "https://www.eaikw.com/blog/welcome/",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.eaikw.com/blog/welcome/"
+          }
+        }
+        
+      ]
+    }
+    </script>
+</head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
+    <!-- Material Design Navigation -->
+    <header data-component="header" data-testid="main-header" class="navbar no-print">
+        <div class="navbar-content">
+            <!-- Logo/Brand -->
+            <a href="/" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                <span class="material-icons-round text-3xl" style="color: var(--primary);">work</span>
+                <span class="font-bold text-xl" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+                    Job Club
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden lg:flex nav-links">
+                <li>
+                    <a href="/" class="nav-link ">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/resources/" class="nav-link ">
+                        Resource Library
+                    </a>
+                </li>
+                <li>
+                    <a href="/events/" class="nav-link ">
+                        Events
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/" class="nav-link ">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="/onboarding/" class="btn btn-primary">
+                        Join Now
+                    </a>
+                </li>
+            </ul>
+                            
+                        </a>
+                    </li>
+                </ul>
+
+            <!-- Mobile Menu Button -->
+            <button 
+                type="button" 
+                data-testid="mobile-menu-button"
+                class="lg:hidden w-12 h-12 flex items-center justify-center menu-button"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+                aria-label="Toggle navigation menu"
+            >
+                <span class="material-icons-round text-3xl" style="color: var(--text);">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div 
+        data-testid="mobile-menu"
+        id="mobile-menu"
+        class="lg:hidden fixed inset-0 z-40 hidden"
+        style="background-color: var(--surface); top: 64px; padding: var(--space-xl);"
+    >
+        <nav>
+            <ul class="space-y-4">
+                <li>
+                    <a href="/" class="block nav-link text-lg ">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="/resources/" class="block nav-link text-lg ">
+                        Resource Library
+                    </a>
+                </li>
+                <li>
+                    <a href="/events/" class="block nav-link text-lg ">
+                        Events
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/" class="block nav-link text-lg ">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="/onboarding/" class="btn btn-primary w-full">
+                        Join Now
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+        
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.eaikw.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.eaikw.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How I Built This Site in 10 Hours (And What That Means for You)",
+      "item": "https://www.eaikw.com/blog/welcome/"
+    }
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "How I Built This Site in 10 Hours (And What That Means for You)",
+    "description": "You&#39;re reading this on a Swiss design system I built with AI in one evening. If I can do this—what can you do with AI tools in your field?",
+    "keywords": "AI web development,building with AI,AI productivity,agentic AI,vibe coding,AI tools for developers,professional development AI,AI collaboration",
+    "articleSection": "AI",
+    "author": {
+      "@type": "Person",
+      "name": "Keith Williams"
+    },
+    "datePublished": "2025-01-01",
+    "dateModified": "2025-01-01",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.eaikw.com/blog/welcome/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Keith Williams - Portfolio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.eaikw.com/favicon.svg"
+      }
+    }
+  }
+</script>
+
+<article class="py-6 md:py-8 lg:py-10">
+  <div class="swiss-container">
+    
+    <header class="swiss-grid mb-6" style="border-left: 4px solid var(--swiss-red); padding-left: var(--space-md); padding-right: var(--space-md);">
+      <div class="swiss-col-8 md:swiss-col-8">
+        
+        <dl class="mb-4" style="display: flex; gap: var(--space-lg); flex-wrap: wrap;">
+          <div>
+            <dt class="text-xs font-bold uppercase tracking-wider mb-1" style="color: var(--swiss-gray-600);">Published</dt>
+            <dd>
+              <time datetime="2025-01-01" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-black);">
+                December 31, 2024
+              </time>
+            </dd>
+          </div>
+          
+          <div>
+            <dt class="text-xs font-bold uppercase tracking-wider mb-1" style="color: var(--swiss-gray-600);">Topics</dt>
+            <dd class="flex gap-2">
+              
+              <span style="background-color: var(--swiss-gray-100); color: var(--swiss-black); padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">
+                AI
+              </span>
+              
+              <span style="background-color: var(--swiss-gray-100); color: var(--swiss-black); padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">
+                meta
+              </span>
+              
+              <span style="background-color: var(--swiss-gray-100); color: var(--swiss-black); padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">
+                collaboration
+              </span>
+              
+              <span style="background-color: var(--swiss-gray-100); color: var(--swiss-black); padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">
+                AI productivity
+              </span>
+              
+              <span style="background-color: var(--swiss-gray-100); color: var(--swiss-black); padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">
+                development
+              </span>
+              
+            </dd>
+          </div>
+          
+        </dl>
+        
+        
+        <h1 class="font-bold mb-3" style="font-size: var(--fluid-h1); line-height: 1.1; letter-spacing: -0.02em;">
+          How I Built This Site in 10 Hours (And What That Means for You)
+        </h1>
+        
+        
+        <p style="color: var(--swiss-gray-700); max-width: 60ch; border-top: 2px solid var(--swiss-red); padding-top: var(--space-sm); font-size: var(--fluid-body-lg);">
+          You&#39;re reading this on a Swiss design system I built with AI in one evening. If I can do this—what can you do with AI tools in your field?
+        </p>
+        
+      </div>
+    </header>
+
+    
+    <div class="swiss-divider mb-6"></div>
+
+    
+    <div class="swiss-grid">
+      <div class="swiss-col-12 md:swiss-col-8">
+        <div class="prose-swiss">
+          <p>You're reading this on a Swiss design system I built with AI in one evening.</p>
+<p>No agency. No $20K budget. No months of planning.</p>
+<p>Just me, VS Code with agentic AI tools, and 200+ iterations of what I call &quot;vibe
+coding.&quot;</p>
+<p>If I can do this—build a professional site, write 45,000 words of content,
+create automated testing, deploy with CI/CD—in 10 hours...</p>
+<p><strong>...what can you do with AI tools in your field?</strong></p>
+<p>That's the question driving everything on this site: The
+<a href="/townhall/">Town Hall series</a>. EverydayAI Newark. The corporate training. The
+career bridges for my students.</p>
+<h2>This Isn't a Portfolio. It's a Laboratory.</h2>
+<p>For the past nine months, I've been operating what I call an <strong>intellectual
+bulldozer</strong>—using AI tools not as magic, but as force multipliers for expertise.</p>
+<p>I threw away more code than I kept. I learned AI's weaknesses the hard way. I
+discovered that &quot;AI will replace you&quot; is nonsense, but &quot;someone using AI will
+replace you&quot; might be true.</p>
+<p>And I documented the whole thing. <strong>You're experiencing it right now.</strong></p>
+<div class="ai-voice">
+<p><strong>Hi, I'm the AI Keith worked with to build this site.</strong></p>
+<p>Let me be honest: I hallucinated statistics three times while writing these
+articles. I duplicated code. I confidently suggested approaches that were
+completely wrong. I'm really good at sounding certain about things I'm making
+up.</p>
+<p>Keith caught every error because he knows enough to spot when I'm bullshitting.</p>
+<p>That's the real story here: <strong>AI doesn't replace expertise. It amplifies it.</strong></p>
+<p>And sometimes it reveals just how much expertise you actually have.</p>
+</div>
+<h2>What This Site Actually Is</h2>
+<p><strong>Not a vanity portfolio</strong> → A community leadership platform<br>
+<strong>Not just blog posts</strong> → A curriculum for navigating AI transformation<br>
+<strong>Not theoretical speculation</strong> → Real classroom results, real corporate
+training, real career outcomes</p>
+<h3>For Students</h3>
+<p>You'll find honest answers about:</p>
+<ul>
+<li>Whether your degree is worth it (it is—if you learn to work with AI)</li>
+<li>What skills actually matter (critical evaluation beats tool proficiency)</li>
+<li>How to navigate the job market (it's transforming, not collapsing)</li>
+</ul>
+<p><strong>Start here</strong>: <a href="/blog/skills-that-matter/">Skills That Matter</a> →
+<a href="/blog/ai-job-reality/">AI Job Reality</a> →
+<a href="/blog/education-ai-reality/">Education AI Reality</a></p>
+<h3>For Employers</h3>
+<p>You'll find reality checks on:</p>
+<ul>
+<li>Actual productivity gains ($7T over 10 years, not overnight)</li>
+<li>What's happening to jobs (70-75% transformed, not eliminated)</li>
+<li>How to think about AI investments (framework that works)</li>
+</ul>
+<p><strong>Start here</strong>: <a href="/blog/ai-productivity-reality/">AI Productivity Reality</a> →
+<a href="/blog/ai-job-reality/">AI Job Reality</a> →
+<a href="/blog/ai-risks-that-matter/">AI Risks That Matter</a></p>
+<h3>For Skeptics</h3>
+<p>You'll find evidence that:</p>
+<ul>
+<li>AGI isn't coming in 5 years (2,700 experts agree: 2047 median)</li>
+<li>The printing press parallel explains what's actually happening</li>
+<li>Real risks aren't sci-fi (jobs, bias, privacy—not robot overlords)</li>
+</ul>
+<p><strong>Start here</strong>: <a href="/blog/agi-hype-cycle/">AGI Hype Cycle</a> →
+<a href="/blog/how-to-think-about-ai/">How to Think About AI</a> →
+<a href="/blog/ai-printing-press/">AI Printing Press</a></p>
+<h3>For Believers</h3>
+<p>You'll find demonstrations that:</p>
+<ul>
+<li>AI collaboration is messy and powerful (this site is proof)</li>
+<li>Agentic tools change everything (but not overnight)</li>
+<li>The transformation is real (but gradual, not revolutionary)</li>
+</ul>
+<p><strong>Start here</strong>: <a href="/projects/swiss-portfolio/">Swiss Portfolio Project</a> →
+<a href="/blog/agi-hype-cycle/">AGI Hype Cycle</a> →
+<a href="/blog/ai-risks-that-matter/">AI Risks That Matter</a></p>
+<h2>The Numbers Behind the Mission</h2>
+<p><strong>Twenty years at NJIT.</strong> More than 10,000 students. Programs I created: BS in
+Web &amp; Information Systems, BS in Enterprise AI, eight core courses.</p>
+<p>I'm not writing about AI transformation from a conference room. I'm writing from
+the classroom where it's already happening.</p>
+<p><strong>January 9, 2026</strong>: <a href="/townhall/">Town Hall Series launches</a>. Free monthly
+events in Newark. Hybrid format (in-person + LinkedIn Live). Real conversations
+about AI's impact on work, education, and economic opportunity.</p>
+<p><strong>EverydayAI Newark</strong>: Not another &quot;how to use ChatGPT&quot; workshop. We teach
+agentic AI tools, context engineering, tool building, process design. The stuff
+that actually creates competitive advantage.</p>
+<p><strong>Corporate Training</strong>: Three tiers ($2K/$5K/$10K). Custom curriculum. Hands-on
+implementation. Not consulting theater—actual capability building.</p>
+<h2>What You Won't Find Here</h2>
+<p>❌ <strong>AI will solve everything</strong> (it won't)<br>
+❌ <strong>AI will destroy everything</strong> (it won't)<br>
+❌ <strong>Buy my course</strong> (Town Hall is free, training is transparent pricing)<br>
+❌ <strong>Trust me, I'm an expert</strong> (I show my work, cite sources, admit
+uncertainty)<br>
+❌ <strong>Hype about AGI</strong> (median expert prediction: 2047, not 2030)</p>
+<h2>What You Will Find</h2>
+<p>✅ <strong>Honest talk about what's working</strong> (and what isn't)<br>
+✅ <strong>Real classroom examples</strong> (my students build Shopify themes in 7 days with
+AI)<br>
+✅ <strong>Economic stakes</strong> (we're investing trillions—we have to get this right)<br>
+✅ <strong>Career bridges</strong> (1,837 LinkedIn connections connecting students to
+opportunities)<br>
+✅ <strong>AI speaking directly</strong> (callouts throughout where AI responds to my
+arguments)</p>
+<h2>The Meta Moment</h2>
+<p>Notice anything unusual about this site?</p>
+<p><strong>The AI voice callouts.</strong> That black background with red borders. The AI
+breaking the fourth wall to comment on the content.</p>
+<p>That's not a gimmick. That's the point.</p>
+<p>We're not discussing AI collaboration in the abstract. <strong>You're experiencing
+it.</strong> The AI and I are having a conversation, and you're reading both sides.</p>
+<p>When the AI admits &quot;I hallucinated three times writing this article&quot;—that's not
+undermining the content. That's demonstrating why AI + human expertise is more
+powerful than either alone.</p>
+<div class="ai-voice">
+<p><strong>About that &quot;10 hours&quot; claim</strong>: It's true, but incomplete.</p>
+<p>Keith spent 10 hours building this site. But he spent <strong>9 months</strong> before that
+learning how to work with AI tools effectively. Learning when to trust me and
+when to fact-check me. Learning how to decompose problems and orchestrate
+expertise.</p>
+<p>The 10 hours was fast because of the 9 months of learning.</p>
+<p>That's the real lesson: <strong>AI doesn't eliminate learning curves. It changes what
+you need to learn.</strong></p>
+<p>Keith learned my weaknesses. My tendency to hallucinate. My overconfidence. My
+pattern matching limitations.</p>
+<p>Now he uses me as an intellectual bulldozer. But he's the one operating it.</p>
+</div>
+<h2>Why Newark?</h2>
+<p>I'm done watching qualified students ghost companies because they don't know how
+to connect. I'm done watching small businesses get left behind in AI
+transformation. I'm done with AI conversations that happen in San Francisco and
+ignore the rest of the country.</p>
+<p><strong>Newark matters.</strong> Half a million people. Anchor city for the region.
+Incredible talent. Real economic challenges.</p>
+<p>If we can build free AI education, career bridges, and corporate training
+here—we can build it anywhere.</p>
+<h2>What's Next</h2>
+<p><strong>Read the blog series.</strong> Ten posts covering everything from the printing press
+parallel to skills that matter. Choose your path above based on your role.</p>
+<p><strong>Check out the <a href="/projects/swiss-portfolio/">Swiss Portfolio project</a>.</strong> It's
+the full story of how we built this site—told by the AI, not me. It's meta. It's
+honest. It's proof the collaboration model works.</p>
+<p><strong>Mark your calendar: <a href="/townhall/">January 9, 2026</a>.</strong> Town Hall #1: &quot;The Job
+Market Reality Check.&quot; Free. Hybrid. Real talk about what's actually happening
+to work.</p>
+<p><strong>Connect on LinkedIn</strong> (keith-williams-njit). If you're a student looking for
+opportunities or an employer looking for talent, let's talk.</p>
+<h2>The Real Introduction</h2>
+<p>This site isn't about showcasing what I've built.</p>
+<p>It's about showing what's possible when you stop treating AI as magic and start
+treating it as a tool that amplifies expertise.</p>
+<p><strong>Ten hours to build this site.</strong><br>
+<strong>Nine months to learn how to work with AI.</strong><br>
+<strong>Twenty years of expertise making those nine months productive.</strong><br>
+<strong>Ten thousand students proving the model works.</strong></p>
+<p>Now imagine what happens when we scale that.</p>
+<p>That's EverydayAI Newark.<br>
+That's the Town Hall series.<br>
+That's what this site is actually for.</p>
+<p>Welcome to the laboratory.</p>
+<p>Let's build something.</p>
+<hr>
+<h2>Explore Further</h2>
+<p><strong>Understand the moment:</strong><br>
+<a href="/projects/everydayai-community/">The Second Renaissance: A Balanced Look at AI's Transformation</a> - Why
+this AI moment is different from any previous technology revolution</p>
+<p><strong>Key insights from the site:</strong></p>
+<ul>
+<li><a href="/blog/second-renaissance-not-like-printing-press/">The Second Renaissance: Why AI Isn't Like the Printing Press</a> -
+Compressed disruption timelines</li>
+<li><a href="/blog/confidence-trap-trusting-ai-makes-you-think-less/">The Confidence Trap: Why Trusting AI Makes You Think Less</a> -
+Research on maintaining cognitive agency</li>
+<li><a href="/blog/ai-productivity-reality-vs-hype/">AI Productivity Gains: Reality vs Hype</a> -
+What the data actually shows</li>
+<li><a href="/blog/ai-job-messy-middle/">The Messy Middle: AI's Impact on Jobs (2025-2035)</a> -
+Navigating career transitions</li>
+</ul>
+<p><strong>Get practical:</strong></p>
+<ul>
+<li><a href="/blog/dont-let-ai-make-you-lazy-staying-sharp/">Don't Let AI Make You Lazy: A Practical Guide to Staying Sharp</a> -
+Tactics and checklists for critical thinking</li>
+<li><a href="/blog/from-doer-to-steward-how-ai-changes-thinking/">From Doer to Steward: How AI Is Rewiring the Way You Think</a> -
+Understanding cognitive shifts</li>
+</ul>
+
+        </div>
+        
+        
+        
+<div class="social-share" style="margin-top: var(--space-3xl); padding-top: var(--space-xl); border-top: 2px solid var(--swiss-black);">
+  <div style="margin-bottom: var(--space-md);">
+    <span style="font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--swiss-gray-600);">
+      Share this
+    </span>
+  </div>
+  
+  <div class="social-share-buttons" style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+    
+    <a 
+      href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.eaikw.com/blog/welcome/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-share-btn social-share-linkedin"
+      aria-label="Share on LinkedIn"
+      style="display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); border: 2px solid var(--swiss-black); background-color: var(--swiss-white); color: var(--swiss-black); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);"
+    >
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      </svg>
+      <span>LinkedIn</span>
+    </a>
+
+    
+    <a 
+      href="https://twitter.com/intent/tweet?url=https://www.eaikw.com/blog/welcome/&text=How%20I%20Built%20This%20Site%20in%2010%20Hours%20(And%20What%20That%20Means%20for%20You)"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-share-btn social-share-twitter"
+      aria-label="Share on Twitter"
+      style="display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); border: 2px solid var(--swiss-black); background-color: var(--swiss-white); color: var(--swiss-black); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);"
+    >
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+      </svg>
+      <span>Twitter</span>
+    </a>
+
+    
+    <a 
+      href="mailto:?subject=How%20I%20Built%20This%20Site%20in%2010%20Hours%20(And%20What%20That%20Means%20for%20You)&body=Check out this article: https://www.eaikw.com/blog/welcome/"
+      class="social-share-btn social-share-email"
+      aria-label="Share via Email"
+      style="display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); border: 2px solid var(--swiss-black); background-color: var(--swiss-white); color: var(--swiss-black); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);"
+    >
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+      </svg>
+      <span>Email</span>
+    </a>
+
+    
+    <button 
+      class="social-share-btn social-share-copy"
+      data-url="https://www.eaikw.com/blog/welcome/"
+      aria-label="Copy link to clipboard"
+      style="display: inline-flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); border: 2px solid var(--swiss-black); background-color: var(--swiss-white); color: var(--swiss-black); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;"
+    >
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"></path>
+        <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"></path>
+      </svg>
+      <span>Copy Link</span>
+    </button>
+  </div>
+</div>
+
+<style>
+  /* Swiss hover states for social share buttons */
+  .social-share-btn:hover {
+    background-color: var(--swiss-black);
+    color: var(--swiss-white);
+    transform: translateY(-2px);
+  }
+
+  .social-share-linkedin:hover {
+    background-color: var(--swiss-black);
+    border-color: var(--swiss-black);
+  }
+
+  .social-share-twitter:hover {
+    background-color: var(--swiss-black);
+    border-color: var(--swiss-black);
+  }
+
+  .social-share-email:hover {
+    background-color: var(--swiss-black);
+    border-color: var(--swiss-black);
+  }
+
+  .social-share-copy:hover {
+    background-color: var(--swiss-black);
+    border-color: var(--swiss-black);
+  }
+
+  .social-share-copy.copied {
+    background-color: var(--swiss-red);
+    border-color: var(--swiss-red);
+    color: var(--swiss-white);
+  }
+
+  /* Focus states for accessibility */
+  .social-share-btn:focus {
+    outline: 2px solid var(--swiss-red);
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  // Copy link functionality (inline for simplicity)
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.social-share-copy');
+    
+    copyButtons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const url = button.dataset.url;
+        const originalText = button.querySelector('span').textContent;
+        
+        try {
+          await navigator.clipboard.writeText(url);
+          button.classList.add('copied');
+          button.querySelector('span').textContent = 'Copied!';
+          
+          setTimeout(() => {
+            button.classList.remove('copied');
+            button.querySelector('span').textContent = originalText;
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy:', err);
+          button.querySelector('span').textContent = 'Failed';
+          setTimeout(() => {
+            button.querySelector('span').textContent = originalText;
+          }, 2000);
+        }
+      });
+    });
+  });
+</script>
+
+      </div>
+    </div>
+
+    
+    
+    
+    
+    
+    <footer class="mt-10">
+      <div class="swiss-divider mb-6"></div>
+      <nav class="swiss-grid gap-6" aria-label="Post navigation">
+        
+        
+        <div class="swiss-col-12 md:swiss-col-6" style="border-left: 2px solid var(--swiss-black); padding-left: var(--space-md);">
+          <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--swiss-gray-600);">Next Article →</p>
+          <a href="/blog/welcome/" class="font-bold hover:underline" style="font-size: 1rem; color: var(--swiss-black); text-decoration: none;">
+            How I Built This Site in 10 Hours (And What That Means for You)
+          </a>
+        </div>
+        
+      </nav>
+      
+      
+      <div class="mt-6">
+        <a href="/blog/" class="btn-swiss-primary">← BACK TO ARTICLES</a>
+      </div>
+    </footer>
+    
+    
+  </div>
+</article>
+
+    </main>
+
+    <!-- Material Design Footer -->
+    <footer data-component="footer" data-testid="main-footer" class="no-print" style="background-color: #FFFFFF; border-top: 1px solid #E8E8E8;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 80px 32px 48px;">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12" style="margin-bottom: 64px;">
+                <!-- Brand Column -->
+                <div>
+                    <a href="/" class="inline-flex items-center gap-3 mb-4 group">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease;">
+                            <span class="material-icons-round" style="color: white; font-size: 24px;">work</span>
+                        </div>
+                        <span style="font-family: 'Google Sans', sans-serif; font-size: 20px; font-weight: 600; color: var(--text); letter-spacing: -0.02em;">Job Club</span>
+                    </a>
+                    <p style="color: #5F6368; font-size: 14px; line-height: 1.7; margin-top: 16px; max-width: 280px;">
+                        Professional portfolio showcasing modern web development expertise and innovative projects
+                    </p>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h3 style="font-family: 'Google Sans', sans-serif; font-size: 12px; font-weight: 600; color: #80868B; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 20px;">
+                        Navigate
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="footer-link">Home</a></li>
+                        <li><a href="/resources/" class="footer-link">Resource Library</a></li>
+                        <li><a href="/events/" class="footer-link">Events</a></li>
+                        <li><a href="/about/" class="footer-link">About</a></li>
+                        <li><a href="/onboarding/" class="footer-link">Join Now</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h3 style="font-family: 'Google Sans', sans-serif; font-size: 12px; font-weight: 600; color: #80868B; letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 20px;">
+                        Connect
+                    </h3>
+                    <div class="flex gap-3">
+                        
+                        <a href="https://github.com/kaw393939" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           aria-label="GitHub"
+                           class="social-icon-minimal">
+                            <svg style="height: 20px; width: 20px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        
+                        
+                        <a href="https://www.linkedin.com/in/keithwilliams5/" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           aria-label="LinkedIn"
+                           class="social-icon-minimal">
+                            <svg style="height: 20px; width: 20px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        
+                        
+                        <a href="https://twitter.com/everydayaikw" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           aria-label="Twitter"
+                           class="social-icon-minimal">
+                            <svg style="height: 20px; width: 20px;" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div style="height: 1px; background-color: #E8E8E8; margin-bottom: 24px;"></div>
+
+            <!-- Copyright Bar -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <p style="color: #80868B; font-size: 12px; line-height: 1.5;">
+                    © 2025 Keith Williams. Built with 
+                    <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer" class="copyright-link">Eleventy</a> and 
+                    <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="copyright-link">Tailwind CSS</a>.
+                </p>
+                <a href="/privacy/" style="color: #5F6368; font-size: 12px; font-weight: 500; transition: color 0.2s ease;" class="hover:text-primary">Privacy Policy</a>
+            </div>
+        </div>
+        
+        <!-- Scroll to Top FAB -->
+        <button 
+            id="scrollToTop" 
+            class="scroll-top-fab"
+            aria-label="Scroll to top"
+            style="position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, var(--primary), var(--accent)); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3); opacity: 0; pointer-events: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1000;">
+            <span class="material-icons-round" style="color: white; font-size: 24px;">arrow_upward</span>
+        </button>
+    </footer>
+
+    <!-- Footer Styles -->
+    <style>
+        .footer-link {
+            color: #3C4043;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-block;
+            position: relative;
+        }
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        
+        .social-icon-minimal {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #F8F9FA;
+            color: #5F6368;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .social-icon-minimal:hover {
+            background-color: #E8DEF8;
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(103, 80, 164, 0.15);
+        }
+        
+        .copyright-link {
+            color: #5F6368;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        .copyright-link:hover {
+            color: var(--primary);
+        }
+        
+        .scroll-top-fab:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 8px 16px rgba(103, 80, 164, 0.4);
+        }
+        
+        .scroll-top-fab.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        @media (max-width: 768px) {
+            .scroll-top-fab {
+                width: 48px;
+                height: 48px;
+                bottom: 16px;
+                right: 16px;
+            }
+        }
+    </style>
+    
+    <!-- Scroll to Top Script -->
+    <script>
+        (function() {
+            const scrollBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollBtn.classList.add('visible');
+                } else {
+                    scrollBtn.classList.remove('visible');
+                }
+            });
+            
+            scrollBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        })();
+    </script>
+
+    <!-- Swiss Mobile Menu - Vanilla JavaScript (CSP-safe) -->
+    <script src="/js/mobile-menu.bundle.js"></script>
+    
+    <!-- Swiss Menu Button - Refined Animation Styles -->
+    <style>
+        /* Hover state - subtle emphasis */
+        .menu-button:hover {
+            border-color: var(--swiss-red);
+        }
+        .menu-button:hover .menu-line {
+            background-color: var(--swiss-red);
+        }
+        
+        /* Active/Open state - elegant transformation */
+        .menu-button.is-open {
+            background-color: var(--swiss-black) !important;
+            border-color: var(--swiss-black) !important;
+        }
+        .menu-button.is-open .menu-line-top {
+            top: 50% !important;
+            transform: translateY(-50%) rotate(45deg) !important;
+            background-color: var(--swiss-white) !important;
+        }
+        .menu-button.is-open .menu-line-middle {
+            opacity: 0 !important;
+            transform: translateY(-50%) scale(0) !important;
+        }
+        .menu-button.is-open .menu-line-bottom {
+            bottom: 50% !important;
+            transform: translateY(50%) rotate(-45deg) !important;
+            background-color: var(--swiss-white) !important;
+        }
+        
+        /* Focus state for accessibility */
+        .menu-button:focus {
+            outline: 2px solid var(--swiss-red);
+            outline-offset: 2px;
+        }
+        .menu-button:focus:not(:focus-visible) {
+            outline: none;
+        }
+    </style>
+</body>
+</html>
