@@ -40,7 +40,7 @@ const client = createClient({
   token: process.env.SANITY_WRITE_TOKEN,
 });
 
-const PORT = 3002;
+const PORT = 5000;
 
 // Helper function to parse request body
 function parseBody(req) {
@@ -131,6 +131,47 @@ function detectMissingPrerequisites(data) {
   return { flags, missingItems };
 }
 
+/**
+ * Send webhook to Zapier for email automation
+ */
+async function triggerEmailAutomation(memberData, missingItems) {
+  const webhookUrl = process.env.EMAIL_WEBHOOK_URL;
+  
+  if (!webhookUrl) {
+    console.warn('⚠️  EMAIL_WEBHOOK_URL not configured - skipping email automation');
+    return { success: false, message: 'Email webhook not configured' };
+  }
+  
+  try {
+    console.log('📧 Sending to Zapier webhook...');
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: memberData.name,
+        email: memberData.email,
+        major: memberData.major,
+        graduationYear: memberData.graduationYear,
+        careerGoal: memberData.careerGoal,
+        missingItems: missingItems,
+        submittedAt: new Date().toISOString(),
+      }),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Webhook returned ${response.status}`);
+    }
+    
+    console.log('✅ Email webhook sent successfully');
+    return { success: true };
+  } catch (error) {
+    console.error('❌ Email webhook error:', error.message);
+    return { success: false, message: error.message };
+  }
+}
+
 // Handle onboarding submission
 async function handleOnboarding(req, res, data) {
   try {
@@ -175,6 +216,9 @@ async function handleOnboarding(req, res, data) {
     console.log('💾 Saving to Sanity CMS...');
     const result = await client.create(memberProfile);
     console.log(`✅ Saved successfully! Document ID: ${result._id}`);
+    
+    // Trigger email automation to Zapier
+    await triggerEmailAutomation(memberProfile, missingItems);
     
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({
