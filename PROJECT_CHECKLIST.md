@@ -58,24 +58,25 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [x] **PRODUCTION SANITY CREDENTIALS SET** ✅
 - [x] **DEV SERVER RUNNING STABLE ON PORT 3002** ✅
 
-### ⏳ Personalized Onboarding Email (BLOCKED - NEEDS SOLUTION)
-**After form submission, automation must send:**
-- [ ] Personalized onboarding checklist
-- [ ] Guides for missing assets:
-  - [ ] LinkedIn optimization guide (if missing)
-  - [ ] GitHub profile setup guide (if missing)
-  - [ ] Personal website template (if missing)
-  - [ ] Calendly setup instructions (if missing)
-- [ ] Welcome message with next steps
-- [ ] Job Club resources links
+### ✅ Personalized Onboarding Email (COMPLETE - TESTED & WORKING)
+**After form submission, automation sends:**
+- [x] Personalized onboarding checklist via Gmail ✅
+- [x] Guides for missing assets:
+  - [x] LinkedIn optimization guide (if missing) ✅
+  - [x] GitHub profile setup guide (if missing) ✅
+  - [x] Personal website template (if missing) ✅
+  - [x] Calendly setup instructions (if missing) ✅
+- [x] Welcome message with next steps ✅
+- [x] Job Club resources links ✅
 
-**Implementation Options:**
-- [ ] ❌ Zapier: **BLOCKED** (requires premium plan for needed features)
-- [ ] Make.com: Free tier allows webhooks + conditionals (1000 ops/month)
-- [ ] n8n (self-hosted): Free forever, requires $5/mo server
-- [ ] Build into `api/submit-onboarding.js`: Add SendGrid API calls directly
+**Implementation:** Zapier Webhook Integration
+- [x] Zapier webhook configured and tested ✅
+- [x] Gmail automation set up with dynamic fields ✅
+- [x] Email templates created (complete & incomplete profiles) ✅
+- [x] End-to-end testing: form submission → email delivery ✅
+- [x] **PRODUCTION READY** (Zap turned ON and sending emails) ✅
 
-**Status:** 0/6 complete - **DECISION NEEDED ON PLATFORM**
+**Status:** 6/6 complete - **PRODUCTION READY**
 
 ### ⏳ Discord Integration (BLOCKED - NEEDS SOLUTION)
 **After form submission, automation must:**
@@ -92,11 +93,15 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 **Status:** 0/3 complete - **BLOCKED BY AUTOMATION PLATFORM DECISION**
 **Options:** Make.com, n8n, or build into serverless function
 
-**Onboarding Section Status:** 11/25 complete (44%) - **NOT PRODUCTION READY**
-**Blockers:**
-- Sanity not deployed/tested
-- Automation platform decision needed (Zapier blocked)
-- No end-to-end testing completed
+**Onboarding Section Status:** 18/25 complete (72%) - **MOSTLY PRODUCTION READY**
+**Completed:**
+- ✅ Onboarding Form (100%)
+- ✅ Sanity Schema (100%)
+- ✅ Backend API (100%)
+- ✅ Email Automation via Zapier (100%)
+
+**Remaining Blockers:**
+- Discord integration not yet implemented
 
 ---
 
@@ -480,29 +485,27 @@ Create a site that onboards students into AI-ready professionals through:
 
 ## 📊 Progress Summary
 
-### Overall Project Status: ~22% Complete
+### Overall Project Status: ~40% Complete (Updated Dec 15, 2025)
 
 **Completed (✅):**
 - Eleventy setup
-- Events system (backend + frontend)
-- Onboarding form (frontend only)
+- Events system (backend + frontend + Sanity integration)
+- Onboarding form (frontend + backend API + Sanity CMS)
 - Sanity schemas (memberProfile, event)
+- Email automation (Zapier integration - tested & working)
 - Basic project structure
-- Material Design styling
+- Material Design styling (complete system)
 - Privacy policy page
+- 4 comprehensive guides (Resource Library)
 
 **In Progress (🔄):**
-- Sanity CMS deployment
-- Data integration testing
-- EAiKW style adaptation
+- Discord integration setup (blocked until decision)
 
 **Not Started (❌):**
-- Automations (0/2)
 - CRM integration
-- Discord integration
-- Resource library
-- Portfolio guidance
-- UX deliverables (personas, wireframes, etc.)
+- Resource library (guides exist, need feature page)
+- Portfolio guidance page
+- UX deliverables (personas, wireframes)
 - Testing (Playwright, Lighthouse CI)
 - Analytics
 - GDPR cookie banner
@@ -512,13 +515,13 @@ Create a site that onboards students into AI-ready professionals through:
 
 ### Priority Roadmap
 
-#### 🚨 PHASE 1: Core Functionality (Week 1-2)
-**Must Complete These First:**
-1. [ ] Deploy Sanity CMS
-2. [ ] Test events with real data
-3. [ ] Set up automation #1 (onboarding flow)
-4. [ ] Discord integration
-5. [ ] CRM integration (choose + setup)
+#### 🚀 PHASE 1: Core Functionality (MOSTLY COMPLETE)
+**✅ Completed:**
+1. [x] Deploy Sanity CMS (using production credentials)
+2. [x] Test events with real data
+3. [x] Set up automation #1 (onboarding flow + email via Zapier)
+4. [ ] Discord integration (next priority)
+5. [ ] CRM integration (choose platform + setup)
 ---
 
 ## 📝 Implementation Notes
