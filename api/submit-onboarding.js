@@ -296,9 +296,10 @@ export default async function handler(req, res) {
     const result = await client.create(memberProfile);
     
     // Trigger email automation (don't wait for it)
-    triggerEmailAutomation(memberProfile, missingItems).catch(err => 
-      console.error('Email automation failed:', err)
-    );
+    const emailResult = await triggerEmailAutomation(memberProfile, missingItems).catch(err => {
+      console.error('Email automation failed:', err);
+      return { success: false, error: err.message };
+    });
     
     // Send Discord notification (don't wait for it)
     sendDiscordNotification(memberProfile).catch(err => 
@@ -312,6 +313,7 @@ export default async function handler(req, res) {
       memberId: result._id,
       missingItems: missingItems.length > 0 ? missingItems : null,
       hasAllPrerequisites: missingItems.length === 0,
+      webhookStatus: emailResult,
     });
     
   } catch (error) {
