@@ -6,14 +6,5 @@
     "api/**/*.js": {
       "runtime": "nodejs18.x"
     }
-  },
-  "env": {
-    "SANITY_PROJECT_ID": "@sanity_project_id",
-    "SANITY_DATASET": "@sanity_dataset",
-    "SANITY_WRITE_TOKEN": "@sanity_write_token",
-    "EMAIL_WEBHOOK_URL": "@email_webhook_url",
-    "DISCORD_WEBHOOK_URL": "@discord_webhook_url",
-    "AIRTABLE_BASE_ID": "@airtable_base_id",
-    "AIRTABLE_API_KEY": "@airtable_api_key"
   }
 }
