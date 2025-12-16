@@ -1,10 +1,5 @@
 {
   "buildCommand": "eleventy",
   "outputDirectory": "_site",
-  "framework": "eleventy",
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "framework": "eleventy"
 }
