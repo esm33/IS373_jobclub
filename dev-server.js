@@ -40,7 +40,7 @@ const client = createClient({
   token: process.env.SANITY_WRITE_TOKEN,
 });
 
-const PORT = 4998;
+const PORT = 4999;
 
 // Helper function to parse request body
 function parseBody(req) {
@@ -144,20 +144,27 @@ async function triggerEmailAutomation(memberData, missingItems) {
   
   try {
     console.log('📧 Sending to Zapier webhook...');
+    const webhookPayload = {
+      name: memberData.name,
+      email: memberData.email,
+      major: memberData.major,
+      graduationYear: memberData.graduationYear,
+      careerGoal: memberData.careerGoal,
+      linkedinUrl: memberData.linkedinUrl,
+      githubUrl: memberData.githubUrl,
+      websiteUrl: memberData.websiteUrl,
+      calendlyUrl: memberData.calendlyUrl,
+      missingItems: missingItems,
+      submittedAt: new Date().toISOString(),
+    };
+    console.log('📤 Payload:', JSON.stringify(webhookPayload, null, 2));
+    
     const response = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        name: memberData.name,
-        email: memberData.email,
-        major: memberData.major,
-        graduationYear: memberData.graduationYear,
-        careerGoal: memberData.careerGoal,
-        missingItems: missingItems,
-        submittedAt: new Date().toISOString(),
-      }),
+      body: JSON.stringify(webhookPayload),
     });
     
     if (!response.ok) {
