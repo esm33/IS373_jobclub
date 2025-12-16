@@ -2,6 +2,11 @@
   "buildCommand": "eleventy",
   "outputDirectory": "_site",
   "framework": "eleventy",
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "env": {
     "SANITY_PROJECT_ID": "@sanity_project_id",
     "SANITY_DATASET": "@sanity_dataset",
