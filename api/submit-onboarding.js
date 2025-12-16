@@ -123,6 +123,10 @@ async function triggerEmailAutomation(memberData, missingItems) {
         major: memberData.major,
         graduationYear: memberData.graduationYear,
         careerGoal: memberData.careerGoal,
+        linkedinUrl: memberData.linkedinUrl,
+        githubUrl: memberData.githubUrl,
+        websiteUrl: memberData.websiteUrl,
+        calendlyUrl: memberData.calendlyUrl,
         missingItems: missingItems,
         submittedAt: new Date().toISOString(),
       }),
@@ -291,15 +295,17 @@ export default async function handler(req, res) {
     // Save to Sanity CMS
     const result = await client.create(memberProfile);
     
-    // Trigger email automation (don't wait for it)
-    triggerEmailAutomation(memberProfile, missingItems).catch(err => 
-      console.error('Email automation failed:', err)
-    );
+    // Trigger email automation
+    const emailResult = await triggerEmailAutomation(memberProfile, missingItems).catch(err => {
+      console.error('Email automation failed:', err);
+      return { success: false, error: err.message };
+    });
     
-    // Send Discord notification (don't wait for it)
-    sendDiscordNotification(memberProfile).catch(err => 
-      console.error('Discord notification failed:', err)
-    );
+    // Send Discord notification
+    const discordResult = await sendDiscordNotification(memberProfile).catch(err => {
+      console.error('Discord notification failed:', err);
+      return { success: false, error: err.message };
+    });
     
     // Return success response
     return res.status(200).json({
@@ -308,6 +314,8 @@ export default async function handler(req, res) {
       memberId: result._id,
       missingItems: missingItems.length > 0 ? missingItems : null,
       hasAllPrerequisites: missingItems.length === 0,
+      webhookStatus: emailResult,
+      discordStatus: discordResult,
     });
     
   } catch (error) {

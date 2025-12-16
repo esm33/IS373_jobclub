@@ -40,7 +40,7 @@ const client = createClient({
   token: process.env.SANITY_WRITE_TOKEN,
 });
 
-const PORT = 3002;
+const PORT = 4999;
 
 // Helper function to parse request body
 function parseBody(req) {
@@ -131,6 +131,145 @@ function detectMissingPrerequisites(data) {
   return { flags, missingItems };
 }
 
+/**
+ * Send webhook to Zapier for email automation
+ */
+async function triggerEmailAutomation(memberData, missingItems) {
+  const webhookUrl = process.env.EMAIL_WEBHOOK_URL;
+  
+  if (!webhookUrl) {
+    console.warn('⚠️  EMAIL_WEBHOOK_URL not configured - skipping email automation');
+    return { success: false, message: 'Email webhook not configured' };
+  }
+  
+  try {
+    console.log('📧 Sending to Zapier webhook...');
+    const webhookPayload = {
+      name: memberData.name,
+      email: memberData.email,
+      major: memberData.major,
+      graduationYear: memberData.graduationYear,
+      careerGoal: memberData.careerGoal,
+      linkedinUrl: memberData.linkedinUrl,
+      githubUrl: memberData.githubUrl,
+      websiteUrl: memberData.websiteUrl,
+      calendlyUrl: memberData.calendlyUrl,
+      missingItems: missingItems,
+      submittedAt: new Date().toISOString(),
+    };
+    console.log('📤 Payload:', JSON.stringify(webhookPayload, null, 2));
+    
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(webhookPayload),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Webhook returned ${response.status}`);
+    }
+    
+    console.log('✅ Email webhook sent successfully');
+    return { success: true };
+  } catch (error) {
+    console.error('❌ Email webhook error:', error.message);
+    return { success: false, message: error.message };
+  }
+}
+
+/**
+ * Send Discord notification to #jobclub-intros
+ */
+async function sendDiscordNotification(memberData) {
+  const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
+  
+  if (!webhookUrl) {
+    console.warn('⚠️  DISCORD_WEBHOOK_URL not configured - skipping Discord notification');
+    return { success: false, message: 'Discord webhook not configured' };
+  }
+  
+  try {
+    console.log('💬 Sending to Discord...');
+    
+    // Format links for Discord
+    const links = [
+      memberData.linkedinUrl && `[LinkedIn](${memberData.linkedinUrl})`,
+      memberData.githubUrl && `[GitHub](${memberData.githubUrl})`,
+      memberData.websiteUrl && `[Portfolio](${memberData.websiteUrl})`,
+      memberData.calendlyUrl && `[Calendly](${memberData.calendlyUrl})`,
+    ].filter(Boolean).join(' • ');
+    
+    const embed = {
+      title: `🎉 New Member: ${memberData.name}`,
+      description: `Welcome to Job Club!`,
+      color: 0x6750A4, // Material Design primary color
+      fields: [
+        {
+          name: '👤 Name',
+          value: memberData.name,
+          inline: true,
+        },
+        {
+          name: '📧 Email',
+          value: memberData.email,
+          inline: true,
+        },
+        {
+          name: '🎓 Major',
+          value: memberData.major,
+          inline: true,
+        },
+        {
+          name: '📅 Graduation',
+          value: memberData.graduationYear.toString(),
+          inline: true,
+        },
+        {
+          name: '🎯 Career Goal',
+          value: memberData.careerGoal.substring(0, 200) + (memberData.careerGoal.length > 200 ? '...' : ''),
+          inline: false,
+        },
+        {
+          name: '🔗 Links',
+          value: links || 'No links provided',
+          inline: false,
+        },
+      ],
+      timestamp: new Date().toISOString(),
+      footer: {
+        text: 'Job Club NJIT',
+      },
+    };
+    
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        embeds: [embed],
+      }),
+    });
+    
+    // Discord returns 204 No Content on success, or 429 on rate limit
+    if (response.status === 204 || response.status === 200) {
+      console.log('✅ Discord notification sent successfully');
+      return { success: true };
+    } else if (response.status === 429) {
+      throw new Error('Discord rate limited - try again later');
+    } else if (response.status === 404) {
+      throw new Error('Discord webhook not found - URL may be invalid');
+    } else {
+      throw new Error(`Discord webhook returned ${response.status}`);
+    }
+  } catch (error) {
+    console.error('❌ Discord notification error:', error.message);
+    return { success: false, message: error.message };
+  }
+}
+
 // Handle onboarding submission
 async function handleOnboarding(req, res, data) {
   try {
@@ -175,6 +314,12 @@ async function handleOnboarding(req, res, data) {
     console.log('💾 Saving to Sanity CMS...');
     const result = await client.create(memberProfile);
     console.log(`✅ Saved successfully! Document ID: ${result._id}`);
+    
+    // Trigger email automation to Zapier
+    await triggerEmailAutomation(memberProfile, missingItems);
+    
+    // Send Discord notification
+    await sendDiscordNotification(memberProfile);
     
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({

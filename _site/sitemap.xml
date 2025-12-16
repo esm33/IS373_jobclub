@@ -193,7 +193,7 @@
   </url>
   <url>
     <loc>https://www.eaikw.com/about-site/</loc>
-    <lastmod>2025-12-08T00:11:51.621Z</lastmod>
+    <lastmod>2025-12-10T18:10:25.693Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -203,7 +203,7 @@
   </url>
   <url>
     <loc>https://www.eaikw.com/about/</loc>
-    <lastmod>2025-12-08T00:11:51.621Z</lastmod>
+    <lastmod>2025-12-10T18:10:25.698Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -213,7 +213,7 @@
   </url>
   <url>
     <loc>https://www.eaikw.com/blog/</loc>
-    <lastmod>2025-12-08T00:11:51.623Z</lastmod>
+    <lastmod>2025-12-10T18:10:25.749Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -223,7 +223,7 @@
   </url>
   <url>
     <loc>https://www.eaikw.com/enterprise-ai/</loc>
-    <lastmod>2025-12-08T00:11:51.624Z</lastmod>
+    <lastmod>2025-12-10T18:10:25.780Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -232,18 +232,8 @@
     >
   </url>
   <url>
-    <loc>https://www.eaikw.com/</loc>
-    <lastmod>2025-12-08T00:11:51.624Z</lastmod>
-    <changefreq
-      >weekly</changefreq
-    >
-    <priority
-      >1.0</priority
-    >
-  </url>
-  <url>
     <loc>https://www.eaikw.com/projects/</loc>
-    <lastmod>2025-12-08T00:11:51.627Z</lastmod>
+    <lastmod>2025-12-10T18:10:25.840Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -253,7 +243,7 @@
   </url>
   <url>
     <loc>https://www.eaikw.com/townhall/</loc>
-    <lastmod>2025-12-08T00:11:51.628Z</lastmod>
+    <lastmod>2025-12-10T18:10:25.864Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -263,27 +253,7 @@
   </url>
   <url>
     <loc>https://www.eaikw.com/work-with-me/</loc>
-    <lastmod>2025-12-08T00:11:51.629Z</lastmod>
-    <changefreq
-      >monthly</changefreq
-    >
-    <priority
-      >0.5</priority
-    >
-  </url>
-  <url>
-    <loc>https://www.eaikw.com/_layouts/base/</loc>
-    <lastmod>2025-12-08T01:20:33.549Z</lastmod>
-    <changefreq
-      >monthly</changefreq
-    >
-    <priority
-      >0.5</priority
-    >
-  </url>
-  <url>
-    <loc>https://www.eaikw.com/onboarding/</loc>
-    <lastmod>2025-12-10T18:34:23.424Z</lastmod>
+    <lastmod>2025-12-10T18:10:25.864Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -302,8 +272,48 @@
     >
   </url>
   <url>
+    <loc>https://www.eaikw.com/</loc>
+    <lastmod>2025-12-13T17:44:48.373Z</lastmod>
+    <changefreq
+      >weekly</changefreq
+    >
+    <priority
+      >1.0</priority
+    >
+  </url>
+  <url>
     <loc>https://www.eaikw.com/privacy/</loc>
-    <lastmod>2025-12-11T14:35:54.414Z</lastmod>
+    <lastmod>2025-12-13T17:44:48.380Z</lastmod>
+    <changefreq
+      >monthly</changefreq
+    >
+    <priority
+      >0.5</priority
+    >
+  </url>
+  <url>
+    <loc>https://www.eaikw.com/_layouts/base/</loc>
+    <lastmod>2025-12-13T19:04:09.425Z</lastmod>
+    <changefreq
+      >monthly</changefreq
+    >
+    <priority
+      >0.5</priority
+    >
+  </url>
+  <url>
+    <loc>https://www.eaikw.com/onboarding/</loc>
+    <lastmod>2025-12-13T19:04:09.480Z</lastmod>
+    <changefreq
+      >monthly</changefreq
+    >
+    <priority
+      >0.5</priority
+    >
+  </url>
+  <url>
+    <loc>https://www.eaikw.com/events/react-fundamentals-workshop/</loc>
+    <lastmod>2025-12-13T19:04:46.313Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -313,7 +323,7 @@
   </url>
   <url>
     <loc>https://www.eaikw.com/events/</loc>
-    <lastmod>2025-12-12T17:57:46.464Z</lastmod>
+    <lastmod>2025-12-13T19:04:46.319Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -322,8 +332,8 @@
     >
   </url>
   <url>
-    <loc>https://www.eaikw.com/events/ai-career-planning-workshop/</loc>
-    <lastmod>2025-12-12T17:59:08.950Z</lastmod>
+    <loc>https://www.eaikw.com/resources/</loc>
+    <lastmod>2025-12-14T21:10:44.544Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
