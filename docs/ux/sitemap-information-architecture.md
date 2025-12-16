@@ -1,5 +1,8 @@
 # Sitemap & Information Architecture
 
+![Job Club Sitemap](./images/sitemap-visual.png)
+*Visual sitemap diagram*
+
 ## Site Structure Overview
 
 ```
@@ -8,69 +11,34 @@ Job Club
 ├── Home (/)
 │
 ├── About (/about)
-│   ├── Mission & Vision
+│   ├── Mission
 │   ├── How It Works
 │   ├── Team
 │   └── FAQ
 │
 ├── Onboarding (/onboarding)
 │   ├── Welcome
-│   ├── Choose Your Path
-│   ├── Set Goals
-│   ├── Join Community
-│   └── First Project
+│   ├── Choose Path
+│   ├── Email Subscription
+│   └── Join Community
 │
 ├── Community (/community)
-│   ├── Members Directory
-│   ├── Discussion Forums
-│   ├── Showcase Gallery
-│   └── Mentorship
-│
-├── Learn (/learn)
-│   ├── Resource Library
-│   │   ├── AI Fundamentals
-│   │   ├── Career Skills
-│   │   ├── Project Templates
-│   │   └── Tool Guides
-│   ├── Learning Paths
-│   │   ├── Beginner Path
-│   │   ├── Intermediate Path
-│   │   └── Advanced Path
-│   └── Workshops & Tutorials
+│   └── Discord
 │
 ├── Events (/events)
-│   ├── Upcoming Events
-│   ├── Past Events
-│   ├── Event Calendar
-│   └── Submit Event
-│
-├── Projects (/projects)
-│   ├── Browse Projects
-│   ├── My Projects
-│   ├── Start New Project
-│   └── Project Showcase
+│   ├── Upcoming
+│   ├── Past
+│   └── Calendar
 │
 ├── Career Hub (/career)
-│   ├── Portfolio Builder
-│   ├── Resume Templates
-│   ├── Interview Prep
-│   ├── Job Board
-│   └── Success Stories
-│
-├── Blog (/blog)
-│   ├── Latest Posts
-│   ├── Categories
-│   │   ├── AI & Career
-│   │   ├── Skills Development
-│   │   ├── Industry Insights
-│   │   └── Member Stories
-│   └── Article Archive
+│   ├── Portfolio Template
+│   ├── Resume
+│   └── Interview Prep
 │
 └── Account (/account)
     ├── Dashboard
     ├── Profile
-    ├── Settings
-    └── Progress Tracking
+    └── Settings
 ```
 
 ---
@@ -98,18 +66,16 @@ Job Club
 
 ### Top-Level Navigation
 ```
-┌─────────────────────────────────────────────────────────┐
-│  [Logo] Home  Learn  Events  Projects  Career  Blog    │
-│                                              [Account]  │
-└─────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────┐
+│  [Logo] Home  About  Community  Events  Career  [Account] │
+└───────────────────────────────────────────────────────────┘
 ```
 
 **Order rationale**:
-1. **Learn** - Core value proposition
-2. **Events** - Community engagement
-3. **Projects** - Hands-on application
-4. **Career** - End goal/outcomes
-5. **Blog** - Thought leadership/content
+1. **About** - Understand the mission
+2. **Community** - Connect with members
+3. **Events** - Engage with activities
+4. **Career** - Prepare for the future
 
 ### Mobile Navigation
 ```
@@ -117,12 +83,10 @@ Job Club
 │  ☰  Job Club  👤 │
 ├──────────────────┤
 │  Home            │
-│  Learn           │
-│  Events          │
-│  Projects        │
-│  Career          │
-│  Blog            │
 │  About           │
+│  Community       │
+│  Events          │
+│  Career Hub      │
 │  Account         │
 └──────────────────┘
 ```
@@ -137,7 +101,7 @@ Job Club
 **Information Hierarchy**:
 1. **Hero Section**
    - Value proposition
-   - Primary CTA (Join / Get Started)
+   - Primary CTA (Start Onboarding)
    - Visual hook
 
 2. **Social Proof**
@@ -147,9 +111,9 @@ Job Club
 
 3. **How It Works**
    - 3-4 step process
-   - Visual journey map
+   - Link to About page
 
-4. **Featured Content**
+4. **Quick Links**
    - Latest blog posts
    - Upcoming events
    - Project showcase
@@ -163,70 +127,54 @@ Job Club
 ### Onboarding Flow
 **Purpose**: Guide new members to first value
 
-**Steps** (5-screen flow):
+**Steps** (4-screen flow):
 
 **Screen 1: Welcome**
 - Welcome message
 - What to expect
-- Estimated time (5 min)
+- Estimated time (3 min)
 
-**Screen 2: Choose Your Path**
+**Screen 2: Choose Path**
 - Select persona/experience level
 - Beginner / Intermediate / Advanced
 - Career goals selection
 
-**Screen 3: Set Goals**
-- What do you want to achieve?
-- Select interests (AI areas)
-- Timeline preference
+**Screen 3: Email Subscription**
+- Subscribe to updates
+- Frequency preferences
+- Content interests
 
 **Screen 4: Join Community**
-- Create profile
-- Add intro (optional)
-- Connect with similar members
-
-**Screen 5: First Project**
-- Recommended starting project
-- Access resources
-- Join discussion channel
+- Connect to Discord
+- Community guidelines
+- Get started in Discord
 
 ---
 
-### Learn / Resource Library
-**Purpose**: Provide curated, accessible learning content
+### About Page
+**Purpose**: Explain Job Club's mission and how it works
 
 **Information Architecture**:
 
-```
-Resource Library
-│
-├── Browse by Category
-│   ├── AI Fundamentals
-│   ├── Career Skills
-│   ├── Tools & Platforms
-│   └── Industry Insights
-│
-├── Browse by Format
-│   ├── Articles
-│   ├── Videos
-│   ├── Templates
-│   └── Checklists
-│
-├── Browse by Level
-│   ├── Beginner
-│   ├── Intermediate
-│   └── Advanced
-│
-└── Curated Collections
-    ├── Getting Started Pack
-    ├── Portfolio Building Kit
-    └── Interview Prep Bundle
-```
+**Mission Section**
+- Vision statement
+- Why Job Club exists
+- Core values
 
-**Filtering & Search**:
-- Search bar (prominent)
-- Filter by: category, level, format, duration
-- Sort by: newest, popular, recommended
+**How It Works**
+- Step-by-step process
+- Member journey
+- Value proposition
+
+**Team**
+- Leadership bios
+- Advisors
+- Contact information
+
+**FAQ**
+- Common questions
+- Getting started help
+- Technical support
 
 ---
 
@@ -235,58 +183,40 @@ Resource Library
 
 **Information Architecture**:
 
-**Primary View**: Upcoming Events (Card Grid)
+**Upcoming Events**
+- Featured event (hero)
+- Event cards with:
+  - Title, date, time
+  - Format (virtual/in-person)
+  - Brief description
+  - RSVP button
+- Filter by: format, topic, date
 
-**Event Card Contains**:
-- Event title
-- Date/time
-- Format (Virtual/In-person)
-- Category/tags
-- RSVP status
-- Brief description
+**Past Events**
+- Event archive
+- Recordings (if available)
+- Event summaries
+- Key takeaways
 
-**Filters**:
-- Timeframe (This week, This month, All)
-- Format (Virtual, In-person, Hybrid)
-- Category (Workshop, Discussion, Showcase, Social)
-- My Events (RSVPs, Hosted)
-
-**Secondary Sections**:
-- Calendar View (toggle option)
-- Past Events (archive)
-- Submit Your Event (CTA)
-
----
-
-### Projects Page
-**Purpose**: Showcase work, inspire new projects, facilitate collaboration
-
-**Views**:
-
-**1. Browse Projects (Default)**
-- Grid of project cards
-- Filters: Category, Difficulty, Status
-- Sort: Recent, Popular, Featured
-
-**2. My Projects**
-- Active projects
-- Completed projects
-- Saved/bookmarked projects
-
-**3. Start New Project**
-- Project templates
-- Blank project option
-- Collaboration requests
-
-**Project Detail Page**:
-- Title & description
-- Creator profile(s)
-- Tech stack/tools used
-- Documentation/learnings
-- Comments/feedback
-- Like/save actions
+**Calendar View**
+- Monthly calendar grid
+- Event markers
+- Quick view details
+- Export to personal calendar
 
 ---
+
+### Community Page
+**Purpose**: Connect members to Discord community
+
+**Information Architecture**:
+
+**Discord Integration**
+- Discord server invite
+- Channel overview
+- Community guidelines
+- Getting started guide
+- Member count/activity stats
 
 ### Career Hub
 **Purpose**: Support career preparation and job search
@@ -296,31 +226,46 @@ Resource Library
 ```
 Career Hub
 │
-├── Portfolio Builder
-│   ├── My Portfolio
-│   ├── Portfolio Templates
-│   └── Portfolio Examples
+├── Portfolio Template
+│   ├── Template gallery
+│   ├── Customization guide
+│   └── Portfolio examples
 │
-├── Resume & Cover Letter
+├── Resume
 │   ├── AI-focused resume templates
-│   ├── Cover letter guides
-│   └── Review requests
+│   ├── Resume writing tips
+│   └── Cover letter guides
 │
-├── Interview Preparation
-│   ├── Common AI interview questions
-│   ├── Mock interview practice
-│   └── Behavioral interview guide
-│
-├── Job Board
-│   ├── Entry-level AI roles
-│   ├── Internships
-│   └── Remote opportunities
-│
-└── Success Stories
-    ├── Member spotlights
-    ├── Career transition stories
-    └── Interview with alumni
+└── Interview Prep
+    ├── Common AI interview questions
+    ├── Mock interview resources
+    └── Behavioral interview guide
 ```
+
+---
+
+### Account Pages
+**Purpose**: Personal dashboard and settings
+
+**Information Architecture**:
+
+**Dashboard**
+- Activity overview
+- Upcoming events
+- Recent updates
+- Quick actions
+
+**Profile**
+- Personal information
+- Bio and interests
+- Social links
+- Privacy settings
+
+**Settings**
+- Account preferences
+- Email notifications
+- Privacy controls
+- Connected accounts
 
 ---
 
@@ -334,45 +279,41 @@ Career Hub
    ↓
 3. Click "Get Started" CTA
    ↓
-4. Complete Onboarding (5 screens)
+4. Complete Onboarding (4 screens)
    ↓
-5. Access Member Dashboard
+5. Join Discord Community
    ↓
-6. Engage with first resource/project
+6. Access Member Dashboard
 ```
 
-### Member Learning Flow
+### Member Engagement Flow
 ```
 1. Dashboard
    ↓
-2. Browse Resource Library
+2. Discover upcoming events
    ↓
-3. Select learning path or resource
+3. RSVP to event
    ↓
-4. Consume content
+4. Participate in event
    ↓
-5. Apply to project
+5. Connect on Discord
    ↓
-6. Share progress/learnings
-   ↓
-7. Get feedback from community
+6. Continue engagement
 ```
 
 ### Career Preparation Flow
 ```
 1. Career Hub
    ↓
-2. Build portfolio (add projects)
+2. Choose portfolio template
    ↓
-3. Create/update resume
+3. Customize portfolio
    ↓
-4. Practice interviews
+4. Create/update resume
    ↓
-5. Browse job board
+5. Practice interview prep
    ↓
-6. Apply with Job Club portfolio
-   ↓
-7. Share success story
+6. Share success on Discord
 ```
 
 ---
@@ -393,10 +334,8 @@ Career Hub
 ```
 Account Menu (Dropdown)
 │
-├── My Dashboard
-├── My Profile
-├── My Projects
-├── Saved Resources
+├── Dashboard
+├── Profile
 ├── Settings
 └── Logout
 ```
@@ -407,7 +346,7 @@ Account Menu (Dropdown)
 
 ### Global Search
 - **Location**: Header (all pages)
-- **Searches across**: Resources, Events, Projects, Blog, Members
+- **Searches across**: Events, Career Resources
 - **Features**:
   - Auto-complete suggestions
   - Recent searches
@@ -415,45 +354,34 @@ Account Menu (Dropdown)
   - Filter results by type
 
 ### Contextual Search
-- **Resource Library**: Search within resources
-- **Events**: Search events
-- **Projects**: Search projects
-- **Members**: Search member directory
+- **Events**: Search by date, topic, format
+- **Career Hub**: Search templates and resources
 
 ---
 
 ## Content Taxonomy
 
 ### Primary Categories
-1. **AI Fundamentals**
-   - Machine Learning Basics
-   - Generative AI
-   - AI Tools & Platforms
-   - AI Ethics
+1. **Community**
+   - Discord channels
+   - Member connections
+   - Community guidelines
 
-2. **Career Skills**
-   - Portfolio Building
-   - Resume Writing
-   - Interview Prep
-   - Networking
+2. **Events**
+   - Workshops
+   - Discussions
+   - Social meetups
 
-3. **Industry Knowledge**
-   - AI in Different Industries
-   - Job Market Trends
-   - Emerging Technologies
-   - Company Insights
-
-4. **Soft Skills**
-   - Communication
-   - Critical Thinking
-   - Collaboration
-   - Adaptability
+3. **Career Resources**
+   - Portfolio templates
+   - Resume templates
+   - Interview preparation
 
 ### Tags System
 - **Skill Level**: Beginner, Intermediate, Advanced
-- **Format**: Article, Video, Template, Checklist, Workshop
-- **Time**: <15min, 15-30min, 30-60min, 1hr+
-- **Tool**: ChatGPT, Midjourney, GitHub Copilot, etc.
+- **Event Type**: Workshop, Social, Discussion
+- **Format**: Virtual, In-person, Hybrid
+- **Resource Type**: Template, Guide, Reference
 
 ---
 
@@ -462,21 +390,19 @@ Account Menu (Dropdown)
 ### Mobile Navigation Priority
 1. **Bottom Navigation** (Primary actions)
    - Home
-   - Learn
-   - Projects
+   - Events
+   - Community
    - Account
 
 2. **Hamburger Menu** (Secondary pages)
-   - Events
-   - Career Hub
-   - Blog
    - About
+   - Career Hub
 
 ### Mobile Content Strategy
 - **Card-based layouts**: Easily scannable
 - **Progressive disclosure**: Show summaries, expand for details
 - **Touch-friendly**: Buttons min 44x44px
-- **Offline access**: Key resources downloadable
+- **Responsive design**: Optimized for all screen sizes
 
 ---
 
@@ -499,11 +425,11 @@ Account Menu (Dropdown)
 ## Scalability Plan
 
 ### Future Expansion Areas
-1. **Mentorship Portal** (dedicated section)
-2. **Company Partnerships** (recruiting hub)
-3. **Certification Program** (badge system)
-4. **Regional Chapters** (location-based communities)
-5. **Premium Resources** (tiered access)
+1. **Resource Library** (curated learning content)
+2. **Project Showcase** (member portfolios)
+3. **Blog** (insights and member stories)
+4. **Mentorship Portal** (dedicated mentorship matching)
+5. **Job Board** (internships and entry-level roles)
 
 ### IA Flexibility
 - **Modular structure**: Easy to add new sections

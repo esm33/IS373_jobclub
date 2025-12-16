@@ -1,5 +1,8 @@
 # Customer Journey Map: Job Club Member
 
+![Customer Journey Map](./images/customer-journey-visual.png)
+*Visual customer journey diagram*
+
 ## Journey Overview
 **Goal**: Transform from AI-curious student to career-ready professional
 
