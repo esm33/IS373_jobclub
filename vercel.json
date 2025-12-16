@@ -1,42 +1,14 @@
 {
-  "functions": {
-    "api/**/*.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Credentials",
-          "value": "true"
-        },
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-        }
-      ]
-    }
-  ],
-  "build": {
-    "env": {
-      "NODE_VERSION": "18"
-    }
+  "buildCommand": "eleventy",
+  "outputDirectory": "_site",
+  "framework": "eleventy",
+  "env": {
+    "SANITY_PROJECT_ID": "@sanity_project_id",
+    "SANITY_DATASET": "@sanity_dataset",
+    "SANITY_WRITE_TOKEN": "@sanity_write_token",
+    "EMAIL_WEBHOOK_URL": "@email_webhook_url",
+    "DISCORD_WEBHOOK_URL": "@discord_webhook_url",
+    "AIRTABLE_BASE_ID": "@airtable_base_id",
+    "AIRTABLE_API_KEY": "@airtable_api_key"
   }
 }
