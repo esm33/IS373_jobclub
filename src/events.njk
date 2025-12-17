@@ -199,9 +199,15 @@ description: "Join our workshops, meetups, and networking events to accelerate y
   }
 </style>
 
+<script src="/js/analytics.js"></script>
 <script>
-  // Event Filtering
+  // Event Filtering with Analytics
   document.addEventListener('DOMContentLoaded', function() {
+    // Track page view
+    if (window.analytics) {
+      window.analytics.trackEventsPageView();
+    }
+    
     const filterButtons = document.querySelectorAll('.filter-btn');
     const eventCards = document.querySelectorAll('.event-card');
     const noEventsMessage = document.getElementById('noEventsMessage');
@@ -231,7 +237,46 @@ description: "Join our workshops, meetups, and networking events to accelerate y
         if (noEventsMessage) {
           noEventsMessage.style.display = visibleCount === 0 ? 'block' : 'none';
         }
+        
+        // Track filter usage
+        if (window.analytics) {
+          window.analytics.trackEventFilter(filter, visibleCount);
+        }
       });
+    });
+    
+    // Track "Learn More" clicks
+    document.querySelectorAll('a[href^="/events/"]').forEach(link => {
+      // Only track links to event detail pages, not the main events page
+      if (link.getAttribute('href') !== '/events/' && link.textContent.includes('Learn More')) {
+        link.addEventListener('click', function(e) {
+          const card = this.closest('.event-card');
+          if (card && window.analytics) {
+            const eventType = card.getAttribute('data-event-type');
+            const eventTitle = card.querySelector('h2').textContent.trim();
+            const eventSlug = this.getAttribute('href').replace('/events/', '').replace('/', '');
+            
+            window.analytics.trackEventLearnMore(eventSlug, eventTitle, eventType);
+          }
+        });
+      }
+    });
+    
+    // Track registration clicks
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      if (link.textContent.includes('Register')) {
+        link.addEventListener('click', function(e) {
+          const card = this.closest('.event-card');
+          if (card && window.analytics) {
+            const eventType = card.getAttribute('data-event-type');
+            const eventTitle = card.querySelector('h2').textContent.trim();
+            const eventSlug = card.querySelector('a[href^="/events/"]').getAttribute('href').replace('/events/', '').replace('/', '');
+            const registrationLink = this.getAttribute('href');
+            
+            window.analytics.trackEventRegistrationClick(eventSlug, eventTitle, eventType, registrationLink);
+          }
+        });
+      }
     });
   });
 </script>

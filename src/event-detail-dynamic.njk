@@ -295,8 +295,42 @@ eleventyComputed:
     eventType: {{ event.eventType | dump | safe }}
   };
   
+  // Track page view
+  if (window.analytics) {
+    window.analytics.trackEventDetailView(
+      eventData.slug,
+      eventData.title,
+      eventData.eventType
+    );
+  }
+  
+  // Track registration clicks
+  document.querySelectorAll('a[href*="http"]').forEach(link => {
+    if (link.textContent.includes('Register Now')) {
+      link.addEventListener('click', function() {
+        if (window.analytics) {
+          window.analytics.trackEventRegistrationClick(
+            eventData.slug,
+            eventData.title,
+            eventData.eventType,
+            this.getAttribute('href')
+          );
+        }
+      });
+    }
+  });
+  
   // Add to Calendar functionality
   document.getElementById('addToCalendarBtn')?.addEventListener('click', function() {
+    // Track calendar download
+    if (window.analytics) {
+      window.analytics.trackAddToCalendar(
+        eventData.slug,
+        eventData.title,
+        eventData.eventType
+      );
+    }
+    
     const startDate = new Date(eventData.date);
     const endDate = eventData.endDate ? new Date(eventData.endDate) : new Date(startDate.getTime() + 60 * 60 * 1000);
     
@@ -346,6 +380,15 @@ END:VCALENDAR`;
     if (navigator.share) {
       try {
         await navigator.share(shareData);
+        // Track successful share
+        if (window.analytics) {
+          window.analytics.trackEventShare(
+            eventData.slug,
+            eventData.title,
+            eventData.eventType,
+            'native'
+          );
+        }
       } catch (err) {
         console.log('Share cancelled');
       }
@@ -353,6 +396,15 @@ END:VCALENDAR`;
       // Fallback: copy link
       navigator.clipboard.writeText(window.location.href).then(() => {
         alert('Event link copied to clipboard!');
+        // Track clipboard share
+        if (window.analytics) {
+          window.analytics.trackEventShare(
+            eventData.slug,
+            eventData.title,
+            eventData.eventType,
+            'clipboard'
+          );
+        }
       });
     }
   });

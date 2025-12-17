@@ -145,10 +145,10 @@ class OnboardingForm {
    */
   getApiEndpoint() {
     // Use the local API endpoint for form submission
-    // In development: http://localhost:3002/api/submit-onboarding
+    // In development: http://localhost:4999/api/submit-onboarding
     // In production: same domain /api/submit-onboarding
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      return 'http://localhost:3002/api/submit-onboarding';
+      return 'http://localhost:4999/api/submit-onboarding';
     }
     return '/api/submit-onboarding';
   }
@@ -173,7 +173,7 @@ class OnboardingForm {
         githubUrl: document.getElementById('github').value.trim(),
         websiteUrl: document.getElementById('website').value.trim(),
         calendlyUrl: document.getElementById('calendly').value.trim(),
-        careerGoal: document.getElementById('careerGoal').value.trim()
+        careerGoal: document.getElementById('careerGoal').value.trim(),
       };
       
       // Client-side validation

@@ -53,9 +53,40 @@
     {# Favicon and Icons #}
     <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | baseUrl }}">
     
+    {# Google Analytics 4 - Add your measurement ID #}
+    {% if site.googleAnalytics %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleAnalytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      // Default consent mode
+      gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied'
+      });
+      
+      // Check for consent
+      const analyticsConsent = localStorage.getItem('analytics_consent');
+      if (analyticsConsent === 'true') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+      
+      gtag('config', '{{ site.googleAnalytics }}', {
+        'anonymize_ip': true,
+        'cookie_flags': 'SameSite=None;Secure'
+      });
+    </script>
+    {% endif %}
+    
     {# Stylesheets #}
     <link rel="preload" href="{{ '/css/main.css' | baseUrl }}" as="style">
     <link rel="stylesheet" href="{{ '/css/main.css' | baseUrl }}">
+    <link rel="stylesheet" href="{{ '/css/cookie-consent.css' | baseUrl }}">
     <link rel="stylesheet" href="{{ '/css/print.css' | baseUrl }}" media="print">
     
     {# Fonts #}
@@ -332,7 +363,10 @@
                     <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer" class="copyright-link">Eleventy</a> and 
                     <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="copyright-link">Tailwind CSS</a>.
                 </p>
-                <a href="/privacy/" style="color: #5F6368; font-size: 12px; font-weight: 500; transition: color 0.2s ease;" class="hover:text-primary">Privacy Policy</a>
+                <div class="flex gap-4">
+                    <a href="/privacy/" style="color: #5F6368; font-size: 12px; font-weight: 500; transition: color 0.2s ease;" class="hover:text-primary">Privacy Policy</a>
+                    <button data-cookie-preferences style="color: #5F6368; font-size: 12px; font-weight: 500; transition: color 0.2s ease; background: none; border: none; cursor: pointer; padding: 0;" class="hover:text-primary">Cookie Preferences</button>
+                </div>
             </div>
         </div>
         
@@ -429,6 +463,12 @@
         })();
     </script>
 
+    <!-- Cookie Consent (must load first) -->
+    <script src="{{ '/js/cookie-consent.js' | baseUrl }}"></script>
+    
+    <!-- Analytics Module -->
+    <script src="{{ '/js/analytics.js' | baseUrl }}"></script>
+    
     <!-- Swiss Mobile Menu - Vanilla JavaScript (CSP-safe) -->
     <script src="{{ '/js/mobile-menu.bundle.js' | baseUrl }}"></script>
     
