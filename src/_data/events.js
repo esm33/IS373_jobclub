@@ -83,6 +83,34 @@ export default async function() {
 function getSampleEvents() {
   return [
     {
+      _id: 'sample-past-1',
+      title: 'Python for Data Science Workshop',
+      slug: 'python-data-science-workshop',
+      description: 'Introduction to Python libraries for data analysis: NumPy, Pandas, and Matplotlib.',
+      fullDescription: 'This workshop covered the essential Python libraries for data science. Participants learned how to use NumPy for numerical computing, Pandas for data manipulation, and Matplotlib for data visualization.\n\nTopics covered:\n- NumPy arrays and operations\n- Pandas DataFrames and data cleaning\n- Data visualization with Matplotlib\n- Real-world data analysis examples\n\nThanks to everyone who attended!',
+      eventType: 'workshop',
+      date: '2024-11-10T18:00:00Z',
+      endDate: '2024-11-10T20:00:00Z',
+      location: {
+        isVirtual: false,
+        venue: 'NJIT Campus',
+        room: 'GITC 3700',
+        address: 'University Heights, Newark, NJ 07102'
+      },
+      capacity: 25,
+      registrationRequired: true,
+      speakers: [
+        {
+          name: 'Dr. Alex Kumar',
+          title: 'Data Scientist',
+          company: 'Microsoft',
+          bio: 'Alex specializes in machine learning and data analytics with 8+ years of industry experience.'
+        }
+      ],
+      tags: ['Python', 'Data Science', 'Machine Learning', 'Completed'],
+      status: 'published'
+    },
+    {
       _id: 'sample-1',
       title: 'React Fundamentals Workshop',
       slug: 'react-fundamentals-workshop',
