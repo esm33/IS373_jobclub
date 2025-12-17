@@ -8,106 +8,126 @@ description: "Join our workshops, meetups, and networking events to accelerate y
 
 <main>
   <!-- Hero Section -->
-  <section style="padding: 120px 0 80px; background: linear-gradient(135deg, var(--primary) 0%, #667eea 100%); color: white; position: relative; overflow: hidden;">
+  <section style="padding: 120px 0 80px; background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%); position: relative; overflow: hidden;">
     <div class="container relative z-10">
-      <h1 class="font-bold mb-6 animate-fade-in" style="font-family: 'Google Sans', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1;">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background: rgba(103, 80, 164, 0.1); backdrop-filter: blur(10px);">
+        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--primary);">event</span>
+        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--primary);">Community Events</span>
+      </div>
+      
+      <!-- Material Design Display Large (57px) -->
+      <h1 class="font-bold mb-4 animate-fade-in" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2.5rem, 5vw, 3.5625rem); line-height: 1.12; letter-spacing: -0.25px;">
         Upcoming Events
       </h1>
-      <p class="text-xl mb-8" style="max-width: 600px; opacity: 0.95; line-height: 1.6;">
+      <!-- Material Design Body Large (16px) -->
+      <p class="mb-8" style="max-width: 700px; color: var(--text); opacity: 0.7; font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.6;">
         Connect, learn, and grow with hands-on workshops, guest speakers, and networking opportunities designed to accelerate your AI career.
       </p>
       
-      <!-- Search Bar -->
-      <div class="mb-6" style="max-width: 600px;">
-        <div style="position: relative;">
-          <span class="material-icons-round" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: rgba(255, 255, 255, 0.7);">search</span>
-          <input type="text" id="eventSearch" placeholder="Search events by title or description..." style="width: 100%; padding: 0.875rem 1rem 0.875rem 3rem; border-radius: 100px; border: 2px solid rgba(255, 255, 255, 0.3); background: rgba(255, 255, 255, 0.2); color: white; font-size: 1rem; backdrop-filter: blur(10px);" />
+      <!-- Material Design 3 Outlined Search Field -->
+      <div class="mb-8" style="max-width: 700px;">
+        <div style="position: relative; width: 100%;">
+          <label for="eventSearch" style="position: absolute; left: 16px; top: -8px; background: white; padding: 0 4px; font-size: 0.75rem; color: var(--primary); font-weight: 500; letter-spacing: 0.5px; z-index: 1;">
+            Search events
+          </label>
+          <span class="material-icons-round" style="position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: rgba(103, 80, 164, 0.6); font-size: 20px; pointer-events: none; z-index: 1;">search</span>
+          <input type="text" id="eventSearch" placeholder="Title or description" style="width: 100%; padding: 16px 16px 16px 48px; border-radius: 16px; border: 2px solid rgba(103, 80, 164, 0.2); background: white; color: var(--text); font-size: 1rem; line-height: 1.5; letter-spacing: 0.5px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 8px rgba(103, 80, 164, 0.08);" />
         </div>
       </div>
       
-      <!-- Event Type Filters -->
-      <div class="flex flex-wrap gap-3 mb-6" id="eventFilters">
-        <button class="filter-btn active" data-filter="all" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid white; padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
+      <!-- Material Design 3 Filter Chips -->
+      <div class="flex flex-wrap gap-3" id="eventFilters" style="margin-bottom: 0;">
+        <button class="filter-chip active" data-filter="all" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); color: white; border: none; padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px; box-shadow: 0 2px 8px rgba(103, 80, 164, 0.25);">
           All Events
         </button>
-        <button class="filter-btn" data-filter="workshop" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
-          🛠️ Workshops
+        <button class="filter-chip" data-filter="workshop" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+          <span style="font-size: 16px;">🛠️</span>
+          Workshops
         </button>
-        <button class="filter-btn" data-filter="office-hours" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
-          💼 Office Hours
+        <button class="filter-chip" data-filter="office-hours" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+          <span style="font-size: 16px;">💼</span>
+          Office Hours
         </button>
-        <button class="filter-btn" data-filter="meetup" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
-          🤝 Meetups
+        <button class="filter-chip" data-filter="meetup" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+          <span style="font-size: 16px;">🤝</span>
+          Meetups
         </button>
-        <button class="filter-btn" data-filter="guest-speaker" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
-          🎤 Guest Speakers
+        <button class="filter-chip" data-filter="guest-speaker" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+          <span style="font-size: 16px;">🎤</span>
+          Guest Speakers
         </button>
-        <button class="filter-btn" data-filter="hack-night" style="background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid rgba(255, 255, 255, 0.3); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; cursor: pointer; transition: all 0.3s;">
-          💻 Hack Nights
+        <button class="filter-chip" data-filter="hack-night" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+          <span style="font-size: 16px;">💻</span>
+          Hack Nights
         </button>
       </div>
     </div>
-    
-    <!-- Decorative Background -->
-    <div style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; opacity: 0.1; background: radial-gradient(circle, white 1px, transparent 1px); background-size: 50px 50px;"></div>
   </section>
   
   <!-- Events Listing Section -->
-  <section style="padding: 80px 0; background: var(--bg);">
+  <section style="padding: 80px 0 120px; background-color: #FEFBFF;">
     <div class="container">
       {% if events and events.length > 0 %}
       
-      <!-- All Events Grid (JavaScript will handle upcoming/past separation) -->
-      <h2 class="text-3xl font-bold mb-8" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
-        Upcoming Events
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" id="eventsGrid">
+      <!-- Section Header matching homepage pattern -->
+      <div class="text-center mb-12">
+        <h2 class="font-bold mb-4" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.1; letter-spacing: -0.01em;">
+          Upcoming Events
+        </h2>
+        <p style="color: var(--text); opacity: 0.7; max-width: 600px; margin: 0 auto; font-size: 1.125rem; line-height: 1.6;">
+          Find the perfect event to advance your career and expand your network
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="eventsGrid">
         {% for event in events %}
-        <article class="event-card" data-event-type="{{ event.eventType }}" data-title="{{ event.title | lower }}" data-description="{{ event.description | lower }}" data-date="{{ event.date }}" data-slug="{{ event.slug }}" style="background: var(--bg-secondary); border-radius: 24px; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border);">
+        <article class="event-card" data-event-type="{{ event.eventType }}" data-title="{{ event.title | lower }}" data-description="{{ event.description | lower }}" data-date="{{ event.date }}" data-slug="{{ event.slug }}" style="background: var(--bg-secondary); border-radius: 12px; overflow: hidden; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border); box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
           <!-- Event Type Badge -->
-          <div style="padding: 1.5rem 1.5rem 0;">
-            <span class="event-type-badge" style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; display: inline-block;">
-              {% if event.eventType == 'workshop' %}🛠️ Workshop
-              {% elif event.eventType == 'office-hours' %}💼 Office Hours
-              {% elif event.eventType == 'meetup' %}🤝 Meetup
-              {% elif event.eventType == 'guest-speaker' %}🎤 Guest Speaker
-              {% elif event.eventType == 'hack-night' %}💻 Hack Night
-              {% else %}📅 Event{% endif %}
+          <div style="padding: 16px 16px 0;">
+            <span class="event-type-badge" style="background: var(--primary); color: white; padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; line-height: 1.67; letter-spacing: 0.4px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px;">
+              {% if event.eventType == 'workshop' %}<span style="font-size: 14px;">🛠️</span>Workshop
+              {% elif event.eventType == 'office-hours' %}<span style="font-size: 14px;">💼</span>Office Hours
+              {% elif event.eventType == 'meetup' %}<span style="font-size: 14px;">🤝</span>Meetup
+              {% elif event.eventType == 'guest-speaker' %}<span style="font-size: 14px;">🎤</span>Guest Speaker
+              {% elif event.eventType == 'hack-night' %}<span style="font-size: 14px;">💻</span>Hack Night
+              {% else %}<span style="font-size: 14px;">📅</span>Event{% endif %}
             </span>
             
             {% if event.featured %}
-            <span style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; display: inline-block; margin-left: 0.5rem;">
-              ⭐ Featured
+            <span style="background: var(--accent); color: white; padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; line-height: 1.67; letter-spacing: 0.4px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; margin-left: 8px;">
+              <span style="font-size: 14px;">⭐</span>Featured
             </span>
             {% endif %}
           </div>
           
           <!-- Event Content -->
-          <div style="padding: 1.5rem;">
-            <h2 class="text-2xl font-bold mb-3" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
-              <a href="/events/{{ event.slug }}/" style="color: var(--text); text-decoration: none;">
+          <div style="padding: 16px;">
+            <!-- Material Design Title Large (22px) -->
+            <h3 class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.375rem; line-height: 1.27; letter-spacing: 0;">
+              <a href="/events/{{ event.slug }}/" style="color: var(--text); text-decoration: none; transition: color 0.2s;">
                 {{ event.title }}
               </a>
-            </h2>
+            </h3>
             
-            <p style="color: var(--text); opacity: 0.7; margin-bottom: 1.5rem; line-height: 1.6;">
-              {{ event.description | truncate(150) }}
+            <!-- Material Design Body Medium (14px) -->
+            <p style="color: var(--text); opacity: 0.7; margin-bottom: 16px; line-height: 1.43; letter-spacing: 0.25px; font-size: 0.875rem;">
+              {{ event.description | truncate(120) }}
             </p>
             
             <!-- Event Meta -->
-            <div class="space-y-2 mb-6" style="font-size: 0.875rem;">
-              <div class="flex items-center gap-2">
-                <span class="material-icons-round" style="font-size: 1.25rem; color: var(--primary);">schedule</span>
-                <span style="color: var(--text); opacity: 0.8;">
+            <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.25px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="material-icons-round" style="font-size: 20px; color: var(--primary);">schedule</span>
+                <span style="color: var(--text); opacity: 0.87;">
                   {{ event.date | readableDate }}
                 </span>
               </div>
               
-              <div class="flex items-center gap-2">
-                <span class="material-icons-round" style="font-size: 1.25rem; color: var(--primary);">place</span>
-                <span style="color: var(--text); opacity: 0.8;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="material-icons-round" style="font-size: 20px; color: var(--primary);">place</span>
+                <span style="color: var(--text); opacity: 0.87;">
                   {% if event.location.isVirtual %}
-                    🌐 Virtual Event
+                    Virtual Event
                   {% else %}
                     {{ event.location.venue }}
                   {% endif %}
@@ -115,33 +135,33 @@ description: "Join our workshops, meetups, and networking events to accelerate y
               </div>
               
               {% if event.capacity %}
-              <div class="flex items-center gap-2">
-                <span class="material-icons-round" style="font-size: 1.25rem; color: var(--primary);">people</span>
-                <span style="color: var(--text); opacity: 0.8;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="material-icons-round" style="font-size: 20px; color: var(--primary);">people</span>
+                <span style="color: var(--text); opacity: 0.87;">
                   {{ event.capacity }} spots available
                 </span>
               </div>
               {% endif %}
             </div>
             
-            <!-- Tags -->
+            <!-- Tags - Material Design Assist Chips -->
             {% if event.tags and event.tags.length > 0 %}
-            <div class="flex flex-wrap gap-2 mb-6">
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
               {% for tag in event.tags | head(3) %}
-              <span style="background: var(--bg); color: var(--text); padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.75rem; border: 1px solid var(--border);">
+              <span style="background: var(--bg); color: var(--text); opacity: 0.87; padding: 4px 8px; border-radius: 8px; font-size: 0.6875rem; line-height: 1.45; letter-spacing: 0.1px; font-weight: 500; border: 1px solid var(--border);">
                 {{ tag }}
               </span>
               {% endfor %}
             </div>
             {% endif %}
             
-            <!-- Action Buttons -->
-            <div class="flex gap-3">
-              <a href="/events/{{ event.slug }}/" class="btn" style="flex: 1; background: var(--primary); color: white; padding: 0.75rem 1.5rem; border-radius: 100px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s;">
+            <!-- Material Design 3 Buttons -->
+            <div style="display: flex; gap: 8px;">
+              <a href="/events/{{ event.slug }}/" class="event-btn event-btn-filled" style="flex: 1; background: var(--primary); color: white; padding: 10px 24px; border-radius: 20px; text-align: center; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; text-decoration: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);">
                 Learn More
               </a>
               {% if event.registrationRequired and event.registrationLink %}
-              <a href="{{ event.registrationLink }}" target="_blank" class="btn" style="background: var(--bg); color: var(--primary); border: 2px solid var(--primary); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; text-decoration: none; transition: all 0.3s;">
+              <a href="{{ event.registrationLink }}" target="_blank" class="event-btn event-btn-outlined" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 24px; border-radius: 20px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; text-decoration: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);">
                 Register
               </a>
               {% endif %}
@@ -152,19 +172,17 @@ description: "Join our workshops, meetups, and networking events to accelerate y
       </div>
       
       <!-- Past Events Archive (populated by JavaScript) -->
-      <div id="pastEventsSection" style="margin-top: 4rem; display: none;">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
+      <div id="pastEventsSection" style="margin-top: 48px; display: none;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 16px;">
+          <h2 class="font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: 1.75rem; line-height: 1.29; letter-spacing: 0;">
             Past Events
           </h2>
-          <button id="togglePastEvents" class="btn" style="background: var(--bg-secondary); color: var(--text); padding: 0.75rem 1.5rem; border-radius: 100px; font-weight: 600; border: 1px solid var(--border); cursor: pointer; transition: all 0.3s;">
-            <span class="flex items-center gap-2">
-              <span>Show Past Events</span>
-              <span class="material-icons-round" style="font-size: 1.25rem;">expand_more</span>
-            </span>
+          <button id="togglePastEvents" class="btn" style="background: var(--bg-secondary); color: var(--text); padding: 10px 24px; border-radius: 20px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; border: 1px solid var(--border); cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px;">
+            <span>Show Past Events</span>
+            <span class="material-icons-round" style="font-size: 20px;">expand_more</span>
           </button>
         </div>
-        <div id="pastEventsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="display: none;">
+        <div id="pastEventsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style="display: none;">
           <!-- Past events will be populated by JavaScript -->
         </div>
       </div>
@@ -196,15 +214,25 @@ description: "Join our workshops, meetups, and networking events to accelerate y
   </section>
   
   <!-- Call to Action -->
-  <section style="padding: 80px 0; background: linear-gradient(135deg, var(--primary) 0%, #667eea 100%); color: white;">
+  <section style="padding: 80px 0; background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%);">
     <div class="container text-center">
-      <h2 class="text-4xl font-bold mb-4" style="font-family: 'Google Sans', sans-serif;">
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background: rgba(0, 191, 165, 0.1);">
+        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--secondary);">add_circle</span>
+        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--secondary);">Get Involved</span>
+      </div>
+      
+      <!-- Material Design Headline Medium -->
+      <h2 class="font-bold mb-4" style="font-family: 'Google Sans', sans-serif; color: var(--text); font-size: clamp(2rem, 4vw, 2.5rem); line-height: 1.1; letter-spacing: -0.01em;">
         Want to Host an Event?
       </h2>
-      <p class="text-xl mb-8" style="max-width: 600px; margin: 0 auto 2rem; opacity: 0.95;">
+      <!-- Material Design Body Large -->
+      <p class="mb-8" style="max-width: 600px; margin: 0 auto 32px; color: var(--text); opacity: 0.7; font-size: 1.125rem; line-height: 1.6;">
         Have an idea for a workshop or want to share your expertise? We'd love to hear from you!
       </p>
-      <a href="mailto:jobclub@njit.edu" class="btn" style="background: white; color: var(--primary); padding: 1rem 2rem; font-size: 1.125rem; border-radius: 100px; font-weight: 600; text-decoration: none; display: inline-block;">
+      <!-- Material Design 3 Primary Button -->
+      <a href="mailto:jobclub@njit.edu" class="cta-btn" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); color: white; padding: 1rem 2.5rem; font-size: 1rem; border-radius: 100px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative;">
+        <span class="material-icons-round" style="font-size: 1.25rem;">email</span>
         Propose an Event
       </a>
     </div>
@@ -212,40 +240,137 @@ description: "Join our workshops, meetups, and networking events to accelerate y
 </main>
 
 <style>
+  /* Material Design 3 Card Elevation on Hover */
+  .event-card {
+    position: relative;
+  }
+  
+  .event-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    background: rgba(103, 80, 164, 0.08);
+    opacity: 0;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+  
   .event-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(103, 80, 164, 0.2);
-  }
-  
-  .past-event:hover {
-    opacity: 1 !important;
-  }
-  
-  .filter-btn:hover {
-    background: rgba(255, 255, 255, 0.3) !important;
     transform: translateY(-2px);
+    box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   }
   
-  .filter-btn.active {
-    background: white !important;
-    color: var(--primary) !important;
-    border-color: white !important;
+  .event-card:hover::before {
+    opacity: 1;
   }
   
+  /* Material Design 3 Button Hover States */
+  .event-btn-filled:hover {
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .event-btn-filled::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  
+  .event-btn-filled:hover::before {
+    opacity: 1;
+  }
+  
+  .event-btn-outlined:hover {
+    background: rgba(103, 80, 164, 0.08);
+  }
+  
+  /* Material Design 3 Filter Chip Hover States */
+  .filter-chip {
+    position: relative;
+  }
+  
+  .filter-chip {
+    position: relative;
+  }
+  
+  .filter-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(103, 80, 164, 0.2);
+    border-color: rgba(103, 80, 164, 0.4);
+  }
+  
+  .filter-chip:active {
+    transform: translateY(0);
+  }
+  
+  /* Material Design 3 Search Input */
   #eventSearch::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(103, 80, 164, 0.4);
+  }
+  
+  #eventSearch:hover {
+    background: white;
+    border-color: rgba(103, 80, 164, 0.3);
+    box-shadow: 0 4px 12px rgba(103, 80, 164, 0.12);
   }
   
   #eventSearch:focus {
     outline: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: white;
+    border-color: var(--primary);
+    border-width: 2px;
+    padding: 15px 15px 15px 47px;
+    box-shadow: 0 4px 16px rgba(103, 80, 164, 0.16);
   }
   
-  #togglePastEvents:hover {
-    background: var(--primary) !important;
-    color: white !important;
+  /* Past Events Toggle Button */
+  #togglePastEvents {
+    position: relative;
+  }
+  
+  #togglePastEvents::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    background: var(--primary);
+    opacity: 0;
+    transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  
+  #togglePastEvents:hover::before {
+    opacity: 0.08;
+  }
+  
+  #togglePastEvents:active {
+    transform: scale(0.98);
+  }
+  
+  /* Title Link Hover */
+  .event-card h3 a:hover {
+    color: var(--primary) !important;
+  }
+  
+  /* CTA Button Hover State */
+  .cta-btn:hover {
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(103, 80, 164, 0.4);
+  }
+  
+  .cta-btn:active {
+    transform: translateY(0);
     box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3);
+  }
+  
+  /* Smooth Transitions */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 </style>
 
@@ -258,7 +383,7 @@ description: "Join our workshops, meetups, and networking events to accelerate y
       window.analytics.trackEventsPageView();
     }
     
-    const filterButtons = document.querySelectorAll('.filter-btn');
+    const filterButtons = document.querySelectorAll('.filter-chip');
     const eventsGrid = document.getElementById('eventsGrid');
     const pastEventsGrid = document.getElementById('pastEventsGrid');
     const pastEventsSection = document.getElementById('pastEventsSection');
@@ -319,10 +444,6 @@ description: "Join our workshops, meetups, and networking events to accelerate y
       pastEventsSection.style.display = 'block';
     }
     
-    let currentFilter = 'all';
-    let currentSearch = '';
-    let pastEventsVisible = false;
-    
     // Function to apply all filters
     function applyFilters() {
       let visibleCount = 0;
@@ -375,8 +496,21 @@ description: "Join our workshops, meetups, and networking events to accelerate y
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
         // Update active state
-        filterButtons.forEach(btn => btn.classList.remove('active'));
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          // Reset to inactive style - white background with border
+          btn.style.background = 'white';
+          btn.style.color = 'var(--primary)';
+          btn.style.border = '2px solid rgba(103, 80, 164, 0.2)';
+          btn.style.boxShadow = 'none';
+        });
         button.classList.add('active');
+        
+        // Apply active style - gradient background
+        button.style.background = 'linear-gradient(135deg, #6750A4 0%, #9575CD 100%)';
+        button.style.color = 'white';
+        button.style.border = 'none';
+        button.style.boxShadow = '0 2px 8px rgba(103, 80, 164, 0.25)';
         
         // Get filter value
         currentFilter = button.getAttribute('data-filter');
