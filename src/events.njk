@@ -57,17 +57,13 @@ description: "Join our workshops, meetups, and networking events to accelerate y
     <div class="container">
       {% if events and events.length > 0 %}
       
-      <!-- Upcoming Events -->
-      {% set upcomingEvents = events | selectattr('date') | rejectattr('date', 'lt', 'now') | list %}
-      {% set pastEvents = events | selectattr('date') | selectattr('date', 'lt', 'now') | list %}
-      
-      {% if upcomingEvents.length > 0 %}
+      <!-- All Events Grid (JavaScript will handle upcoming/past separation) -->
       <h2 class="text-3xl font-bold mb-8" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
         Upcoming Events
       </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" id="upcomingEventsGrid">
-        {% for event in upcomingEvents %}
-        <article class="event-card" data-event-type="{{ event.eventType }}" data-title="{{ event.title | lower }}" data-description="{{ event.description | lower }}" style="background: var(--bg-secondary); border-radius: 24px; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border);">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16" id="eventsGrid">
+        {% for event in events %}
+        <article class="event-card" data-event-type="{{ event.eventType }}" data-title="{{ event.title | lower }}" data-description="{{ event.description | lower }}" data-date="{{ event.date }}" data-slug="{{ event.slug }}" style="background: var(--bg-secondary); border-radius: 24px; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border);">
           <!-- Event Type Badge -->
           <div style="padding: 1.5rem 1.5rem 0;">
             <span class="event-type-badge" style="background: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; display: inline-block;">
@@ -154,11 +150,9 @@ description: "Join our workshops, meetups, and networking events to accelerate y
         </article>
         {% endfor %}
       </div>
-      {% endif %}
       
-      <!-- Past Events Archive -->
-      {% if pastEvents.length > 0 %}
-      <div id="pastEventsSection" style="margin-top: 4rem;">
+      <!-- Past Events Archive (populated by JavaScript) -->
+      <div id="pastEventsSection" style="margin-top: 4rem; display: none;">
         <div class="flex items-center justify-between mb-8">
           <h2 class="text-3xl font-bold" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
             Past Events
@@ -171,55 +165,9 @@ description: "Join our workshops, meetups, and networking events to accelerate y
           </button>
         </div>
         <div id="pastEventsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="display: none;">
-          {% for event in pastEvents %}
-          <article class="event-card past-event" data-event-type="{{ event.eventType }}" data-title="{{ event.title | lower }}" data-description="{{ event.description | lower }}" style="background: var(--bg-secondary); border-radius: 24px; overflow: hidden; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border); opacity: 0.8;">
-            <!-- Event Type Badge -->
-            <div style="padding: 1.5rem 1.5rem 0;">
-              <span class="event-type-badge" style="background: var(--text); opacity: 0.3; color: var(--bg); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; display: inline-block;">
-                {% if event.eventType == 'workshop' %}🛠️ Workshop
-                {% elif event.eventType == 'office-hours' %}💼 Office Hours
-                {% elif event.eventType == 'meetup' %}🤝 Meetup
-                {% elif event.eventType == 'guest-speaker' %}🎤 Guest Speaker
-                {% elif event.eventType == 'hack-night' %}💻 Hack Night
-                {% else %}📅 Event{% endif %}
-              </span>
-              <span style="background: var(--text); opacity: 0.2; color: var(--bg); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; display: inline-block; margin-left: 0.5rem;">
-                ✓ Completed
-              </span>
-            </div>
-            
-            <!-- Event Content -->
-            <div style="padding: 1.5rem;">
-              <h3 class="text-2xl font-bold mb-3" style="font-family: 'Google Sans', sans-serif; color: var(--text);">
-                <a href="/events/{{ event.slug }}/" style="color: var(--text); text-decoration: none;">
-                  {{ event.title }}
-                </a>
-              </h3>
-              
-              <p style="color: var(--text); opacity: 0.6; margin-bottom: 1.5rem; line-height: 1.6;">
-                {{ event.description | truncate(150) }}
-              </p>
-              
-              <!-- Event Meta -->
-              <div class="space-y-2 mb-6" style="font-size: 0.875rem;">
-                <div class="flex items-center gap-2">
-                  <span class="material-icons-round" style="font-size: 1.25rem; color: var(--text); opacity: 0.5;">schedule</span>
-                  <span style="color: var(--text); opacity: 0.6;">
-                    {{ event.date | readableDate }}
-                  </span>
-                </div>
-              </div>
-              
-              <!-- Action Button -->
-              <a href="/events/{{ event.slug }}/" class="btn" style="display: block; background: var(--bg); color: var(--text); padding: 0.75rem 1.5rem; border-radius: 100px; text-align: center; font-weight: 600; text-decoration: none; transition: all 0.3s; border: 1px solid var(--border);">
-                View Details
-              </a>
-            </div>
-          </article>
-          {% endfor %}
+          <!-- Past events will be populated by JavaScript -->
         </div>
       </div>
-      {% endif %}
       
       <!-- Empty State for Filters -->
       <div id="noEventsMessage" style="display: none; text-align: center; padding: 4rem 2rem;">
@@ -311,13 +259,65 @@ description: "Join our workshops, meetups, and networking events to accelerate y
     }
     
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const eventCards = document.querySelectorAll('.event-card:not(.past-event)');
-    const pastEventCards = document.querySelectorAll('.past-event');
-    const allEventCards = document.querySelectorAll('.event-card');
+    const eventsGrid = document.getElementById('eventsGrid');
+    const pastEventsGrid = document.getElementById('pastEventsGrid');
+    const pastEventsSection = document.getElementById('pastEventsSection');
     const noEventsMessage = document.getElementById('noEventsMessage');
     const searchInput = document.getElementById('eventSearch');
     const togglePastButton = document.getElementById('togglePastEvents');
-    const pastEventsGrid = document.getElementById('pastEventsGrid');
+    
+    let currentFilter = 'all';
+    let currentSearch = '';
+    let pastEventsVisible = false;
+    let upcomingCards = [];
+    let pastCards = [];
+    
+    // Separate events into upcoming and past
+    const now = new Date();
+    const allEventCards = document.querySelectorAll('.event-card');
+    
+    allEventCards.forEach(card => {
+      const eventDate = new Date(card.getAttribute('data-date'));
+      
+      if (eventDate >= now) {
+        // Upcoming event - keep in main grid
+        upcomingCards.push(card);
+      } else {
+        // Past event - move to past events grid
+        pastCards.push(card);
+        card.remove(); // Remove from main grid
+        
+        // Style as past event
+        card.classList.add('past-event');
+        card.style.opacity = '0.8';
+        
+        // Update badge styling
+        const badge = card.querySelector('.event-type-badge');
+        if (badge) {
+          badge.style.background = 'var(--text)';
+          badge.style.opacity = '0.3';
+          badge.style.color = 'var(--bg)';
+        }
+        
+        // Add completed badge
+        const badgeContainer = card.querySelector('[style*="padding: 1.5rem 1.5rem 0"]');
+        if (badgeContainer && !badgeContainer.querySelector('.completed-badge')) {
+          const completedBadge = document.createElement('span');
+          completedBadge.className = 'completed-badge';
+          completedBadge.style.cssText = 'background: var(--text); opacity: 0.2; color: var(--bg); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.875rem; font-weight: 600; display: inline-block; margin-left: 0.5rem;';
+          completedBadge.textContent = '✓ Completed';
+          badgeContainer.appendChild(completedBadge);
+        }
+        
+        // Append to past events grid
+        pastEventsGrid.appendChild(card);
+      }
+    });
+    
+    // Show past events section only if there are past events
+    if (pastCards.length > 0) {
+      pastEventsSection.style.display = 'block';
+    }
     
     let currentFilter = 'all';
     let currentSearch = '';
@@ -328,7 +328,7 @@ description: "Join our workshops, meetups, and networking events to accelerate y
       let visibleCount = 0;
       
       // Filter upcoming events
-      eventCards.forEach(card => {
+      upcomingCards.forEach(card => {
         const eventType = card.getAttribute('data-event-type');
         const title = card.getAttribute('data-title') || '';
         const description = card.getAttribute('data-description') || '';
@@ -346,8 +346,8 @@ description: "Join our workshops, meetups, and networking events to accelerate y
       });
       
       // Filter past events if visible
-      if (pastEventsVisible) {
-        pastEventCards.forEach(card => {
+      if (pastEventsVisible && pastCards.length > 0) {
+        pastCards.forEach(card => {
           const eventType = card.getAttribute('data-event-type');
           const title = card.getAttribute('data-title') || '';
           const description = card.getAttribute('data-description') || '';
@@ -386,7 +386,7 @@ description: "Join our workshops, meetups, and networking events to accelerate y
         
         // Track filter usage
         if (window.analytics) {
-          const visibleCount = Array.from(allEventCards).filter(card => card.style.display !== 'none').length;
+          const visibleCount = [...upcomingCards, ...pastCards].filter(card => card.style.display !== 'none').length;
           window.analytics.trackEventFilter(currentFilter, visibleCount);
         }
       });
