@@ -266,6 +266,38 @@ Label Small:  11px | Medium (500) | Line Height: 16px | Tracking: 0.5px
 
 ## 4. Voice & Tone
 
+### Brand Archetype: The Mentor (Sage + Caregiver)
+
+**Primary Archetype: The Sage**
+- **Core Motivation**: Seek truth and share knowledge
+- **Goal**: Help others understand the world through wisdom and expertise
+- **Strategy**: Continuous learning and thoughtful teaching
+- **Message**: "The truth will set you free"
+
+**Secondary Archetype: The Caregiver**
+- **Core Motivation**: Protect and care for others
+- **Goal**: Help students succeed and feel supported
+- **Strategy**: Do things for others, provide guidance and resources
+- **Message**: "I've got your back"
+
+**Why This Combination Works for Job Club:**
+
+The Mentor archetype blends the Sage's pursuit of knowledge with the Caregiver's nurturing support. This reflects the brand's dual nature:
+1. **Sage qualities**: 23 years of expertise, research-backed insights, honest conversations about AI
+2. **Caregiver qualities**: Student-focused support, welcoming community, personalized guidance
+
+**How This Shows Up:**
+- We share hard truths about AI and careers (Sage) but with encouragement and support (Caregiver)
+- We provide expert knowledge (Sage) while making it accessible and approachable (Caregiver)
+- We challenge students to think critically (Sage) while celebrating their progress (Caregiver)
+
+**Brand Personality Traits:**
+- **Wise**: Drawing from 23 years of experience and 10,000+ students
+- **Honest**: "AI won't replace your job, but someone using AI might"
+- **Supportive**: Creating safe spaces for learning and growth
+- **Experienced**: Deep technical knowledge paired with teaching expertise
+- **Grounded**: Realistic about challenges, optimistic about solutions
+
 ### Brand Voice Attributes
 
 **🎯 Clear & Direct**
