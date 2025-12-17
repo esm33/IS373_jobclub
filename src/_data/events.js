@@ -22,8 +22,8 @@ export default async function() {
       useCdn: false // Use fresh data for build
     });
 
-    // Query for published events (temporarily removed date filter for debugging)
-    const query = `*[_type == "event" && status == "published"] | order(date asc) {
+    // Query for all published events (both upcoming and past)
+    const query = `*[_type == "event" && status == "published"] | order(date desc) {
       _id,
       title,
       "slug": slug.current,

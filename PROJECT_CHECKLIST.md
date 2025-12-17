@@ -155,10 +155,10 @@ Must track:
 - [x] Implement cookie consent banner ✅
 - [ ] Test in production environment
 
-### ⏳ Events - Additional Features
-- [ ] Test events page with real Sanity data
-- [ ] Add past events archive section
-- [ ] Add event search functionality
+### ✅ Events - Additional Features (COMPLETE)
+- [x] Test events page with real Sanity data ✅
+- [x] Add past events archive section ✅
+- [x] Add event search functionality ✅
 - [ ] Optional: Event reminder email signup
 - [ ] Optional: RSVP tracking system
 - [ ] Optional: Event cancellation notification
@@ -166,7 +166,7 @@ Must track:
 - [ ] Optional: Event waitlist functionality
 - [ ] Optional: Event feedback/review system
 
-**Events Section Status:** 37/46 complete (80%)
+**Events Section Status:** 40/46 complete (87%)
 
 **Status:** 0/4 complete
 

@@ -9,6 +9,63 @@
 
 ## Session Log
 
+### December 17, 2025 (Evening) - Events System Completion
+
+**Time:** Evening Session  
+**Contributor:** Adriana (via GitHub Copilot)
+
+#### Actions Completed:
+
+1. ✅ **Added Event Search Functionality**
+   - Implemented real-time search bar on events page
+   - Searches across event titles and descriptions
+   - Instant filtering with case-insensitive matching
+   - Stylish Material Design search input with icon
+   - Focus/blur animations for better UX
+   - Works in combination with event type filters
+
+2. ✅ **Implemented Past Events Archive**
+   - Separated events into "Upcoming" and "Past" sections
+   - Date-based filtering using Nunjucks filters
+   - Collapsible past events section with toggle button
+   - Different styling for completed events (muted appearance)
+   - "Show/Hide Past Events" button with icon animation
+   - Past events support same filtering and search as upcoming
+
+3. ✅ **Enhanced Events Data Fetching**
+   - Updated `events.js` query to fetch both upcoming and past events
+   - Changed sort order to `desc` (newest first)
+   - Better handling of date comparisons
+   - Successfully tested with 5 real events from Sanity CMS
+
+4. ✅ **Improved Events Page UX**
+   - Added data attributes for search (`data-title`, `data-description`)
+   - Combined filter and search functionality seamlessly
+   - Improved empty state messaging
+   - Added hover effects for past events
+   - Enhanced toggle button with smooth transitions
+   - Better visual hierarchy between upcoming and past events
+
+5. ✅ **Testing with Real Data**
+   - Verified events system working with Sanity CMS
+   - Successfully fetched 5 events (Office Hours, Hack Night, Panel, Workshop, Meetup)
+   - All event types displaying correctly
+   - Filtering and search working as expected
+   - Analytics tracking functional on all interactions
+
+#### Files Modified:
+- `src/events.njk` - Added search bar, past events section, enhanced JavaScript
+- `src/_data/events.js` - Updated query sorting and comments
+- `PROJECT_CHECKLIST.md` - Updated Events Section from 80% to 87% complete
+
+#### Impact:
+- **Events System now 87% complete** (40/46 tasks)
+- All core features implemented and tested
+- Production-ready event browsing experience
+- Remaining items are optional enhancements (RSVP, reminders, waitlist)
+
+---
+
 ### December 17, 2025 - Analytics Implementation Complete
 
 **Time:** Afternoon Session  
