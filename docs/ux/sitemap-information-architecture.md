@@ -10,36 +10,25 @@ Job Club
 │
 ├── Home (/)
 │
-├── About (/about)
-│   ├── Mission
-│   ├── How It Works
-│   ├── Team
-│   └── FAQ
+├── Resource Library (/resources/)
+│   ├── LinkedIn Optimization Guide
+│   ├── GitHub Profile Setup Guide
+│   ├── Portfolio Website Guide
+│   └── AI Skills Career Success Guide
 │
-├── Onboarding (/onboarding)
-│   ├── Welcome
-│   ├── Choose Path
-│   ├── Email Subscription
-│   └── Join Community
+├── Events (/events/)
+│   ├── Upcoming Events
+│   ├── Event Details (individual)
+│   └── Event Filters (Workshop, Office Hours, Meetup, Guest Speaker, Hack Night)
 │
-├── Community (/community)
-│   └── Discord
+├── About (/about/)
 │
-├── Events (/events)
-│   ├── Upcoming
-│   ├── Past
-│   └── Calendar
-│
-├── Career Hub (/career)
-│   ├── Portfolio Template
-│   ├── Resume
-│   └── Interview Prep
-│
-└── Account (/account)
-    ├── Dashboard
-    ├── Profile
-    └── Settings
+└── Join Now (/onboarding/)
 ```
+
+**Navigation Structure:**
+- **Primary Nav**: Home, Resource Library, Events, About
+- **CTA Button**: Join Now (prominent in header)
 
 ---
 
@@ -66,28 +55,28 @@ Job Club
 
 ### Top-Level Navigation
 ```
-┌───────────────────────────────────────────────────────────┐
-│  [Logo] Home  About  Community  Events  Career  [Account] │
-└───────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│  [Logo] Home  Resource Library  Events  About  [Join Now]       │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
-**Order rationale**:
-1. **About** - Understand the mission
-2. **Community** - Connect with members
-3. **Events** - Engage with activities
-4. **Career** - Prepare for the future
+**Navigation elements**:
+- **Home** - Landing page
+- **Resource Library** - Guides and resources
+- **Events** - Workshops and meetups
+- **About** - Background and mission
+- **Join Now** - Primary CTA (styled as button)
 
 ### Mobile Navigation
 ```
 ┌──────────────────┐
-│  ☰  Job Club  👤 │
+│  ☰  Job Club    │
 ├──────────────────┤
 │  Home            │
-│  About           │
-│  Community       │
+│  Resource Library│
 │  Events          │
-│  Career Hub      │
-│  Account         │
+│  About           │
+│  Join Now        │
 └──────────────────┘
 ```
 
@@ -96,24 +85,157 @@ Job Club
 ## Page-Level Architecture
 
 ### Homepage
-**Purpose**: Orient, inspire, convert visitors to members
+**Purpose**: Introduce the brand, showcase community, drive engagement
 
 **Information Hierarchy**:
 1. **Hero Section**
-   - Value proposition
-   - Primary CTA (Start Onboarding)
-   - Visual hook
+   - Personal brand (Eriberto S. Marte)
+   - Value proposition: "Build your future with AI education, real connections, and career opportunities"
+   - Primary CTAs: "Join Town Hall" and "Learn More"
 
-2. **Social Proof**
-   - Member count
-   - Success metrics
-   - Testimonials
+2. **Stats Row**
+   - 23 Years teaching
+   - 10,000+ Students
+   - AI Impact metrics
 
-3. **How It Works**
-   - 3-4 step process
-   - Link to About page
+3. **About Preview**
+   - Brief background
+   - Experience highlights
+   - Link to full About page
 
-4. **Quick Links**
+4. **Key Sections**
+   - Projects showcase
+   - Town Hall preview
+   - Event highlights
+
+---
+
+### Resource Library Page
+**Purpose**: Provide curated career development guides
+
+**Content Structure**:
+- Page title and description
+- Grid of resource cards (2-column layout)
+- Each resource card includes:
+  - Icon with gradient background
+  - Title and category
+  - Description
+  - "What You'll Learn" highlights
+  - Time estimate
+  - Download/access button
+
+**Current Resources**:
+1. LinkedIn Optimization Guide
+2. GitHub Profile Setup Guide
+3. Portfolio Website Guide
+4. AI Skills Career Success Guide
+
+---
+
+### Events Page
+**Purpose**: Showcase workshops, meetups, and networking opportunities
+
+**Page Structure**:
+1. **Hero Section**
+   - Page title: "Upcoming Events"
+   - Description
+   - Event type filters:
+     - All Events
+     - 🛠️ Workshops
+     - 💼 Office Hours
+     - 🤝 Meetups
+     - 🎤 Guest Speakers
+     - 💻 Hack Nights
+
+2. **Events Grid**
+   - Card-based layout (3-column on desktop)
+   - Each event card shows:
+     - Event type badge
+     - Featured badge (if applicable)
+     - Title
+     - Date and time
+     - Location (Virtual/In-person)
+     - Duration and attendee count
+     - Brief description
+     - RSVP button
+     - Link to event details
+
+3. **Individual Event Detail Pages**
+   - Full event information
+   - Schedule and agenda
+   - Registration/RSVP
+   - Speaker information (if applicable)
+   - Location details
+
+---
+
+### About Page
+**Purpose**: Share background, experience, and mission
+
+**Content Sections**:
+1. **Page Header**
+   - Section number and title
+   - Structural divider
+
+2. **Introduction**
+   - "Twenty-Three Years. Ten Thousand Students."
+   - Teaching background and evolution
+   - Technology journey
+
+3. **Experience Highlights**
+   - NJIT background
+   - Course development
+   - Student impact
+
+4. **Current Work**
+   - Enterprise AI program
+   - EverydayAI Community
+   - Teaching philosophy
+
+5. **Skills & Expertise**
+   - Technical skills
+   - Leadership experience
+   - Educational approach
+
+---
+
+### Onboarding/Join Now Page
+**Purpose**: Collect member information and complete registration
+
+**Form Structure**:
+1. **Header**
+   - Welcome message
+   - "Welcome to Job Club" title
+   - Description
+
+2. **Form Sections**
+   - Personal Information:
+     - Full Name
+     - Email Address
+   - Academic Information:
+     - NJIT ID
+     - Graduation Year
+     - Major
+   - Career Interests:
+     - AI Interest Areas (checkboxes)
+     - Career Goals
+     - Skill Level
+   - Commitment:
+     - Weekly Time Commitment
+     - Participation Agreement
+   - Success message on submission
+
+---
+
+### Onboarding Flow
+**Purpose**: Welcome new members and guide initial setup
+
+**Current Implementation**:
+- Single-page form with all fields
+- Material Design 3 styling
+- Icon-enhanced sections
+- Gradient backgrounds
+- Success confirmation
    - Latest blog posts
    - Upcoming events
    - Project showcase
