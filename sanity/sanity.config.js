@@ -99,6 +99,13 @@ export default defineConfig({
                     { field: "submittedAt", direction: "desc" },
                   ]),
               ),
+            S.divider(),
+            S.documentTypeListItem("event")
+              .title("📅 Events"),
+            S.documentTypeListItem("resource")
+              .title("📚 Resources"),
+            S.documentTypeListItem("author")
+              .title("✍️ Authors"),
           ]),
     }),
     visionTool(),
