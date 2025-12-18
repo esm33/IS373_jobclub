@@ -169,25 +169,25 @@ class EventsManager {
               <span>${locationText}</span>
             </div>
             ${
-  event.capacity
-    ? `
+              event.capacity
+                ? `
               <div class="flex items-center gap-2">
                 <span class="material-icons-round" style="font-size: 1.125rem; color: var(--primary);">people</span>
                 <span>Capacity: ${event.capacity} attendees</span>
               </div>
             `
-    : ""
-}
+                : ""
+            }
             ${
-  event.speakers && event.speakers.length > 0
-    ? `
+              event.speakers && event.speakers.length > 0
+                ? `
               <div class="flex items-center gap-2">
                 <span class="material-icons-round" style="font-size: 1.125rem; color: var(--primary);">person</span>
                 <span>${event.speakers[0].name}${event.speakers[0].company ? " - " + event.speakers[0].company : ""}</span>
               </div>
             `
-    : ""
-}
+                : ""
+            }
           </div>
           
           ${this.renderCTA(event)}

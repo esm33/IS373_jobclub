@@ -1,0 +1,40 @@
+{
+  "config": {
+    "default": true,
+    // Disable line-length rule - too restrictive for documentation
+    "MD013": false,
+    // Disable bare URL rule - acceptable in documentation
+    "MD034": false,
+    // Disable trailing punctuation in headings - stylistic choice
+    "MD026": false,
+    // Disable emphasis as heading - used for formatting
+    "MD036": false,
+    // Disable inline HTML - needed for custom layouts
+    "MD033": false,
+    // Disable duplicate headings - acceptable in long docs
+    "MD024": false,
+    // Disable ordered list prefix - stylistic
+    "MD029": false,
+    // Disable fenced code language - not always needed
+    "MD040": false,
+    // Disable blanks around fences - stylistic
+    "MD031": false,
+    // Disable link fragments - false positives with anchors
+    "MD051": false,
+    // Disable unused reference definitions - false positives
+    "MD053": false,
+    // Allow multiple h1 tags - needed for documentation structure
+    "MD025": false,
+    // Disable tables blank lines - stylistic
+    "MD058": false,
+    // Disable code block style - allow both fenced and indented
+    "MD046": false
+  },
+  // Ignore generated/build files
+  "ignores": [
+    "node_modules/**",
+    "_site/**",
+    "dist/**",
+    "build/**"
+  ]
+}
