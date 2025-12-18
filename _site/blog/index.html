@@ -143,46 +143,47 @@
             </a>
 
             <!-- Desktop Navigation -->
-            <ul class="hidden lg:flex nav-links">
+            <ul class="hidden lg:flex nav-links" style="gap: 8px;">
                 <li>
-                    <a href="/" class="nav-link ">
+                    <a href="/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="/resources/" class="nav-link ">
+                    <a href="/resources/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Resource Library
                     </a>
                 </li>
                 <li>
-                    <a href="/events/" class="nav-link ">
+                    <a href="/events/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Events
                     </a>
                 </li>
                 <li>
-                    <a href="/about/" class="nav-link ">
+                    <a href="/about/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         About
                     </a>
                 </li>
                 <li>
-                    <a href="/onboarding/" class="btn btn-primary">
+                    <a href="/onboarding/" class="btn btn-primary" style="min-height: 48px; display: inline-flex; align-items: center; padding: 12px 24px;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Join Now
                     </a>
                 </li>
             </ul>
-                            
-                        </a>
-                    </li>
-                </ul>
 
             <!-- Mobile Menu Button -->
             <button 
                 type="button" 
                 data-testid="mobile-menu-button"
-                class="lg:hidden w-12 h-12 flex items-center justify-center menu-button"
+                class="lg:hidden flex items-center justify-center menu-button"
+                style="min-width: 48px; min-height: 48px; border-radius: 50%; transition: all 0.3s;"
                 aria-expanded="false"
                 aria-controls="mobile-menu"
                 aria-label="Toggle navigation menu"
+                onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'; this.style.backgroundColor='rgba(103, 80, 164, 0.08)'"
+                onblur="this.style.outline='none'; this.style.backgroundColor='transparent'"
+                onmouseover="this.style.backgroundColor='rgba(103, 80, 164, 0.08)'"
+                onmouseout="this.style.backgroundColor='transparent'"
             >
                 <span class="material-icons-round text-3xl" style="color: var(--text);">menu</span>
             </button>
@@ -194,32 +195,32 @@
         data-testid="mobile-menu"
         id="mobile-menu"
         class="lg:hidden fixed inset-0 z-40 hidden"
-        style="background-color: var(--surface); top: 64px; padding: var(--space-xl);"
+        style="background-color: var(--surface); top: 64px; padding: 24px;"
     >
         <nav>
-            <ul class="space-y-4">
+            <ul class="space-y-3">
                 <li>
-                    <a href="/" class="block nav-link text-lg ">
+                    <a href="/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="/resources/" class="block nav-link text-lg ">
+                    <a href="/resources/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Resource Library
                     </a>
                 </li>
                 <li>
-                    <a href="/events/" class="block nav-link text-lg ">
+                    <a href="/events/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Events
                     </a>
                 </li>
                 <li>
-                    <a href="/about/" class="block nav-link text-lg ">
+                    <a href="/about/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         About
                     </a>
                 </li>
-                <li>
-                    <a href="/onboarding/" class="btn btn-primary w-full">
+                <li style="margin-top: 16px;">
+                    <a href="/onboarding/" class="btn btn-primary w-full" style="min-height: 48px; display: flex; align-items: center; justify-content: center; padding: 14px 24px;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Join Now
                     </a>
                 </li>
@@ -233,270 +234,403 @@
         
 
 
-<section class="py-12 md:py-16 lg:py-20" style="padding-top: 120px !important;">
-  <div style="max-width: 1440px; margin: 0 auto; padding-left: var(--swiss-grid-margin); padding-right: var(--swiss-grid-margin);">
+<section style="padding: 120px 0 80px; background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%);">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
     
-    <div class="swiss-grid mb-12" style="border-left: 4px solid var(--swiss-red); padding-left: var(--space-md);">
-      <div class="swiss-col-7">
-        <p class="text-sm font-bold uppercase tracking-wider mb-2" style="color: var(--swiss-gray-600);">03 — ARTICLES</p>
-        <h1 class="font-bold mb-4" style="font-size: var(--fluid-h1); line-height: 1.1; letter-spacing: -0.02em;">Blog</h1>
-        <p class="text-lg" style="color: var(--swiss-gray-700); max-width: 60ch;">Articles, tutorials, and insights about web development</p>
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background: rgba(103, 80, 164, 0.1); backdrop-filter: blur(10px);">
+        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--primary);">article</span>
+        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--primary);">Blog & Articles</span>
       </div>
+      <h1 class="font-bold mb-6" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em;">Blog</h1>
+      <p style="color: var(--text); opacity: 0.7; max-width: 700px; margin: 0 auto; font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.6;">Articles, tutorials, and insights about web development</p>
     </div>
     
+  </div>
+</section>
+
+<section style="padding: 64px 0 96px; background-color: #FEFBFF;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
     
-    <div class="swiss-divider mb-12"></div>
     
-    
-    
-    <div class="space-y-0">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-01-01" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-01-01" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             December 31, 2024
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/welcome/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">How I Built This Site in 10 Hours (And What That Means for You)</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/welcome/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">How I Built This Site in 10 Hours (And What That Means for You)</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">You&#39;re reading this on a Swiss design system I built with AI in one evening. If I can do this—what can you do with AI tools in your field?</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">You&#39;re reading this on a Swiss design system I built with AI in one evening. If I can do this—what can you do with AI...</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/welcome/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/welcome/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-11-06" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-11-06" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             November 5, 2025
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/ai-printing-press/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">AI Is Our Printing Press Moment (And That&#39;s Both Exciting and Terrifying)</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/ai-printing-press/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">AI Is Our Printing Press Moment (And That&#39;s Both Exciting and Terrifying)</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">Everyone&#39;s talking about AI like it&#39;s magic. Let me tell you what it actually is—and why the printing press comparison matters more than you think.</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">Everyone&#39;s talking about AI like it&#39;s magic. Let me tell you what it actually is—and why the printing press comparison...</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/ai-printing-press/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/ai-printing-press/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-11-07" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-11-07" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             November 6, 2025
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/ai-risks-that-matter/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">The AI Risks That Actually Matter (And the Ones Getting All the Attention)</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/ai-risks-that-matter/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">The AI Risks That Actually Matter (And the Ones Getting All the Attention)</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">Everyone&#39;s worried about AGI and robot uprisings. Meanwhile, the real risks—job displacement, algorithmic bias, and privacy erosion—are happening right now. Let&#39;s talk about what actually keeps me up at night.</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">Everyone&#39;s worried about AGI and robot uprisings. Meanwhile, the real risks—job displacement, algorithmic bias, and...</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/ai-risks-that-matter/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/ai-risks-that-matter/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-11-08" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-11-08" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             November 7, 2025
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/what-2035-looks-like/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">What 2035 Actually Looks Like: Three Realistic AI Scenarios</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/what-2035-looks-like/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">What 2035 Actually Looks Like: Three Realistic AI Scenarios</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">Forget the utopia/dystopia extremes. Here are three grounded predictions for how AI will actually reshape work, education, and opportunity over the next decade—based on history, not hype.</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">Forget the utopia/dystopia extremes. Here are three grounded predictions for how AI will actually reshape work,...</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/what-2035-looks-like/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/what-2035-looks-like/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-11-09" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-11-09" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             November 8, 2025
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/how-to-think-about-ai/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">How to Think About AI Long-Term: A Framework That Actually Works</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/how-to-think-about-ai/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">How to Think About AI Long-Term: A Framework That Actually Works</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">AGI by 2027? Self-driving cars everywhere? Don&#39;t trust predictions—trust principles. Here&#39;s a mental model for evaluating AI hype based on history, not hope.</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">AGI by 2027? Self-driving cars everywhere? Don&#39;t trust predictions—trust principles. Here&#39;s a mental model for...</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/how-to-think-about-ai/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/how-to-think-about-ai/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-11-13" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-11-13" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             November 12, 2025
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/agi-hype-cycle/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">Everyone Says AGI Is Coming in 5 Years. They&#39;re Probably Wrong.</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/agi-hype-cycle/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">Everyone Says AGI Is Coming in 5 Years. They&#39;re Probably Wrong.</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">AI leaders keep predicting AGI by 2028. Let me show you why you should take those predictions with a massive grain of salt.</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">AI leaders keep predicting AGI by 2028. Let me show you why you should take those predictions with a massive grain of...</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/agi-hype-cycle/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/agi-hype-cycle/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-11-20" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-11-20" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             November 19, 2025
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/ai-job-reality/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">What Actually Happens to Your Job When AI Gets Better</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/ai-job-reality/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">What Actually Happens to Your Job When AI Gets Better</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">Everyone&#39;s scared AI will take their job. The reality is way more complicated—and way more interesting—than that.</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">Everyone&#39;s scared AI will take their job. The reality is way more complicated—and way more interesting—than that.</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/ai-job-reality/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/ai-job-reality/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-11-27" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-11-27" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             November 26, 2025
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/education-ai-reality/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">How Education Needs to Change (And Why It Won&#39;t Happen Overnight)</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/education-ai-reality/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">How Education Needs to Change (And Why It Won&#39;t Happen Overnight)</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">I gave my class an impossible assignment: build custom Shopify themes in 7 days. Every single student delivered. Here&#39;s what that means for education.</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">I gave my class an impossible assignment: build custom Shopify themes in 7 days. Every single student delivered. Here&#39;s...</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/education-ai-reality/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/education-ai-reality/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-12-04" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-12-04" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             December 3, 2025
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/ai-productivity-reality/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">The AI Productivity Gains Are Real (Just Smaller Than the Headlines)</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/ai-productivity-reality/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">The AI Productivity Gains Are Real (Just Smaller Than the Headlines)</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">Goldman Sachs says AI will add $7 trillion to the global economy. McKinsey says $4.4 trillion. Here&#39;s what those numbers actually mean for you.</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">Goldman Sachs says AI will add $7 trillion to the global economy. McKinsey says $4.4 trillion. Here&#39;s what those numbers...</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/ai-productivity-reality/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/ai-productivity-reality/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
-        
-        <div class="swiss-col-2">
-          <time datetime="2025-12-11" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
+      <article style="
+        background: var(--md-surface);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      " onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)'">
+        <div style="padding: 24px; flex: 1; display: flex; flex-direction: column;">
+          <time datetime="2025-12-11" style="font-size: 0.875rem; font-weight: 500; color: var(--primary); margin-bottom: 12px; display: block;">
             December 10, 2025
           </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/skills-that-matter/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">What You Should Actually Learn Right Now (It&#39;s Not What You Think)</a>
+          <h2 style="font-family: 'Google Sans', sans-serif; font-size: 1.375rem; font-weight: 700; line-height: 1.3; margin-bottom: 12px; flex: 1;">
+            <a href="/blog/skills-that-matter/" style="color: var(--text); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='#6750A4'" onmouseout="this.style.color='var(--text)'">What You Should Actually Learn Right Now (It&#39;s Not What You Think)</a>
           </h2>
           
-          <p style="color: var(--swiss-gray-700);">Everyone&#39;s rushing to learn prompt engineering and AI tools. That&#39;s fine. But it&#39;s not what will make you valuable long-term.</p>
+          <p style="color: var(--text); opacity: 0.7; font-size: 0.9375rem; line-height: 1.6; margin-bottom: 16px;">Everyone&#39;s rushing to learn prompt engineering and AI tools. That&#39;s fine. But it&#39;s not what will make you valuable...</p>
           
-        </div>
-        
-        
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/skills-that-matter/" class="btn-swiss-primary">READ ARTICLE</a>
+          <a href="/blog/skills-that-matter/" style="
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 0.875rem;
+            text-decoration: none;
+            padding: 8px 0;
+            transition: gap 0.2s;
+          " onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='8px'">
+            <span>Read Article</span>
+            <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+          </a>
         </div>
       </article>
     </div>
@@ -619,27 +753,67 @@
             transition: all 0.2s ease;
             display: inline-block;
             position: relative;
+            padding: 6px 0;
+            min-height: 32px;
+            line-height: 20px;
         }
         .footer-link:hover {
             color: var(--primary);
         }
+        .footer-link:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
         
         .social-icon-minimal {
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background-color: #F8F9FA;
             color: #5F6368;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .social-icon-minimal:hover {
-            background-color: #E8DEF8;
+            background-color: rgba(103, 80, 164, 0.08);
             color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(103, 80, 164, 0.15);
+            transform: translateY(-2px);
+        }
+        .social-icon-minimal:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            background-color: rgba(103, 80, 164, 0.08);
+        }
+        
+        .copyright-link {
+            color: var(--primary);
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .copyright-link:hover {
+            text-decoration: underline;
+        }
+        .copyright-link:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        
+        button[data-cookie-preferences]:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        .scroll-top-fab:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(103, 80, 164, 0.4);
+        }
+        .scroll-top-fab:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
         }
         
         .copyright-link {

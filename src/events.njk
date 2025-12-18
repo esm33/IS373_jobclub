@@ -36,28 +36,28 @@ description: "Join our workshops, meetups, and networking events to accelerate y
         </div>
       </div>
       
-      <!-- Material Design 3 Filter Chips -->
-      <div class="flex flex-wrap gap-3" id="eventFilters" style="margin-bottom: 0;">
-        <button class="filter-chip active" data-filter="all" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); color: white; border: none; padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px; box-shadow: 0 2px 8px rgba(103, 80, 164, 0.25);">
+      <!-- Material Design 3 Filter Chips - Accessible -->
+      <div class="flex flex-wrap gap-3" id="eventFilters" style="margin-bottom: 0;" role="group" aria-label="Filter events by type">
+        <button class="filter-chip active" data-filter="all" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); color: white; border: none; padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px; box-shadow: 0 2px 8px rgba(103, 80, 164, 0.25);" onfocus="this.style.outline='2px solid #FFFFFF'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="true">
           All Events
         </button>
-        <button class="filter-chip" data-filter="workshop" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="workshop" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">🛠️</span>
           Workshops
         </button>
-        <button class="filter-chip" data-filter="office-hours" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="office-hours" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">💼</span>
           Office Hours
         </button>
-        <button class="filter-chip" data-filter="meetup" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="meetup" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">🤝</span>
           Meetups
         </button>
-        <button class="filter-chip" data-filter="guest-speaker" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="guest-speaker" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">🎤</span>
           Guest Speakers
         </button>
-        <button class="filter-chip" data-filter="hack-night" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="hack-night" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">💻</span>
           Hack Nights
         </button>
