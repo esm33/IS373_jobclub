@@ -6,13 +6,13 @@
 
 ## 📊 Current Setup
 
-| Component | Status | Details |
-|-----------|--------|---------|
-| Sanity Project | ✅ Active | ID: 2nqkaqwe, Dataset: production |
-| Member Schema | ✅ Ready | `memberProfile.js` - stores onboarding submissions |
-| Event Schema | ✅ Ready | `event.js` - stores event listings (8945 bytes) |
-| Write Token | ✅ Configured | In `.env.local` - has Editor permissions |
-| Sanity Studio | ✅ Ready | Local dev at `http://localhost:3333` |
+| Component      | Status        | Details                                            |
+| -------------- | ------------- | -------------------------------------------------- |
+| Sanity Project | ✅ Active     | ID: 2nqkaqwe, Dataset: production                  |
+| Member Schema  | ✅ Ready      | `memberProfile.js` - stores onboarding submissions |
+| Event Schema   | ✅ Ready      | `event.js` - stores event listings (8945 bytes)    |
+| Write Token    | ✅ Configured | In `.env.local` - has Editor permissions           |
+| Sanity Studio  | ✅ Ready      | Local dev at `http://localhost:3333`               |
 
 ---
 
@@ -26,6 +26,7 @@ npm run populate:events
 ```
 
 **What this does:**
+
 - Reads from `scripts/populate-events.js`
 - Creates 5 sample events with full data:
   1. React Fundamentals Workshop
@@ -36,6 +37,7 @@ npm run populate:events
 - Each event includes: date, location, speakers, tags, capacity, registration links
 
 **Example Output:**
+
 ```
 🚀 Starting to populate Sanity with sample events...
 
@@ -59,6 +61,7 @@ npm run build
 ```
 
 This rebuilds the site and fetches real event data from Sanity:
+
 - `src/_data/events.js` queries Sanity for all published events
 - Events are embedded into the build
 - Events page now shows real data instead of fallback sample data
@@ -71,6 +74,7 @@ npm run dev
 ```
 
 **What you should see:**
+
 - ✅ 5 real events from Sanity displayed
 - ✅ Filter buttons working (click to filter by event type)
 - ✅ Event details showing (date, location, capacity, speakers)
@@ -87,6 +91,7 @@ npm run sanity:studio
 ```
 
 You should see:
+
 - Left sidebar with "Content" menu
 - "Events" section showing 5 created events
 - Ability to edit, delete, or create new events
@@ -99,6 +104,7 @@ You should see:
 ### Method 1: Use Sanity Studio (Recommended for Team)
 
 1. Start the Sanity Studio:
+
    ```bash
    npm run sanity:studio
    # Visit: http://localhost:3333
@@ -131,6 +137,7 @@ You should see:
 1. Edit `scripts/populate-events.js`
 
 2. Add new event object to `sampleEvents` array:
+
    ```javascript
    {
      _type: 'event',
@@ -184,7 +191,7 @@ http://localhost:8080/events/
 ### Key Files:
 
 - **sanity/schemas/event.js** - Event data model (8945 bytes)
-- **src/_data/events.js** - Fetches events from Sanity during build (156 lines)
+- **src/\_data/events.js** - Fetches events from Sanity during build (156 lines)
 - **src/events.njk** - Events listing page with Material Design (238 lines)
 - **src/event-detail-dynamic.njk** - Dynamic event detail pages
 - **src/js/events.js** - Client-side filtering and interactions
@@ -255,7 +262,7 @@ git push
 
 git push
 
-# GitHub Actions workflow (.github/workflows/deploy.yml) 
+# GitHub Actions workflow (.github/workflows/deploy.yml)
 # automatically builds and deploys to GitHub Pages
 ```
 
@@ -295,6 +302,7 @@ Before declaring "ready for team":
 ### Events not showing on site
 
 1. Check Sanity connection:
+
    ```bash
    # Verify credentials in .env.local
    cat .env.local | grep SANITY
@@ -305,6 +313,7 @@ Before declaring "ready for team":
    - Draft events won't appear
 
 3. Rebuild site:
+
    ```bash
    npm run build
    ```
@@ -316,6 +325,7 @@ Before declaring "ready for team":
 ### Populate script fails
 
 1. Check token:
+
    ```bash
    echo $SANITY_WRITE_TOKEN
    # Should start with 'sk'

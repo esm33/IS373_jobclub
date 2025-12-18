@@ -17,35 +17,43 @@ Job Club NJIT achieves perfect Lighthouse SEO scores through comprehensive meta 
 ### 1. Meta Tags
 
 #### Base Layout (`src/_layouts/base.njk`)
+
 ```html
 <head>
   <!-- Essential Meta Tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ title }} - {{ site.title }}</title>
-  <meta name="description" content="{{ description or site.description }}">
-  
+  <meta name="description" content="{{ description or site.description }}" />
+
   <!-- Open Graph (Social Sharing) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ title }} - {{ site.title }}">
-  <meta property="og:description" content="{{ description or site.description }}">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:image" content="{{ site.url }}/images/og-image.png">
-  
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ title }} - {{ site.title }}" />
+  <meta
+    property="og:description"
+    content="{{ description or site.description }}"
+  />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}/images/og-image.png" />
+
   <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ title }} - {{ site.title }}">
-  <meta name="twitter:description" content="{{ description or site.description }}">
-  <meta name="twitter:image" content="{{ site.url }}/images/twitter-card.png">
-  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title }} - {{ site.title }}" />
+  <meta
+    name="twitter:description"
+    content="{{ description or site.description }}"
+  />
+  <meta name="twitter:image" content="{{ site.url }}/images/twitter-card.png" />
+
   <!-- Canonical URL -->
-  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 </head>
 ```
 
 ### 2. Sitemap Generation
 
 **File:** `src/sitemap.njk`
+
 ```njk
 ---
 permalink: /sitemap.xml
@@ -71,6 +79,7 @@ eleventyExcludeFromCollections: true
 ### 3. Robots.txt
 
 **File:** `src/robots.njk`
+
 ```
 ---
 permalink: /robots.txt
@@ -85,41 +94,43 @@ Sitemap: {{ site.url }}/sitemap.xml
 ### 4. Structured Data (JSON-LD)
 
 #### Organization Schema
+
 ```html
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Job Club NJIT",
-  "url": "https://jobclub-njit.netlify.app",
-  "logo": "https://jobclub-njit.netlify.app/images/logo.png",
-  "description": "AI Career Accelerator for NJIT Students",
-  "sameAs": [
-    "https://github.com/jobclub-njit",
-    "https://linkedin.com/company/jobclub-njit"
-  ]
-}
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Job Club NJIT",
+    "url": "https://jobclub-njit.netlify.app",
+    "logo": "https://jobclub-njit.netlify.app/images/logo.png",
+    "description": "AI Career Accelerator for NJIT Students",
+    "sameAs": [
+      "https://github.com/jobclub-njit",
+      "https://linkedin.com/company/jobclub-njit"
+    ]
+  }
 </script>
 ```
 
 #### Event Schema
+
 ```html
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "name": "{{ event.title }}",
-  "startDate": "{{ event.date | dateToRfc3339 }}",
-  "location": {
-    "@type": "Place",
-    "name": "{{ event.location }}"
-  },
-  "description": "{{ event.description }}",
-  "organizer": {
-    "@type": "Organization",
-    "name": "Job Club NJIT"
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "{{ event.title }}",
+    "startDate": "{{ event.date | dateToRfc3339 }}",
+    "location": {
+      "@type": "Place",
+      "name": "{{ event.location }}"
+    },
+    "description": "{{ event.description }}",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Job Club NJIT"
+    }
   }
-}
 </script>
 ```
 
@@ -128,23 +139,29 @@ Sitemap: {{ site.url }}/sitemap.xml
 ## Semantic HTML
 
 ### Proper Heading Hierarchy
+
 ```html
 <body>
   <header>
-    <h1>Job Club NJIT</h1> <!-- Site title -->
+    <h1>Job Club NJIT</h1>
+    <!-- Site title -->
   </header>
-  
+
   <main>
-    <h1>Page Title</h1>          <!-- Page h1 -->
+    <h1>Page Title</h1>
+    <!-- Page h1 -->
     <section>
-      <h2>Section Title</h2>      <!-- Section h2 -->
-      <h3>Subsection Title</h3>   <!-- Subsection h3 -->
+      <h2>Section Title</h2>
+      <!-- Section h2 -->
+      <h3>Subsection Title</h3>
+      <!-- Subsection h3 -->
     </section>
   </main>
 </body>
 ```
 
 ### Landmark Regions
+
 ```html
 <header role="banner">
   <nav aria-label="Main navigation" role="navigation">
@@ -166,16 +183,19 @@ Sitemap: {{ site.url }}/sitemap.xml
 ## Content Optimization
 
 ### 1. Title Tags
+
 - **Format:** `[Page Title] - [Site Name]`
 - **Length:** 50-60 characters
 - **Unique** for every page
 
 ### 2. Meta Descriptions
+
 - **Length:** 150-160 characters
 - **Descriptive** and **actionable**
 - **Unique** for every page
 
 **Examples:**
+
 ```
 Home: "Job Club NJIT - AI Career Accelerator helping students transition into AI careers through workshops, mentorship, and hands-on projects."
 
@@ -185,6 +205,7 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 ```
 
 ### 3. Image Alt Text
+
 - **Descriptive** and **contextual**
 - **Not keyword stuffed**
 - **Empty for decorative images**
@@ -194,21 +215,24 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 ## Performance & SEO
 
 ### Core Web Vitals
-| Metric | Value | Target | SEO Impact |
-|--------|-------|--------|------------|
-| **LCP** | 1.2s | <2.5s | ✅ Positive |
+
+| Metric  | Value  | Target | SEO Impact  |
+| ------- | ------ | ------ | ----------- |
+| **LCP** | 1.2s   | <2.5s  | ✅ Positive |
 | **FID** | <100ms | <100ms | ✅ Positive |
-| **CLS** | 0.02 | <0.1 | ✅ Positive |
+| **CLS** | 0.02   | <0.1   | ✅ Positive |
 
 **Note:** Google uses Core Web Vitals as ranking signals
 
 ### Mobile-Friendliness
+
 - ✅ Responsive design
 - ✅ Touch targets ≥44px
 - ✅ No horizontal scrolling
 - ✅ Readable font sizes
 
 ### Page Speed
+
 - **Desktop:** 98/100
 - **Mobile:** 95/100
 - **First Contentful Paint:** 0.8s
@@ -218,6 +242,7 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 ## URL Structure
 
 ### Best Practices Applied
+
 ```
 ✅ Good URLs:
 /events/
@@ -230,6 +255,7 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 ```
 
 **Characteristics:**
+
 - Human-readable
 - Descriptive
 - Lowercase
@@ -241,11 +267,13 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 ## Internal Linking Strategy
 
 ### Navigation
+
 - Clear hierarchy
 - Descriptive anchor text
 - No "click here" links
 
 ### Breadcrumbs
+
 ```html
 <nav aria-label="Breadcrumb">
   <ol>
@@ -261,6 +289,7 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 ## RSS Feed
 
 **File:** `src/feed.njk`
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -287,6 +316,7 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 ## SEO Checklist
 
 ### Technical SEO ✅
+
 - [x] Unique title tags (50-60 chars)
 - [x] Unique meta descriptions (150-160 chars)
 - [x] Semantic HTML structure
@@ -299,6 +329,7 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 - [x] No broken links
 
 ### On-Page SEO ✅
+
 - [x] H1 tag on every page
 - [x] Proper heading hierarchy
 - [x] Image alt text
@@ -307,12 +338,14 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 - [x] External links (open in new tab)
 
 ### Content SEO ✅
+
 - [x] High-quality content
 - [x] Regular updates (blog posts)
 - [x] Long-form content (>500 words)
 - [x] Keyword optimization (natural)
 
 ### Social SEO ✅
+
 - [x] Open Graph tags
 - [x] Twitter Card tags
 - [x] Social sharing buttons
@@ -323,6 +356,7 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 ## Tools & Validation
 
 ### SEO Testing Tools
+
 - ✅ Google Search Console (submit sitemap)
 - ✅ Lighthouse SEO audit (100/100)
 - ✅ Schema.org validator
@@ -330,6 +364,7 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 - ✅ Twitter Card validator
 
 ### Monitoring
+
 - Google Search Console
 - Google Analytics 4
 - Sitemap submitted to Google
@@ -353,6 +388,7 @@ Onboarding: "Join Job Club NJIT to access exclusive AI career resources, persona
 ---
 
 **Target Keywords:**
+
 - AI career accelerator
 - NJIT student jobs
 - AI workshops NJ

@@ -158,7 +158,7 @@ class SwissAboutEnhanced {
           link.style.opacity = "1";
           link.style.transform = "translateX(0)";
         },
-        300 + index * 100
+        300 + index * 100,
       );
 
       // Initial state
@@ -200,7 +200,7 @@ class SwissAboutEnhanced {
       });
 
       // Click feedback
-      link.addEventListener("click", (e) => {
+      link.addEventListener("click", (_e) => {
         link.style.transform = "scale(0.95)";
         setTimeout(() => {
           link.style.transform = "scale(1)";
@@ -220,7 +220,10 @@ class SwissAboutEnhanced {
 }
 
 // Initialize on about page
-if (document.querySelector("[data-skill-card]") || document.querySelector("[data-contact-link]")) {
+if (
+  document.querySelector("[data-skill-card]") ||
+  document.querySelector("[data-contact-link]")
+) {
   new SwissAboutEnhanced();
 }
 

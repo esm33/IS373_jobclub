@@ -1,3 +1,4 @@
+/* global gtag */
 /**
  * Analytics Tracking Module
  * Implements Google Analytics 4 event tracking with consent management
@@ -17,9 +18,9 @@ class AnalyticsManager {
   init() {
     // Check for consent (basic implementation - enhance with cookie banner)
     this.consentGiven = this.checkConsent();
-    
+
     // Only initialize if consent given and gtag is available
-    if (this.consentGiven && typeof gtag !== 'undefined') {
+    if (this.consentGiven && typeof gtag !== "undefined") {
       this.isInitialized = true;
       this.processQueue();
     }
@@ -31,8 +32,8 @@ class AnalyticsManager {
    */
   checkConsent() {
     // Check localStorage for consent
-    const consent = localStorage.getItem('analytics_consent');
-    return consent === 'true' || consent === null; // Default to true for now
+    const consent = localStorage.getItem("analytics_consent");
+    return consent === "true" || consent === null; // Default to true for now
   }
 
   /**
@@ -47,12 +48,12 @@ class AnalyticsManager {
         ...params,
         timestamp: new Date().toISOString(),
         page_url: window.location.href,
-        page_title: document.title
-      }
+        page_title: document.title,
+      },
     };
 
-    if (this.isInitialized && typeof gtag !== 'undefined') {
-      gtag('event', event.name, event.params);
+    if (this.isInitialized && typeof gtag !== "undefined") {
+      gtag("event", event.name, event.params);
       this.logEvent(event);
     } else {
       // Queue event for later if gtag not ready
@@ -64,9 +65,9 @@ class AnalyticsManager {
    * Process queued events
    */
   processQueue() {
-    if (this.eventQueue.length > 0 && typeof gtag !== 'undefined') {
-      this.eventQueue.forEach(event => {
-        gtag('event', event.name, event.params);
+    if (this.eventQueue.length > 0 && typeof gtag !== "undefined") {
+      this.eventQueue.forEach((event) => {
+        gtag("event", event.name, event.params);
         this.logEvent(event);
       });
       this.eventQueue = [];
@@ -77,8 +78,11 @@ class AnalyticsManager {
    * Log event to console in development
    */
   logEvent(event) {
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      console.log('[Analytics]', event.name, event.params);
+    if (
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1"
+    ) {
+      console.log("[Analytics]", event.name, event.params);
     }
   }
 
@@ -86,9 +90,9 @@ class AnalyticsManager {
    * Track page view
    */
   trackPageView(pagePath = window.location.pathname) {
-    this.trackEvent('page_view', {
+    this.trackEvent("page_view", {
       page_path: pagePath,
-      page_location: window.location.href
+      page_location: window.location.href,
     });
   }
 
@@ -96,9 +100,9 @@ class AnalyticsManager {
    * Track events page view
    */
   trackEventsPageView() {
-    this.trackEvent('view_events_page', {
-      event_category: 'Events',
-      event_label: 'Events Page View'
+    this.trackEvent("view_events_page", {
+      event_category: "Events",
+      event_label: "Events Page View",
     });
   }
 
@@ -109,12 +113,12 @@ class AnalyticsManager {
    * @param {string} eventType - Type of event
    */
   trackEventDetailView(eventSlug, eventTitle, eventType) {
-    this.trackEvent('view_event_detail', {
-      event_category: 'Events',
+    this.trackEvent("view_event_detail", {
+      event_category: "Events",
       event_label: eventTitle,
       event_slug: eventSlug,
       event_type: eventType,
-      content_type: 'event_detail'
+      content_type: "event_detail",
     });
   }
 
@@ -125,12 +129,12 @@ class AnalyticsManager {
    * @param {string} eventType - Type of event
    */
   trackEventLearnMore(eventSlug, eventTitle, eventType) {
-    this.trackEvent('event_learn_more_click', {
-      event_category: 'Events',
+    this.trackEvent("event_learn_more_click", {
+      event_category: "Events",
       event_label: eventTitle,
       event_slug: eventSlug,
       event_type: eventType,
-      link_type: 'learn_more'
+      link_type: "learn_more",
     });
   }
 
@@ -141,15 +145,20 @@ class AnalyticsManager {
    * @param {string} eventType - Type of event
    * @param {string} registrationLink - External registration URL
    */
-  trackEventRegistrationClick(eventSlug, eventTitle, eventType, registrationLink) {
-    this.trackEvent('event_registration_click', {
-      event_category: 'Events',
+  trackEventRegistrationClick(
+    eventSlug,
+    eventTitle,
+    eventType,
+    registrationLink,
+  ) {
+    this.trackEvent("event_registration_click", {
+      event_category: "Events",
       event_label: eventTitle,
       event_slug: eventSlug,
       event_type: eventType,
-      link_type: 'register',
+      link_type: "register",
       link_url: registrationLink,
-      outbound: true
+      outbound: true,
     });
   }
 
@@ -160,12 +169,12 @@ class AnalyticsManager {
    * @param {string} eventType - Type of event
    */
   trackAddToCalendar(eventSlug, eventTitle, eventType) {
-    this.trackEvent('event_add_to_calendar', {
-      event_category: 'Events',
+    this.trackEvent("event_add_to_calendar", {
+      event_category: "Events",
       event_label: eventTitle,
       event_slug: eventSlug,
       event_type: eventType,
-      action_type: 'download'
+      action_type: "download",
     });
   }
 
@@ -177,13 +186,13 @@ class AnalyticsManager {
    * @param {string} shareMethod - How the event was shared (native|clipboard)
    */
   trackEventShare(eventSlug, eventTitle, eventType, shareMethod) {
-    this.trackEvent('event_share', {
-      event_category: 'Events',
+    this.trackEvent("event_share", {
+      event_category: "Events",
       event_label: eventTitle,
       event_slug: eventSlug,
       event_type: eventType,
       method: shareMethod,
-      content_type: 'event'
+      content_type: "event",
     });
   }
 
@@ -193,11 +202,11 @@ class AnalyticsManager {
    * @param {number} resultCount - Number of events shown after filtering
    */
   trackEventFilter(filterType, resultCount) {
-    this.trackEvent('event_filter_used', {
-      event_category: 'Events',
+    this.trackEvent("event_filter_used", {
+      event_category: "Events",
       event_label: filterType,
       filter_type: filterType,
-      result_count: resultCount
+      result_count: resultCount,
     });
   }
 
@@ -207,11 +216,11 @@ class AnalyticsManager {
    * @param {string} eventTitle - Event title
    */
   trackRegistrationComplete(eventSlug, eventTitle) {
-    this.trackEvent('registration_complete', {
-      event_category: 'Conversion',
+    this.trackEvent("registration_complete", {
+      event_category: "Conversion",
       event_label: eventTitle,
       event_slug: eventSlug,
-      conversion_type: 'event_registration'
+      conversion_type: "event_registration",
     });
   }
 
@@ -222,11 +231,11 @@ class AnalyticsManager {
    * @param {string} errorLocation - Where error occurred
    */
   trackError(errorType, errorMessage, errorLocation) {
-    this.trackEvent('error', {
-      event_category: 'Error',
+    this.trackEvent("error", {
+      event_category: "Error",
       error_type: errorType,
       error_message: errorMessage,
-      error_location: errorLocation
+      error_location: errorLocation,
     });
   }
 }
@@ -235,7 +244,7 @@ class AnalyticsManager {
 const analytics = new AnalyticsManager();
 
 // Export for use in other modules
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== "undefined" && module.exports) {
   module.exports = analytics;
 }
 

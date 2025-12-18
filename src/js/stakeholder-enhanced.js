@@ -129,7 +129,11 @@ class SwissStakeholderEnhanced {
     // Click animation - geometric pulse
     card.addEventListener("click", (e) => {
       // Don't animate if clicking a link or button
-      if (e.target.tagName === "A" || e.target.closest("a") || e.target.tagName === "BUTTON") {
+      if (
+        e.target.tagName === "A" ||
+        e.target.closest("a") ||
+        e.target.tagName === "BUTTON"
+      ) {
         return;
       }
 

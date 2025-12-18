@@ -1,0 +1,10 @@
+# Build output
+_site/
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Generated files
+*.min.css

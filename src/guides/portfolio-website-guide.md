@@ -5,6 +5,7 @@
 ---
 
 ## Table of Contents
+
 1. Portfolio Structure & Sections
 2. Design Best Practices
 3. Technical Implementation
@@ -18,6 +19,7 @@
 ### Essential Sections:
 
 #### Hero Section
+
 - **Headline**: Your value proposition in 5-10 words
 - **Subheading**: Brief description of who you are
 - **Call-to-Action**: "View My Work" or "Let's Connect"
@@ -27,6 +29,7 @@
 "I build beautiful, functional web experiences"
 
 #### About Section
+
 - **Brief bio**: Who are you and what do you do (2-3 paragraphs)
 - **Key achievements**: 3-4 major accomplishments
 - **Skills overview**: Main technical and soft skills
@@ -34,6 +37,7 @@
 - **Call-to-action**: "Let's work together" or "Get in touch"
 
 #### Portfolio/Projects Section
+
 - **Project cards** with:
   - Project image/screenshot
   - Project title
@@ -44,22 +48,26 @@
 - **Filtering**: Optional filter by category/tech (for larger portfolios)
 
 #### Services/Expertise Section (Optional)
+
 - What you offer
 - Your specialties
 - Pricing (if applicable)
 
 #### Testimonials Section (Optional)
+
 - 2-3 short quotes from clients/collaborators
 - Name, title, company
 - Project or service they're referring to
 
 #### Contact Section
+
 - **Email** link or form
 - **Social links**: LinkedIn, GitHub, Twitter, etc.
 - **Optional**: Calendly for scheduling calls
 - **Response expectation**: "I'll get back to you within 48 hours"
 
 #### Footer
+
 - Copyright
 - Links to key pages
 - Social icons
@@ -87,18 +95,21 @@
 ### Color Scheme
 
 **Option 1: Professional (Blue)**
+
 - Primary: #0066CC (Blue)
 - Secondary: #F0F4F8 (Light Gray)
 - Accent: #FF6B6B (Red for CTAs)
 - Text: #1A202C (Dark Gray/Black)
 
 **Option 2: Creative (Purple)**
+
 - Primary: #8B5CF6 (Purple)
 - Secondary: #F5F3FF (Light Purple)
 - Accent: #EC4899 (Pink)
 - Text: #1F2937 (Dark)
 
 **Option 3: Minimal (Gray)**
+
 - Primary: #111827 (Almost Black)
 - Secondary: #F9FAFB (Almost White)
 - Accent: #059669 (Green)
@@ -107,11 +118,13 @@
 ### Typography
 
 **Font Pairing Examples:**
+
 1. **Elegant**: Serif (Playfair Display) + Sans-serif (Inter)
 2. **Modern**: Sans-serif (Poppins) + Monospace (Courier Prime)
 3. **Professional**: Sans-serif (Roboto) + Sans-serif (Open Sans)
 
 **Size Hierarchy:**
+
 - **H1 (Hero)**: 48-72px
 - **H2 (Section)**: 32-48px
 - **H3 (Subsection)**: 24-32px
@@ -129,6 +142,7 @@
 ### Images & Media
 
 **Best Practices:**
+
 - ✓ High resolution (2x for retina displays)
 - ✓ Optimized for web (compressed, right format)
 - ✓ Consistent aspect ratios (16:9 for projects)
@@ -136,6 +150,7 @@
 - ✓ Lazy loading for performance
 
 **Tools:**
+
 - TinyPNG: Compress images
 - Figma: Design mockups
 - Unsplash/Pexels: Free stock photos
@@ -144,6 +159,7 @@
 ### Mobile Responsiveness
 
 **Breakpoints:**
+
 ```
 Mobile:     < 640px (phone)
 Tablet:     640px - 1024px
@@ -151,6 +167,7 @@ Desktop:    > 1024px
 ```
 
 **Mobile Checklist:**
+
 - [ ] Navigation collapses to hamburger menu
 - [ ] Text is readable (16px+)
 - [ ] Images scale proportionally
@@ -165,17 +182,20 @@ Desktop:    > 1024px
 ### Framework Options
 
 **Easiest (No Coding):**
+
 - Webflow
 - Wix
 - Squarespace
 - Framer
 
 **Low-Code (Visual + Some Code):**
+
 - Next.js + Templates
 - Gatsby
 - Hugo
 
 **Full Control (Coding Required):**
+
 - React
 - Vue.js
 - HTML/CSS/JavaScript
@@ -194,58 +214,61 @@ Forms:       Formspree or Netlify Forms
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>John Doe - Web Developer</title>
-    <meta name="description" content="Full-stack developer building web solutions">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Full-stack developer building web solutions"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="logo">John Doe</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+      <div class="container">
+        <div class="logo">John Doe</div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>I build beautiful web experiences</h1>
-        <p>Full-stack developer focused on React and Node.js</p>
-        <a href="#projects" class="cta-button">View My Work</a>
+      <h1>I build beautiful web experiences</h1>
+      <p>Full-stack developer focused on React and Node.js</p>
+      <a href="#projects" class="cta-button">View My Work</a>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
-        <h2>About Me</h2>
-        <!-- Content -->
+      <h2>About Me</h2>
+      <!-- Content -->
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h2>Featured Projects</h2>
-        <!-- Project cards -->
+      <h2>Featured Projects</h2>
+      <!-- Project cards -->
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2>Let's Work Together</h2>
-        <!-- Contact form -->
+      <h2>Let's Work Together</h2>
+      <!-- Contact form -->
     </section>
 
     <!-- Footer -->
     <footer>
-        <!-- Footer content -->
+      <!-- Footer content -->
     </footer>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
 ```
 
@@ -267,27 +290,36 @@ Forms:       Formspree or Netlify Forms
 
 ```html
 <head>
-    <!-- Primary Meta Tags -->
-    <title>John Doe - Full-Stack Developer | Web Development</title>
-    <meta name="description" content="Experienced full-stack developer specializing in React and Node.js. View portfolio and projects.">
-    <meta name="keywords" content="developer, react, node.js, web development">
-    <meta name="author" content="John Doe">
+  <!-- Primary Meta Tags -->
+  <title>John Doe - Full-Stack Developer | Web Development</title>
+  <meta
+    name="description"
+    content="Experienced full-stack developer specializing in React and Node.js. View portfolio and projects."
+  />
+  <meta name="keywords" content="developer, react, node.js, web development" />
+  <meta name="author" content="John Doe" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://johndoe.com">
-    <meta property="og:title" content="John Doe - Full-Stack Developer">
-    <meta property="og:description" content="Building beautiful web experiences">
-    <meta property="og:image" content="https://johndoe.com/og-image.jpg">
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://johndoe.com" />
+  <meta property="og:title" content="John Doe - Full-Stack Developer" />
+  <meta
+    property="og:description"
+    content="Building beautiful web experiences"
+  />
+  <meta property="og:image" content="https://johndoe.com/og-image.jpg" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://johndoe.com">
-    <meta property="twitter:title" content="John Doe - Full-Stack Developer">
-    <meta property="twitter:description" content="Building beautiful web experiences">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://johndoe.com" />
+  <meta property="twitter:title" content="John Doe - Full-Stack Developer" />
+  <meta
+    property="twitter:description"
+    content="Building beautiful web experiences"
+  />
 
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 ```
 
@@ -305,18 +337,15 @@ Add JSON-LD for better search results:
 
 ```html
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Person",
-  "name": "John Doe",
-  "url": "https://johndoe.com",
-  "image": "https://johndoe.com/profile.jpg",
-  "sameAs": [
-    "https://linkedin.com/in/johndoe",
-    "https://github.com/johndoe"
-  ],
-  "jobTitle": "Full-Stack Developer"
-}
+  {
+    "@context": "https://schema.org/",
+    "@type": "Person",
+    "name": "John Doe",
+    "url": "https://johndoe.com",
+    "image": "https://johndoe.com/profile.jpg",
+    "sameAs": ["https://linkedin.com/in/johndoe", "https://github.com/johndoe"],
+    "jobTitle": "Full-Stack Developer"
+  }
 </script>
 ```
 
@@ -326,17 +355,18 @@ Add JSON-LD for better search results:
 
 ### Best Options for Portfolios:
 
-| Platform | Ease | Cost | Best For |
-|----------|------|------|----------|
-| **Vercel** | Very Easy | Free tier | React/Next.js |
-| **Netlify** | Very Easy | Free tier | Static sites |
-| **GitHub Pages** | Easy | Free | Static sites |
-| **Heroku** | Medium | Free tier | Full-stack apps |
-| **AWS** | Hard | Pay-as-you-go | Enterprise |
+| Platform         | Ease      | Cost          | Best For        |
+| ---------------- | --------- | ------------- | --------------- |
+| **Vercel**       | Very Easy | Free tier     | React/Next.js   |
+| **Netlify**      | Very Easy | Free tier     | Static sites    |
+| **GitHub Pages** | Easy      | Free          | Static sites    |
+| **Heroku**       | Medium    | Free tier     | Full-stack apps |
+| **AWS**          | Hard      | Pay-as-you-go | Enterprise      |
 
 ### Recommended: Vercel (for React/Next.js)
 
 **Steps:**
+
 1. Push code to GitHub
 2. Connect GitHub to Vercel
 3. Vercel auto-deploys on every push
@@ -356,18 +386,21 @@ Add JSON-LD for better search results:
 ## Quick Start Checklist
 
 ### Planning Phase:
+
 - [ ] Define your brand/style
 - [ ] Sketch layout on paper or Figma
 - [ ] Gather project images/descriptions
 - [ ] Write compelling copy
 
 ### Design Phase:
+
 - [ ] Choose color scheme
 - [ ] Select fonts
 - [ ] Create mockups
 - [ ] Get feedback from 2-3 people
 
 ### Build Phase:
+
 - [ ] Set up development environment
 - [ ] Build structure (HTML)
 - [ ] Style (CSS)
@@ -375,12 +408,14 @@ Add JSON-LD for better search results:
 - [ ] Optimize images and performance
 
 ### Content Phase:
+
 - [ ] Write About section
 - [ ] Describe each project
 - [ ] Add images/screenshots
 - [ ] Write meta descriptions
 
 ### Launch Phase:
+
 - [ ] Test on mobile and desktop
 - [ ] Check all links work
 - [ ] Set up contact form
@@ -394,6 +429,7 @@ Add JSON-LD for better search results:
 ## Performance Tips
 
 **Optimize For Speed:**
+
 - Compress images (use WebP format)
 - Minimize CSS/JavaScript
 - Enable caching
@@ -401,6 +437,7 @@ Add JSON-LD for better search results:
 - Lazy load images below fold
 
 **Target Metrics:**
+
 - Page load: < 3 seconds
 - Lighthouse score: > 90
 - Mobile friendly: Yes
@@ -421,7 +458,7 @@ I'm open to freelance projects, full-time opportunities, and mentorship discussi
 
 **E-Commerce Platform**
 "Full-stack e-commerce application built with React, Node.js, and MongoDB. Implemented user authentication, product filtering, shopping cart, and payment processing with Stripe. Achieved 98% lighthouse score and 60% improvement in page load time through optimization."
-*Tech: React, Node.js, MongoDB, Stripe, Tailwind CSS*
+_Tech: React, Node.js, MongoDB, Stripe, Tailwind CSS_
 
 ---
 
@@ -435,4 +472,3 @@ I'm open to freelance projects, full-time opportunities, and mentorship discussi
 6. **Mobile First** - Design for mobile, scale up to desktop
 
 Your portfolio is a powerful tool. Invest in it!
-

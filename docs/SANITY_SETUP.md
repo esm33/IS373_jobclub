@@ -73,6 +73,7 @@ SANITY_WRITE_TOKEN=your_write_token_here
 ```
 
 **Example:**
+
 ```bash
 SANITY_PROJECT_ID=abc123def456
 SANITY_DATASET=production
@@ -159,6 +160,7 @@ Replace `{PROJECT_ID}` and `{SANITY_WRITE_TOKEN}` with your actual values.
 ### Error: "SANITY_PROJECT_ID is not defined"
 
 **Solution:** Check that `.env.local` is in the correct location:
+
 - For form submission: `/root/.env.local` (main project)
 - For Sanity Studio: `/sanity/.env.local`
 
@@ -166,20 +168,23 @@ Restart your dev server after adding environment variables.
 
 ### Error: "Token Invalid" or "Unauthorized"
 
-**Solution:** 
+**Solution:**
+
 1. Your `SANITY_WRITE_TOKEN` may be wrong - copy it again from Sanity dashboard
 2. Make sure token has **"Editor"** permissions (read + write)
 3. Regenerate token if needed
 
 ### Error: "Dataset not found"
 
-**Solution:** 
+**Solution:**
+
 1. Check that `SANITY_DATASET` matches your dataset name (usually "production")
 2. In Sanity dashboard, go to Settings → API to verify dataset name
 
 ### Form Submits but No Data Appears
 
 **Solution:**
+
 1. Check browser console (F12) for error messages
 2. Check `.env.local` variables are correctly set
 3. Restart dev server: `npm run dev`
@@ -188,6 +193,7 @@ Restart your dev server after adding environment variables.
 ### Sanity Studio Won't Load
 
 **Solution:**
+
 1. Make sure you're logged into your Sanity account
 2. Check that `SANITY_STUDIO_PROJECT_ID` is correct in `/sanity/.env.local`
 3. Restart Sanity dev server: `cd sanity && npm run dev`
@@ -235,6 +241,7 @@ When a user submits the onboarding form, the following data is saved:
 When deploying to production (Vercel, Netlify, etc.):
 
 1. Add these environment variables in your hosting platform's dashboard:
+
    ```
    SANITY_PROJECT_ID=xxx
    SANITY_DATASET=production
@@ -256,4 +263,4 @@ When deploying to production (Vercel, Netlify, etc.):
 
 ---
 
-*Last Updated: December 13, 2025*
+_Last Updated: December 13, 2025_

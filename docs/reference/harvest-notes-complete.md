@@ -9,6 +9,7 @@
 ## 🎯 Quick Start Guide
 
 **For Job Club Team:** Use this as your implementation checklist. Each pattern includes:
+
 - ✅ Working code (copy-paste ready)
 - 🎓 Job Club specific use cases
 - 📊 Performance impact data
@@ -20,21 +21,25 @@
 ## Table of Contents
 
 ### **Critical Path (Week 1-2)**
+
 1. [Accessibility Foundation](#accessibility-foundation)
 2. [Responsive Core](#responsive-core)
 3. [Performance Baseline](#performance-baseline)
 
 ### **Component Library (Week 3-4)**
+
 4. [Interactive Components](#interactive-components)
 5. [Form Systems](#form-systems)
 6. [Navigation Patterns](#navigation-patterns)
 
 ### **Advanced Features (Week 5+)**
+
 7. [JavaScript Patterns](#javascript-patterns)
 8. [Animation System](#animation-system)
 9. [Testing & Analytics](#testing--analytics)
 
 ### **Job Club Specific**
+
 10. [Student Dashboard Features](#student-dashboard-features)
 11. [Onboarding Patterns](#onboarding-patterns)
 12. [Profile & Progress Tracking](#profile--progress-tracking)
@@ -78,6 +83,7 @@ input[type="radio"],
 ```
 
 **Job Club Applications:**
+
 - ✅ All CTA buttons (Join, Register, RSVP)
 - ✅ Mobile menu toggle
 - ✅ Form checkboxes/radios
@@ -174,7 +180,7 @@ a:focus-visible {
 
 <!-- Link with additional context -->
 <a href="/events">
-  Events 
+  Events
   <span class="sr-only">(3 upcoming this week)</span>
 </a>
 
@@ -185,12 +191,11 @@ a:focus-visible {
 </div>
 
 <!-- Skip to main content link -->
-<a href="#main-content" class="sr-only-focusable">
-  Skip to main content
-</a>
+<a href="#main-content" class="sr-only-focusable"> Skip to main content </a>
 ```
 
 **Job Club Use Cases:**
+
 - Icon-only buttons (hamburger menu, close, social icons)
 - Status indicators (online/offline, active/inactive)
 - Dynamic content updates ("3 new messages")
@@ -202,29 +207,28 @@ a:focus-visible {
 
 ```html
 <!-- Mobile Menu Button -->
-<button 
+<button
   type="button"
   aria-label="Toggle navigation menu"
   aria-expanded="false"
   aria-controls="mobile-navigation"
-  aria-haspopup="true">
+  aria-haspopup="true"
+>
   Menu
 </button>
 
 <!-- Mobile Menu -->
-<nav 
-  id="mobile-navigation" 
-  aria-label="Main navigation"
-  hidden>
+<nav id="mobile-navigation" aria-label="Main navigation" hidden>
   <!-- links -->
 </nav>
 
 <!-- Modal Dialog -->
-<div 
-  role="dialog" 
-  aria-labelledby="dialog-title" 
+<div
+  role="dialog"
+  aria-labelledby="dialog-title"
   aria-describedby="dialog-description"
-  aria-modal="true">
+  aria-modal="true"
+>
   <h2 id="dialog-title">Complete Your Profile</h2>
   <p id="dialog-description">Add your information to get started</p>
 </div>
@@ -232,30 +236,33 @@ a:focus-visible {
 <!-- Form Input with Validation -->
 <div class="form-group">
   <label for="email">Email Address</label>
-  <input 
-    type="email" 
+  <input
+    type="email"
     id="email"
     aria-required="true"
     aria-invalid="false"
-    aria-describedby="email-hint email-error">
+    aria-describedby="email-hint email-error"
+  />
   <span id="email-hint">We'll never share your email</span>
   <span id="email-error" role="alert"></span>
 </div>
 
 <!-- Tab Interface -->
 <div role="tablist" aria-label="Event categories">
-  <button 
-    role="tab" 
-    aria-selected="true" 
+  <button
+    role="tab"
+    aria-selected="true"
     aria-controls="panel-upcoming"
-    id="tab-upcoming">
+    id="tab-upcoming"
+  >
     Upcoming
   </button>
-  <button 
-    role="tab" 
-    aria-selected="false" 
+  <button
+    role="tab"
+    aria-selected="false"
     aria-controls="panel-past"
-    id="tab-past">
+    id="tab-past"
+  >
     Past
   </button>
 </div>
@@ -264,12 +271,13 @@ a:focus-visible {
 </div>
 
 <!-- Progress Indicator -->
-<div 
-  role="progressbar" 
-  aria-valuenow="60" 
-  aria-valuemin="0" 
+<div
+  role="progressbar"
+  aria-valuenow="60"
+  aria-valuemin="0"
   aria-valuemax="100"
-  aria-label="Profile completion">
+  aria-label="Profile completion"
+>
   60% complete
 </div>
 
@@ -300,7 +308,7 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   /* Disable transforms */
   .hover-effect:hover,
   .animated-card:hover {
@@ -330,39 +338,39 @@ class FocusTrap {
       input:not([disabled]),
       select:not([disabled]),
       [tabindex]:not([tabindex="-1"])
-    `.replace(/\s+/g, '');
-    
+    `.replace(/\s+/g, "");
+
     this.firstFocusable = null;
     this.lastFocusable = null;
     this.previouslyFocused = null;
   }
-  
+
   activate() {
     // Store currently focused element
     this.previouslyFocused = document.activeElement;
-    
+
     // Get all focusable elements
     const focusables = Array.from(
-      this.element.querySelectorAll(this.focusableSelectors)
+      this.element.querySelectorAll(this.focusableSelectors),
     );
-    
+
     if (focusables.length === 0) return;
-    
+
     this.firstFocusable = focusables[0];
     this.lastFocusable = focusables[focusables.length - 1];
-    
+
     // Add keyboard listener
     this.boundHandleKeydown = this.handleKeydown.bind(this);
-    this.element.addEventListener('keydown', this.boundHandleKeydown);
-    
+    this.element.addEventListener("keydown", this.boundHandleKeydown);
+
     // Focus first element
     this.firstFocusable.focus();
   }
-  
+
   handleKeydown(e) {
     // Only trap Tab key
-    if (e.key !== 'Tab') return;
-    
+    if (e.key !== "Tab") return;
+
     if (e.shiftKey) {
       // Shift + Tab (backwards)
       if (document.activeElement === this.firstFocusable) {
@@ -377,10 +385,10 @@ class FocusTrap {
       }
     }
   }
-  
+
   deactivate() {
-    this.element.removeEventListener('keydown', this.boundHandleKeydown);
-    
+    this.element.removeEventListener("keydown", this.boundHandleKeydown);
+
     // Return focus to previously focused element
     if (this.previouslyFocused && this.previouslyFocused.focus) {
       this.previouslyFocused.focus();
@@ -389,19 +397,20 @@ class FocusTrap {
 }
 
 // Usage Example
-const modal = document.getElementById('onboarding-modal');
+const modal = document.getElementById("onboarding-modal");
 const focusTrap = new FocusTrap(modal);
 
 // When opening modal
-modal.classList.remove('hidden');
+modal.classList.remove("hidden");
 focusTrap.activate();
 
 // When closing modal
-modal.classList.add('hidden');
+modal.classList.add("hidden");
 focusTrap.deactivate();
 ```
 
 **Job Club Applications:**
+
 - Onboarding wizard modals
 - Profile edit dialogs
 - Event registration forms
@@ -419,13 +428,15 @@ focusTrap.deactivate();
  */
 
 // ESC to close overlays
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    const openModal = document.querySelector('[role="dialog"][aria-modal="true"]:not([hidden])');
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    const openModal = document.querySelector(
+      '[role="dialog"][aria-modal="true"]:not([hidden])',
+    );
     if (openModal) {
       closeModal(openModal);
     }
-    
+
     const openMenu = document.querySelector('[aria-expanded="true"]');
     if (openMenu) {
       closeMenu(openMenu);
@@ -434,9 +445,9 @@ document.addEventListener('keydown', (e) => {
 });
 
 // Enter/Space on custom controls
-document.querySelectorAll('[role="button"]').forEach(element => {
-  element.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+document.querySelectorAll('[role="button"]').forEach((element) => {
+  element.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       element.click();
     }
@@ -447,30 +458,33 @@ document.querySelectorAll('[role="button"]').forEach(element => {
 class ArrowKeyNav {
   constructor(container) {
     this.container = container;
-    this.items = Array.from(container.querySelectorAll('[role="menuitem"], [role="option"]'));
+    this.items = Array.from(
+      container.querySelectorAll('[role="menuitem"], [role="option"]'),
+    );
     this.currentIndex = 0;
-    
-    this.container.addEventListener('keydown', this.handleKeydown.bind(this));
+
+    this.container.addEventListener("keydown", this.handleKeydown.bind(this));
   }
-  
+
   handleKeydown(e) {
-    switch(e.key) {
-      case 'ArrowDown':
+    switch (e.key) {
+      case "ArrowDown":
         e.preventDefault();
         this.currentIndex = (this.currentIndex + 1) % this.items.length;
         this.items[this.currentIndex].focus();
         break;
-      case 'ArrowUp':
+      case "ArrowUp":
         e.preventDefault();
-        this.currentIndex = (this.currentIndex - 1 + this.items.length) % this.items.length;
+        this.currentIndex =
+          (this.currentIndex - 1 + this.items.length) % this.items.length;
         this.items[this.currentIndex].focus();
         break;
-      case 'Home':
+      case "Home":
         e.preventDefault();
         this.currentIndex = 0;
         this.items[0].focus();
         break;
-      case 'End':
+      case "End":
         e.preventDefault();
         this.currentIndex = this.items.length - 1;
         this.items[this.currentIndex].focus();
@@ -480,7 +494,7 @@ class ArrowKeyNav {
 }
 
 // Usage
-const dropdown = document.getElementById('user-menu');
+const dropdown = document.getElementById("user-menu");
 new ArrowKeyNav(dropdown);
 ```
 
@@ -495,11 +509,11 @@ new ArrowKeyNav(dropdown);
 ```css
 :root {
   /* Fluid type scale using clamp() */
-  --font-display: clamp(2rem, 6vw + 1rem, 4.5rem);     /* 32-72px */
-  --font-h1: clamp(1.75rem, 5vw + 0.5rem, 3rem);      /* 28-48px */
-  --font-h2: clamp(1.5rem, 4vw + 0.5rem, 2.25rem);    /* 24-36px */
-  --font-h3: clamp(1.25rem, 3vw + 0.5rem, 1.75rem);   /* 20-28px */
-  --font-h4: clamp(1.125rem, 2vw + 0.25rem, 1.5rem);  /* 18-24px */
+  --font-display: clamp(2rem, 6vw + 1rem, 4.5rem); /* 32-72px */
+  --font-h1: clamp(1.75rem, 5vw + 0.5rem, 3rem); /* 28-48px */
+  --font-h2: clamp(1.5rem, 4vw + 0.5rem, 2.25rem); /* 24-36px */
+  --font-h3: clamp(1.25rem, 3vw + 0.5rem, 1.75rem); /* 20-28px */
+  --font-h4: clamp(1.125rem, 2vw + 0.25rem, 1.5rem); /* 18-24px */
   --font-body-lg: clamp(1.125rem, 1vw + 0.5rem, 1.25rem);
   --font-body: clamp(1rem, 0.5vw + 0.75rem, 1.125rem);
   --font-body-sm: clamp(0.875rem, 0.5vw + 0.5rem, 1rem);
@@ -507,34 +521,35 @@ new ArrowKeyNav(dropdown);
 }
 
 /* Apply to elements */
-h1 { 
-  font-size: var(--font-h1); 
-  line-height: 1.1; 
+h1 {
+  font-size: var(--font-h1);
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
-h2 { 
-  font-size: var(--font-h2); 
-  line-height: 1.2; 
+h2 {
+  font-size: var(--font-h2);
+  line-height: 1.2;
 }
 
-h3 { 
-  font-size: var(--font-h3); 
-  line-height: 1.3; 
+h3 {
+  font-size: var(--font-h3);
+  line-height: 1.3;
 }
 
-body { 
-  font-size: var(--font-body); 
-  line-height: 1.6; 
+body {
+  font-size: var(--font-body);
+  line-height: 1.6;
 }
 
-small, .text-small { 
-  font-size: var(--font-body-sm); 
+small,
+.text-small {
+  font-size: var(--font-body-sm);
 }
 
-.display { 
-  font-size: var(--font-display); 
-  line-height: 1; 
+.display {
+  font-size: var(--font-display);
+  line-height: 1;
   letter-spacing: -0.03em;
 }
 ```
@@ -548,19 +563,19 @@ small, .text-small {
 ```css
 :root {
   /* Static spacing scale */
-  --space-xs: 0.25rem;   /* 4px */
-  --space-sm: 0.5rem;    /* 8px */
-  --space-md: 0.75rem;   /* 12px */
-  --space-lg: 1rem;      /* 16px */
-  --space-xl: 1.5rem;    /* 24px */
-  --space-2xl: 2rem;     /* 32px */
-  --space-3xl: 2.5rem;   /* 40px */
-  --space-4xl: 3rem;     /* 48px */
-  --space-5xl: 4rem;     /* 64px */
-  --space-6xl: 5rem;     /* 80px */
-  --space-7xl: 6rem;     /* 96px */
-  --space-8xl: 8rem;     /* 128px */
-  
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 0.75rem; /* 12px */
+  --space-lg: 1rem; /* 16px */
+  --space-xl: 1.5rem; /* 24px */
+  --space-2xl: 2rem; /* 32px */
+  --space-3xl: 2.5rem; /* 40px */
+  --space-4xl: 3rem; /* 48px */
+  --space-5xl: 4rem; /* 64px */
+  --space-6xl: 5rem; /* 80px */
+  --space-7xl: 6rem; /* 96px */
+  --space-8xl: 8rem; /* 128px */
+
   /* Fluid spacing (viewport relative) */
   --space-section-y: clamp(3rem, 8vw, 8rem);
   --space-section-x: clamp(1rem, 4vw, 3rem);
@@ -601,33 +616,71 @@ section {
 }
 
 /* Span utilities */
-.span-1 { grid-column: span 1; }
-.span-2 { grid-column: span 2; }
-.span-3 { grid-column: span 3; }
-.span-4 { grid-column: span 4; }
-.span-5 { grid-column: span 5; }
-.span-6 { grid-column: span 6; }
-.span-7 { grid-column: span 7; }
-.span-8 { grid-column: span 8; }
-.span-9 { grid-column: span 9; }
-.span-10 { grid-column: span 10; }
-.span-11 { grid-column: span 11; }
-.span-12 { grid-column: span 12; }
+.span-1 {
+  grid-column: span 1;
+}
+.span-2 {
+  grid-column: span 2;
+}
+.span-3 {
+  grid-column: span 3;
+}
+.span-4 {
+  grid-column: span 4;
+}
+.span-5 {
+  grid-column: span 5;
+}
+.span-6 {
+  grid-column: span 6;
+}
+.span-7 {
+  grid-column: span 7;
+}
+.span-8 {
+  grid-column: span 8;
+}
+.span-9 {
+  grid-column: span 9;
+}
+.span-10 {
+  grid-column: span 10;
+}
+.span-11 {
+  grid-column: span 11;
+}
+.span-12 {
+  grid-column: span 12;
+}
 
 /* Responsive: collapse to single column */
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
   }
-  
-  .span-1, .span-2, .span-3, .span-4, .span-5, .span-6,
-  .span-7, .span-8, .span-9, .span-10, .span-11, .span-12 {
+
+  .span-1,
+  .span-2,
+  .span-3,
+  .span-4,
+  .span-5,
+  .span-6,
+  .span-7,
+  .span-8,
+  .span-9,
+  .span-10,
+  .span-11,
+  .span-12 {
     grid-column: span 1;
   }
-  
+
   /* Optionally keep some spans on mobile */
-  .span-6-mobile { grid-column: span 6; }
-  .span-4-mobile { grid-column: span 4; }
+  .span-6-mobile {
+    grid-column: span 6;
+  }
+  .span-4-mobile {
+    grid-column: span 4;
+  }
 }
 
 /* Tablet: 8 columns */
@@ -635,14 +688,20 @@ section {
   .grid {
     grid-template-columns: repeat(8, 1fr);
   }
-  
-  .span-7, .span-8, .span-9, .span-10, .span-11, .span-12 {
+
+  .span-7,
+  .span-8,
+  .span-9,
+  .span-10,
+  .span-11,
+  .span-12 {
     grid-column: span 8;
   }
 }
 ```
 
 **Job Club Layouts:**
+
 ```html
 <!-- Dashboard: Sidebar + Main Content -->
 <div class="grid">
@@ -696,6 +755,7 @@ section {
 **Magic:** No breakpoints needed! Grid automatically adjusts based on available space.
 
 **Job Club Use Cases:**
+
 - Event cards
 - Mentor profiles
 - Resource library tiles
@@ -711,22 +771,29 @@ section {
 /* Better text rendering on small screens */
 @media (max-width: 640px) {
   /* Enable hyphenation */
-  p, li, dd {
+  p,
+  li,
+  dd {
     hyphens: auto;
     hyphenate-limit-chars: 6 3 2;
   }
-  
+
   /* Prevent text overflow */
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     word-break: break-word;
     overflow-wrap: break-word;
   }
-  
+
   /* Slightly tighter leading on mobile */
   body {
     line-height: 1.5;
   }
-  
+
   /* Optimize for mobile reading */
   p {
     max-width: 100%;
@@ -752,14 +819,14 @@ section {
     content-visibility: auto;
     contain-intrinsic-size: 0 500px;
   }
-  
+
   /* Cards */
   .card,
   [data-card] {
     content-visibility: auto;
     contain-intrinsic-size: 0 300px;
   }
-  
+
   /* Blog posts */
   article {
     content-visibility: auto;
@@ -805,29 +872,27 @@ section {
 ```html
 <!-- Modern responsive images -->
 <picture>
-  <source 
-    srcset="image.avif" 
-    type="image/avif">
-  <source 
-    srcset="image.webp" 
-    type="image/webp">
-  <img 
-    src="image.jpg" 
+  <source srcset="image.avif" type="image/avif" />
+  <source srcset="image.webp" type="image/webp" />
+  <img
+    src="image.jpg"
     alt="Description"
     loading="lazy"
     decoding="async"
     width="800"
-    height="600">
+    height="600"
+  />
 </picture>
 
 <!-- With skeleton loader -->
 <div class="image-wrapper">
   <div class="image-skeleton"></div>
-  <img 
-    src="event.jpg" 
+  <img
+    src="event.jpg"
     alt="Event photo"
     loading="lazy"
-    onload="this.previousElementSibling.remove()">
+    onload="this.previousElementSibling.remove()"
+  />
 </div>
 ```
 
@@ -836,19 +901,18 @@ section {
 .image-skeleton {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    #f0f0f0 0%,
-    #f8f8f8 50%,
-    #f0f0f0 100%
-  );
+  background: linear-gradient(90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
   background-size: 200% 100%;
   animation: shimmer 2s ease-in-out infinite;
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 .image-wrapper {
@@ -870,32 +934,41 @@ section {
 
 ```html
 <!-- Preload critical fonts -->
-<link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link
+  rel="preload"
+  href="/fonts/inter-var.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 
 <!-- Async load Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link 
-  rel="preload" 
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
-  as="style">
-<link 
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
-  rel="stylesheet" 
-  media="print" 
-  onload="this.media='all'">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  as="style"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+  media="print"
+  onload="this.media='all'"
+/>
 <noscript>
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" 
-    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 </noscript>
 ```
 
 ```css
 /* Font face with optimal settings */
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/inter-var.woff2') format('woff2');
+  font-family: "Inter";
+  src: url("/fonts/inter-var.woff2") format("woff2");
   font-display: swap; /* Show fallback immediately */
   font-weight: 100 900;
   font-style: normal;
@@ -903,22 +976,25 @@ section {
 
 /* System font fallback stack */
 body {
-  font-family: 
-    'Inter',
+  font-family:
+    "Inter",
     -apple-system,
     BlinkMacSystemFont,
-    'Segoe UI',
+    "Segoe UI",
     Roboto,
     Oxygen,
     Ubuntu,
     Cantarell,
-    'Helvetica Neue',
+    "Helvetica Neue",
     sans-serif;
 }
 
 /* Enable font features */
 body {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -934,27 +1010,27 @@ body {
  * Efficient smooth scroll for anchor links
  * Uses event delegation - works with dynamic content
  */
-document.addEventListener('click', (e) => {
+document.addEventListener("click", (e) => {
   // Check if clicked element is an anchor link
   const anchor = e.target.closest('a[href^="#"]:not([href="#"])');
-  
+
   if (!anchor) return;
-  
-  const targetId = anchor.getAttribute('href');
+
+  const targetId = anchor.getAttribute("href");
   const targetElement = document.querySelector(targetId);
-  
+
   if (targetElement) {
     e.preventDefault();
-    
+
     // Smooth scroll
     targetElement.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
+      behavior: "smooth",
+      block: "start",
     });
-    
+
     // Update URL without jumping
     history.pushState(null, null, targetId);
-    
+
     // Focus target (accessibility)
     targetElement.focus({ preventScroll: true });
   }
@@ -978,35 +1054,35 @@ class IntersectionManager {
     this.callback = callback;
     this.options = {
       root: null,
-      rootMargin: '50px',
+      rootMargin: "50px",
       threshold: 0.1,
-      ...options
+      ...options,
     };
-    
+
     this.observer = null;
     this.init();
   }
-  
+
   init() {
-    if (!('IntersectionObserver' in window)) {
+    if (!("IntersectionObserver" in window)) {
       // Fallback for older browsers
       this.callback(this.elements);
       return;
     }
-    
+
     this.observer = new IntersectionObserver(
       this.handleIntersection.bind(this),
-      this.options
+      this.options,
     );
-    
-    this.elements.forEach(el => this.observer.observe(el));
+
+    this.elements.forEach((el) => this.observer.observe(el));
   }
-  
+
   handleIntersection(entries) {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         this.callback(entry.target, entry);
-        
+
         // Stop observing once triggered (if needed)
         if (this.options.once) {
           this.observer.unobserve(entry.target);
@@ -1014,7 +1090,7 @@ class IntersectionManager {
       }
     });
   }
-  
+
   destroy() {
     if (this.observer) {
       this.observer.disconnect();
@@ -1024,36 +1100,37 @@ class IntersectionManager {
 
 // Usage: Lazy load images
 new IntersectionManager(
-  document.querySelectorAll('img[data-src]'),
+  document.querySelectorAll("img[data-src]"),
   (img) => {
     img.src = img.dataset.src;
-    img.removeAttribute('data-src');
+    img.removeAttribute("data-src");
   },
-  { once: true }
+  { once: true },
 );
 
 // Usage: Fade in cards on scroll
 new IntersectionManager(
-  document.querySelectorAll('.card'),
+  document.querySelectorAll(".card"),
   (card, entry) => {
-    card.style.opacity = '1';
-    card.style.transform = 'translateY(0)';
+    card.style.opacity = "1";
+    card.style.transform = "translateY(0)";
   },
-  { threshold: 0.2, once: true }
+  { threshold: 0.2, once: true },
 );
 
 // Usage: Track viewport visibility (analytics)
 new IntersectionManager(
-  document.querySelectorAll('[data-track-view]'),
+  document.querySelectorAll("[data-track-view]"),
   (element) => {
     const eventName = element.dataset.trackView;
-    analytics.track('Element Viewed', { element: eventName });
+    analytics.track("Element Viewed", { element: eventName });
   },
-  { threshold: 0.5, once: true }
+  { threshold: 0.5, once: true },
 );
 ```
 
 **Job Club Applications:**
+
 - Lazy load event images
 - Animate cards on scroll
 - Track which resources users view
@@ -1069,36 +1146,36 @@ new IntersectionManager(
  * Real-time performance monitoring
  * From actual production code
  */
-import { onCLS, onFCP, onINP, onLCP, onTTFB } from 'web-vitals';
+import { onCLS, onFCP, onINP, onLCP, onTTFB } from "web-vitals";
 
 // Rate limiter to prevent flooding analytics
 const rateLimiter = {
   queue: [],
   maxPerMinute: 10,
-  
+
   canSend() {
     const now = Date.now();
     const oneMinuteAgo = now - 60000;
-    this.queue = this.queue.filter(t => t > oneMinuteAgo);
-    
+    this.queue = this.queue.filter((t) => t > oneMinuteAgo);
+
     if (this.queue.length < this.maxPerMinute) {
       this.queue.push(now);
       return true;
     }
     return false;
-  }
+  },
 };
 
 function sendToAnalytics(metric) {
   // Skip in development
-  if (window.location.hostname === 'localhost') return;
-  
+  if (window.location.hostname === "localhost") return;
+
   // Rate limit check
   if (!rateLimiter.canSend()) {
-    console.warn('[Vitals] Rate limited:', metric.name);
+    console.warn("[Vitals] Rate limited:", metric.name);
     return;
   }
-  
+
   const body = JSON.stringify({
     name: metric.name,
     value: metric.value,
@@ -1106,20 +1183,22 @@ function sendToAnalytics(metric) {
     delta: metric.delta,
     id: metric.id,
     url: window.location.href,
-    timestamp: Date.now()
+    timestamp: Date.now(),
   });
-  
+
   // Send via beacon (survives page unload)
   if (navigator.sendBeacon) {
-    navigator.sendBeacon('/api/analytics/vitals', body);
+    navigator.sendBeacon("/api/analytics/vitals", body);
   }
-  
+
   // Also send to Google Analytics
   if (window.gtag) {
-    gtag('event', metric.name, {
-      value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+    gtag("event", metric.name, {
+      value: Math.round(
+        metric.name === "CLS" ? metric.value * 1000 : metric.value,
+      ),
       metric_id: metric.id,
-      metric_rating: metric.rating
+      metric_rating: metric.rating,
     });
   }
 }
@@ -1133,6 +1212,7 @@ onTTFB(sendToAnalytics);
 ```
 
 **Metrics Tracked:**
+
 - **CLS** (Cumulative Layout Shift) - Target: < 0.1
 - **FCP** (First Contentful Paint) - Target: < 1.8s
 - **INP** (Interaction to Next Paint) - Target: < 200ms
@@ -1157,32 +1237,32 @@ onTTFB(sendToAnalytics);
 </section>
 
 <!-- Interactive elements -->
-<button 
+<button
   data-component="mobile-menu-toggle"
   data-testid="menu-button"
-  data-action="toggle-menu">
+  data-action="toggle-menu"
+>
   Menu
 </button>
 
 <!-- Cards/items -->
-<div 
-  class="card" 
+<div
+  class="card"
   data-component="event-card"
   data-event-id="123"
-  data-testid="event-card-123">
+  data-testid="event-card-123"
+>
   <!-- content -->
 </div>
 
 <!-- State tracking -->
-<div 
-  data-component="accordion"
-  data-state="collapsed"
-  data-index="0">
+<div data-component="accordion" data-state="collapsed" data-index="0">
   <!-- content -->
 </div>
 ```
 
 **Why this matters:**
+
 - ✅ Playwright/Cypress tests don't break when CSS changes
 - ✅ Clear component identification
 - ✅ Easy to select in JavaScript
@@ -1207,23 +1287,28 @@ await expect(page.locator('[data-testid="main-header"]')).toBeVisible();
 
 ```html
 <!-- Onboarding/Profile completion progress -->
-<div class="progress-tracker" role="region" aria-label="Profile completion progress">
+<div
+  class="progress-tracker"
+  role="region"
+  aria-label="Profile completion progress"
+>
   <div class="progress-header">
     <span class="progress-label">Profile Completion</span>
     <span class="progress-percentage" aria-live="polite">60%</span>
   </div>
-  
-  <div 
-    class="progress-bar-container" 
-    role="progressbar" 
-    aria-valuenow="60" 
-    aria-valuemin="0" 
-    aria-valuemax="100">
+
+  <div
+    class="progress-bar-container"
+    role="progressbar"
+    aria-valuenow="60"
+    aria-valuemin="0"
+    aria-valuemax="100"
+  >
     <div class="progress-bar-fill" style="width: 60%"></div>
   </div>
-  
+
   <p class="progress-steps">6 of 10 steps complete</p>
-  
+
   <ul class="progress-checklist">
     <li class="complete">
       <svg class="check-icon" aria-hidden="true">✓</svg>
@@ -1233,9 +1318,7 @@ await expect(page.locator('[data-testid="main-header"]')).toBeVisible();
       <svg class="check-icon" aria-hidden="true">✓</svg>
       Email Verified
     </li>
-    <li class="incomplete">
-      Add Profile Photo
-    </li>
+    <li class="incomplete">Add Profile Photo</li>
   </ul>
 </div>
 ```
@@ -1319,16 +1402,16 @@ await expect(page.locator('[data-testid="main-header"]')).toBeVisible();
 // Update progress dynamically
 function updateProgress(completed, total) {
   const percentage = Math.round((completed / total) * 100);
-  
-  const bar = document.querySelector('.progress-bar-fill');
-  const percentageText = document.querySelector('.progress-percentage');
-  const stepsText = document.querySelector('.progress-steps');
+
+  const bar = document.querySelector(".progress-bar-fill");
+  const percentageText = document.querySelector(".progress-percentage");
+  const stepsText = document.querySelector(".progress-steps");
   const progressBar = document.querySelector('[role="progressbar"]');
-  
+
   bar.style.width = `${percentage}%`;
   percentageText.textContent = `${percentage}%`;
   stepsText.textContent = `${completed} of ${total} steps complete`;
-  progressBar.setAttribute('aria-valuenow', percentage);
+  progressBar.setAttribute("aria-valuenow", percentage);
 }
 ```
 
@@ -1346,10 +1429,7 @@ function updateProgress(completed, total) {
 <!-- Dismissible badge -->
 <span class="badge badge-primary badge-dismissible">
   Python
-  <button 
-    type="button" 
-    class="badge-dismiss" 
-    aria-label="Remove Python">
+  <button type="button" class="badge-dismiss" aria-label="Remove Python">
     ×
   </button>
 </span>
@@ -1442,6 +1522,7 @@ function updateProgress(completed, total) {
 ```
 
 **Job Club Use Cases:**
+
 - Student skills (Python, JavaScript, AI)
 - Interest areas (Consulting, Development, Startup)
 - Membership status (Active, Alumni, Pending)
@@ -1455,12 +1536,12 @@ function updateProgress(completed, total) {
 ```html
 <!-- Basic avatar -->
 <div class="avatar">
-  <img src="/api/avatar/123" alt="John Doe">
+  <img src="/api/avatar/123" alt="John Doe" />
 </div>
 
 <!-- Avatar with status -->
 <div class="avatar">
-  <img src="/api/avatar/123" alt="Jane Smith">
+  <img src="/api/avatar/123" alt="Jane Smith" />
   <span class="avatar-status avatar-status-online"></span>
 </div>
 
@@ -1473,13 +1554,13 @@ function updateProgress(completed, total) {
 <!-- Avatar group (show multiple users) -->
 <div class="avatar-group">
   <div class="avatar avatar-sm">
-    <img src="/avatar/1.jpg" alt="User 1">
+    <img src="/avatar/1.jpg" alt="User 1" />
   </div>
   <div class="avatar avatar-sm">
-    <img src="/avatar/2.jpg" alt="User 2">
+    <img src="/avatar/2.jpg" alt="User 2" />
   </div>
   <div class="avatar avatar-sm">
-    <img src="/avatar/3.jpg" alt="User 3">
+    <img src="/avatar/3.jpg" alt="User 3" />
   </div>
   <div class="avatar avatar-sm avatar-count">
     <span>+5</span>
@@ -1488,7 +1569,11 @@ function updateProgress(completed, total) {
 
 <!-- Avatar with initials fallback -->
 <div class="avatar" data-initials="JD">
-  <img src="/avatar/404.jpg" alt="John Doe" onerror="this.style.display='none'">
+  <img
+    src="/avatar/404.jpg"
+    alt="John Doe"
+    onerror="this.style.display='none'"
+  />
   <span class="avatar-initials">JD</span>
 </div>
 ```
@@ -1601,6 +1686,7 @@ function updateProgress(completed, total) {
 ```
 
 **Job Club Use Cases:**
+
 - User profiles
 - Event attendee lists
 - Mentor directory
@@ -1613,24 +1699,28 @@ function updateProgress(completed, total) {
 ## 📊 Implementation Checklist
 
 ### **Week 1: Foundation**
+
 - [ ] Implement fluid typography system
 - [ ] Set up 12-column grid
 - [ ] Configure accessibility baseline (focus, ARIA, reduced motion)
 - [ ] Add touch target sizing
 
 ### **Week 2: Core Components**
+
 - [ ] Build button system
 - [ ] Create card components
 - [ ] Implement modal/dialog
 - [ ] Add form input styles
 
 ### **Week 3: Advanced Features**
+
 - [ ] Set up Intersection Observer
 - [ ] Add progress tracking
 - [ ] Implement badge system
 - [ ] Create avatar components
 
 ### **Week 4: Polish & Testing**
+
 - [ ] Add Web Vitals monitoring
 - [ ] Implement content visibility
 - [ ] Run accessibility audit
@@ -1642,6 +1732,7 @@ function updateProgress(completed, total) {
 ## 🧪 Testing Requirements
 
 ### Accessibility Testing
+
 - [ ] Keyboard navigation works on all pages
 - [ ] Screen reader announces all content
 - [ ] Focus indicators visible
@@ -1651,6 +1742,7 @@ function updateProgress(completed, total) {
 - [ ] Modals trap focus correctly
 
 ### Performance Testing
+
 - [ ] Lighthouse score > 90
 - [ ] FCP < 1.8s
 - [ ] LCP < 2.5s
@@ -1659,6 +1751,7 @@ function updateProgress(completed, total) {
 - [ ] Fonts load async
 
 ### Responsive Testing
+
 - [ ] Mobile (320px - 767px)
 - [ ] Tablet (768px - 1023px)
 - [ ] Desktop (1024px - 1439px)
@@ -1668,4 +1761,4 @@ function updateProgress(completed, total) {
 
 **End of Documentation**
 
-*All patterns production-tested with perfect Lighthouse scores. Ready for Job Club implementation.*
+_All patterns production-tested with perfect Lighthouse scores. Ready for Job Club implementation._

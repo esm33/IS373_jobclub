@@ -24,9 +24,13 @@ class SwissMobileMenu {
 
   setup() {
     // Get DOM elements
-    this.menuButton = document.querySelector('[data-testid="mobile-menu-button"]');
+    this.menuButton = document.querySelector(
+      '[data-testid="mobile-menu-button"]',
+    );
     this.menuOverlay = document.getElementById("mobile-menu");
-    this.menuLinks = this.menuOverlay ? Array.from(this.menuOverlay.querySelectorAll("a")) : [];
+    this.menuLinks = this.menuOverlay
+      ? Array.from(this.menuOverlay.querySelectorAll("a"))
+      : [];
 
     if (!this.menuButton || !this.menuOverlay) {
       console.warn("Mobile menu elements not found");
@@ -43,7 +47,7 @@ class SwissMobileMenu {
 
     // Close on menu link click
     this.menuLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
+      link.addEventListener("click", (_e) => {
         // Close menu immediately
         this.close();
       });

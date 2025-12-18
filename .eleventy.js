@@ -1,4 +1,4 @@
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
   // Copy passthrough files
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/css");
@@ -11,36 +11,57 @@ export default function(eleventyConfig) {
   });
 
   eleventyConfig.addNunjucksFilter("dateToISO", (dateObj) => {
-    return new Date(dateObj).toISOString().split('T')[0];
+    return new Date(dateObj).toISOString().split("T")[0];
   });
 
   eleventyConfig.addNunjucksFilter("readableDate", (dateObj) => {
-    return new Date(dateObj).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    return new Date(dateObj).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
   });
 
   eleventyConfig.addNunjucksFilter("currentYear", () => {
     return new Date().getFullYear();
   });
 
-  eleventyConfig.addNunjucksFilter("getNewestCollectionItemDate", (collection) => {
-    if (!collection || collection.length === 0) return new Date();
-    return new Date(Math.max(...collection.map(item => new Date(item.date || item.data.date).getTime())));
-  });
+  eleventyConfig.addNunjucksFilter(
+    "getNewestCollectionItemDate",
+    (collection) => {
+      if (!collection || collection.length === 0) {
+        return new Date();
+      }
+      return new Date(
+        Math.max(
+          ...collection.map((item) =>
+            new Date(item.date || item.data.date).getTime(),
+          ),
+        ),
+      );
+    },
+  );
 
-  eleventyConfig.addNunjucksFilter("getPreviousCollectionItem", (collection, currentItem) => {
-    const index = collection.indexOf(currentItem);
-    return index > 0 ? collection[index - 1] : null;
-  });
+  eleventyConfig.addNunjucksFilter(
+    "getPreviousCollectionItem",
+    (collection, currentItem) => {
+      const index = collection.indexOf(currentItem);
+      return index > 0 ? collection[index - 1] : null;
+    },
+  );
 
-  eleventyConfig.addNunjucksFilter("getNextCollectionItem", (collection, currentItem) => {
-    const index = collection.indexOf(currentItem);
-    return index < collection.length - 1 ? collection[index + 1] : null;
-  });
+  eleventyConfig.addNunjucksFilter(
+    "getNextCollectionItem",
+    (collection, currentItem) => {
+      const index = collection.indexOf(currentItem);
+      return index < collection.length - 1 ? collection[index + 1] : null;
+    },
+  );
 
   eleventyConfig.addNunjucksFilter("absoluteUrl", (url, baseUrl) => {
     try {
       return new URL(url, baseUrl).toString();
-    } catch(e) {
+    } catch {
       return baseUrl + url;
     }
   });
@@ -49,8 +70,8 @@ export default function(eleventyConfig) {
     try {
       const urlObj = new URL(url);
       return urlObj.origin;
-    } catch(e) {
-      return url.split('/').slice(0, 3).join('/');
+    } catch {
+      return url.split("/").slice(0, 3).join("/");
     }
   });
 
@@ -62,17 +83,21 @@ export default function(eleventyConfig) {
     return encodeURIComponent(str);
   });
 
-  eleventyConfig.addNunjucksFilter("join", (array, separator = ', ') => {
+  eleventyConfig.addNunjucksFilter("join", (array, separator = ", ") => {
     return array.join(separator);
   });
 
   eleventyConfig.addNunjucksFilter("head", (array, n = 1) => {
-    if (!Array.isArray(array)) return array;
+    if (!Array.isArray(array)) {
+      return array;
+    }
     return array.slice(0, n);
   });
 
   eleventyConfig.addNunjucksFilter("tail", (array, n = 1) => {
-    if (!Array.isArray(array)) return array;
+    if (!Array.isArray(array)) {
+      return array;
+    }
     return array.slice(-n);
   });
 
@@ -80,7 +105,7 @@ export default function(eleventyConfig) {
     dir: {
       input: "src",
       output: "_site",
-      includes: "_includes"
-    }
+      includes: "_includes",
+    },
   };
-};
+}

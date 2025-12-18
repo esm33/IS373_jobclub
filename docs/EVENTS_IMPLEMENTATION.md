@@ -8,7 +8,7 @@ The entire events system is **fully implemented** with UI, filtering, Sanity int
 
 1. **[src/events.njk](../src/events.njk)** - Events page template (238 lines, fully styled)
 2. **[src/js/events.js](../src/js/events.js)** - Event filtering functionality
-3. **[src/_data/events.js](../src/_data/events.js)** - Sanity integration + fallback data (156 lines)
+3. **[src/\_data/events.js](../src/_data/events.js)** - Sanity integration + fallback data (156 lines)
 4. **[src/event-detail-dynamic.njk](../src/event-detail-dynamic.njk)** - Dynamic event detail pages
 5. **[sanity/schemas/event.js](../sanity/schemas/event.js)** - Complete event schema (8945 bytes)
 6. **[docs/EVENTS_SETUP.md](EVENTS_SETUP.md)** - Comprehensive setup guide
@@ -21,6 +21,7 @@ The entire events system is **fully implemented** with UI, filtering, Sanity int
 ## Features Implemented
 
 ### ✅ Event Types
+
 - 🛠️ Workshops
 - 🕐 Office Hours
 - 🤝 Meetups
@@ -29,6 +30,7 @@ The entire events system is **fully implemented** with UI, filtering, Sanity int
 - 🏛️ Town Halls
 
 ### ✅ Event Display
+
 - Dynamic event cards with Material Design
 - Event type badges with emojis
 - Date/time formatting
@@ -38,18 +40,21 @@ The entire events system is **fully implemented** with UI, filtering, Sanity int
 - CTA buttons (Register Now or Learn More)
 
 ### ✅ Filtering System
+
 - Filter by event type
 - Smooth animations
 - Active state indication
 - "No events" message when filter returns empty
 
 ### ✅ Responsive Design
+
 - Mobile: 1 column grid
 - Tablet: 2 columns
 - Desktop: 3 columns
 - Touch-friendly buttons
 
 ### ✅ Loading States
+
 - Loading spinner on initial load
 - Fade-in animations for events
 - Graceful error handling
@@ -65,6 +70,7 @@ The entire events system is **fully implemented** with UI, filtering, Sanity int
 **⏳ Needs Real Data** - Add events to Sanity CMS, rebuild site, and events will appear automatically.
 
 **Demo Mode** - Page currently displays 3 sample events:
+
 1. React Fundamentals Workshop (Jan 15, 2026)
 2. AI Career Paths Office Hours (Jan 20, 2026)
 3. Tech Industry Networking Meetup (Jan 25, 2026)
@@ -81,6 +87,7 @@ npm run dev
 ### Quick Start
 
 1. **Get Sanity Project ID**
+
    ```bash
    cd sanity
    npm run dev
@@ -88,10 +95,11 @@ npm run dev
    ```
 
 2. **Update events.js**
-   
+
    Edit [src/js/events.js](src/js/events.js) line 12:
+
    ```javascript
-   const projectId = 'YOUR_ACTUAL_PROJECT_ID'; // Replace this
+   const projectId = "YOUR_ACTUAL_PROJECT_ID"; // Replace this
    ```
 
 3. **Add Events in Sanity Studio**
@@ -110,6 +118,7 @@ npm run dev
 The event schema includes:
 
 ### Required Fields
+
 - `title` - Event name
 - `slug` - URL-friendly slug
 - `eventType` - Type of event (workshop, office-hours, etc.)
@@ -117,6 +126,7 @@ The event schema includes:
 - `status` - Draft, published, cancelled, or completed
 
 ### Optional Fields
+
 - `description` - Short description (displayed on cards)
 - `fullDescription` - Full event details (for detail page)
 - `endDate` - Event end time
@@ -141,11 +151,13 @@ The event schema includes:
 ## API Integration
 
 ### Sanity Query
+
 ```javascript
 *[_type == "event" && status == "published" && date >= now()] | order(date asc)
 ```
 
 ### Fallback Strategy
+
 - Primary: Fetch from Sanity API
 - Fallback: Display mock events
 - Error handling: Console logging + mock data
@@ -153,19 +165,20 @@ The event schema includes:
 ## Styling Architecture
 
 ### CSS Variables
+
 ```css
---primary: #0072FF
---bg-card: var(--bg-secondary)
---text: Dynamic based on theme
+--primary: #0072ff --bg-card: var(--bg-secondary) --text: Dynamic based on theme;
 ```
 
 ### Animations
+
 - Fade-in on load (0.6s ease-out)
 - Hover scale transform (1.02)
 - Smooth shadow transitions
 - Filter button ripple effect
 
 ### Responsive Breakpoints
+
 - Mobile: < 768px (1 column)
 - Tablet: 768px - 1024px (2 columns)
 - Desktop: > 1024px (3 columns)
@@ -187,12 +200,14 @@ The event schema includes:
 ## Next Steps
 
 ### Immediate
+
 1. Get Sanity project ID from studio
 2. Update `events.js` with project ID
 3. Add real events in Sanity Studio
 4. Test live data integration
 
 ### Future Enhancements
+
 - Event detail pages (individual event URLs)
 - Calendar integration (Google Calendar, iCal)
 - Event search functionality
@@ -235,6 +250,7 @@ Full setup guide available at [docs/EVENTS_SETUP.md](docs/EVENTS_SETUP.md)
 ## Support
 
 Questions? Contact:
+
 - **Email**: kwilliams@njit.edu
 - **Issues**: Check browser console for errors
 - **Sanity**: Review Sanity Studio logs

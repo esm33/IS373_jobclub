@@ -29,7 +29,9 @@ class ChaptersNavigation {
    * Find all H2 headings with IDs (chapters)
    */
   findChapters() {
-    const contentArea = document.querySelector(".chapters-content .prose-swiss");
+    const contentArea = document.querySelector(
+      ".chapters-content .prose-swiss",
+    );
     if (!contentArea) {
       return;
     }
@@ -57,8 +59,14 @@ class ChaptersNavigation {
 
     this.chapters.forEach((chapter, index) => {
       // Check if we need to add a group title
-      const group = this.chapterGroups.find((g) => index >= g.start && index <= g.end);
-      if (group && index === group.start && (currentGroupIndex === 0 || index !== 0)) {
+      const group = this.chapterGroups.find(
+        (g) => index >= g.start && index <= g.end,
+      );
+      if (
+        group &&
+        index === group.start &&
+        (currentGroupIndex === 0 || index !== 0)
+      ) {
         html += `<li class="chapters-section-title">${group.title}</li>`;
         currentGroupIndex++;
       }
@@ -129,7 +137,9 @@ class ChaptersNavigation {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const chapterIndex = this.chapters.findIndex((ch) => ch.element === entry.target);
+          const chapterIndex = this.chapters.findIndex(
+            (ch) => ch.element === entry.target,
+          );
           if (chapterIndex !== -1) {
             this.setActiveChapter(chapterIndex);
           }
@@ -186,7 +196,7 @@ class ChaptersNavigation {
 
     const scrollPercent = Math.min(
       100,
-      Math.round((scrollTop / (documentHeight - windowHeight)) * 100)
+      Math.round((scrollTop / (documentHeight - windowHeight)) * 100),
     );
 
     progressEl.textContent = `${scrollPercent}%`;
@@ -210,7 +220,10 @@ class ChaptersNavigation {
     prevBtn.addEventListener("click", () => {
       if (this.currentChapter > 0) {
         const prevChapter = this.chapters[this.currentChapter - 1];
-        prevChapter.element.scrollIntoView({ behavior: "smooth", block: "start" });
+        prevChapter.element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
         history.pushState(null, null, `#${prevChapter.id}`);
       }
     });
@@ -218,7 +231,10 @@ class ChaptersNavigation {
     nextBtn.addEventListener("click", () => {
       if (this.currentChapter < this.chapters.length - 1) {
         const nextChapter = this.chapters[this.currentChapter + 1];
-        nextChapter.element.scrollIntoView({ behavior: "smooth", block: "start" });
+        nextChapter.element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
         history.pushState(null, null, `#${nextChapter.id}`);
       }
     });
@@ -329,7 +345,9 @@ class ChaptersNavigation {
 
     toggle.addEventListener("click", () => {
       nav.classList.toggle("open");
-      toggle.textContent = nav.classList.contains("open") ? "Close" : "Chapters";
+      toggle.textContent = nav.classList.contains("open")
+        ? "Close"
+        : "Chapters";
     });
 
     document.body.appendChild(toggle);

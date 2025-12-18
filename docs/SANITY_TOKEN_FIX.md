@@ -33,6 +33,7 @@ The token should show: **"Editor"** (allows read + write + delete)
 If the token has wrong permissions:
 
 **Option A: Delete and Recreate**
+
 1. In the Tokens section, click the **trash icon** to delete the old token
 2. Click **"Add API token"**
 3. **Token name:** `job-club-write-token`
@@ -41,6 +42,7 @@ If the token has wrong permissions:
 6. **Copy the new token** (it won't be shown again!)
 
 **Option B: Update Token Permissions**
+
 1. If your token is still listed, click on it
 2. Edit the **Permissions** field to **"Editor"**
 3. Click **"Save"**
@@ -74,11 +76,11 @@ SANITY_WRITE_TOKEN=skE0h4f2TbWNSsAhUQ9rXnJDvVZKFJFi6Qv2...  # Replace with new t
 
 ## Sanity Token Permissions Explained
 
-| Permission | Read | Write | Delete | Notes |
-|-----------|------|-------|--------|-------|
-| **Viewer** | ✓ | ✗ | ✗ | Read-only, can't create documents |
-| **Editor** | ✓ | ✓ | ✓ | Can create, edit, delete documents |
-| **Custom** | ✓ | ✓ | ✗ | Can create/edit but not delete |
+| Permission | Read | Write | Delete | Notes                              |
+| ---------- | ---- | ----- | ------ | ---------------------------------- |
+| **Viewer** | ✓    | ✗     | ✗      | Read-only, can't create documents  |
+| **Editor** | ✓    | ✓     | ✓      | Can create, edit, delete documents |
+| **Custom** | ✓    | ✓     | ✗      | Can create/edit but not delete     |
 
 For Job Club, you need **"Editor"** permissions to save member profiles.
 
@@ -94,4 +96,4 @@ For Job Club, you need **"Editor"** permissions to save member profiles.
 
 ---
 
-*Last Updated: December 13, 2025*
+_Last Updated: December 13, 2025_

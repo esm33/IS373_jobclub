@@ -1,6 +1,7 @@
 # Brand Guide
 
 ## Overview
+
 This brand guide establishes the visual and verbal identity for Job Club. It ensures consistency across all touchpoints and reinforces our mission: helping students prepare for AI-driven careers through community and practice.
 
 ---
@@ -161,37 +162,47 @@ This brand guide establishes the visual and verbal identity for Job Club. It ens
 
 **Display Styles** (Google Sans)
 ```
-Display Large:  57px | Regular (400) | Line Height: 64px  | Tracking: -0.25px
-Display Medium: 45px | Regular (400) | Line Height: 52px  | Tracking: 0px
-Display Small:  36px | Regular (400) | Line Height: 44px  | Tracking: 0px
+
+Display Large: 57px | Regular (400) | Line Height: 64px | Tracking: -0.25px
+Display Medium: 45px | Regular (400) | Line Height: 52px | Tracking: 0px
+Display Small: 36px | Regular (400) | Line Height: 44px | Tracking: 0px
+
 ```
 
 **Headline Styles** (Google Sans)
 ```
-Headline Large:  32px | Regular (400) | Line Height: 40px | Tracking: 0px
+
+Headline Large: 32px | Regular (400) | Line Height: 40px | Tracking: 0px
 Headline Medium: 28px | Regular (400) | Line Height: 36px | Tracking: 0px
-Headline Small:  24px | Regular (400) | Line Height: 32px | Tracking: 0px
+Headline Small: 24px | Regular (400) | Line Height: 32px | Tracking: 0px
+
 ```
 
 **Title Styles** (Roboto)
 ```
-Title Large:  22px | Regular (400) | Line Height: 28px | Tracking: 0px
-Title Medium: 16px | Medium (500)  | Line Height: 24px | Tracking: 0.15px
-Title Small:  14px | Medium (500)  | Line Height: 20px | Tracking: 0.1px
+
+Title Large: 22px | Regular (400) | Line Height: 28px | Tracking: 0px
+Title Medium: 16px | Medium (500) | Line Height: 24px | Tracking: 0.15px
+Title Small: 14px | Medium (500) | Line Height: 20px | Tracking: 0.1px
+
 ```
 
 **Body Styles** (Roboto)
 ```
-Body Large:  16px | Regular (400) | Line Height: 24px | Tracking: 0.5px
+
+Body Large: 16px | Regular (400) | Line Height: 24px | Tracking: 0.5px
 Body Medium: 14px | Regular (400) | Line Height: 20px | Tracking: 0.25px
-Body Small:  12px | Regular (400) | Line Height: 16px | Tracking: 0.4px
+Body Small: 12px | Regular (400) | Line Height: 16px | Tracking: 0.4px
+
 ```
 
 **Label Styles** (Roboto - for buttons, chips, tabs)
 ```
-Label Large:  14px | Medium (500) | Line Height: 20px | Tracking: 0.1px
+
+Label Large: 14px | Medium (500) | Line Height: 20px | Tracking: 0.1px
 Label Medium: 12px | Medium (500) | Line Height: 16px | Tracking: 0.5px
-Label Small:  11px | Medium (500) | Line Height: 16px | Tracking: 0.5px
+Label Small: 11px | Medium (500) | Line Height: 16px | Tracking: 0.5px
+
 ```
 
 ### Typography Guidelines
@@ -349,285 +360,337 @@ The Mentor archetype blends the Sage's pursuit of knowledge with the Caregiver's
 
 **Primary Button**
 ```
+
 ┌──────────────────────┐
-│   Get Started        │  ← Background: #06B6D4 (Bright Cyan)
-└──────────────────────┘     Text: #FFFFFF (White)
-                             Padding: 12px 24px
-                             Border Radius: 8px
-                             Font: 16px Medium (500)
-                             Hover: Darken 10%
-                             Active: Darken 15%
+│ Get Started │ ← Background: #06B6D4 (Bright Cyan)
+└──────────────────────┘ Text: #FFFFFF (White)
+Padding: 12px 24px
+Border Radius: 8px
+Font: 16px Medium (500)
+Hover: Darken 10%
+Active: Darken 15%
+
 ```
 
 **Secondary Button**
 ```
+
 ┌──────────────────────┐
-│   Learn More         │  ← Background: Transparent
-└──────────────────────┘     Border: 2px solid #1E3A8A
-                             Text: #1E3A8A (Deep Blue)
-                             Padding: 12px 24px
-                             Border Radius: 8px
-                             Font: 16px Medium (500)
-                             Hover: Light blue background (#EFF6FF)
+│ Learn More │ ← Background: Transparent
+└──────────────────────┘ Border: 2px solid #1E3A8A
+Text: #1E3A8A (Deep Blue)
+Padding: 12px 24px
+Border Radius: 8px
+Font: 16px Medium (500)
+Hover: Light blue background (#EFF6FF)
+
 ```
 
 **Tertiary Button / Link**
 ```
-  Explore Resources →     ← Text: #06B6D4
-                             No background/border
-                             Font: 16px Medium (500)
-                             Hover: Underline
+
+Explore Resources → ← Text: #06B6D4
+No background/border
+Font: 16px Medium (500)
+Hover: Underline
+
 ```
 
 **Disabled State**
 ```
+
 ┌──────────────────────┐
-│   Submit             │  ← Background: #E5E7EB (Light Gray)
-└──────────────────────┘     Text: #9CA3AF (Gray)
-                             Cursor: not-allowed
-                             Opacity: 0.6
+│ Submit │ ← Background: #E5E7EB (Light Gray)
+└──────────────────────┘ Text: #9CA3AF (Gray)
+Cursor: not-allowed
+Opacity: 0.6
+
 ```
 
 **Button Sizes**
 ```
-Large:  Padding 16px 32px | Font 18px
+
+Large: Padding 16px 32px | Font 18px
 Medium: Padding 12px 24px | Font 16px (Default)
-Small:  Padding 8px 16px  | Font 14px
+Small: Padding 8px 16px | Font 14px
+
 ```
 
 ### Form Elements
 
 **Text Input**
 ```
+
 ┌──────────────────────────────────┐
-│ Enter your email                 │  ← Border: 1px solid #E5E7EB
-└──────────────────────────────────┘     Padding: 12px 16px
-                                         Border Radius: 6px
-                                         Font: 16px Regular
-                                         Focus: Border #06B6D4, 2px
+│ Enter your email │ ← Border: 1px solid #E5E7EB
+└──────────────────────────────────┘ Padding: 12px 16px
+Border Radius: 6px
+Font: 16px Regular
+Focus: Border #06B6D4, 2px
+
 ```
 
 **Dropdown / Select**
 ```
+
 ┌──────────────────────────────────┐
-│ Select category              ▼   │  ← Same as text input
-└──────────────────────────────────┘     Arrow icon: Right aligned
+│ Select category ▼ │ ← Same as text input
+└──────────────────────────────────┘ Arrow icon: Right aligned
+
 ```
 
 **Checkbox**
 ```
-☑  Remember me                        ← Checked: #06B6D4
-☐  Remember me                           Unchecked: Border #E5E7EB
-                                         Size: 20px × 20px
-                                         Border Radius: 4px
+
+☑ Remember me ← Checked: #06B6D4
+☐ Remember me Unchecked: Border #E5E7EB
+Size: 20px × 20px
+Border Radius: 4px
+
 ```
 
 **Radio Button**
 ```
-●  Option A                           ← Selected: #06B6D4
-○  Option B                              Unselected: Border #E5E7EB
-                                         Size: 20px diameter
+
+● Option A ← Selected: #06B6D4
+○ Option B Unselected: Border #E5E7EB
+Size: 20px diameter
+
 ```
 
 **Toggle Switch**
 ```
-────●                                 ← ON: Background #10B981 (Green)
-●────                                    OFF: Background #E5E7EB
-                                         Width: 44px, Height: 24px
+
+────● ← ON: Background #10B981 (Green)
+●──── OFF: Background #E5E7EB
+Width: 44px, Height: 24px
+
 ```
 
 ### Cards
 
 **Standard Card**
 ```
+
 ┌────────────────────────────────────┐
-│  [Image/Thumbnail]                 │
-│                                    │
-│  Card Title                        │
-│  Brief description or metadata     │
-│  goes here...                      │
-│                                    │
-│  [Action Button]                   │
+│ [Image/Thumbnail] │
+│ │
+│ Card Title │
+│ Brief description or metadata │
+│ goes here... │
+│ │
+│ [Action Button] │
 └────────────────────────────────────┘
-   ↑
-   Background: #FFFFFF
-   Border: 1px solid #E5E7EB
-   Border Radius: 12px
-   Padding: 24px
-   Shadow: 0 1px 3px rgba(0,0,0,0.1)
-   Hover: Shadow 0 4px 12px rgba(0,0,0,0.15)
+↑
+Background: #FFFFFF
+Border: 1px solid #E5E7EB
+Border Radius: 12px
+Padding: 24px
+Shadow: 0 1px 3px rgba(0,0,0,0.1)
+Hover: Shadow 0 4px 12px rgba(0,0,0,0.15)
+
 ```
 
 **Event Card**
 ```
+
 ┌────────────────────────────────────┐
-│  Dec 15 │ AI Career Workshop       │
-│  6PM    │ Virtual | 45 registered  │
-│         │                   [RSVP] │
+│ Dec 15 │ AI Career Workshop │
+│ 6PM │ Virtual | 45 registered │
+│ │ [RSVP] │
 └────────────────────────────────────┘
+
 ```
 
 **Project Card**
 ```
+
 ┌────────────────────────────────────┐
-│  [Project Preview Image]           │
-│                                    │
-│  Project Title                     │
-│  by @username                      │
-│                                    │
-│  ❤️ 45  💬 12                      │
+│ [Project Preview Image] │
+│ │
+│ Project Title │
+│ by @username │
+│ │
+│ ❤️ 45 💬 12 │
 └────────────────────────────────────┘
+
 ```
 
 ### Navigation
 
 **Header Navigation**
 ```
+
 ┌─────────────────────────────────────────────────┐
-│  [Logo]  Learn  Events  Projects  Career  Blog │
-│                                        [Login]  │
+│ [Logo] Learn Events Projects Career Blog │
+│ [Login] │
 └─────────────────────────────────────────────────┘
-   ↑
-   Background: #FFFFFF
-   Border Bottom: 1px solid #E5E7EB
-   Height: 64px
-   Padding: 0 24px
-   Shadow: 0 1px 2px rgba(0,0,0,0.05)
+↑
+Background: #FFFFFF
+Border Bottom: 1px solid #E5E7EB
+Height: 64px
+Padding: 0 24px
+Shadow: 0 1px 2px rgba(0,0,0,0.05)
+
 ```
 
 **Navigation Link States**
 ```
-Default:  #6B7280 (Gray)      | No underline
-Hover:    #1E3A8A (Deep Blue) | No underline
-Active:   #1E3A8A (Deep Blue) | Bold, underline
+
+Default: #6B7280 (Gray) | No underline
+Hover: #1E3A8A (Deep Blue) | No underline
+Active: #1E3A8A (Deep Blue) | Bold, underline
+
 ```
 
 **Mobile Menu**
 ```
+
 ┌──────────────────┐
-│  ☰  [Logo]   👤  │  ← Hamburger menu
+│ ☰ [Logo] 👤 │ ← Hamburger menu
 └──────────────────┘
-      ↓
+↓
 ┌──────────────────┐
-│  ✕  Menu         │
+│ ✕ Menu │
 ├──────────────────┤
-│  Home            │
-│  Learn           │
-│  Events          │
-│  Projects        │
-│  Career          │
-│  Blog            │
-│  ───────────     │
-│  Login           │
+│ Home │
+│ Learn │
+│ Events │
+│ Projects │
+│ Career │
+│ Blog │
+│ ─────────── │
+│ Login │
 └──────────────────┘
+
 ```
 
 ### Badges & Tags
 
 **Tag / Label**
 ```
+
 ┌─────────────┐
-│ AI Basics   │  ← Background: #EFF6FF (Light Blue)
-└─────────────┘     Text: #1E3A8A (Deep Blue)
-                    Padding: 4px 12px
-                    Border Radius: 16px (pill shape)
-                    Font: 12px Medium
+│ AI Basics │ ← Background: #EFF6FF (Light Blue)
+└─────────────┘ Text: #1E3A8A (Deep Blue)
+Padding: 4px 12px
+Border Radius: 16px (pill shape)
+Font: 12px Medium
+
 ```
 
 **Badge (Notification)**
 ```
-  [Icon]  ③       ← Background: #EF4444 (Red)
-                     Text: #FFFFFF (White)
-                     Size: 20px diameter
-                     Position: Top-right of parent
+
+[Icon] ③ ← Background: #EF4444 (Red)
+Text: #FFFFFF (White)
+Size: 20px diameter
+Position: Top-right of parent
+
 ```
 
 **Status Indicators**
 ```
-●  Active          ← Green (#10B981)
-●  Pending         ← Yellow (#F59E0B)
-●  Inactive        ← Gray (#6B7280)
+
+● Active ← Green (#10B981)
+● Pending ← Yellow (#F59E0B)
+● Inactive ← Gray (#6B7280)
+
 ```
 
 ### Alerts & Messages
 
 **Success Alert**
 ```
+
 ┌────────────────────────────────────────┐
-│  ✓  Profile updated successfully!      │
+│ ✓ Profile updated successfully! │
 └────────────────────────────────────────┘
-    Background: #D1FAE5 (Light Green)
-    Border: 1px solid #10B981 (Green)
-    Text: #065F46 (Dark Green)
-    Icon: ✓
+Background: #D1FAE5 (Light Green)
+Border: 1px solid #10B981 (Green)
+Text: #065F46 (Dark Green)
+Icon: ✓
+
 ```
 
 **Error Alert**
 ```
+
 ┌────────────────────────────────────────┐
-│  ✕  Something went wrong. Try again.   │
+│ ✕ Something went wrong. Try again. │
 └────────────────────────────────────────┘
-    Background: #FEE2E2 (Light Red)
-    Border: 1px solid #EF4444 (Red)
-    Text: #991B1B (Dark Red)
-    Icon: ✕
+Background: #FEE2E2 (Light Red)
+Border: 1px solid #EF4444 (Red)
+Text: #991B1B (Dark Red)
+Icon: ✕
+
 ```
 
 **Info Alert**
 ```
+
 ┌────────────────────────────────────────┐
-│  ℹ  New resources available!           │
+│ ℹ New resources available! │
 └────────────────────────────────────────┘
-    Background: #DBEAFE (Light Blue)
-    Border: 1px solid #3B82F6 (Blue)
-    Text: #1E40AF (Dark Blue)
-    Icon: ℹ
+Background: #DBEAFE (Light Blue)
+Border: 1px solid #3B82F6 (Blue)
+Text: #1E40AF (Dark Blue)
+Icon: ℹ
+
 ```
 
 ### Loading States
 
 **Spinner**
 ```
+
     ⟳                  ← Animation: Rotate
                           Color: #06B6D4 (Bright Cyan)
                           Size: 24px-48px depending on context
+
 ```
 
 **Skeleton Loader**
 ```
+
 ┌────────────────────────┐
-│ ████████               │  ← Gray bars (#E5E7EB)
-│ ██████                 │     Animated shimmer effect
-│ ████████████           │     Maintains layout dimensions
+│ ████████ │ ← Gray bars (#E5E7EB)
+│ ██████ │ Animated shimmer effect
+│ ████████████ │ Maintains layout dimensions
 └────────────────────────┘
+
 ```
 
 **Progress Bar**
 ```
+
 [████████░░░░░░░░] 60%
-    ↑
-    Fill: #06B6D4 (Bright Cyan)
-    Background: #E5E7EB (Light Gray)
-    Height: 8px
-    Border Radius: 4px
+↑
+Fill: #06B6D4 (Bright Cyan)
+Background: #E5E7EB (Light Gray)
+Height: 8px
+Border Radius: 4px
+
 ```
 
 ### Spacing System
 
 **Consistent spacing scale (px)**
 ```
-0:   0px
-1:   4px
-2:   8px
-3:   12px
-4:   16px
-5:   20px
-6:   24px
-8:   32px
-10:  40px
-12:  48px
-16:  64px
-20:  80px
+
+0: 0px
+1: 4px
+2: 8px
+3: 12px
+4: 16px
+5: 20px
+6: 24px
+8: 32px
+10: 40px
+12: 48px
+16: 64px
+20: 80px
+
 ```
 
 **Usage**
@@ -639,22 +702,30 @@ Active:   #1E3A8A (Deep Blue) | Bold, underline
 
 **Card Shadow (Default)**
 ```
+
 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
 ```
 
 **Card Shadow (Hover)**
 ```
+
 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
 ```
 
 **Modal Shadow**
 ```
+
 box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
 ```
 
 **Subtle Shadow (Dividers)**
 ```
+
 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
 ```
 
 ### Border Radius
@@ -736,19 +807,25 @@ box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
 **Standard Easing**
 ```
+
 ease-in-out: cubic-bezier(0.4, 0, 0.2, 1)
+
 ```
 
 **Quick Transitions** (hover, focus)
 ```
+
 Duration: 150ms
 Easing: ease-in-out
+
 ```
 
 **Page Transitions**
 ```
+
 Duration: 300ms
 Easing: ease-in-out
+
 ```
 
 ### Common Animations
@@ -822,3 +899,4 @@ Before launching any design, verify:
 ---
 
 *This brand guide is a living document. Update as the brand evolves, but maintain consistency with core principles.*
+```

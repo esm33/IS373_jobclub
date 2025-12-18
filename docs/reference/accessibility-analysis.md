@@ -17,16 +17,17 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ### Perceivable
 
 #### 1.1 Text Alternatives ✅
+
 - **All images have alt text**
 - **Decorative images use `alt=""`**
 - **Icon buttons have `aria-label`**
 
 ```html
 <!-- Functional image -->
-<img src="/images/logo.png" alt="Job Club NJIT logo">
+<img src="/images/logo.png" alt="Job Club NJIT logo" />
 
 <!-- Decorative image -->
-<img src="/images/decoration.svg" alt="" aria-hidden="true">
+<img src="/images/decoration.svg" alt="" aria-hidden="true" />
 
 <!-- Icon button -->
 <button aria-label="Open menu">
@@ -35,6 +36,7 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ```
 
 #### 1.3 Adaptable ✅
+
 - **Semantic HTML structure**
 - **Proper heading hierarchy (h1→h2→h3)**
 - **Landmark regions** (`<nav>`, `<main>`, `<footer>`)
@@ -55,6 +57,7 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ```
 
 #### 1.4 Distinguishable ✅
+
 - **Color contrast ratio ≥4.5:1** for all text
 - **Text resizable up to 200%** without loss of functionality
 - **Focus indicators visible** on all interactive elements
@@ -72,6 +75,7 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ### Operable
 
 #### 2.1 Keyboard Accessible ✅
+
 - **All functionality via keyboard**
 - **No keyboard traps**
 - **Logical tab order**
@@ -87,6 +91,7 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ```
 
 #### 2.4 Navigable ✅
+
 - **Clear page titles**
 - **Descriptive headings**
 - **Multiple navigation methods** (menu, search, sitemap)
@@ -95,19 +100,22 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ```css
 /* Visible focus indicator */
 *:focus-visible {
-  outline: 2px solid #6750A4;
+  outline: 2px solid #6750a4;
   outline-offset: 2px;
 }
 ```
 
 #### 2.5 Input Modalities ✅
+
 - **Touch targets ≥44×44px**
 - **Pointer cancellation** (click on release, not press)
 - **No motion-only activation**
 
 ```css
 /* WCAG 2.1 touch target size */
-.btn, a.btn, button {
+.btn,
+a.btn,
+button {
   min-height: 44px;
   min-width: 44px;
   padding: 12px 24px;
@@ -119,23 +127,27 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ### Understandable
 
 #### 3.1 Readable ✅
+
 - **Language declared** (`<html lang="en">`)
 - **Clear, simple language** in content
 - **Abbreviations explained** on first use
 
 ```html
 <html lang="en">
-<head>
-  <title>Job Club - AI Career Accelerator</title>
-</head>
+  <head>
+    <title>Job Club - AI Career Accelerator</title>
+  </head>
+</html>
 ```
 
 #### 3.2 Predictable ✅
+
 - **Consistent navigation** across pages
 - **No unexpected context changes**
 - **Consistent component behavior**
 
 #### 3.3 Input Assistance ✅
+
 - **Error identification** in forms
 - **Labels and instructions** provided
 - **Error suggestions** offered
@@ -146,14 +158,14 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
   Email Address
   <span aria-label="required">*</span>
 </label>
-<input 
-  type="email" 
-  id="email" 
+<input
+  type="email"
+  id="email"
   name="email"
   required
   aria-required="true"
   aria-describedby="email-error"
->
+/>
 <span id="email-error" class="error" role="alert">
   Please enter a valid email address
 </span>
@@ -164,18 +176,20 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ### Robust
 
 #### 4.1 Compatible ✅
+
 - **Valid HTML** (no parsing errors)
 - **Proper ARIA usage**
 - **Name, Role, Value** for all UI components
 
 ```html
 <!-- Accessible custom component -->
-<div 
-  role="button" 
-  tabindex="0" 
+<div
+  role="button"
+  tabindex="0"
   aria-pressed="false"
   onclick="toggleFeature()"
-  onkeypress="handleKeyPress(event)">
+  onkeypress="handleKeyPress(event)"
+>
   Toggle Feature
 </div>
 ```
@@ -185,24 +199,28 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ## Accessibility Features Implemented
 
 ### 1. Screen Reader Support
+
 - All images have meaningful alt text
 - ARIA labels on icon buttons
 - ARIA live regions for dynamic content
 - Proper heading structure
 
 ### 2. Keyboard Navigation
+
 - Tab order follows visual order
 - All interactive elements keyboard accessible
 - Escape key closes modals
 - Arrow keys for carousel navigation
 
 ### 3. Visual Accessibility
+
 - High color contrast (11:1 ratio on text)
 - Clear focus indicators
 - Text resizable without horizontal scrolling
 - No information conveyed by color alone
 
 ### 4. Motion & Animation
+
 ```css
 /* Respects user preferences */
 @media (prefers-reduced-motion: reduce) {
@@ -214,6 +232,7 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ```
 
 ### 5. Forms & Validation
+
 - Required fields clearly marked
 - Error messages associated with inputs
 - Real-time validation feedback
@@ -224,11 +243,13 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ## Testing Results
 
 ### Automated Testing
+
 - **Lighthouse:** 100/100
 - **axe DevTools:** 0 violations
 - **WAVE:** 0 errors
 
 ### Manual Testing
+
 - ✅ Keyboard navigation: Full site navigable
 - ✅ Screen reader (NVDA): All content accessible
 - ✅ Screen reader (VoiceOver): All content accessible
@@ -253,6 +274,7 @@ Job Club NJIT achieves **100/100 Lighthouse Accessibility score** through compre
 ---
 
 **References:**
+
 - WCAG 2.1: https://www.w3.org/WAI/WCAG21/quickref/
 - Material Design Accessibility: https://m3.material.io/foundations/accessible-design
 

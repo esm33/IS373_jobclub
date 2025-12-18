@@ -9,6 +9,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 ---
 
 ## 📋 Table of Contents
+
 - [✅ General Requirements (All Projects)](#-general-requirements-all-projects)
 - [🎯 Job Club Specific Requirements](#-job-club-specific-requirements)
 - [Progress Summary](#progress-summary)
@@ -18,6 +19,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 ## 🎉 Events System
 
 ### ✅ Onboarding Form (COMPLETE - TESTED & WORKING)
+
 - [x] Create `src/onboarding.njk` page ✅
 - [x] Form fields:
   - [x] Name (text) ✅
@@ -37,6 +39,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [x] **PRODUCTION READY** (live Sanity credentials configured and tested) ✅
 
 ### ✅ Sanity Schema (COMPLETE - TESTED & WORKING)
+
 - [x] Create `sanity/schemas/memberProfile.js` ✅
 - [x] All required fields ✅
 - [x] Onboarding status (new, in-progress, completed) ✅
@@ -48,6 +51,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [x] **STUDIO CONFIGURED** (works locally, ready for team deployment) ✅
 
 ### ✅ Backend API (COMPLETE - TESTED & WORKING)
+
 - [x] Create `api/submit-onboarding.js` serverless function ✅
 - [x] Create `dev-server.js` for local testing ✅
 - [x] Sanity client integration ✅
@@ -59,7 +63,9 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [x] **DEV SERVER RUNNING STABLE ON PORT 3002** ✅
 
 ### ✅ Personalized Onboarding Email (COMPLETE - TESTED & WORKING)
+
 **After form submission, automation sends:**
+
 - [x] Personalized onboarding checklist via Gmail ✅
 - [x] Guides for missing assets:
   - [x] LinkedIn optimization guide (if missing) ✅
@@ -70,6 +76,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [x] Job Club resources links ✅
 
 **Implementation:** Zapier Webhook Integration
+
 - [x] Zapier webhook configured and tested ✅
 - [x] Gmail automation set up with dynamic fields ✅
 - [x] Email templates created (complete & incomplete profiles) ✅
@@ -79,7 +86,9 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 **Status:** 6/6 complete - **PRODUCTION READY**
 
 ### ⏳ Discord Integration (COMPLETE - TESTED & WORKING)
+
 **After form submission, automation sends:**
+
 - [x] Post to #jobclub-intros Discord channel ✅
 - [x] Beautiful embed with member info ✅
 - [x] Name, major, graduation year, career goal ✅
@@ -88,6 +97,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [x] **PRODUCTION READY** ✅
 
 **Implementation:** Discord Webhook
+
 - [x] Discord webhook configured and tested ✅
 - [x] Embed formatting with Material Design colors ✅
 - [x] Error handling for webhook failures ✅
@@ -97,6 +107,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 
 **Onboarding Section Status:** 24/25 complete (96%) - **PRODUCTION READY**
 **Completed:**
+
 - ✅ Onboarding Form (100%)
 - ✅ Sanity Schema (100%)
 - ✅ Backend API (100%)
@@ -104,6 +115,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - ✅ Discord Integration (100%)
 
 **Remaining:**
+
 - None - all core onboarding features complete!
 
 ---
@@ -111,6 +123,7 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 ## 🎉 B. Events System
 
 ### ✅ Event Schema & Backend (COMPLETE)
+
 - [x] Create `sanity/schemas/event.js` ✅ **(8945 bytes - FULLY IMPLEMENTED)**
 - [x] All required fields (date, location, capacity, speakers, tags, etc.) ✅
 - [x] Event type enum (workshop, office-hours, meetup, webinar, etc.) ✅
@@ -121,9 +134,10 @@ This document tracks all requirements (general + Job Club-specific) and implemen
 - [x] **AUTOMATIC BUILD INTEGRATION** - Events fetched during 11ty build ✅ GENERAL REQUIREMENTS (All Projects)
 
 ### 1. Core Expectations
+
 - [x] Use Eleventy (11ty) as static generator ✅
 - [x] Analytics Tracking (REQUIRED) ✅
-Must track:
+      Must track:
 - [x] Events page views ✅
 - [x] Event detail page views ✅
 - [x] Event clicks (learn more, register) ✅
@@ -134,6 +148,7 @@ Must track:
 **Status:** 6/6 complete ✅ **PRODUCTION READY** (needs GA4 measurement ID)
 
 ### ✅ Events Analytics (COMPLETE - PRODUCTION READY)
+
 - [x] Google Analytics 4 integration ✅
 - [x] Analytics manager module (`src/js/analytics.js`) ✅
 - [x] Events page view tracking ✅
@@ -151,11 +166,13 @@ Must track:
 **Analytics Status:** 13/13 complete (100%) ✅
 
 **Remaining for Full Production:**
+
 - [ ] Add real GA4 measurement ID to `site.json`
 - [x] Implement cookie consent banner ✅
 - [ ] Test in production environment
 
 ### ✅ Events - Additional Features (COMPLETE)
+
 - [x] Test events page with real Sanity data ✅
 - [x] Add past events archive section ✅
 - [x] Add event search functionality ✅
@@ -173,7 +190,9 @@ Must track:
 ---
 
 ### 6. UX Deliverables
+
 📁 Location: `docs/ux/`
+
 - [ ] Sitemap + IA
 - [ ] Wireframes:
   - [ ] Homepage
@@ -191,6 +210,7 @@ Must track:
 ---
 
 ### 7. Implementation Requirements
+
 - [x] Multi-page Eleventy site ✅
 - [x] Content structure for Sanity ✅
 - [ ] All content powered by Sanity (needs deployment + data)
@@ -205,13 +225,16 @@ Must track:
 ---
 
 ### 8. Privacy + GDPR ✅ **COMPLETE**
+
 - [x] Cookie banner (Accept / Reject / Preferences) ✅
 - [x] Analytics only after consent ✅
+
 ---
 
 ## 🎉 C. Resource Library (COMPLETE - PRODUCTION READY)
 
 ### ✅ Resource Page Created
+
 - [x] Create `src/resources.njk` page ✅
 - [x] Material Design card layout (2-column responsive grid) ✅
 - [x] 4 comprehensive guides with download functionality ✅
@@ -219,7 +242,9 @@ Must track:
 - [x] Proper 120px top padding (consistent with all pages) ✅
 
 ### ✅ 4 High-Quality Guides Created (COMPLETE)
+
 All guides downloadable as markdown files in `/guides/`:
+
 - [x] **LinkedIn Optimization Guide** (1,200+ lines) ✅
   - [x] Profile photo best practices ✅
   - [x] Headline formula ✅
@@ -253,12 +278,15 @@ All guides downloadable as markdown files in `/guides/`:
 ## 🔗 Required Integrations
 
 ### ⏳ Discord Integration (REQUIRED)
+
 **Minimum Required Channels:**
+
 - [ ] #jobclub-intros (automated intro posts from onboarding)
 - [ ] #events (event announcements)
 - [ ] #resources (new guide notifications)
 
 **Setup:**
+
 - [ ] Create Discord server
 - [ ] Set up webhook URLs for each channel
 - [ ] Configure automation (Zapier/Make)
@@ -269,9 +297,11 @@ All guides downloadable as markdown files in `/guides/`:
 **Discord Status:** 0/6 complete
 
 ### 🔄 CRM Integration (REQUIRED)
+
 **Chosen:** ✅ Airtable
 
 Must track:
+
 - [x] Member onboarding submissions ✅
 - [ ] Onboarding status
 - [ ] Missing prerequisites
@@ -280,6 +310,7 @@ Must track:
 - [ ] Career goals
 
 **Setup:**
+
 - [x] Choose CRM platform (Airtable) ✅
 - [x] Create member database structure ✅
 - [x] Set up API/webhook integration (Zapier) ✅
@@ -294,9 +325,11 @@ Must track:
 ## ⚙️ Automation Requirements
 
 ### ⏳ Required Automation #1: Onboarding Flow
+
 **Trigger:** Form submission on `/onboarding/`
 
 **Must do:**
+
 1. [ ] Add member to Sanity CMS
 2. [ ] Add member to CRM (HubSpot/Airtable/Notion)
 3. [ ] Send personalized email with:
@@ -309,7 +342,9 @@ Must track:
 **Status:** 0/4 steps complete
 
 ### ⏳ Required Automation #2: Choose One
+
 Options:
+
 - [ ] **Event Created** → Discord announcement
 - [ ] **Event Registration** → Add to CRM + calendar
 - [ ] **Resource Published** → Discord notification
@@ -327,6 +362,7 @@ Options:
 All Job Club core pages must adopt EAiKW layout patterns:
 
 ### ⏳ Apply EAiKW Patterns To:
+
 - [ ] **Home** (`src/index.njk`)
   - [ ] Hero section layout
   - [ ] Feature sections
@@ -345,7 +381,9 @@ All Job Club core pages must adopt EAiKW layout patterns:
   - [ ] Navigation
 
 **EAiKW Adaptation Status:** 2/11 complete (18%)
+
 ### ⚠️ Basic Configuration (SCAFFOLDED - NOT PRODUCTION READY)
+
 - [x] Sanity project structure in `/sanity` folder ✅
 - [x] Schema index file ✅
 - [x] Event schema ✅
@@ -357,12 +395,14 @@ All Job Club core pages must adopt EAiKW layout patterns:
 - [ ] **NO CONTENT CREATED** (0 events, 0 members) ❌
 
 ### ⏳ Required Schemas (Job Club)
+
 - [x] `memberProfile.js` ✅
 - [x] `event.js` ✅
 - [ ] `resource.js` (for guides)
 - [ ] `author.js` (optional, for resource authors)
 
 ### ⏳ Deployment & Configuration (NOT PRODUCTION READY)
+
 - [x] Initialize Sanity project (`sanity init`) ✅ Project ID: 2nqkaqwe
 - [x] Sanity Studio running locally ✅ http://localhost:3333/
 - [ ] **Deploy Sanity Studio to hosted URL** (NEEDED for team collaboration) ❌
@@ -379,6 +419,7 @@ All Job Club core pages must adopt EAiKW layout patterns:
 
 **Sanity Status:** 2/13 complete (15%) - **NOT PRODUCTION READY**
 **Critical Missing:** Studio deployment, production credentials, content creation, testing
+
 - [ ] Linting setup (ESLint)
 - [ ] Playwright tests (min. 2–3)
   - [ ] Onboarding form test
@@ -393,7 +434,9 @@ All Job Club core pages must adopt EAiKW layout patterns:
 ---
 
 ### 11. AI Usage Documentation
+
 📄 Deliverable: `docs/ai-usage.md`
+
 - [x] Document exists ✅
 - [ ] Log all prompts + outputs
 - [ ] Document AI use in:
@@ -408,7 +451,9 @@ All Job Club core pages must adopt EAiKW layout patterns:
 ---
 
 ### 12. Final Presentation
+
 📊 5-minute pitch including:
+
 - [ ] Problem statement
 - [ ] Research findings
 - [ ] UX process
@@ -426,6 +471,7 @@ All Job Club core pages must adopt EAiKW layout patterns:
 ---
 
 ### 13. Deployment
+
 - [x] GitHub repository ✅
 - [ ] Deploy to GitHub Pages / Netlify / Vercel
 - [ ] Automated via CI/CD
@@ -442,7 +488,9 @@ All Job Club core pages must adopt EAiKW layout patterns:
 ## 🎯 JOB CLUB SPECIFIC REQUIREMENTS
 
 ### Purpose
+
 Create a site that onboards students into AI-ready professionals through:
+
 - ✅ Guided onboarding
 - ✅ Events (95% complete)
 - ⏳ Resources
@@ -451,23 +499,25 @@ Create a site that onboards students into AI-ready professionals through:
 
 ---
 
-## 🎉 A. Student Onboarding Workflow (CORE FEATURE).js` schema in `sanity/schemas/`
-  - [x] Event types: Workshops, Office Hours, Meetups, Guest Speakers, Hack Nights
-  - [x] Required fields: title, slug, description, fullDescription
-  - [x] Date/time fields: date, endDate
-  - [x] Location object: isVirtual, venue, room, address, virtualLink
-  - [x] Registration: capacity, registrationRequired, registrationLink, registrationDeadline
-  - [x] Speakers array with name, title, company, bio, photoUrl, linkedinUrl
-  - [x] Tags and targetAudience arrays
-  - [x] Prerequisites and materialsProvided text fields
-  - [x] Status field: draft, published, registration-closed, completed, cancelled
-  - [x] Featured flag for prominent display
-  - [x] SEO fields: metaTitle, metaDescription
-  - [x] Preview configuration with emoji icons
-  - [x] Ordering by date and event type
+## 🎉 A. Student Onboarding Workflow (CORE FEATURE).js`schema in`sanity/schemas/`
+
+- [x] Event types: Workshops, Office Hours, Meetups, Guest Speakers, Hack Nights
+- [x] Required fields: title, slug, description, fullDescription
+- [x] Date/time fields: date, endDate
+- [x] Location object: isVirtual, venue, room, address, virtualLink
+- [x] Registration: capacity, registrationRequired, registrationLink, registrationDeadline
+- [x] Speakers array with name, title, company, bio, photoUrl, linkedinUrl
+- [x] Tags and targetAudience arrays
+- [x] Prerequisites and materialsProvided text fields
+- [x] Status field: draft, published, registration-closed, completed, cancelled
+- [x] Featured flag for prominent display
+- [x] SEO fields: metaTitle, metaDescription
+- [x] Preview configuration with emoji icons
+- [x] Ordering by date and event type
 - [x] Register event schema in `sanity/schemas/index.js`
 
 ### ✅ Events Listing Page (COMPLETE - TESTED & WORKING)
+
 - [x] Create `src/events.njk` main events page ✅ **(238 lines - FULLY IMPLEMENTED)**
 - [x] Hero section with gradient background and event type filters ✅
 - [x] Filter buttons for all event types (All, Workshops, Office Hours, Meetups, Guest Speakers, Hack Nights) ✅
@@ -489,6 +539,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [x] **MATERIAL DESIGN STYLING IMPLEMENTED** ✅
 
 ### ✅ Event Detail Pages (COMPLETE)
+
 - [x] Create `src/event-detail-dynamic.njk` using Eleventy pagination ✅
 - [x] Dynamic routes: `/events/{slug}/` ✅
 - [x] Hero section with: ✅
@@ -506,6 +557,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [x] Sidebar with:
   - [x] Detailed event information
   - [x] Target audience badges
+
 ---
 
 ## 📊 Progress Summary
@@ -513,6 +565,7 @@ Create a site that onboards students into AI-ready professionals through:
 ### Overall Project Status: ~55% Complete (Updated Dec 15, 2025 - Final Updates)
 
 **Completed (✅):**
+
 - Eleventy setup
 - Events system (backend + frontend + Sanity integration)
 - Onboarding form (frontend + backend API + Sanity CMS)
@@ -525,9 +578,11 @@ Create a site that onboards students into AI-ready professionals through:
 - 4 comprehensive guides (Resource Library)
 
 **In Progress (🔄):**
+
 - None - all core systems complete
 
 **Not Started (❌):**
+
 - CRM integration
 - Resource library feature page
 - Portfolio guidance page
@@ -542,17 +597,21 @@ Create a site that onboards students into AI-ready professionals through:
 ### Priority Roadmap
 
 #### 🚀 PHASE 1: Core Functionality (MOSTLY COMPLETE)
+
 **✅ Completed:**
+
 1. [x] Deploy Sanity CMS (using production credentials)
 2. [x] Test events with real data
 3. [x] Set up automation #1 (onboarding flow + email via Zapier)
 4. [ ] Discord integration (next priority)
 5. [ ] CRM integration (choose platform + setup)
+
 ---
 
 ## 📝 Implementation Notes
 
 ### What's Working Now
+
 - ✅ Events system with sample data (3 events)
 - ✅ Onboarding form (frontend + validation)
 - ✅ Material Design UI system
@@ -561,19 +620,18 @@ Create a site that onboards students into AI-ready professionals through:
 - ✅ Privacy policy page
 
 ### What Needs Immediate Attention
+
 1. **Sanity Studio Deployment**
    - ✅ Already initialized (Project ID: 2nqkaqwe)
    - Run: `cd sanity && sanity deploy`
    - Configure CORS for production
    - Add sample event data
-   
 2. **Automation Testing**
    - ✅ Using Zapier
    - ✅ Airtable connected
    - Test full onboarding flow
    - Add email automation
    - Test Discord webhook
-   
 3. **CRM Integration**
    - ✅ Airtable chosen and configured
    - Verify data flow from form → Zapier → Airtable
@@ -581,6 +639,7 @@ Create a site that onboards students into AI-ready professionals through:
    - Create admin dashboard view
 
 ### Technical Debt
+
 - [ ] Need to test events with real Sanity data
 - [ ] Backend API needs Netlify/Vercel deployment
 - [ ] Missing GDPR cookie banner
@@ -588,6 +647,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] No automated tests
 
 ### Files Created Today
+
 1. ✅ `sanity/schemas/event.js` (267 lines)
 2. ✅ `sanity/schemas/index.js` (updated)
 3. ✅ `src/events.njk` (237 lines)
@@ -597,6 +657,7 @@ Create a site that onboards students into AI-ready professionals through:
 7. ✅ `PROJECT_CHECKLIST.md` (this file)
 
 ### Next Steps (In Order)
+
 1. Deploy Sanity CMS
 2. Test events page with real data
 3. Create resource schema + 2 guides
@@ -607,11 +668,13 @@ Create a site that onboards students into AI-ready professionals through:
 8. Implement GDPR cookie banner
 9. Set up analytics
 10. Write Playwright tests
+
 ---
 
 ## 🤝 Community Features
 
 ### ⏳ Discord Integration (NOT STARTED)
+
 - [ ] Set up Discord server for Job Club
 - [ ] Create Discord bot for automation
 - [ ] Add role assignment system
@@ -624,6 +687,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] Add Discord activity tracking
 
 ### ⏳ Mentoring System (NOT STARTED)
+
 - [ ] Design mentor-mentee matching algorithm
 - [ ] Create mentor profile schema
 - [ ] Create mentee profile schema
@@ -636,6 +700,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] Create mentor training resources
 
 ### ⏳ Learning Resources Hub (NOT STARTED)
+
 - [ ] Create resources schema in Sanity
 - [ ] Design resources listing page
 - [ ] Add resource categories (AI, Career, Technical, etc.)
@@ -648,6 +713,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] Add community-contributed resources
 
 ### ⏳ Job Board (NOT STARTED)
+
 - [ ] Create job posting schema
 - [ ] Design job board page
 - [ ] Add job filtering (type, location, company, etc.)
@@ -664,6 +730,7 @@ Create a site that onboards students into AI-ready professionals through:
 ## 🧪 Testing & Deployment
 
 ### ⏳ Testing (NOT STARTED)
+
 - [ ] Set up end-to-end tests with Playwright
 - [ ] Test onboarding form submission
 - [ ] Test events page filtering
@@ -677,6 +744,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] Cross-browser testing (Chrome, Firefox, Safari, Edge)
 
 ### ⏳ Performance Optimization (NOT STARTED)
+
 - [ ] Optimize images (WebP, lazy loading)
 - [ ] Minimize JavaScript bundles
 - [ ] Set up content caching strategy
@@ -689,6 +757,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] Implement incremental static regeneration
 
 ### ⏳ Deployment (PARTIALLY COMPLETE)
+
 - [x] GitHub repository setup
 - [x] GitHub Pages configuration (existing)
 - [ ] Set up Netlify/Vercel deployment (recommended for serverless functions)
@@ -707,6 +776,7 @@ Create a site that onboards students into AI-ready professionals through:
 ## 📚 Documentation
 
 ### ⏳ User Documentation (NOT STARTED)
+
 - [ ] Create user guide for students
 - [ ] Document onboarding process
 - [ ] Create events registration guide
@@ -717,6 +787,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] Document Discord server usage
 
 ### ⏳ Admin Documentation (NOT STARTED)
+
 - [ ] Create Sanity Studio guide
 - [ ] Document event creation workflow
 - [ ] Create member management guide
@@ -726,6 +797,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] Create troubleshooting guide
 
 ### ⏳ Developer Documentation (PARTIALLY COMPLETE)
+
 - [x] Basic README exists
 - [x] Project structure documented in WORK_LOG.md
 - [ ] Create comprehensive API documentation
@@ -742,6 +814,7 @@ Create a site that onboards students into AI-ready professionals through:
 ## 📱 Additional Features
 
 ### ⏳ Professional Asset Setup (NOT STARTED)
+
 - [ ] LinkedIn profile optimization guide
 - [ ] GitHub portfolio setup tutorial
 - [ ] Personal website templates
@@ -752,6 +825,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] Professional email signature generator
 
 ### ⏳ AI Career Tools (NOT STARTED)
+
 - [ ] AI resume reviewer
 - [ ] Mock interview chatbot
 - [ ] Career path recommendation engine
@@ -762,6 +836,7 @@ Create a site that onboards students into AI-ready professionals through:
 - [ ] Networking strategy generator
 
 ### ⏳ Analytics & Tracking (NOT STARTED)
+
 - [ ] Member engagement metrics
 - [ ] Event attendance tracking
 - [ ] Content popularity metrics
@@ -776,6 +851,7 @@ Create a site that onboards students into AI-ready professionals through:
 ## 🔒 Compliance & Legal
 
 ### ⏳ Privacy & Security (PARTIALLY COMPLETE)
+
 - [x] Privacy policy page created
 - [ ] Terms of service page
 - [ ] Cookie consent banner
@@ -791,16 +867,16 @@ Create a site that onboards students into AI-ready professionals through:
 
 ## 📊 Project Statistics
 
-**Overall Progress:** ~35% Complete *(Updated after Resource Library completion)*
+**Overall Progress:** ~35% Complete _(Updated after Resource Library completion)_
 
 ### Completed Sections:
+
 - ✅ **Onboarding System** (100%)
   - Form page with validation ✅
   - Sanity schema ✅
   - Backend API (serverless + dev server) ✅
   - End-to-end testing confirmed ✅
   - **Status:** PRODUCTION READY
-  
 - ✅ **Events System** (95%)
   - Event schema (fully implemented) ✅
   - Events listing page (Material Design UI, filtering) ✅
@@ -808,14 +884,12 @@ Create a site that onboards students into AI-ready professionals through:
   - Sanity integration + fallback data ✅
   - JavaScript handlers for filtering ✅
   - **Status:** NEEDS TESTING WITH REAL SANITY DATA
-  
 - ✅ **Resource Library** (100%)
   - Resource page with Material Design cards ✅
   - 4 comprehensive downloadable guides (3,600+ lines total) ✅
   - Professional layout matching site design ✅
   - Proper spacing and responsive design ✅
   - **Status:** PRODUCTION READY
-  
 - ✅ **Material Design System** (100%)
   - CSS framework with MD3 tokens ✅
   - Component library (buttons, cards, badges, etc.) ✅
@@ -823,13 +897,11 @@ Create a site that onboards students into AI-ready professionals through:
   - Responsive grid layout ✅
   - Dark mode support ✅
   - **Status:** FULLY IMPLEMENTED
-  
 - ✅ **Layout & Padding** (100%)
   - Fixed header with z-50 ✅
   - Standardized 120px top padding across 8+ pages ✅
   - Consistent spacing throughout ✅
   - **Status:** PRODUCTION READY
-  
 - ✅ **Documentation** (14+ guides)
   - Sanity setup guides ✅
   - Onboarding form documentation ✅
@@ -840,11 +912,13 @@ Create a site that onboards students into AI-ready professionals through:
   - **Status:** COMPREHENSIVE
 
 ### In Progress:
+
 - 🔄 **Automation Platform Decision** (Zapier blocked, evaluating Make.com/n8n)
 - 🔄 **Sanity CMS Deployment** (working locally, ready to deploy for team)
 - 🔄 **Events Testing** (need to populate real event data in Sanity)
 
 ### Not Started:
+
 - ❌ Discord Integration
 - ❌ Email Automation
 - ❌ Mentoring System
@@ -859,6 +933,7 @@ Create a site that onboards students into AI-ready professionals through:
 ## 🎯 Priority Order (Recommended)
 
 ### Phase 1: Core Launch (2-3 weeks)
+
 1. ✅ Events system (DONE)
 2. ✅ Onboarding form (DONE)
 3. Deploy Sanity CMS
@@ -867,6 +942,7 @@ Create a site that onboards students into AI-ready professionals through:
 6. Basic analytics setup
 
 ### Phase 2: Community Building (3-4 weeks)
+
 1. Discord server setup
 2. Learning resources hub
 3. Job board MVP
@@ -874,6 +950,7 @@ Create a site that onboards students into AI-ready professionals through:
 5. Enhanced documentation
 
 ### Phase 3: Advanced Features (4-6 weeks)
+
 1. AI career tools
 2. Professional asset setup guides
 3. Advanced analytics
@@ -881,6 +958,7 @@ Create a site that onboards students into AI-ready professionals through:
 5. Mobile app (optional)
 
 ### Phase 4: Polish & Scale (Ongoing)
+
 1. Performance optimization
 2. Comprehensive testing
 3. User feedback integration

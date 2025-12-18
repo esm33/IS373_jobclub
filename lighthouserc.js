@@ -21,7 +21,10 @@ module.exports = {
 
         // Resource budgets
         "resource-summary:script:size": ["error", { maxNumericValue: 50000 }], // 50KB
-        "resource-summary:stylesheet:size": ["error", { maxNumericValue: 30000 }], // 30KB
+        "resource-summary:stylesheet:size": [
+          "error",
+          { maxNumericValue: 30000 },
+        ], // 30KB
         "resource-summary:image:size": ["error", { maxNumericValue: 200000 }], // 200KB
         "resource-summary:total:size": ["error", { maxNumericValue: 500000 }], // 500KB
       },

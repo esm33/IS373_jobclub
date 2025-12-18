@@ -15,6 +15,7 @@ This document analyzes the Eleventy (11ty) static site generator configuration f
 ## Core Configuration
 
 ### File Structure
+
 ```
 eleventy.config.js          # Main configuration file
 src/
@@ -39,10 +40,10 @@ src/
 ### 1. Directory Configuration
 
 ```javascript
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
   // Set custom layouts directory
   eleventyConfig.setLayoutsDirectory("_includes/layouts");
-  
+
   // Return directory configuration
   return {
     dir: {
@@ -50,13 +51,14 @@ export default function(eleventyConfig) {
       output: "_site",
       includes: "_includes",
       layouts: "_includes/layouts",
-      data: "_data"
-    }
+      data: "_data",
+    },
   };
 }
 ```
 
 **Key Decisions:**
+
 - **Input:** `src/` - All source files in one directory
 - **Output:** `_site/` - Clean build output (gitignored)
 - **Layouts:** Nested in `_includes/layouts/` for better organization
@@ -76,11 +78,13 @@ eleventyConfig.addPassthroughCopy("src/CNAME");
 ```
 
 **Purpose:**
+
 - CSS/JS files are built externally (Tailwind, esbuild)
 - Images copied directly (optimization happens via `@11ty/eleventy-img` when needed)
 - Static files (favicon, CNAME) copied as-is
 
 **Performance Note:**
+
 - Avoids unnecessary processing
 - Faster builds by bypassing Eleventy's template engine for static assets
 
@@ -94,24 +98,26 @@ import markdownItAnchor from "markdown-it-anchor";
 
 // Configure markdown-it
 const md = markdownIt({
-  html: true,          // Allow HTML in markdown
-  breaks: true,        // Convert \n to <br>
-  linkify: true        // Auto-link URLs
+  html: true, // Allow HTML in markdown
+  breaks: true, // Convert \n to <br>
+  linkify: true, // Auto-link URLs
 }).use(markdownItAnchor, {
   permalink: markdownItAnchor.permalink.headerLink(),
-  level: [1, 2, 3, 4]  // Add anchors to h1-h4
+  level: [1, 2, 3, 4], // Add anchors to h1-h4
 });
 
 eleventyConfig.setLibrary("md", md);
 ```
 
 **Features:**
+
 - **HTML Support:** Embed HTML components in markdown
 - **Auto-linking:** URLs become clickable links automatically
 - **Anchor Links:** Headings get ID attributes for deep linking
 - **Table of Contents:** Can be generated from heading anchors
 
 **Use Cases:**
+
 - Blog posts with rich formatting
 - Documentation with anchor navigation
 - Embedding custom components in markdown
@@ -121,19 +127,20 @@ eleventyConfig.setLibrary("md", md);
 ### 4. Template Filters
 
 #### Date Filters
+
 ```javascript
 // Human-readable date: "December 17, 2025"
 eleventyConfig.addFilter("readableDate", (dateObj) => {
   return new Date(dateObj).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
-    day: "numeric"
+    day: "numeric",
   });
 });
 
 // HTML date attribute: "2025-12-17"
 eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-  return new Date(dateObj).toISOString().split('T')[0];
+  return new Date(dateObj).toISOString().split("T")[0];
 });
 
 // RFC 3339 for RSS: "2025-12-17T10:30:00.000Z"
@@ -146,12 +153,13 @@ eleventyConfig.addFilter("time", (dateObj) => {
   return new Date(dateObj).toLocaleTimeString("en-US", {
     hour: "numeric",
     minute: "2-digit",
-    timeZone: "America/New_York"
+    timeZone: "America/New_York",
   });
 });
 ```
 
 **Usage in Templates:**
+
 ```njk
 <!-- Blog post date -->
 <time datetime="{{ post.date | htmlDateString }}">
@@ -166,14 +174,15 @@ eleventyConfig.addFilter("time", (dateObj) => {
 ```
 
 #### Array Filters
+
 ```javascript
 // Get first n items
 eleventyConfig.addFilter("head", (array, n) => {
-  if(!Array.isArray(array) || array.length === 0) {
+  if (!Array.isArray(array) || array.length === 0) {
     return [];
   }
-  if(n < 0) {
-    return array.slice(n);  // Last n items
+  if (n < 0) {
+    return array.slice(n); // Last n items
   }
   return array.slice(0, n);
 });
@@ -185,6 +194,7 @@ eleventyConfig.addFilter("min", (...numbers) => {
 ```
 
 **Usage:**
+
 ```njk
 <!-- Show latest 3 blog posts -->
 {% for post in collections.blog | head(3) %}
@@ -196,25 +206,27 @@ eleventyConfig.addFilter("min", (...numbers) => {
 ```
 
 #### Tag Filters
+
 ```javascript
 // Get all unique tags from collection
 eleventyConfig.addFilter("getAllTags", (collection) => {
   let tagSet = new Set();
-  collection.forEach(item => {
-    (item.data.tags || []).forEach(tag => tagSet.add(tag));
+  collection.forEach((item) => {
+    (item.data.tags || []).forEach((tag) => tagSet.add(tag));
   });
   return Array.from(tagSet);
 });
 
 // Remove system tags
 eleventyConfig.addFilter("filterTagList", (tags) => {
-  return (tags || []).filter(tag => 
-    ["all", "nav", "post", "posts"].indexOf(tag) === -1
+  return (tags || []).filter(
+    (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1,
   );
 });
 ```
 
 **Usage:**
+
 ```njk
 <!-- Tag cloud -->
 {% set allTags = collections.blog | getAllTags | filterTagList %}
@@ -224,6 +236,7 @@ eleventyConfig.addFilter("filterTagList", (tags) => {
 ```
 
 #### String Filters
+
 ```javascript
 // Truncate text with ellipsis
 eleventyConfig.addFilter("truncate", (str, length = 150) => {
@@ -233,6 +246,7 @@ eleventyConfig.addFilter("truncate", (str, length = 150) => {
 ```
 
 **Usage:**
+
 ```njk
 <!-- Excerpt for blog listing -->
 <p>{{ post.templateContent | truncate(200) }}</p>
@@ -244,28 +258,32 @@ eleventyConfig.addFilter("truncate", (str, length = 150) => {
 
 ```javascript
 // Blog posts sorted by date (newest first)
-eleventyConfig.addCollection("blog", function(collectionApi) {
-  return collectionApi.getFilteredByGlob("src/blog/**/*.md")
+eleventyConfig.addCollection("blog", function (collectionApi) {
+  return collectionApi
+    .getFilteredByGlob("src/blog/**/*.md")
     .sort((a, b) => b.date - a.date);
 });
 
 // Projects sorted by order field
-eleventyConfig.addCollection("projects", function(collectionApi) {
-  return collectionApi.getFilteredByGlob("src/projects/**/*.md")
+eleventyConfig.addCollection("projects", function (collectionApi) {
+  return collectionApi
+    .getFilteredByGlob("src/projects/**/*.md")
     .sort((a, b) => (b.data.order || 0) - (a.data.order || 0));
 });
 
 // Events (future only)
-eleventyConfig.addCollection("upcomingEvents", function(collectionApi) {
+eleventyConfig.addCollection("upcomingEvents", function (collectionApi) {
   const now = new Date();
-  return collectionApi.getAll()
-    .filter(item => item.data.tags && item.data.tags.includes("event"))
-    .filter(item => new Date(item.data.date) >= now)
+  return collectionApi
+    .getAll()
+    .filter((item) => item.data.tags && item.data.tags.includes("event"))
+    .filter((item) => new Date(item.data.date) >= now)
     .sort((a, b) => new Date(a.data.date) - new Date(b.data.date));
 });
 ```
 
 **Best Practices:**
+
 - Use glob patterns for clear file organization
 - Sort collections at build time (more efficient)
 - Filter by tags or custom criteria
@@ -282,12 +300,14 @@ eleventyConfig.addPlugin(eleventyPluginRss);
 ```
 
 **RSS Plugin Features:**
+
 - Adds `absoluteUrl` filter
 - Adds `dateToRfc3339` filter (if not custom defined)
 - Provides `getNewestCollectionItemDate` filter
 - Simplifies RSS feed generation
 
 **Other Common Plugins:**
+
 - `@11ty/eleventy-img` - Image optimization
 - `@11ty/eleventy-plugin-syntaxhighlight` - Code highlighting
 - `@11ty/eleventy-navigation` - Navigation building
@@ -299,6 +319,7 @@ eleventyConfig.addPlugin(eleventyPluginRss);
 ### Global Data (`_data/`)
 
 #### site.json
+
 ```json
 {
   "title": "Job Club NJIT",
@@ -319,23 +340,25 @@ eleventyConfig.addPlugin(eleventyPluginRss);
 ```
 
 **Access in Templates:**
+
 ```njk
 <title>{{ title }} - {{ site.title }}</title>
 <meta name="description" content="{{ site.description }}">
 ```
 
 #### events.js (Dynamic Data)
+
 ```javascript
-const sanityClient = require('@sanity/client');
+const sanityClient = require("@sanity/client");
 
 const client = sanityClient({
   projectId: process.env.SANITY_PROJECT_ID,
   dataset: process.env.SANITY_DATASET,
-  apiVersion: '2024-01-01',
-  useCdn: true
+  apiVersion: "2024-01-01",
+  useCdn: true,
 });
 
-module.exports = async function() {
+module.exports = async function () {
   const query = `*[_type == "event" && datetime(date) > datetime(now())] 
     | order(date asc) {
       title,
@@ -346,24 +369,26 @@ module.exports = async function() {
       description,
       registrationUrl
     }`;
-  
+
   try {
     const events = await client.fetch(query);
     return events;
   } catch (error) {
-    console.error('Sanity fetch error:', error);
+    console.error("Sanity fetch error:", error);
     return [];
   }
 };
 ```
 
 **Features:**
+
 - Fetches data at build time
 - Can use environment variables
 - Falls back gracefully on error
 - Returns JavaScript objects/arrays
 
 **Access in Templates:**
+
 ```njk
 {% for event in events %}
   <article>{{ event.title }}</article>
@@ -375,6 +400,7 @@ module.exports = async function() {
 ## Template Formats
 
 ### Supported Formats
+
 - `.njk` - Nunjucks (primary template language)
 - `.md` - Markdown (for content)
 - `.html` - HTML (for components)
@@ -383,6 +409,7 @@ module.exports = async function() {
 ### Nunjucks Templates
 
 **Inheritance:**
+
 ```njk
 {# Layout: _layouts/base.njk #}
 <!DOCTYPE html>
@@ -406,6 +433,7 @@ title: Home
 ```
 
 **Includes:**
+
 ```njk
 {# Include component #}
 {% include "components/header.njk" %}
@@ -418,6 +446,7 @@ title: Home
 ```
 
 **Loops & Conditionals:**
+
 ```njk
 {# Loop with index #}
 {% for item in items %}
@@ -435,6 +464,7 @@ title: Home
 ## Performance Optimizations
 
 ### 1. Incremental Builds
+
 ```javascript
 // Watch specific directories only
 eleventyConfig.setWatchThrottleWaitTime(100);
@@ -443,12 +473,14 @@ eleventyConfig.addWatchTarget("src/js/");
 ```
 
 ### 2. Ignore Unnecessary Files
+
 ```javascript
 eleventyConfig.ignores.add("src/_drafts/**");
 eleventyConfig.ignores.add("README.md");
 ```
 
 ### 3. Cache Busting
+
 ```njk
 {# In layout #}
 <link rel="stylesheet" href="/css/main.css?v={{ site.buildTime }}">
@@ -459,6 +491,7 @@ eleventyConfig.ignores.add("README.md");
 ## Build Process Integration
 
 ### npm Scripts
+
 ```json
 {
   "scripts": {
@@ -473,11 +506,13 @@ eleventyConfig.ignores.add("README.md");
 ```
 
 **Build Order:**
+
 1. Build CSS (Tailwind)
 2. Build JS (Alpine bundle)
 3. Build Eleventy (HTML generation)
 
 **Watch Mode:**
+
 - CSS watch (Tailwind)
 - JS watch (esbuild)
 - Eleventy watch (--serve)
@@ -487,38 +522,43 @@ eleventyConfig.ignores.add("README.md");
 ## Best Practices Learned
 
 ### 1. ✅ Separate Build Tools
+
 - Use Eleventy for HTML/templating only
 - Use Tailwind for CSS compilation
 - Use esbuild for JavaScript bundling
 - **Benefit:** Each tool does what it's best at
 
 ### 2. ✅ Data Fetching at Build Time
+
 - Fetch from APIs in `_data/*.js` files
 - Cache results during build
 - **Benefit:** No client-side API calls, faster page loads
 
 ### 3. ✅ Template Filters for Reusability
+
 - Create custom filters for common operations
 - Keep templates clean and readable
 - **Benefit:** DRY principle, easier maintenance
 
 ### 4. ✅ Collections for Organization
+
 - Group content by type (blog, projects, events)
 - Sort at build time, not runtime
 - **Benefit:** Better performance, cleaner templates
 
 ### 5. ✅ Environment-Based Configuration
+
 ```javascript
-const isProd = process.env.NODE_ENV === 'production';
+const isProd = process.env.NODE_ENV === "production";
 
 if (isProd) {
   // Minify HTML in production
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     if (outputPath.endsWith(".html")) {
       return require("html-minifier").minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       });
     }
     return content;
@@ -531,16 +571,19 @@ if (isProd) {
 ## Debugging Tips
 
 ### Enable Verbose Logging
+
 ```bash
 DEBUG=Eleventy* npx @11ty/eleventy
 ```
 
 ### Check Build Performance
+
 ```bash
 npx @11ty/eleventy --debug
 ```
 
 ### Dry Run (No File Writing)
+
 ```bash
 npx @11ty/eleventy --dryrun
 ```
@@ -560,9 +603,10 @@ npx @11ty/eleventy --dryrun
 7. **Performance First** - Static output = fast load times
 
 **Files Referenced:**
+
 - Configuration: [eleventy.config.js](../../eleventy.config.js)
-- Site Data: [src/_data/site.json](../../src/_data/site.json)
-- Events Data: [src/_data/events.js](../../src/_data/events.js)
+- Site Data: [src/\_data/site.json](../../src/_data/site.json)
+- Events Data: [src/\_data/events.js](../../src/_data/events.js)
 
 ---
 

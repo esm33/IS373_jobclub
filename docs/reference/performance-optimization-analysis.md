@@ -10,22 +10,22 @@
 
 ### Lighthouse Scores
 
-| Page | Performance | Notes |
-|------|-------------|-------|
-| Homepage | 98/100 | ✅ Excellent |
-| Events | 96/100 | ✅ Excellent |
-| Onboarding | 95/100 | ✅ Excellent |
-| Blog | 97/100 | ✅ Excellent |
+| Page       | Performance | Notes        |
+| ---------- | ----------- | ------------ |
+| Homepage   | 98/100      | ✅ Excellent |
+| Events     | 96/100      | ✅ Excellent |
+| Onboarding | 95/100      | ✅ Excellent |
+| Blog       | 97/100      | ✅ Excellent |
 
 ### Core Web Vitals
 
-| Metric | Desktop | Mobile | Target | Status |
-|--------|---------|--------|--------|--------|
-| **LCP** | 1.2s | 2.1s | <2.5s | ✅ Good |
-| **FID** | <100ms | <100ms | <100ms | ✅ Good |
-| **CLS** | 0.02 | 0.03 | <0.1 | ✅ Good |
-| **FCP** | 0.8s | 1.4s | <1.8s | ✅ Good |
-| **TTI** | 1.5s | 2.8s | <3.8s | ✅ Good |
+| Metric  | Desktop | Mobile | Target | Status  |
+| ------- | ------- | ------ | ------ | ------- |
+| **LCP** | 1.2s    | 2.1s   | <2.5s  | ✅ Good |
+| **FID** | <100ms  | <100ms | <100ms | ✅ Good |
+| **CLS** | 0.02    | 0.03   | <0.1   | ✅ Good |
+| **FCP** | 0.8s    | 1.4s   | <1.8s  | ✅ Good |
+| **TTI** | 1.5s    | 2.8s   | <3.8s  | ✅ Good |
 
 ---
 
@@ -52,6 +52,7 @@ User Request → Serve Pre-built HTML → Response
 ### 2. CSS Optimization
 
 #### Before PurgeCSS
+
 ```
 Tailwind Full Build: ~3.5 MB
 Material Design CSS: ~150 KB
@@ -59,6 +60,7 @@ Total CSS: ~3.65 MB
 ```
 
 #### After PurgeCSS
+
 ```
 Tailwind Purged: ~20 KB
 Material Design: ~4 KB
@@ -68,12 +70,11 @@ Total CSS: ~24 KB
 **Reduction:** 99.3% smaller (3.65 MB → 24 KB)
 
 **Configuration:**
+
 ```javascript
 // tailwind.config.js
 module.exports = {
-  content: [
-    "./src/**/*.{html,njk,md,js}",
-  ],
+  content: ["./src/**/*.{html,njk,md,js}"],
   // PurgeCSS removes unused classes
 };
 ```
@@ -83,6 +84,7 @@ module.exports = {
 ### 3. JavaScript Bundle Optimization
 
 #### Bundle Analysis
+
 ```
 Alpine.js Core: 42.3 KB (minified)
 Alpine Focus Plugin: 3.1 KB
@@ -92,19 +94,21 @@ Total JS: 56.4 KB (20.7 KB gzipped)
 ```
 
 **Optimizations:**
+
 - Tree-shaking (esbuild removes unused code)
 - Minification (whitespace removal)
 - Gzip compression (server-level)
 
 **Build Process:**
+
 ```javascript
 // build-alpine.js
 esbuild.build({
-  entryPoints: ['src/js/alpine.js'],
+  entryPoints: ["src/js/alpine.js"],
   bundle: true,
   minify: true,
-  target: 'es2020',
-  outfile: '_site/js/alpine.min.js'
+  target: "es2020",
+  outfile: "_site/js/alpine.min.js",
 });
 ```
 
@@ -113,6 +117,7 @@ esbuild.build({
 ### 4. Image Optimization
 
 **Techniques:**
+
 - Lazy loading (`loading="lazy"`)
 - Responsive images (`srcset`)
 - Modern formats (WebP with JPEG fallback)
@@ -120,16 +125,19 @@ esbuild.build({
 
 ```html
 <!-- Optimized image -->
-<img 
-  src="/images/event.jpg" 
-  srcset="/images/event-400.jpg 400w, 
-          /images/event-800.jpg 800w, 
-          /images/event-1200.jpg 1200w"
+<img
+  src="/images/event.jpg"
+  srcset="
+    /images/event-400.jpg   400w,
+    /images/event-800.jpg   800w,
+    /images/event-1200.jpg 1200w
+  "
   sizes="(max-width: 600px) 400px, 
          (max-width: 900px) 800px, 
          1200px"
   loading="lazy"
-  alt="AI Career Workshop">
+  alt="AI Career Workshop"
+/>
 ```
 
 ---
@@ -139,23 +147,26 @@ esbuild.build({
 ```css
 /* Font display swap - prevents FOIT */
 @font-face {
-  font-family: 'Google Sans';
+  font-family: "Google Sans";
   font-display: swap;
-  src: url('/fonts/GoogleSans.woff2') format('woff2');
+  src: url("/fonts/GoogleSans.woff2") format("woff2");
 }
 ```
 
 **Strategy:**
+
 - `font-display: swap` - Show fallback font immediately
 - WOFF2 format (best compression)
 - Preload critical fonts
 
 ```html
-<link rel="preload" 
-      href="/fonts/GoogleSans.woff2" 
-      as="font" 
-      type="font/woff2" 
-      crossorigin>
+<link
+  rel="preload"
+  href="/fonts/GoogleSans.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 ```
 
 ---
@@ -164,14 +175,14 @@ esbuild.build({
 
 ```html
 <!-- DNS prefetch for external resources -->
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
 <!-- Preconnect to critical origins -->
-<link rel="preconnect" href="https://cdn.sanity.io">
+<link rel="preconnect" href="https://cdn.sanity.io" />
 
 <!-- Prefetch next likely page -->
-<link rel="prefetch" href="/events/">
+<link rel="prefetch" href="/events/" />
 ```
 
 ---
@@ -179,25 +190,26 @@ esbuild.build({
 ### 7. Caching Strategy
 
 #### Service Worker (Future Enhancement)
+
 ```javascript
 // Cache static assets
-const CACHE_NAME = 'job-club-v1';
+const CACHE_NAME = "job-club-v1";
 const urlsToCache = [
-  '/',
-  '/css/main.css',
-  '/js/alpine.min.js',
-  '/images/logo.png'
+  "/",
+  "/css/main.css",
+  "/js/alpine.min.js",
+  "/images/logo.png",
 ];
 
-self.addEventListener('install', (event) => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(urlsToCache))
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache)),
   );
 });
 ```
 
 #### HTTP Caching Headers (Netlify)
+
 ```toml
 # netlify.toml
 [[headers]]
@@ -216,11 +228,13 @@ self.addEventListener('install', (event) => {
 ### 8. Lazy Loading
 
 #### Images
+
 ```html
-<img src="image.jpg" loading="lazy" alt="...">
+<img src="image.jpg" loading="lazy" alt="..." />
 ```
 
 #### JavaScript (Defer)
+
 ```html
 <script src="/js/analytics.js" defer></script>
 <script src="/js/cookie-consent.js" defer></script>
@@ -236,13 +250,21 @@ self.addEventListener('install', (event) => {
 <head>
   <style>
     /* Inline critical above-the-fold CSS */
-    .hero { background: #6750A4; }
-    .container { max-width: 1440px; }
+    .hero {
+      background: #6750a4;
+    }
+    .container {
+      max-width: 1440px;
+    }
   </style>
-  
+
   <!-- Load full CSS asynchronously -->
-  <link rel="preload" href="/css/main.css" as="style" 
-        onload="this.onload=null;this.rel='stylesheet'">
+  <link
+    rel="preload"
+    href="/css/main.css"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
 </head>
 ```
 
@@ -251,11 +273,13 @@ self.addEventListener('install', (event) => {
 ### 10. Reduce Render-Blocking Resources
 
 **Current Status:**
+
 - ✅ CSS loaded in `<head>` (small file size OK)
 - ✅ JS deferred with `defer` attribute
 - ✅ No synchronous scripts blocking parser
 
 **Lighthouse Audit:**
+
 - 0 render-blocking resources
 - All scripts deferred or async
 
@@ -263,13 +287,13 @@ self.addEventListener('install', (event) => {
 
 ## Performance Budget
 
-| Resource | Budget | Actual | Status |
-|----------|--------|--------|--------|
-| Total JS | <100 KB | 56.4 KB | ✅ 43% under |
-| Total CSS | <50 KB | 23.7 KB | ✅ 52% under |
-| Images (per page) | <500 KB | ~150 KB | ✅ 70% under |
-| Total Page Weight | <1 MB | ~300 KB | ✅ 70% under |
-| Time to Interactive | <3.8s | 1.5s | ✅ 60% faster |
+| Resource            | Budget  | Actual  | Status        |
+| ------------------- | ------- | ------- | ------------- |
+| Total JS            | <100 KB | 56.4 KB | ✅ 43% under  |
+| Total CSS           | <50 KB  | 23.7 KB | ✅ 52% under  |
+| Images (per page)   | <500 KB | ~150 KB | ✅ 70% under  |
+| Total Page Weight   | <1 MB   | ~300 KB | ✅ 70% under  |
+| Time to Interactive | <3.8s   | 1.5s    | ✅ 60% faster |
 
 ---
 
@@ -291,12 +315,14 @@ self.addEventListener('install', (event) => {
 ## Monitoring & Improvement
 
 ### Tools Used
+
 - Lighthouse CI (automated audits)
 - WebPageTest (real-world testing)
 - Chrome DevTools (performance profiling)
 - Bundle size checks in CI/CD
 
 ### Future Enhancements
+
 1. **Service Worker** - Offline support, caching
 2. **WebP Images** - Better compression
 3. **HTTP/2 Push** - Critical assets

@@ -29,6 +29,7 @@ Job Club NJIT has undergone comprehensive quality assurance testing across multi
 ## 1. Lighthouse Performance Audit
 
 ### Methodology
+
 - **Tool:** Lighthouse 13.0.1
 - **Testing Environment:** Local development server (port 8080)
 - **Device Profiles:** Desktop & Mobile
@@ -37,41 +38,42 @@ Job Club NJIT has undergone comprehensive quality assurance testing across multi
 
 ### Overall Scores
 
-| Page | Performance | Accessibility | Best Practices | SEO |
-|------|-------------|---------------|----------------|-----|
-| **Homepage** | 98 🟢 | 100 🟢 | 100 🟢 | 100 🟢 |
-| **Events** | 96 🟢 | 100 🟢 | 100 🟢 | 100 🟢 |
-| **Onboarding** | 95 🟢 | 100 🟢 | 96 🟢 | 100 🟢 |
-| **Blog** | 97 🟢 | 100 🟢 | 100 🟢 | 100 🟢 |
-| **About** | 98 🟢 | 100 🟢 | 100 🟢 | 100 🟢 |
-| **Average** | **96.8** | **100** | **99.2** | **100** |
+| Page           | Performance | Accessibility | Best Practices | SEO     |
+| -------------- | ----------- | ------------- | -------------- | ------- |
+| **Homepage**   | 98 🟢       | 100 🟢        | 100 🟢         | 100 🟢  |
+| **Events**     | 96 🟢       | 100 🟢        | 100 🟢         | 100 🟢  |
+| **Onboarding** | 95 🟢       | 100 🟢        | 96 🟢          | 100 🟢  |
+| **Blog**       | 97 🟢       | 100 🟢        | 100 🟢         | 100 🟢  |
+| **About**      | 98 🟢       | 100 🟢        | 100 🟢         | 100 🟢  |
+| **Average**    | **96.8**    | **100**       | **99.2**       | **100** |
 
 🟢 = 90-100 (Good) | 🟡 = 50-89 (Needs Improvement) | 🔴 = 0-49 (Poor)
 
 ### Performance Metrics (Homepage - Desktop)
 
-| Metric | Value | Target | Status |
-|--------|-------|--------|--------|
-| **First Contentful Paint (FCP)** | 0.8s | <1.8s | ✅ Excellent |
-| **Largest Contentful Paint (LCP)** | 1.2s | <2.5s | ✅ Excellent |
-| **Total Blocking Time (TBT)** | 45ms | <200ms | ✅ Excellent |
-| **Cumulative Layout Shift (CLS)** | 0.02 | <0.1 | ✅ Excellent |
-| **Speed Index** | 1.3s | <3.4s | ✅ Excellent |
-| **Time to Interactive (TTI)** | 1.5s | <3.8s | ✅ Excellent |
+| Metric                             | Value | Target | Status       |
+| ---------------------------------- | ----- | ------ | ------------ |
+| **First Contentful Paint (FCP)**   | 0.8s  | <1.8s  | ✅ Excellent |
+| **Largest Contentful Paint (LCP)** | 1.2s  | <2.5s  | ✅ Excellent |
+| **Total Blocking Time (TBT)**      | 45ms  | <200ms | ✅ Excellent |
+| **Cumulative Layout Shift (CLS)**  | 0.02  | <0.1   | ✅ Excellent |
+| **Speed Index**                    | 1.3s  | <3.4s  | ✅ Excellent |
+| **Time to Interactive (TTI)**      | 1.5s  | <3.8s  | ✅ Excellent |
 
 ### Performance Metrics (Mobile)
 
-| Metric | Value | Target | Status |
-|--------|-------|--------|--------|
-| **First Contentful Paint (FCP)** | 1.4s | <1.8s | ✅ Good |
-| **Largest Contentful Paint (LCP)** | 2.1s | <2.5s | ✅ Good |
-| **Total Blocking Time (TBT)** | 120ms | <200ms | ✅ Good |
-| **Cumulative Layout Shift (CLS)** | 0.03 | <0.1 | ✅ Excellent |
-| **Speed Index** | 2.2s | <3.4s | ✅ Good |
+| Metric                             | Value | Target | Status       |
+| ---------------------------------- | ----- | ------ | ------------ |
+| **First Contentful Paint (FCP)**   | 1.4s  | <1.8s  | ✅ Good      |
+| **Largest Contentful Paint (LCP)** | 2.1s  | <2.5s  | ✅ Good      |
+| **Total Blocking Time (TBT)**      | 120ms | <200ms | ✅ Good      |
+| **Cumulative Layout Shift (CLS)**  | 0.03  | <0.1   | ✅ Excellent |
+| **Speed Index**                    | 2.2s  | <3.4s  | ✅ Good      |
 
 ### Key Performance Optimizations
 
 ✅ **Implemented:**
+
 - CSS minification and purging (Tailwind PurgeCSS)
 - Image optimization with lazy loading
 - Minimal JavaScript footprint (<50KB total)
@@ -82,11 +84,13 @@ Job Club NJIT has undergone comprehensive quality assurance testing across multi
 - Optimal caching headers
 
 ⚠️ **Opportunities for Further Improvement:**
+
 - Implement service worker for offline support (future enhancement)
 - Consider WebP image format for all images
 - Implement HTTP/2 server push for critical assets (deployment configuration)
 
 ### Lighthouse Report Screenshot Location
+
 ```
 📸 lighthouse-report.html (generated via npm run lighthouse)
 📊 Dashboard: Scores visible in CI/CD pipeline
@@ -98,30 +102,30 @@ Job Club NJIT has undergone comprehensive quality assurance testing across multi
 
 ### JavaScript Bundles
 
-| Bundle | Size (Minified) | Size (Gzipped) | Purpose |
-|--------|-----------------|----------------|---------|
-| **Alpine.js Core** | 42.3 KB | 15.2 KB | Interactive components |
-| **Alpine Focus Plugin** | 3.1 KB | 1.2 KB | Focus management |
-| **analytics.js** | 4.8 KB | 1.9 KB | Event tracking |
-| **cookie-consent.js** | 6.2 KB | 2.4 KB | GDPR compliance |
-| **Total JS** | **56.4 KB** | **20.7 KB** | ✅ Under 100KB target |
+| Bundle                  | Size (Minified) | Size (Gzipped) | Purpose                |
+| ----------------------- | --------------- | -------------- | ---------------------- |
+| **Alpine.js Core**      | 42.3 KB         | 15.2 KB        | Interactive components |
+| **Alpine Focus Plugin** | 3.1 KB          | 1.2 KB         | Focus management       |
+| **analytics.js**        | 4.8 KB          | 1.9 KB         | Event tracking         |
+| **cookie-consent.js**   | 6.2 KB          | 2.4 KB         | GDPR compliance        |
+| **Total JS**            | **56.4 KB**     | **20.7 KB**    | ✅ Under 100KB target  |
 
 ### CSS Bundles
 
-| Bundle | Size (Minified) | Size (Gzipped) | Purpose |
-|--------|-----------------|----------------|---------|
-| **main.css** | 23.7 KB | 5.8 KB | Tailwind + Material Design |
-| **Total CSS** | **23.7 KB** | **5.8 KB** | ✅ Excellent (PurgeCSS) |
+| Bundle        | Size (Minified) | Size (Gzipped) | Purpose                    |
+| ------------- | --------------- | -------------- | -------------------------- |
+| **main.css**  | 23.7 KB         | 5.8 KB         | Tailwind + Material Design |
+| **Total CSS** | **23.7 KB**     | **5.8 KB**     | ✅ Excellent (PurgeCSS)    |
 
 ### Total Page Weight (Homepage)
 
-| Resource Type | Size | % of Total |
-|---------------|------|------------|
-| HTML | 18.2 KB | 22% |
-| CSS | 23.7 KB | 29% |
-| JavaScript | 56.4 KB | 42% |
-| Fonts (Google Sans) | 24.1 KB | 7% |
-| **Total (First Load)** | **122.4 KB** | **100%** |
+| Resource Type          | Size         | % of Total |
+| ---------------------- | ------------ | ---------- |
+| HTML                   | 18.2 KB      | 22%        |
+| CSS                    | 23.7 KB      | 29%        |
+| JavaScript             | 56.4 KB      | 42%        |
+| Fonts (Google Sans)    | 24.1 KB      | 7%         |
+| **Total (First Load)** | **122.4 KB** | **100%**   |
 
 ### Bundle Size Trends
 
@@ -132,12 +136,12 @@ Job Club NJIT has undergone comprehensive quality assurance testing across multi
 
 ### Budget Performance
 
-| Budget Item | Budget | Actual | Status |
-|-------------|--------|--------|--------|
-| Total JS | <100 KB | 56.4 KB | ✅ 43% under |
-| Total CSS | <50 KB | 23.7 KB | ✅ 52% under |
+| Budget Item       | Budget  | Actual  | Status       |
+| ----------------- | ------- | ------- | ------------ |
+| Total JS          | <100 KB | 56.4 KB | ✅ 43% under |
+| Total CSS         | <50 KB  | 23.7 KB | ✅ 52% under |
 | Images (per page) | <500 KB | ~150 KB | ✅ 70% under |
-| Total Page Weight | <1 MB | ~300 KB | ✅ 70% under |
+| Total Page Weight | <1 MB   | ~300 KB | ✅ 70% under |
 
 ---
 
@@ -163,40 +167,48 @@ Time:        14.2s
 ### Test Coverage by Category
 
 #### 1. Visual Regression Tests (`pages.spec.ts`)
+
 ```
 ✅ homepage renders correctly
 ✅ blog page renders correctly
 ```
+
 - **Purpose:** Ensure pages render consistently across builds
 - **Method:** Screenshot comparison with baseline snapshots
 - **Status:** All snapshots match (0 visual regressions)
 
 #### 2. Component Tests (`components.spec.ts`)
+
 ```
 ✅ header component renders correctly
 ✅ hero section displays properly
 ✅ featured projects section functional
 ✅ footer component renders correctly
 ```
+
 - **Purpose:** Validate individual component rendering
 - **Method:** Element presence and visual snapshot testing
 - **Status:** All components render correctly
 
 #### 3. Interaction Tests (`interactions.spec.ts`)
+
 ```
 ✅ mobile menu opens and closes
 ✅ pages load correctly (smoke test)
 ```
+
 - **Purpose:** Verify interactive functionality
 - **Method:** User interaction simulation
 - **Status:** All interactions work as expected
 
 #### 4. Responsive Tests (`responsive.spec.ts`)
+
 ```
 ✅ mobile viewport renders correctly
 ✅ tablet viewport renders correctly
 ✅ desktop viewport renders correctly
 ```
+
 - **Purpose:** Validate responsive design across devices
 - **Method:** Viewport testing at 375px, 768px, 1920px
 - **Status:** All breakpoints functional
@@ -225,6 +237,7 @@ Running 12 tests using 2 workers
 ```
 
 ### Test Report Location
+
 ```
 📊 HTML Report: playwright-report/index.html
 📸 Screenshots: tests/visual/*-snapshots/
@@ -236,16 +249,17 @@ Running 12 tests using 2 workers
 
 ### Linting Tools Configured
 
-| Tool | Purpose | Configuration | Status |
-|------|---------|---------------|--------|
-| **ESLint 9.39.1** | JavaScript linting | eslint.config.js | ✅ Configured |
-| **Stylelint 16.25.0** | CSS linting | .stylelintrc | ✅ Configured |
-| **Markdownlint** | Markdown linting | .markdownlint.json | ✅ Configured |
-| **Prettier 3.6.2** | Code formatting | .prettierrc | ✅ Configured |
+| Tool                  | Purpose            | Configuration      | Status        |
+| --------------------- | ------------------ | ------------------ | ------------- |
+| **ESLint 9.39.1**     | JavaScript linting | eslint.config.js   | ✅ Configured |
+| **Stylelint 16.25.0** | CSS linting        | .stylelintrc       | ✅ Configured |
+| **Markdownlint**      | Markdown linting   | .markdownlint.json | ✅ Configured |
+| **Prettier 3.6.2**    | Code formatting    | .prettierrc        | ✅ Configured |
 
 ### Linting Results
 
 #### JavaScript (ESLint)
+
 ```bash
 $ npm run lint:js
 
@@ -254,6 +268,7 @@ $ npm run lint:js
 ```
 
 **Rules Enforced:**
+
 - ES6+ modern JavaScript standards
 - No unused variables
 - Consistent code style
@@ -261,6 +276,7 @@ $ npm run lint:js
 - Proper error handling
 
 #### CSS (Stylelint)
+
 ```bash
 $ npm run lint:css
 
@@ -269,12 +285,14 @@ $ npm run lint:css
 ```
 
 **Rules Enforced:**
+
 - Standard CSS formatting
 - No duplicate selectors
 - Proper color formats
 - Consistent property ordering
 
 #### Markdown (Markdownlint)
+
 ```bash
 $ npm run lint:md
 
@@ -283,12 +301,14 @@ $ npm run lint:md
 ```
 
 **Rules Enforced:**
+
 - Consistent heading hierarchy
 - Proper list formatting
 - No trailing whitespace
 - Link format validation
 
 #### Code Formatting (Prettier)
+
 ```bash
 $ npm run format:check
 
@@ -297,6 +317,7 @@ $ npm run format:check
 ```
 
 **Formatting Standards:**
+
 - 2-space indentation
 - Single quotes for JS
 - Trailing commas in multiline
@@ -305,12 +326,12 @@ $ npm run format:check
 
 ### Code Quality Metrics
 
-| Metric | Value | Target | Status |
-|--------|-------|--------|--------|
-| **Linting Errors** | 0 | 0 | ✅ Perfect |
-| **Linting Warnings** | 0 | <5 | ✅ Excellent |
-| **Code Formatting** | 100% | 100% | ✅ Perfect |
-| **Markdown Quality** | 100% | >95% | ✅ Excellent |
+| Metric               | Value | Target | Status       |
+| -------------------- | ----- | ------ | ------------ |
+| **Linting Errors**   | 0     | 0      | ✅ Perfect   |
+| **Linting Warnings** | 0     | <5     | ✅ Excellent |
+| **Code Formatting**  | 100%  | 100%   | ✅ Perfect   |
+| **Markdown Quality** | 100%  | >95%   | ✅ Excellent |
 
 ---
 
@@ -319,6 +340,7 @@ $ npm run format:check
 ### WCAG 2.1 AA Compliance
 
 **Methodology:**
+
 - Lighthouse accessibility audit
 - Manual keyboard navigation testing
 - Screen reader testing (NVDA, VoiceOver)
@@ -327,23 +349,25 @@ $ npm run format:check
 
 ### Accessibility Audit Results
 
-| Category | Status | Score |
-|----------|--------|-------|
-| **Overall Accessibility** | ✅ Pass | 100/100 |
-| **Keyboard Navigation** | ✅ Full support | 100% |
-| **Screen Reader** | ✅ Fully labeled | 100% |
-| **Color Contrast** | ✅ WCAG AA | 100% |
-| **Form Accessibility** | ✅ Compliant | 100% |
+| Category                  | Status           | Score   |
+| ------------------------- | ---------------- | ------- |
+| **Overall Accessibility** | ✅ Pass          | 100/100 |
+| **Keyboard Navigation**   | ✅ Full support  | 100%    |
+| **Screen Reader**         | ✅ Fully labeled | 100%    |
+| **Color Contrast**        | ✅ WCAG AA       | 100%    |
+| **Form Accessibility**    | ✅ Compliant     | 100%    |
 
 ### Accessibility Features Implemented
 
 #### 1. ✅ Semantic HTML
+
 - Proper heading hierarchy (h1 → h2 → h3)
 - Semantic elements (`<nav>`, `<main>`, `<article>`, `<footer>`)
 - Landmark regions for screen readers
 - Proper list structures
 
 #### 2. ✅ ARIA Labels
+
 ```html
 <!-- Example: Navigation -->
 <nav aria-label="Main navigation">
@@ -353,15 +377,16 @@ $ npm run format:check
 </nav>
 
 <!-- Example: Forms -->
-<input 
-  type="email" 
-  id="email" 
-  aria-required="true" 
+<input
+  type="email"
+  id="email"
+  aria-required="true"
   aria-describedby="email-error"
->
+/>
 ```
 
 #### 3. ✅ Keyboard Navigation
+
 - All interactive elements accessible via Tab
 - Visible focus indicators (2px outline)
 - Skip-to-content link for screen readers
@@ -369,20 +394,23 @@ $ npm run format:check
 - Escape key closes modals
 
 #### 4. ✅ Color Contrast
-| Element | Ratio | WCAG AA (4.5:1) | WCAG AAA (7:1) |
-|---------|-------|-----------------|----------------|
-| Body text | 11.2:1 | ✅ Pass | ✅ Pass |
-| Headings | 12.8:1 | ✅ Pass | ✅ Pass |
-| Links | 6.9:1 | ✅ Pass | ✅ Pass |
-| Buttons | 8.4:1 | ✅ Pass | ✅ Pass |
-| Form inputs | 7.1:1 | ✅ Pass | ✅ Pass |
+
+| Element     | Ratio  | WCAG AA (4.5:1) | WCAG AAA (7:1) |
+| ----------- | ------ | --------------- | -------------- |
+| Body text   | 11.2:1 | ✅ Pass         | ✅ Pass        |
+| Headings    | 12.8:1 | ✅ Pass         | ✅ Pass        |
+| Links       | 6.9:1  | ✅ Pass         | ✅ Pass        |
+| Buttons     | 8.4:1  | ✅ Pass         | ✅ Pass        |
+| Form inputs | 7.1:1  | ✅ Pass         | ✅ Pass        |
 
 #### 5. ✅ Touch Targets
+
 - Minimum 44×44px for all interactive elements (WCAG 2.1)
 - Adequate spacing between clickable items
 - Mobile-optimized tap areas
 
 #### 6. ✅ Motion & Animation
+
 ```css
 /* Respects user's motion preferences */
 @media (prefers-reduced-motion: reduce) {
@@ -394,12 +422,14 @@ $ npm run format:check
 ```
 
 #### 7. ✅ Form Validation
+
 - Required fields clearly marked
 - Error messages associated with inputs
 - Real-time validation feedback
 - Success confirmations
 
 #### 8. ✅ Image Alt Text
+
 - All images have descriptive alt text
 - Decorative images use `alt=""` (properly hidden from screen readers)
 - Complex images have extended descriptions
@@ -426,14 +456,14 @@ $ npm run format:check
 
 ### Quality Gates Implemented
 
-| Gate | Tool | Passing Criteria | Status |
-|------|------|------------------|--------|
-| **1. Linting** | ESLint, Stylelint, Markdownlint | 0 errors | ✅ Pass |
-| **2. Formatting** | Prettier | All files formatted | ✅ Pass |
-| **3. Build** | Eleventy | Successful build | ✅ Pass |
-| **4. Tests** | Playwright | 100% pass rate | ✅ Pass |
-| **5. Lighthouse** | Lighthouse CI | Score ≥90 | ✅ Pass |
-| **6. Bundle Size** | Custom check | <150KB total | ✅ Pass |
+| Gate               | Tool                            | Passing Criteria    | Status  |
+| ------------------ | ------------------------------- | ------------------- | ------- |
+| **1. Linting**     | ESLint, Stylelint, Markdownlint | 0 errors            | ✅ Pass |
+| **2. Formatting**  | Prettier                        | All files formatted | ✅ Pass |
+| **3. Build**       | Eleventy                        | Successful build    | ✅ Pass |
+| **4. Tests**       | Playwright                      | 100% pass rate      | ✅ Pass |
+| **5. Lighthouse**  | Lighthouse CI                   | Score ≥90           | ✅ Pass |
+| **6. Bundle Size** | Custom check                    | <150KB total        | ✅ Pass |
 
 ### CI Pipeline Flow
 
@@ -506,24 +536,24 @@ $ npm run format:check
 
 ### Browsers Tested
 
-| Browser | Version | OS | Status |
-|---------|---------|----|----|
-| Chrome | 120+ | Windows/Mac/Linux | ✅ Full support |
-| Firefox | 121+ | Windows/Mac/Linux | ✅ Full support |
-| Safari | 17+ | macOS/iOS | ✅ Full support |
-| Edge | 120+ | Windows | ✅ Full support |
-| Mobile Chrome | Latest | Android | ✅ Full support |
-| Mobile Safari | Latest | iOS 16+ | ✅ Full support |
+| Browser       | Version | OS                | Status          |
+| ------------- | ------- | ----------------- | --------------- |
+| Chrome        | 120+    | Windows/Mac/Linux | ✅ Full support |
+| Firefox       | 121+    | Windows/Mac/Linux | ✅ Full support |
+| Safari        | 17+     | macOS/iOS         | ✅ Full support |
+| Edge          | 120+    | Windows           | ✅ Full support |
+| Mobile Chrome | Latest  | Android           | ✅ Full support |
+| Mobile Safari | Latest  | iOS 16+           | ✅ Full support |
 
 ### Browser Features Used
 
-| Feature | Support | Fallback |
-|---------|---------|----------|
-| CSS Grid | Modern browsers | Flexbox fallback |
-| CSS Custom Properties | Modern browsers | Hardcoded values |
-| Intersection Observer | Modern browsers | Lazy load polyfill |
-| Fetch API | Modern browsers | XMLHttpRequest fallback |
-| ES6 Modules | Modern browsers | N/A (build transpiles) |
+| Feature               | Support         | Fallback                |
+| --------------------- | --------------- | ----------------------- |
+| CSS Grid              | Modern browsers | Flexbox fallback        |
+| CSS Custom Properties | Modern browsers | Hardcoded values        |
+| Intersection Observer | Modern browsers | Lazy load polyfill      |
+| Fetch API             | Modern browsers | XMLHttpRequest fallback |
+| ES6 Modules           | Modern browsers | N/A (build transpiles)  |
 
 ### Known Limitations
 
@@ -536,6 +566,7 @@ $ npm run format:check
 ## 8. Recommendations
 
 ### Immediate Actions (Before Deployment)
+
 ✅ All completed - production ready!
 
 ### Short-term Improvements (Sprint 2)
@@ -592,15 +623,15 @@ $ npm run format:check
 
 ### Overall Quality Score: **A+ (98/100)**
 
-| Category | Score | Grade |
-|----------|-------|-------|
-| Performance | 96.8/100 | A+ |
-| Accessibility | 100/100 | A+ |
-| Best Practices | 99.2/100 | A+ |
-| SEO | 100/100 | A+ |
-| Testing | 100% Pass | A+ |
-| Code Quality | 0 Errors | A+ |
-| Bundle Size | 43% Under Budget | A+ |
+| Category       | Score            | Grade |
+| -------------- | ---------------- | ----- |
+| Performance    | 96.8/100         | A+    |
+| Accessibility  | 100/100          | A+    |
+| Best Practices | 99.2/100         | A+    |
+| SEO            | 100/100          | A+    |
+| Testing        | 100% Pass        | A+    |
+| Code Quality   | 0 Errors         | A+    |
+| Bundle Size    | 43% Under Budget | A+    |
 
 ### Production Readiness: ✅ **READY**
 
@@ -629,9 +660,10 @@ The project demonstrates enterprise-grade quality standards and is ready for pro
 
 **Report Generated:** December 17, 2025  
 **Next Review:** Post-deployment performance monitoring  
-**QA Team:** Job Club Development Team  
+**QA Team:** Job Club Development Team
 
 **Report Files:**
+
 - Lighthouse Report: `lighthouse-report.html`
 - Playwright Report: `playwright-report/index.html`
 - Bundle Analysis: Package.json scripts

@@ -1,4 +1,4 @@
-import memberProfile from './memberProfile.js'
-import event from './event.js'
+import memberProfile from "./memberProfile.js";
+import event from "./event.js";
 
-export const schemaTypes = [memberProfile, event]
+export const schemaTypes = [memberProfile, event];

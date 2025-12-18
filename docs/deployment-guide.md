@@ -59,6 +59,7 @@ Job Club NJIT is configured for automated deployment through multiple platforms 
 
 3. **Environment Variables**
    Add these in Netlify dashboard → Site settings → Environment variables:
+
    ```
    SANITY_PROJECT_ID=<your_project_id>
    SANITY_DATASET=production
@@ -73,21 +74,25 @@ Job Club NJIT is configured for automated deployment through multiple platforms 
 ### Netlify Features Used
 
 ✅ **Continuous Deployment**
+
 - Automatic deploy on push to `main` branch
 - Deploy previews for pull requests
 - Build logs and notifications
 
 ✅ **Serverless Functions**
+
 - `/api/submit-onboarding.js` → Netlify Functions
 - Automatic scaling
 - Environment variable support
 
 ✅ **Custom Domain** (Optional)
+
 - Configure custom domain in Netlify DNS
 - Automatic HTTPS via Let's Encrypt
 - CDN distribution
 
 ✅ **Performance**
+
 - Global CDN (edge network)
 - Automatic asset optimization
 - Gzip/Brotli compression
@@ -123,6 +128,7 @@ Job Club NJIT is configured for automated deployment through multiple platforms 
 
 3. **Environment Variables**
    Add in Vercel dashboard → Settings → Environment Variables:
+
    ```
    SANITY_PROJECT_ID=<your_project_id>
    SANITY_DATASET=production
@@ -140,6 +146,7 @@ Job Club NJIT is configured for automated deployment through multiple platforms 
 ### Configuration
 
 **File:** `CNAME` (for custom domain)
+
 ```
 jobclub.njit.edu
 ```
@@ -154,17 +161,18 @@ jobclub.njit.edu
 
 2. **GitHub Actions Workflow**
    Already configured in `.github/workflows/ci.yml`:
+
    ```yaml
    deploy-production:
      runs-on: ubuntu-latest
      steps:
        - name: Build site
          run: npm run build
-       
+
        - name: Deploy to Netlify
          uses: nwtgck/actions-netlify@v2
          with:
-           publish-dir: './_site'
+           publish-dir: "./_site"
            production-deploy: true
    ```
 
@@ -217,6 +225,7 @@ jobclub.njit.edu
 ### Quality Gates
 
 All must pass before deployment:
+
 - ✅ Linting (0 errors)
 - ✅ Build succeeds
 - ✅ All tests pass (12/12)
@@ -228,11 +237,13 @@ All must pass before deployment:
 ## Deployment URLs
 
 ### Production
+
 **Primary:** `https://jobclub-njit.netlify.app`  
 **Alternative:** `https://jobclub-njit.vercel.app`  
 **Custom Domain (Future):** `https://jobclub.njit.edu`
 
 ### Staging/Preview
+
 **Netlify Deploy Previews:** `https://deploy-preview-[PR#]--jobclub-njit.netlify.app`  
 **Vercel Preview:** `https://jobclub-njit-[branch].vercel.app`
 
@@ -240,28 +251,31 @@ All must pass before deployment:
 
 ## Environment Variables Required
 
-| Variable | Description | Required For |
-|----------|-------------|--------------|
-| `SANITY_PROJECT_ID` | Sanity project ID | CMS data fetching |
-| `SANITY_DATASET` | Dataset name (production) | CMS data fetching |
-| `SANITY_API_TOKEN` | Read token for API | CMS data fetching |
-| `NODE_ENV` | Environment (production/dev) | Build optimizations |
-| `NETLIFY_AUTH_TOKEN` | Netlify deploy token | GitHub Actions deploy |
-| `NETLIFY_SITE_ID` | Site ID for deployment | GitHub Actions deploy |
+| Variable             | Description                  | Required For          |
+| -------------------- | ---------------------------- | --------------------- |
+| `SANITY_PROJECT_ID`  | Sanity project ID            | CMS data fetching     |
+| `SANITY_DATASET`     | Dataset name (production)    | CMS data fetching     |
+| `SANITY_API_TOKEN`   | Read token for API           | CMS data fetching     |
+| `NODE_ENV`           | Environment (production/dev) | Build optimizations   |
+| `NETLIFY_AUTH_TOKEN` | Netlify deploy token         | GitHub Actions deploy |
+| `NETLIFY_SITE_ID`    | Site ID for deployment       | GitHub Actions deploy |
 
 ### Setting Environment Variables
 
 **Netlify:**
+
 1. Go to Site settings → Environment variables
 2. Add key-value pairs
 3. Trigger redeploy
 
 **Vercel:**
+
 1. Go to Project settings → Environment Variables
 2. Add variables (can be scoped to Production/Preview/Development)
 3. Redeploy
 
 **GitHub Actions:**
+
 1. Go to Repository Settings → Secrets and variables → Actions
 2. Add repository secrets
 3. Reference in workflow with `${{ secrets.VARIABLE_NAME }}`
@@ -271,6 +285,7 @@ All must pass before deployment:
 ## Build Process
 
 ### Local Build
+
 ```bash
 # Install dependencies
 npm ci
@@ -288,6 +303,7 @@ npm run build:eleventy
 ```
 
 ### Production Build (Automated)
+
 ```bash
 # GitHub Actions runs:
 npm ci
@@ -300,6 +316,7 @@ npm run build
 ## Deployment Checklist
 
 ### Pre-Deployment
+
 - [ ] All environment variables set
 - [ ] Sanity CMS credentials configured
 - [ ] Analytics ID added (GA4)
@@ -310,6 +327,7 @@ npm run build
 - [ ] Check Lighthouse scores
 
 ### Post-Deployment
+
 - [ ] Verify site loads at deployment URL
 - [ ] Test all pages (Home, Events, Onboarding, Blog)
 - [ ] Check forms work (onboarding submission)
@@ -324,17 +342,20 @@ npm run build
 ## Monitoring & Maintenance
 
 ### Netlify Dashboard
+
 - Build logs
 - Deploy history
 - Analytics (bandwidth, requests)
 - Error tracking
 
 ### Google Search Console
+
 - Submit sitemap: `https://jobclub-njit.netlify.app/sitemap.xml`
 - Monitor indexing status
 - Track search performance
 
 ### GitHub Actions
+
 - View workflow runs
 - Check for failed builds
 - Review test results
@@ -344,17 +365,20 @@ npm run build
 ## Rollback Procedure
 
 ### Netlify
+
 1. Go to Deploys tab
 2. Find previous successful deploy
 3. Click "Publish deploy"
 4. Previous version goes live immediately
 
 ### Vercel
+
 1. Go to Deployments
 2. Find previous deployment
 3. Click "Promote to Production"
 
 ### GitHub
+
 ```bash
 # Revert last commit
 git revert HEAD
@@ -370,14 +394,16 @@ git push -f origin main
 ## Performance Optimization (Production)
 
 ### Netlify Settings
+
 - **Asset Optimization:** Enabled (automatic image optimization)
 - **Pretty URLs:** Enabled (removes .html extensions)
-- **Post Processing:** 
+- **Post Processing:**
   - Minify CSS: ✅
   - Minify JS: ✅
   - Bundle CSS: ✅
 
 ### Caching Headers
+
 ```toml
 # netlify.toml
 [[headers]]
@@ -396,18 +422,21 @@ git push -f origin main
 ## Troubleshooting
 
 ### Build Fails
+
 1. Check build logs in Netlify/Vercel dashboard
 2. Verify environment variables are set correctly
 3. Test build locally: `npm run build`
 4. Check Node version matches (18+)
 
 ### Site Not Loading
+
 1. Check DNS settings (if using custom domain)
 2. Verify HTTPS certificate is active
 3. Check Netlify/Vercel status page
 4. Review deploy logs for errors
 
 ### Functions Not Working
+
 1. Verify serverless function syntax
 2. Check CORS headers configuration
 3. Test function locally: `netlify dev`
@@ -427,13 +456,14 @@ git push -f origin main
 
 ## Deployment Status
 
-| Environment | Status | URL | Last Deploy |
-|-------------|--------|-----|-------------|
-| **Production** | 🟡 Pending | TBD | Not deployed yet |
-| **Staging** | 🟡 Pending | TBD | Not deployed yet |
-| **CI/CD** | ✅ Configured | GitHub Actions | Ready |
+| Environment    | Status        | URL            | Last Deploy      |
+| -------------- | ------------- | -------------- | ---------------- |
+| **Production** | 🟡 Pending    | TBD            | Not deployed yet |
+| **Staging**    | 🟡 Pending    | TBD            | Not deployed yet |
+| **CI/CD**      | ✅ Configured | GitHub Actions | Ready            |
 
 **Next Steps:**
+
 1. Create Netlify account and connect repository
 2. Configure environment variables
 3. Trigger first production deploy

@@ -29,31 +29,34 @@ Job Club NJIT implements comprehensive privacy and GDPR compliance measures incl
 
 ### Compliance Checklist
 
-| Requirement | Status | Implementation |
-|------------|--------|----------------|
-| ✅ **Cookie Consent** | Implemented | Banner with Accept/Reject/Preferences |
-| ✅ **Opt-In Analytics** | Implemented | Analytics loads only after consent |
-| ✅ **Privacy Policy** | Implemented | [/privacy/](../src/privacy.njk) |
-| ✅ **Data Transparency** | Implemented | Clear disclosure of data collection |
-| ✅ **User Rights** | Documented | Data access, correction, deletion |
-| ✅ **Consent Logging** | Implemented | LocalStorage with timestamp |
-| ✅ **IP Anonymization** | Implemented | GA4 `anonymize_ip: true` |
-| ✅ **Secure Transmission** | Implemented | HTTPS encryption |
-| ✅ **Data Minimization** | Implemented | Collect only necessary data |
-| ✅ **Accessible Forms** | Implemented | WCAG 2.1 AA compliant |
+| Requirement                | Status      | Implementation                        |
+| -------------------------- | ----------- | ------------------------------------- |
+| ✅ **Cookie Consent**      | Implemented | Banner with Accept/Reject/Preferences |
+| ✅ **Opt-In Analytics**    | Implemented | Analytics loads only after consent    |
+| ✅ **Privacy Policy**      | Implemented | [/privacy/](../src/privacy.njk)       |
+| ✅ **Data Transparency**   | Implemented | Clear disclosure of data collection   |
+| ✅ **User Rights**         | Documented  | Data access, correction, deletion     |
+| ✅ **Consent Logging**     | Implemented | LocalStorage with timestamp           |
+| ✅ **IP Anonymization**    | Implemented | GA4 `anonymize_ip: true`              |
+| ✅ **Secure Transmission** | Implemented | HTTPS encryption                      |
+| ✅ **Data Minimization**   | Implemented | Collect only necessary data           |
+| ✅ **Accessible Forms**    | Implemented | WCAG 2.1 AA compliant                 |
 
 ### Legal Basis for Data Processing
 
 **Article 6(1)(a) GDPR - Consent:**
+
 - User consent obtained via cookie banner
 - Explicit opt-in for analytics tracking
 - Consent can be withdrawn at any time
 
 **Article 6(1)(b) GDPR - Contract Performance:**
+
 - Onboarding form data necessary for service provision
 - Event registration for attendance management
 
 **Article 6(1)(f) GDPR - Legitimate Interest:**
+
 - Essential cookies for site functionality
 - Security and fraud prevention
 
@@ -68,10 +71,11 @@ Job Club NJIT implements comprehensive privacy and GDPR compliance measures incl
 ### Features
 
 #### 1. ✅ First-Time Visitor Detection
+
 ```javascript
 init() {
   const consent = localStorage.getItem(this.consentKey);
-  
+
   if (consent === null) {
     // First time visitor - show banner after 1s delay
     setTimeout(() => this.showBanner(), 1000);
@@ -83,26 +87,29 @@ init() {
 ```
 
 #### 2. ✅ Three-Option Consent Model
+
 - **Accept All** - Enables all cookies including analytics
 - **Reject All** - Essential cookies only (analytics disabled)
 - **Preferences** - Granular control over cookie categories
 
 #### 3. ✅ Consent Storage
+
 ```javascript
 setConsent(analyticsEnabled, preferences = {}) {
   // Store consent decision
   localStorage.setItem('analytics_consent', analyticsEnabled.toString());
   localStorage.setItem('cookie_preferences', JSON.stringify(preferences));
   localStorage.setItem('cookie_banner_shown', 'true');
-  
+
   // Apply to Google Analytics
   this.applyConsent(analyticsEnabled);
 }
 ```
 
 **Storage Details:**
+
 - **Location:** Browser LocalStorage
-- **Keys:** 
+- **Keys:**
   - `analytics_consent` - Boolean (true/false)
   - `cookie_preferences` - JSON object
   - `cookie_banner_shown` - Boolean
@@ -110,6 +117,7 @@ setConsent(analyticsEnabled, preferences = {}) {
 - **Accessibility:** User can clear via browser settings
 
 #### 4. ✅ Privacy Policy Link
+
 ```html
 <p>
   We use cookies and similar technologies...
@@ -118,11 +126,13 @@ setConsent(analyticsEnabled, preferences = {}) {
 ```
 
 #### 5. ✅ Accessibility Features
+
 ```html
-<div 
-  role="dialog" 
+<div
+  role="dialog"
   aria-label="Cookie consent"
-  aria-describedby="cookieConsentMessage">
+  aria-describedby="cookieConsentMessage"
+>
   <!-- Banner content -->
 </div>
 ```
@@ -135,6 +145,7 @@ setConsent(analyticsEnabled, preferences = {}) {
 ### Banner Appearance
 
 **Visual Design:**
+
 - Material Design styling
 - Bottom-fixed position (mobile-friendly)
 - Slide-up animation
@@ -142,6 +153,7 @@ setConsent(analyticsEnabled, preferences = {}) {
 - Cookie icon for visual clarity
 
 **Screenshot Location:**
+
 ```
 docs/ux/images/cookie-consent-banner.png (to be captured)
 ```
@@ -152,22 +164,22 @@ docs/ux/images/cookie-consent-banner.png (to be captured)
 
 ### Google Analytics 4 Consent Mode
 
-**File:** [src/_layouts/base.njk](../src/_layouts/base.njk)
+**File:** [src/\_layouts/base.njk](../src/_layouts/base.njk)
 
 #### Consent Mode Implementation
 
 ```javascript
 // 1. Default consent state (before user choice)
-gtag('consent', 'default', {
-  'analytics_storage': 'denied',
-  'ad_storage': 'denied',
-  'wait_for_update': 500
+gtag("consent", "default", {
+  analytics_storage: "denied",
+  ad_storage: "denied",
+  wait_for_update: 500,
 });
 
 // 2. After user accepts cookies
 if (cookieConsent.hasConsent()) {
-  gtag('consent', 'update', {
-    'analytics_storage': 'granted'
+  gtag("consent", "update", {
+    analytics_storage: "granted",
   });
 }
 ```
@@ -175,26 +187,30 @@ if (cookieConsent.hasConsent()) {
 #### Delayed Analytics Loading
 
 **Before Consent:**
+
 ```html
 <!-- Analytics script NOT loaded -->
 ```
 
 **After Consent Accepted:**
+
 ```javascript
 // Dynamically load GA4 script
 if (window.cookieConsent && window.cookieConsent.hasConsent()) {
-  const script = document.createElement('script');
+  const script = document.createElement("script");
   script.async = true;
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX";
   document.head.appendChild(script);
-  
+
   // Initialize GA4 with privacy settings
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', {
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-XXXXXXXXXX", {
     anonymize_ip: true,
-    cookie_flags: 'SameSite=None;Secure'
+    cookie_flags: "SameSite=None;Secure",
   });
 }
 ```
@@ -206,22 +222,22 @@ if (window.cookieConsent && window.cookieConsent.hasConsent()) {
 ```javascript
 class AnalyticsManager {
   constructor() {
-    this.consentKey = 'analytics_consent';
+    this.consentKey = "analytics_consent";
     this.queue = [];
   }
-  
+
   hasConsent() {
-    return localStorage.getItem(this.consentKey) === 'true';
+    return localStorage.getItem(this.consentKey) === "true";
   }
-  
+
   trackEvent(eventName, eventParams) {
     if (!this.hasConsent()) {
-      console.log('Analytics blocked - no consent');
+      console.log("Analytics blocked - no consent");
       return;
     }
-    
+
     if (window.gtag) {
-      gtag('event', eventName, eventParams);
+      gtag("event", eventName, eventParams);
     } else {
       // Queue for later if gtag not loaded yet
       this.queue.push({ eventName, eventParams });
@@ -233,13 +249,14 @@ class AnalyticsManager {
 ### IP Anonymization
 
 ```javascript
-gtag('config', 'G-XXXXXXXXXX', {
-  anonymize_ip: true,  // Removes last octet of IP address
-  cookie_flags: 'SameSite=None;Secure'
+gtag("config", "G-XXXXXXXXXX", {
+  anonymize_ip: true, // Removes last octet of IP address
+  cookie_flags: "SameSite=None;Secure",
 });
 ```
 
-**Effect:** 
+**Effect:**
+
 - IP address `192.168.1.100` → stored as `192.168.1.0`
 - Complies with GDPR IP privacy requirements
 
@@ -249,20 +266,22 @@ gtag('config', 'G-XXXXXXXXXX', {
 
 ### Data Collection Map
 
-| Data Type | Source | Storage | Purpose | Consent Required |
-|-----------|--------|---------|---------|-----------------|
-| **Name, Email** | Onboarding Form | Sanity CMS | Service provision | ✅ Form submission |
-| **LinkedIn, GitHub URLs** | Onboarding Form | Sanity CMS | Profile creation | ✅ Form submission |
-| **Career Goals** | Onboarding Form | Sanity CMS | Personalization | ✅ Form submission |
-| **Page Views** | Website Visits | Google Analytics | Analytics | ✅ Cookie consent |
-| **Event Interactions** | Click Tracking | Google Analytics | Analytics | ✅ Cookie consent |
-| **Form Submissions** | Forms | Sanity + CRM | Lead management | ✅ Form submission |
-| **Cookie Preferences** | Banner Interaction | LocalStorage | Consent management | ❌ Essential (no consent needed) |
+| Data Type                 | Source             | Storage          | Purpose            | Consent Required                 |
+| ------------------------- | ------------------ | ---------------- | ------------------ | -------------------------------- |
+| **Name, Email**           | Onboarding Form    | Sanity CMS       | Service provision  | ✅ Form submission               |
+| **LinkedIn, GitHub URLs** | Onboarding Form    | Sanity CMS       | Profile creation   | ✅ Form submission               |
+| **Career Goals**          | Onboarding Form    | Sanity CMS       | Personalization    | ✅ Form submission               |
+| **Page Views**            | Website Visits     | Google Analytics | Analytics          | ✅ Cookie consent                |
+| **Event Interactions**    | Click Tracking     | Google Analytics | Analytics          | ✅ Cookie consent                |
+| **Form Submissions**      | Forms              | Sanity + CRM     | Lead management    | ✅ Form submission               |
+| **Cookie Preferences**    | Banner Interaction | LocalStorage     | Consent management | ❌ Essential (no consent needed) |
 
 ### Storage Locations
 
 #### 1. Sanity CMS (Member Profiles)
+
 **Data Stored:**
+
 - Name, email, phone (optional)
 - LinkedIn, GitHub, portfolio URLs
 - Career goals and interests
@@ -270,6 +289,7 @@ gtag('config', 'G-XXXXXXXXXX', {
 - Availability and time commitment
 
 **Security:**
+
 - Hosted on Sanity.io cloud (SOC 2 Type II certified)
 - Role-based access control (RBAC)
 - API token authentication
@@ -277,6 +297,7 @@ gtag('config', 'G-XXXXXXXXXX', {
 - At-rest encryption
 
 **Access Control:**
+
 - Project admins: Full read/write
 - Editors: Content management
 - Viewers: Read-only
@@ -284,7 +305,9 @@ gtag('config', 'G-XXXXXXXXXX', {
 **Data Location:** USA (Sanity cloud infrastructure)
 
 #### 2. Google Analytics 4 (Behavioral Data)
+
 **Data Stored:**
+
 - Page views (URL, timestamp)
 - Event interactions (clicks, registrations)
 - Session duration
@@ -292,6 +315,7 @@ gtag('config', 'G-XXXXXXXXXX', {
 - Approximate location (city-level, anonymized IP)
 
 **Security:**
+
 - Google Cloud infrastructure (ISO 27001 certified)
 - 14-month automatic data retention (configurable)
 - IP anonymization enabled
@@ -300,12 +324,15 @@ gtag('config', 'G-XXXXXXXXXX', {
 **Data Location:** USA (Google Cloud Platform)
 
 #### 3. LocalStorage (Browser)
+
 **Data Stored:**
+
 - Cookie consent preference (boolean)
 - Cookie preferences (JSON)
 - Banner shown flag (boolean)
 
 **Security:**
+
 - Client-side only (not transmitted to servers)
 - Origin-specific (isolated per domain)
 - User can clear via browser
@@ -313,13 +340,16 @@ gtag('config', 'G-XXXXXXXXXX', {
 **Data Location:** User's browser
 
 #### 4. CRM Integration (Airtable)
+
 **Data Stored:**
+
 - Contact information from forms
 - Interaction history
 - Event registrations
 - Onboarding status
 
 **Security:**
+
 - Airtable enterprise security
 - API key authentication
 - HTTPS encryption
@@ -328,13 +358,13 @@ gtag('config', 'G-XXXXXXXXXX', {
 
 ### Data Retention Periods
 
-| Data Type | Retention Period | Deletion Process |
-|-----------|------------------|------------------|
-| **Member Profiles** | Until user requests deletion | Manual deletion from Sanity |
-| **Analytics Data** | 14 months (GA4 default) | Automatic expiration |
-| **Cookie Consent** | Until user clears browser | User controls via browser |
-| **CRM Records** | Until user requests deletion | Manual deletion from Airtable |
-| **Form Submissions** | Until processed + 30 days | Automatic cleanup script |
+| Data Type            | Retention Period             | Deletion Process              |
+| -------------------- | ---------------------------- | ----------------------------- |
+| **Member Profiles**  | Until user requests deletion | Manual deletion from Sanity   |
+| **Analytics Data**   | 14 months (GA4 default)      | Automatic expiration          |
+| **Cookie Consent**   | Until user clears browser    | User controls via browser     |
+| **CRM Records**      | Until user requests deletion | Manual deletion from Airtable |
+| **Form Submissions** | Until processed + 30 days    | Automatic cleanup script      |
 
 ---
 
@@ -343,12 +373,15 @@ gtag('config', 'G-XXXXXXXXXX', {
 ### GDPR User Rights Implementation
 
 #### Right to Access (Article 15)
+
 **How to Request:**
+
 1. Email privacy request to: `privacy@jobclub-njit.edu` (to be set up)
 2. Submit request via contact form with identity verification
 3. Response within 30 days
 
 **Data Provided:**
+
 - Copy of all stored personal data
 - Purpose of processing
 - Categories of data
@@ -356,53 +389,62 @@ gtag('config', 'G-XXXXXXXXXX', {
 - Retention periods
 
 #### Right to Rectification (Article 16)
+
 **How to Request:**
+
 1. Email correction request with updated information
 2. Verification of identity required
 3. Updates applied within 5 business days
 
 **Supported Corrections:**
+
 - Name, email, contact information
 - Career goals and preferences
 - Skills and interests
 
 #### Right to Erasure (Article 17 - "Right to be Forgotten")
+
 **How to Request:**
+
 1. Submit deletion request via email
 2. Identity verification required
 3. Deletion completed within 30 days
 
 **Deletion Process:**
+
 ```javascript
 // Pseudocode for deletion workflow
 async function deleteUserData(userId, email) {
   // 1. Remove from Sanity CMS
   await sanityClient.delete(userId);
-  
+
   // 2. Remove from CRM (Airtable)
   await airtable.deleteRecord(userId);
-  
+
   // 3. Request GA4 deletion (via Google Support)
   // (GA4 auto-expires after 14 months anyway)
-  
+
   // 4. Send confirmation email
-  await sendEmail(email, 'Data Deletion Confirmation');
-  
+  await sendEmail(email, "Data Deletion Confirmation");
+
   // 5. Log deletion for compliance
   await logDataDeletion(userId, new Date());
 }
 ```
 
 **What Gets Deleted:**
+
 - ✅ Sanity CMS profile
 - ✅ CRM records
 - ✅ Form submission history
 - ⚠️ GA4 data (requires Google support request, or auto-expires in 14 months)
 
 #### Right to Data Portability (Article 20)
+
 **Format:** JSON or CSV export of all user data
 
 **Example Export:**
+
 ```json
 {
   "user_id": "user_123456",
@@ -427,7 +469,9 @@ async function deleteUserData(userId, email) {
 ```
 
 #### Right to Object (Article 21)
+
 **How to Exercise:**
+
 - Opt-out of analytics via cookie banner "Reject All"
 - Unsubscribe from emails via footer link
 - Request to stop processing via email
@@ -457,26 +501,27 @@ async function deleteUserData(userId, email) {
 ### Key Disclosures
 
 **Analytics Tools:**
+
 ```html
 <p>
-  We use Google Analytics 4 to understand how visitors interact with our site. 
-  This tool collects information such as:
-  - Pages you visit
-  - Time spent on each page
-  - How you arrived at our site
-  - Your approximate location (city-level)
-  - Device type and browser
+  We use Google Analytics 4 to understand how visitors interact with our site.
+  This tool collects information such as: - Pages you visit - Time spent on each
+  page - How you arrived at our site - Your approximate location (city-level) -
+  Device type and browser
 </p>
 <p>
-  <strong>Important:</strong> Google Analytics only loads if you accept cookies 
+  <strong>Important:</strong> Google Analytics only loads if you accept cookies
   via our consent banner. You can opt out at any time.
 </p>
 ```
 
 **Cookie Usage:**
+
 ```html
 <h3>Essential Cookies</h3>
-<p>These cookies are necessary for the site to function and cannot be disabled:</p>
+<p>
+  These cookies are necessary for the site to function and cannot be disabled:
+</p>
 <ul>
   <li><code>analytics_consent</code> - Stores your cookie preference</li>
   <li><code>cookie_preferences</code> - Stores granular cookie settings</li>
@@ -491,6 +536,7 @@ async function deleteUserData(userId, email) {
 ```
 
 ### Last Updated Date
+
 ```html
 <p class="text-xl">Last updated: December 17, 2025</p>
 ```
@@ -556,29 +602,31 @@ docs/
 ### Code Examples
 
 #### Cookie Consent Check (Before Tracking)
+
 ```javascript
 // In analytics.js
 class AnalyticsManager {
   trackEvent(eventName, params) {
     // Always check consent before tracking
     if (!this.hasConsent()) {
-      console.log('[Analytics] Blocked - No consent');
+      console.log("[Analytics] Blocked - No consent");
       return;
     }
-    
+
     // Proceed with tracking
     if (window.gtag) {
-      gtag('event', eventName, params);
+      gtag("event", eventName, params);
     }
   }
-  
+
   hasConsent() {
-    return localStorage.getItem('analytics_consent') === 'true';
+    return localStorage.getItem("analytics_consent") === "true";
   }
 }
 ```
 
 #### Consent Banner Show/Hide
+
 ```javascript
 // In cookie-consent.js
 acceptAll() {
@@ -588,7 +636,7 @@ acceptAll() {
     marketing: false
   });
   this.hideBanner();
-  
+
   // Reload analytics if accepting after initial reject
   if (window.analytics) {
     window.analytics.init();
@@ -611,65 +659,66 @@ hideBanner() {
 
 ### Manual Testing Checklist
 
-| Test Case | Expected Result | Status |
-|-----------|----------------|--------|
-| First-time visitor | Banner appears after 1s | ✅ Pass |
-| Accept All clicked | Banner hides, analytics loads, LocalStorage set | ✅ Pass |
-| Reject All clicked | Banner hides, analytics blocked, LocalStorage set | ✅ Pass |
-| Return visitor (accepted) | No banner, analytics loads automatically | ✅ Pass |
-| Return visitor (rejected) | No banner, analytics stays blocked | ✅ Pass |
-| Privacy policy link | Opens /privacy/ page | ✅ Pass |
-| Analytics script load (accepted) | GA4 script in `<head>` | ✅ Pass |
-| Analytics script load (rejected) | No GA4 script in DOM | ✅ Pass |
-| Event tracking (accepted) | Events sent to GA4 | ✅ Pass |
-| Event tracking (rejected) | Events blocked, console log shown | ✅ Pass |
-| Clear LocalStorage | Banner reappears on next visit | ✅ Pass |
+| Test Case                        | Expected Result                                   | Status  |
+| -------------------------------- | ------------------------------------------------- | ------- |
+| First-time visitor               | Banner appears after 1s                           | ✅ Pass |
+| Accept All clicked               | Banner hides, analytics loads, LocalStorage set   | ✅ Pass |
+| Reject All clicked               | Banner hides, analytics blocked, LocalStorage set | ✅ Pass |
+| Return visitor (accepted)        | No banner, analytics loads automatically          | ✅ Pass |
+| Return visitor (rejected)        | No banner, analytics stays blocked                | ✅ Pass |
+| Privacy policy link              | Opens /privacy/ page                              | ✅ Pass |
+| Analytics script load (accepted) | GA4 script in `<head>`                            | ✅ Pass |
+| Analytics script load (rejected) | No GA4 script in DOM                              | ✅ Pass |
+| Event tracking (accepted)        | Events sent to GA4                                | ✅ Pass |
+| Event tracking (rejected)        | Events blocked, console log shown                 | ✅ Pass |
+| Clear LocalStorage               | Banner reappears on next visit                    | ✅ Pass |
 
 ### Automated Testing
 
 **Playwright Test Example:**
+
 ```typescript
 // tests/privacy/cookie-consent.spec.ts
-test('cookie banner appears for first-time visitors', async ({ page }) => {
-  await page.goto('/');
-  
+test("cookie banner appears for first-time visitors", async ({ page }) => {
+  await page.goto("/");
+
   // Banner should appear after delay
-  await page.waitForSelector('#cookieConsentBanner', { timeout: 2000 });
-  
-  const banner = page.locator('#cookieConsentBanner');
+  await page.waitForSelector("#cookieConsentBanner", { timeout: 2000 });
+
+  const banner = page.locator("#cookieConsentBanner");
   await expect(banner).toBeVisible();
 });
 
-test('accepting cookies loads analytics', async ({ page, context }) => {
-  await page.goto('/');
-  
+test("accepting cookies loads analytics", async ({ page, context }) => {
+  await page.goto("/");
+
   // Accept cookies
-  await page.click('#cookieConsentAccept');
-  
+  await page.click("#cookieConsentAccept");
+
   // Check LocalStorage
-  const consent = await page.evaluate(() => 
-    localStorage.getItem('analytics_consent')
+  const consent = await page.evaluate(() =>
+    localStorage.getItem("analytics_consent"),
   );
-  expect(consent).toBe('true');
-  
+  expect(consent).toBe("true");
+
   // Check if GA4 script loads
-  await page.waitForFunction(() => 
-    document.querySelector('script[src*="googletagmanager"]')
+  await page.waitForFunction(() =>
+    document.querySelector('script[src*="googletagmanager"]'),
   );
 });
 
-test('rejecting cookies blocks analytics', async ({ page }) => {
-  await page.goto('/');
-  
+test("rejecting cookies blocks analytics", async ({ page }) => {
+  await page.goto("/");
+
   // Reject cookies
-  await page.click('#cookieConsentReject');
-  
+  await page.click("#cookieConsentReject");
+
   // Check LocalStorage
-  const consent = await page.evaluate(() => 
-    localStorage.getItem('analytics_consent')
+  const consent = await page.evaluate(() =>
+    localStorage.getItem("analytics_consent"),
   );
-  expect(consent).toBe('false');
-  
+  expect(consent).toBe("false");
+
   // Ensure no GA4 script
   const gaScript = await page.locator('script[src*="googletagmanager"]');
   await expect(gaScript).toHaveCount(0);
@@ -678,14 +727,14 @@ test('rejecting cookies blocks analytics', async ({ page }) => {
 
 ### GDPR Compliance Validation
 
-| Requirement | Validation Method | Result |
-|-------------|------------------|---------|
-| Consent before analytics | Manual test + Playwright | ✅ Pass |
-| Opt-out functional | Manual test | ✅ Pass |
-| Privacy policy accessible | Link check | ✅ Pass |
-| IP anonymization enabled | GA4 settings check | ✅ Pass |
-| No pre-ticked boxes | Banner UI inspection | ✅ Pass (no default acceptance) |
-| Consent withdrawal | Clear storage test | ✅ Pass |
+| Requirement               | Validation Method        | Result                          |
+| ------------------------- | ------------------------ | ------------------------------- |
+| Consent before analytics  | Manual test + Playwright | ✅ Pass                         |
+| Opt-out functional        | Manual test              | ✅ Pass                         |
+| Privacy policy accessible | Link check               | ✅ Pass                         |
+| IP anonymization enabled  | GA4 settings check       | ✅ Pass                         |
+| No pre-ticked boxes       | Banner UI inspection     | ✅ Pass (no default acceptance) |
+| Consent withdrawal        | Clear storage test       | ✅ Pass                         |
 
 ---
 
@@ -711,7 +760,7 @@ Job Club NJIT implements comprehensive GDPR-compliant privacy measures:
 - ✅ [src/js/cookie-consent.js](../src/js/cookie-consent.js) - 407 lines
 - ✅ [src/js/analytics.js](../src/js/analytics.js) - Analytics wrapper
 - ✅ [src/privacy.njk](../src/privacy.njk) - 306 lines
-- ✅ [src/_layouts/base.njk](../src/_layouts/base.njk) - GA4 integration
+- ✅ [src/\_layouts/base.njk](../src/_layouts/base.njk) - GA4 integration
 - ✅ [docs/privacy-implementation.md](privacy-implementation.md) - This document
 
 ### Next Steps

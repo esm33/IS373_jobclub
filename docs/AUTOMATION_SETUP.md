@@ -3,6 +3,7 @@
 ## Overview
 
 This guide walks you through setting up the two required automations for Job Club:
+
 1. **Onboarding Form → CRM + Personalized Email**
 2. **Discord Integration** for #jobclub-intros
 
@@ -11,6 +12,7 @@ This guide walks you through setting up the two required automations for Job Clu
 ## Part 1: Zapier Setup (Email Automation)
 
 ### Step 1: Create a Zapier Account
+
 1. Go to [zapier.com](https://zapier.com) and sign up for a free account
 2. Verify your email
 
@@ -83,6 +85,7 @@ Job Club Team
 ### Step 5: Update Your .env.local
 
 Copy your webhook URL from Step 2 and paste it:
+
 ```
 EMAIL_WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/YOUR_ACCOUNT_ID/YOUR_HOOK_ID/
 ```
@@ -110,6 +113,7 @@ EMAIL_WEBHOOK_URL=https://hooks.zapier.com/hooks/catch/YOUR_ACCOUNT_ID/YOUR_HOOK
 ### Step 3: Update Your .env.local
 
 Paste the webhook URL:
+
 ```
 DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN
 ```
@@ -163,6 +167,7 @@ Calendly: [Link]
 2. Go to **API** tab
 3. Generate an API key
 4. Copy it to `.env.local`:
+
 ```
 AIRTABLE_API_KEY=your_api_key_here
 AIRTABLE_BASE_ID=your_base_id_here
@@ -171,6 +176,7 @@ AIRTABLE_BASE_ID=your_base_id_here
 ### Step 3: Create Zapier Integration (Alternative)
 
 Or use Zapier to connect:
+
 1. In your onboarding Zap, add another action
 2. Search for **Airtable**
 3. Select **Create Record**
@@ -185,11 +191,13 @@ Or use Zapier to connect:
 ### Test the Full Flow:
 
 1. **Start dev server:**
+
    ```bash
    npm run dev
    ```
 
 2. **Visit the onboarding form:**
+
    ```
    http://localhost:8080/onboarding/
    ```
@@ -219,22 +227,26 @@ Or use Zapier to connect:
 ## Troubleshooting
 
 ### Form doesn't submit?
+
 - Check browser console for errors (F12)
 - Verify EMAIL_WEBHOOK_URL is set in `.env.local`
 - Make sure it's a valid Zapier webhook URL
 
 ### Discord message not posting?
+
 - Check DISCORD_WEBHOOK_URL is correct
 - Verify the webhook still exists in Discord settings
 - Check the bot has permission to post in #jobclub-intros
 
 ### Email not being sent?
+
 - Check Zapier Zap is turned ON
 - Look at Zapier task history for errors
 - Verify Gmail is authorized in Zapier
 - Check email wasn't filtered to spam
 
 ### Data not appearing in Sanity?
+
 - Verify SANITY_PROJECT_ID and SANITY_WRITE_TOKEN
 - Check Sanity API token has write access
 - Look at browser network tab for API errors
@@ -246,19 +258,23 @@ Or use Zapier to connect:
 ### 2nd Automation Options:
 
 **Option A: Event Registration → CRM**
+
 - Trigger: New event registration
 - Action: Add to Airtable/HubSpot
 - Add to Google Calendar
 
 **Option B: New Event → Discord Announcement**
+
 - Trigger: New event published in Sanity
 - Action: Post to #events channel
 
 **Option C: New Resource → Discord**
+
 - Trigger: New resource published
 - Action: Post to #resources channel
 
 **Option D: Member Update → Mentor Notification**
+
 - Trigger: Member profile updated
 - Action: Notify mentors in Slack/Discord
 

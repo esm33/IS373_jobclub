@@ -111,22 +111,22 @@ Our custom events are automatically tracked, but you can create custom dimension
 2. Click **"Create custom dimension"**
 3. Add these dimensions:
 
-| Dimension Name | Scope | Event Parameter | Description |
-|----------------|-------|-----------------|-------------|
-| Event Slug | Event | `event_slug` | URL slug of the event |
-| Event Type | Event | `event_type` | Type of event (workshop, meetup, etc.) |
-| Filter Type | Event | `filter_type` | Filter selected by user |
-| Share Method | Event | `method` | How event was shared |
-| Link Type | Event | `link_type` | Type of link clicked |
+| Dimension Name | Scope | Event Parameter | Description                            |
+| -------------- | ----- | --------------- | -------------------------------------- |
+| Event Slug     | Event | `event_slug`    | URL slug of the event                  |
+| Event Type     | Event | `event_type`    | Type of event (workshop, meetup, etc.) |
+| Filter Type    | Event | `filter_type`   | Filter selected by user                |
+| Share Method   | Event | `method`        | How event was shared                   |
+| Link Type      | Event | `link_type`     | Type of link clicked                   |
 
 ### Create Custom Metrics
 
 1. Go to: **Admin** → **Custom Definitions** → **Custom Metrics**
 2. Click **"Create custom metric"**
 
-| Metric Name | Scope | Event Parameter | Unit |
-|-------------|-------|-----------------|------|
-| Result Count | Event | `result_count` | Standard |
+| Metric Name  | Scope | Event Parameter | Unit     |
+| ------------ | ----- | --------------- | -------- |
+| Result Count | Event | `result_count`  | Standard |
 
 ---
 
@@ -137,6 +137,7 @@ Our custom events are automatically tracked, but you can create custom dimension
 **Path:** Reports → Engagement → Events
 
 **What to look for:**
+
 - Total event counts
 - Most popular custom events
 - Event conversion funnels
@@ -144,6 +145,7 @@ Our custom events are automatically tracked, but you can create custom dimension
 ### 2. Custom Event Performance
 
 **Create a new report:**
+
 1. Go to **Explore**
 2. Choose **"Blank"** template
 3. Add dimensions:
@@ -161,6 +163,7 @@ Our custom events are automatically tracked, but you can create custom dimension
 **Path:** Reports → Realtime → Overview
 
 **Perfect for:**
+
 - Testing your tracking setup
 - Watching live user activity
 - Debugging issues
@@ -208,17 +211,20 @@ Our custom events are automatically tracked, but you can create custom dimension
 ## Privacy Compliance
 
 ### Current Setup:
+
 ✅ IP anonymization enabled  
 ✅ Consent mode configured  
 ✅ No tracking until consent (default: denied)  
-✅ SameSite cookies configured  
+✅ SameSite cookies configured
 
 ### Still Need:
+
 ❌ Cookie consent banner  
 ❌ Privacy policy update  
-❌ Terms of service  
+❌ Terms of service
 
 ### Recommended Cookie Banner Libraries:
+
 - [Cookie Consent](https://www.cookieconsent.com/)
 - [Osano Cookie Consent](https://github.com/osano/cookieconsent)
 - [CookieYes](https://www.cookieyes.com/)

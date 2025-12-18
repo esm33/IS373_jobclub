@@ -1,6 +1,7 @@
 # Wireframes
 
 ## Overview
+
 This document contains wireframes for key pages and flows in the Job Club platform. Wireframes are presented in ASCII/text format for easy version control and collaboration, with visual wireframe screenshots provided for reference.
 
 ---
@@ -10,29 +11,29 @@ This document contains wireframes for key pages and flows in the Job Club platfo
 ### Homepage Wireframes
 
 ![Homepage Hero Section](./images/wireframe-homepage-hero.png)
-*Homepage hero section with personal branding*
+_Homepage hero section with personal branding_
 
 ![Homepage Stats Row](./images/wireframe-homepage-stats.png)
-*Stats section showing teaching experience metrics*
+_Stats section showing teaching experience metrics_
 
 ![Homepage How It Works](./images/wireframe-homepage-howitworks.png)
-*Four-step process visualization*
+_Four-step process visualization_
 
 ![Homepage Resource Highlights](./images/wireframe-homepage-resources.png)
-*Free downloadable career guides section*
+_Free downloadable career guides section_
 
 ### Onboarding Wireframe
 
 ![Onboarding Form](./images/wireframe-onboarding-form.png)
-*Single-page member registration form*
+_Single-page member registration form_
 
 ### Events Page Wireframes
 
 ![Events Page Header](./images/wireframe-events-page.png)
-*Events page with filters and hero section*
+_Events page with filters and hero section_
 
 ![Events Grid](./images/wireframe-events-grid.png)
-*Event cards in three-column grid layout*
+_Event cards in three-column grid layout_
 
 ---
 
@@ -457,6 +458,7 @@ This document contains wireframes for key pages and flows in the Job Club platfo
 ## Component Patterns
 
 ### Card Pattern (Reusable)
+
 ```
 ┌──────────────────────────┐
 │  [Image/Icon]            │
@@ -470,6 +472,7 @@ This document contains wireframes for key pages and flows in the Job Club platfo
 ```
 
 ### Filter Panel Pattern
+
 ```
 ┌────────────────┐
 │  FILTER NAME   │
@@ -486,6 +489,7 @@ This document contains wireframes for key pages and flows in the Job Club platfo
 ```
 
 ### Progress Indicator
+
 ```
 ●  ○  ○  ○   (Dots - 4 steps)
 
@@ -510,3 +514,4 @@ Step 2 of 4      (Text)
 ---
 
 *These wireframes serve as blueprints. Final designs may include additional visual polish, illustrations, and brand elements per the brand guide.*
+```

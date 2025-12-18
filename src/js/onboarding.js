@@ -5,77 +5,77 @@
 
 class OnboardingForm {
   constructor() {
-    this.form = document.getElementById('onboardingForm');
-    this.errorMessage = document.getElementById('errorMessage');
-    this.successMessage = document.getElementById('successMessage');
+    this.form = document.getElementById("onboardingForm");
+    this.errorMessage = document.getElementById("errorMessage");
+    this.successMessage = document.getElementById("successMessage");
     this.submitButton = this.form.querySelector('button[type="submit"]');
     this.originalButtonText = this.submitButton.innerHTML;
-    
+
     this.init();
   }
-  
+
   init() {
-    this.form.addEventListener('submit', this.handleSubmit.bind(this));
+    this.form.addEventListener("submit", this.handleSubmit.bind(this));
     this.setupRealtimeValidation();
   }
-  
+
   /**
    * Setup real-time URL validation
    */
   setupRealtimeValidation() {
-    const urlInputs = ['linkedin', 'github', 'website', 'calendly'];
-    
-    urlInputs.forEach(inputId => {
+    const urlInputs = ["linkedin", "github", "website", "calendly"];
+
+    urlInputs.forEach((inputId) => {
       const input = document.getElementById(inputId);
-      
-      input.addEventListener('blur', () => {
+
+      input.addEventListener("blur", () => {
         this.validateUrlField(input);
       });
-      
+
       // Clear validation on focus
-      input.addEventListener('focus', () => {
-        input.style.borderColor = '';
+      input.addEventListener("focus", () => {
+        input.style.borderColor = "";
       });
     });
   }
-  
+
   /**
    * Validate individual URL field
    */
   validateUrlField(input) {
     const value = input.value.trim();
-    
-    if (value === '') {
+
+    if (value === "") {
       return false;
     }
-    
+
     try {
       new URL(value);
-      
+
       // Check domain-specific requirements
       const domainChecks = {
-        linkedin: 'linkedin.com',
-        github: 'github.com',
-        calendly: 'calendly.com'
+        linkedin: "linkedin.com",
+        github: "github.com",
+        calendly: "calendly.com",
       };
-      
+
       const expectedDomain = domainChecks[input.id];
       if (expectedDomain) {
         const url = new URL(value);
         if (!url.hostname.includes(expectedDomain)) {
-          input.style.borderColor = '#EF5350';
+          input.style.borderColor = "#EF5350";
           return false;
         }
       }
-      
-      input.style.borderColor = '#66BB6A';
+
+      input.style.borderColor = "#66BB6A";
       return true;
     } catch {
-      input.style.borderColor = '#EF5350';
+      input.style.borderColor = "#EF5350";
       return false;
     }
   }
-  
+
   /**
    * Show loading state
    */
@@ -96,29 +96,29 @@ class OnboardingForm {
       this.submitButton.innerHTML = this.originalButtonText;
     }
   }
-  
+
   /**
    * Show error message
    */
   showError(message) {
     this.hideMessages();
-    this.errorMessage.querySelector('p').textContent = message;
-    this.errorMessage.classList.remove('hidden');
-    this.errorMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    this.errorMessage.querySelector("p").textContent = message;
+    this.errorMessage.classList.remove("hidden");
+    this.errorMessage.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
-  
+
   /**
    * Show success message
    */
   showSuccess(message, hasWarnings = false) {
     this.hideMessages();
-    
-    let iconColor = hasWarnings ? '#FB8C00' : '#66BB6A';
-    let bgColor = hasWarnings ? '#FFF3E0' : '#E8F5E9';
-    let borderColor = hasWarnings ? '#FB8C00' : '#66BB6A';
-    let textColor = hasWarnings ? '#E65100' : '#2E7D32';
-    let icon = hasWarnings ? 'warning' : 'check_circle';
-    
+
+    const iconColor = hasWarnings ? "#FB8C00" : "#66BB6A";
+    const bgColor = hasWarnings ? "#FFF3E0" : "#E8F5E9";
+    const borderColor = hasWarnings ? "#FB8C00" : "#66BB6A";
+    const textColor = hasWarnings ? "#E65100" : "#2E7D32";
+    const icon = hasWarnings ? "warning" : "check_circle";
+
     this.successMessage.innerHTML = `
       <div class="flex items-center gap-2">
         <span class="material-icons-round" style="color: ${iconColor}">${icon}</span>
@@ -128,18 +128,21 @@ class OnboardingForm {
     this.successMessage.style.backgroundColor = bgColor;
     this.successMessage.style.borderColor = borderColor;
     this.successMessage.style.color = textColor;
-    this.successMessage.classList.remove('hidden');
-    this.successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    this.successMessage.classList.remove("hidden");
+    this.successMessage.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
   }
-  
+
   /**
    * Hide all messages
    */
   hideMessages() {
-    this.errorMessage.classList.add('hidden');
-    this.successMessage.classList.add('hidden');
+    this.errorMessage.classList.add("hidden");
+    this.successMessage.classList.add("hidden");
   }
-  
+
   /**
    * Get API endpoint URL
    */
@@ -147,84 +150,94 @@ class OnboardingForm {
     // Use the local API endpoint for form submission
     // In development: http://localhost:4999/api/submit-onboarding
     // In production: same domain /api/submit-onboarding
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      return 'http://localhost:4999/api/submit-onboarding';
+    if (
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1"
+    ) {
+      return "http://localhost:4999/api/submit-onboarding";
     }
-    return '/api/submit-onboarding';
+    return "/api/submit-onboarding";
   }
-  
+
   /**
    * Handle form submission
    */
   async handleSubmit(e) {
     e.preventDefault();
-    
+
     this.hideMessages();
     this.setLoading(true);
-    
+
     try {
       // Collect form data
       const formData = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        major: document.getElementById('major').value.trim(),
-        graduationYear: document.getElementById('gradYear').value,
-        linkedinUrl: document.getElementById('linkedin').value.trim(),
-        githubUrl: document.getElementById('github').value.trim(),
-        websiteUrl: document.getElementById('website').value.trim(),
-        calendlyUrl: document.getElementById('calendly').value.trim(),
-        careerGoal: document.getElementById('careerGoal').value.trim(),
+        name: document.getElementById("name").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        major: document.getElementById("major").value.trim(),
+        graduationYear: document.getElementById("gradYear").value,
+        linkedinUrl: document.getElementById("linkedin").value.trim(),
+        githubUrl: document.getElementById("github").value.trim(),
+        websiteUrl: document.getElementById("website").value.trim(),
+        calendlyUrl: document.getElementById("calendly").value.trim(),
+        careerGoal: document.getElementById("careerGoal").value.trim(),
       };
-      
+
       // Client-side validation
-      const requiredFields = ['name', 'email', 'major', 'graduationYear', 'careerGoal'];
+      const requiredFields = [
+        "name",
+        "email",
+        "major",
+        "graduationYear",
+        "careerGoal",
+      ];
       for (const field of requiredFields) {
         if (!formData[field]) {
           this.setLoading(false);
-          this.showError(`Please fill in all required fields.`);
+          this.showError("Please fill in all required fields.");
           return;
         }
       }
-      
+
       // Validate email format
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(formData.email)) {
         this.setLoading(false);
-        this.showError('Please enter a valid email address.');
+        this.showError("Please enter a valid email address.");
         return;
       }
-      
+
       // Submit to Zapier webhook
       const response = await fetch(this.getApiEndpoint(), {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-      
+
       // Zapier returns 200 OK with different response format
       if (!response.ok) {
-        throw new Error('Failed to submit profile');
+        throw new Error("Failed to submit profile");
       }
-      
+
       // Store basic info in localStorage for quick access
-      localStorage.setItem('jobClubMemberName', formData.name);
-      localStorage.setItem('jobClubMemberEmail', formData.email);
-      
+      localStorage.setItem("jobClubMemberName", formData.name);
+      localStorage.setItem("jobClubMemberEmail", formData.email);
+
       // Show success message
-      this.showSuccess('🎉 Profile submitted successfully! Welcome to Job Club. Check your email for next steps!');
-      
+      this.showSuccess(
+        "🎉 Profile submitted successfully! Welcome to Job Club. Check your email for next steps!",
+      );
+
       // Log for debugging
-      console.log('Submission successful');
-      
+      console.log("Submission successful");
+
       // Redirect after delay
       setTimeout(() => {
-        window.location.href = '/';
+        window.location.href = "/";
       }, 3000);
-      
     } catch (error) {
-      console.error('Submission error:', error);
+      console.error("Submission error:", error);
       this.showError(`Failed to submit profile: ${error.message}`);
     } finally {
       this.setLoading(false);
@@ -233,8 +246,8 @@ class OnboardingForm {
 }
 
 // Initialize when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
     new OnboardingForm();
   });
 } else {

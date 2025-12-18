@@ -4,39 +4,45 @@
  * This supplements Eleventy's static server with backend functionality
  */
 
-import http from 'http';
-import { createClient } from '@sanity/client';
-import * as dotenv from 'dotenv';
-import path from 'path';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
+import http from "http";
+import { createClient } from "@sanity/client";
+import * as dotenv from "dotenv";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from "url";
 
 // Get current directory
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Load environment variables from .env.local
-const envPath = path.join(__dirname, '.env.local');
+const envPath = path.join(__dirname, ".env.local");
 if (fs.existsSync(envPath)) {
   dotenv.config({ path: envPath });
 }
 
 // Check for required environment variables
 if (!process.env.SANITY_PROJECT_ID || !process.env.SANITY_WRITE_TOKEN) {
-  console.error('❌ Missing required environment variables:');
-  console.error('   - SANITY_PROJECT_ID: ' + (process.env.SANITY_PROJECT_ID ? '✓' : '✗'));
-  console.error('   - SANITY_DATASET: ' + (process.env.SANITY_DATASET ? '✓' : '✗'));
-  console.error('   - SANITY_WRITE_TOKEN: ' + (process.env.SANITY_WRITE_TOKEN ? '✓' : '✗'));
-  console.error('\n📝 Please add these to .env.local file');
+  console.error("❌ Missing required environment variables:");
+  console.error(
+    "   - SANITY_PROJECT_ID: " + (process.env.SANITY_PROJECT_ID ? "✓" : "✗"),
+  );
+  console.error(
+    "   - SANITY_DATASET: " + (process.env.SANITY_DATASET ? "✓" : "✗"),
+  );
+  console.error(
+    "   - SANITY_WRITE_TOKEN: " + (process.env.SANITY_WRITE_TOKEN ? "✓" : "✗"),
+  );
+  console.error("\n📝 Please add these to .env.local file");
   process.exit(1);
 }
 
 // Initialize Sanity client
 const client = createClient({
   projectId: process.env.SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_DATASET || 'production',
+  dataset: process.env.SANITY_DATASET || "production",
   useCdn: false,
-  apiVersion: '2024-01-01',
+  apiVersion: "2024-01-01",
   token: process.env.SANITY_WRITE_TOKEN,
 });
 
@@ -45,13 +51,13 @@ const PORT = 4999;
 // Helper function to parse request body
 function parseBody(req) {
   return new Promise((resolve, reject) => {
-    let data = '';
-    req.on('data', chunk => {
+    let data = "";
+    req.on("data", (chunk) => {
       data += chunk.toString();
     });
-    req.on('end', () => {
+    req.on("end", () => {
       try {
-        resolve(JSON.parse(data || '{}'));
+        resolve(JSON.parse(data || "{}"));
       } catch (e) {
         reject(e);
       }
@@ -61,23 +67,23 @@ function parseBody(req) {
 
 // Validate URL
 function validateUrl(url, expectedDomain = null) {
-  if (!url || url.trim() === '') {
-    return { valid: false, message: 'URL is required' };
+  if (!url || url.trim() === "") {
+    return { valid: false, message: "URL is required" };
   }
-  
+
   try {
     const urlObj = new URL(url);
-    
+
     if (expectedDomain && !urlObj.hostname.includes(expectedDomain)) {
-      return { 
-        valid: false, 
-        message: `URL should be from ${expectedDomain}` 
+      return {
+        valid: false,
+        message: `URL should be from ${expectedDomain}`,
       };
     }
-    
+
     return { valid: true, url: url.trim() };
-  } catch (error) {
-    return { valid: false, message: 'Invalid URL format' };
+  } catch {
+    return { valid: false, message: "Invalid URL format" };
   }
 }
 
@@ -89,45 +95,45 @@ function detectMissingPrerequisites(data) {
     missingWebsite: false,
     missingCalendly: false,
   };
-  
+
   const missingItems = [];
-  
-  const linkedinCheck = validateUrl(data.linkedinUrl, 'linkedin.com');
+
+  const linkedinCheck = validateUrl(data.linkedinUrl, "linkedin.com");
   if (!linkedinCheck.valid) {
     flags.missingLinkedIn = true;
     missingItems.push({
-      field: 'LinkedIn',
+      field: "LinkedIn",
       issue: linkedinCheck.message,
     });
   }
-  
-  const githubCheck = validateUrl(data.githubUrl, 'github.com');
+
+  const githubCheck = validateUrl(data.githubUrl, "github.com");
   if (!githubCheck.valid) {
     flags.missingGitHub = true;
     missingItems.push({
-      field: 'GitHub',
+      field: "GitHub",
       issue: githubCheck.message,
     });
   }
-  
+
   const websiteCheck = validateUrl(data.websiteUrl);
   if (!websiteCheck.valid) {
     flags.missingWebsite = true;
     missingItems.push({
-      field: 'Personal Website',
+      field: "Personal Website",
       issue: websiteCheck.message,
     });
   }
-  
-  const calendlyCheck = validateUrl(data.calendlyUrl, 'calendly.com');
+
+  const calendlyCheck = validateUrl(data.calendlyUrl, "calendly.com");
   if (!calendlyCheck.valid) {
     flags.missingCalendly = true;
     missingItems.push({
-      field: 'Calendly',
+      field: "Calendly",
       issue: calendlyCheck.message,
     });
   }
-  
+
   return { flags, missingItems };
 }
 
@@ -136,14 +142,16 @@ function detectMissingPrerequisites(data) {
  */
 async function triggerEmailAutomation(memberData, missingItems) {
   const webhookUrl = process.env.EMAIL_WEBHOOK_URL;
-  
+
   if (!webhookUrl) {
-    console.warn('⚠️  EMAIL_WEBHOOK_URL not configured - skipping email automation');
-    return { success: false, message: 'Email webhook not configured' };
+    console.warn(
+      "⚠️  EMAIL_WEBHOOK_URL not configured - skipping email automation",
+    );
+    return { success: false, message: "Email webhook not configured" };
   }
-  
+
   try {
-    console.log('📧 Sending to Zapier webhook...');
+    console.log("📧 Sending to Zapier webhook...");
     const webhookPayload = {
       name: memberData.name,
       email: memberData.email,
@@ -157,24 +165,24 @@ async function triggerEmailAutomation(memberData, missingItems) {
       missingItems: missingItems,
       submittedAt: new Date().toISOString(),
     };
-    console.log('📤 Payload:', JSON.stringify(webhookPayload, null, 2));
-    
+    console.log("📤 Payload:", JSON.stringify(webhookPayload, null, 2));
+
     const response = await fetch(webhookUrl, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(webhookPayload),
     });
-    
+
     if (!response.ok) {
       throw new Error(`Webhook returned ${response.status}`);
     }
-    
-    console.log('✅ Email webhook sent successfully');
+
+    console.log("✅ Email webhook sent successfully");
     return { success: true };
   } catch (error) {
-    console.error('❌ Email webhook error:', error.message);
+    console.error("❌ Email webhook error:", error.message);
     return { success: false, message: error.message };
   }
 }
@@ -184,88 +192,94 @@ async function triggerEmailAutomation(memberData, missingItems) {
  */
 async function sendDiscordNotification(memberData) {
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL;
-  
+
   if (!webhookUrl) {
-    console.warn('⚠️  DISCORD_WEBHOOK_URL not configured - skipping Discord notification');
-    return { success: false, message: 'Discord webhook not configured' };
+    console.warn(
+      "⚠️  DISCORD_WEBHOOK_URL not configured - skipping Discord notification",
+    );
+    return { success: false, message: "Discord webhook not configured" };
   }
-  
+
   try {
-    console.log('💬 Sending to Discord...');
-    
+    console.log("💬 Sending to Discord...");
+
     // Format links for Discord
     const links = [
       memberData.linkedinUrl && `[LinkedIn](${memberData.linkedinUrl})`,
       memberData.githubUrl && `[GitHub](${memberData.githubUrl})`,
       memberData.websiteUrl && `[Portfolio](${memberData.websiteUrl})`,
       memberData.calendlyUrl && `[Calendly](${memberData.calendlyUrl})`,
-    ].filter(Boolean).join(' • ');
-    
+    ]
+      .filter(Boolean)
+      .join(" • ");
+
     const embed = {
       title: `🎉 New Member: ${memberData.name}`,
-      description: `Welcome to Job Club!`,
-      color: 0x6750A4, // Material Design primary color
+      description: "Welcome to Job Club!",
+      color: 0x6750a4, // Material Design primary color
       fields: [
         {
-          name: '👤 Name',
+          name: "👤 Name",
           value: memberData.name,
           inline: true,
         },
         {
-          name: '📧 Email',
+          name: "📧 Email",
           value: memberData.email,
           inline: true,
         },
         {
-          name: '🎓 Major',
+          name: "🎓 Major",
           value: memberData.major,
           inline: true,
         },
         {
-          name: '📅 Graduation',
+          name: "📅 Graduation",
           value: memberData.graduationYear.toString(),
           inline: true,
         },
         {
-          name: '🎯 Career Goal',
-          value: memberData.careerGoal.substring(0, 200) + (memberData.careerGoal.length > 200 ? '...' : ''),
+          name: "🎯 Career Goal",
+          value:
+            memberData.careerGoal.substring(0, 200) +
+            (memberData.careerGoal.length > 200 ? "..." : ""),
           inline: false,
         },
         {
-          name: '🔗 Links',
-          value: links || 'No links provided',
+          name: "🔗 Links",
+          value: links || "No links provided",
           inline: false,
         },
       ],
       timestamp: new Date().toISOString(),
       footer: {
-        text: 'Job Club NJIT',
+        text: "Job Club NJIT",
       },
     };
-    
+
     const response = await fetch(webhookUrl, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         embeds: [embed],
       }),
     });
-    
+
     // Discord returns 204 No Content on success, or 429 on rate limit
     if (response.status === 204 || response.status === 200) {
-      console.log('✅ Discord notification sent successfully');
+      console.log("✅ Discord notification sent successfully");
       return { success: true };
     } else if (response.status === 429) {
-      throw new Error('Discord rate limited - try again later');
+      throw new Error("Discord rate limited - try again later");
     } else if (response.status === 404) {
-      throw new Error('Discord webhook not found - URL may be invalid');
+      throw new Error("Discord webhook not found - URL may be invalid");
     } else {
       throw new Error(`Discord webhook returned ${response.status}`);
     }
   } catch (error) {
-    console.error('❌ Discord notification error:', error.message);
+    console.error("❌ Discord notification error:", error.message);
     return { success: false, message: error.message };
   }
 }
@@ -274,100 +288,113 @@ async function sendDiscordNotification(memberData) {
 async function handleOnboarding(req, res, data) {
   try {
     // Validate required fields
-    const requiredFields = ['name', 'email', 'major', 'graduationYear', 'careerGoal'];
-    
+    const requiredFields = [
+      "name",
+      "email",
+      "major",
+      "graduationYear",
+      "careerGoal",
+    ];
+
     for (const field of requiredFields) {
-      if (!data[field] || data[field].toString().trim() === '') {
-        res.writeHead(400, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({
-          success: false,
-          error: `${field} is required`,
-        }));
+      if (!data[field] || data[field].toString().trim() === "") {
+        res.writeHead(400, { "Content-Type": "application/json" });
+        res.end(
+          JSON.stringify({
+            success: false,
+            error: `${field} is required`,
+          }),
+        );
         return;
       }
     }
-    
+
     console.log(`📝 Processing onboarding for: ${data.name}`);
-    
+
     // Detect missing prerequisites
     const { flags, missingItems } = detectMissingPrerequisites(data);
-    
+
     // Prepare member profile document for Sanity
     const memberProfile = {
-      _type: 'memberProfile',
+      _type: "memberProfile",
       name: data.name.trim(),
       email: data.email.trim().toLowerCase(),
       major: data.major.trim(),
       graduationYear: parseInt(data.graduationYear),
-      linkedinUrl: data.linkedinUrl?.trim() || '',
-      githubUrl: data.githubUrl?.trim() || '',
-      websiteUrl: data.websiteUrl?.trim() || '',
-      calendlyUrl: data.calendlyUrl?.trim() || '',
+      linkedinUrl: data.linkedinUrl?.trim() || "",
+      githubUrl: data.githubUrl?.trim() || "",
+      websiteUrl: data.websiteUrl?.trim() || "",
+      calendlyUrl: data.calendlyUrl?.trim() || "",
       careerGoal: data.careerGoal.trim(),
-      onboardingStatus: 'new',
+      onboardingStatus: "new",
       ...flags,
       submittedAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
-    
+
     // Save to Sanity CMS
-    console.log('💾 Saving to Sanity CMS...');
+    console.log("💾 Saving to Sanity CMS...");
     const result = await client.create(memberProfile);
     console.log(`✅ Saved successfully! Document ID: ${result._id}`);
-    
+
     // Trigger email automation to Zapier
     await triggerEmailAutomation(memberProfile, missingItems);
-    
+
     // Send Discord notification
     await sendDiscordNotification(memberProfile);
-    
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({
-      success: true,
-      message: 'Profile submitted successfully',
-      memberId: result._id,
-      missingItems: missingItems.length > 0 ? missingItems : null,
-      hasAllPrerequisites: missingItems.length === 0,
-    }));
-    
+
+    res.writeHead(200, { "Content-Type": "application/json" });
+    res.end(
+      JSON.stringify({
+        success: true,
+        message: "Profile submitted successfully",
+        memberId: result._id,
+        missingItems: missingItems.length > 0 ? missingItems : null,
+        hasAllPrerequisites: missingItems.length === 0,
+      }),
+    );
   } catch (error) {
-    console.error('❌ Error:', error.message);
-    res.writeHead(500, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({
-      success: false,
-      error: 'Failed to submit profile',
-      details: error.message,
-    }));
+    console.error("❌ Error:", error.message);
+    res.writeHead(500, { "Content-Type": "application/json" });
+    res.end(
+      JSON.stringify({
+        success: false,
+        error: "Failed to submit profile",
+        details: error.message,
+      }),
+    );
   }
 }
 
 // Create HTTP server
 const server = http.createServer(async (req, res) => {
   // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
   // Handle OPTIONS for CORS preflight
-  if (req.method === 'OPTIONS') {
+  if (req.method === "OPTIONS") {
     res.writeHead(200);
     res.end();
     return;
   }
-  
+
   // Route: POST /api/submit-onboarding
-  if (req.method === 'POST' && req.url === '/api/submit-onboarding') {
+  if (req.method === "POST" && req.url === "/api/submit-onboarding") {
     const data = await parseBody(req);
     await handleOnboarding(req, res, data);
     return;
   }
-  
+
   // Route not found
-  res.writeHead(404, { 'Content-Type': 'application/json' });
-  res.end(JSON.stringify({
-    error: 'Not found',
-    availableRoutes: ['/api/submit-onboarding']
-  }));
+  res.writeHead(404, { "Content-Type": "application/json" });
+  res.end(
+    JSON.stringify({
+      error: "Not found",
+      availableRoutes: ["/api/submit-onboarding"],
+    }),
+  );
 });
 
 // Start server
@@ -381,13 +408,13 @@ server.listen(PORT, () => {
 ║  POST /api/submit-onboarding               ║
 ║                                            ║
 ║  Using Sanity project:                     ║
-║  ${process.env.SANITY_PROJECT_ID || 'NOT CONFIGURED'}  ║
+║  ${process.env.SANITY_PROJECT_ID || "NOT CONFIGURED"}  ║
 ╚════════════════════════════════════════════╝
   `);
 });
 
-server.on('error', (error) => {
-  if (error.code === 'EADDRINUSE') {
+server.on("error", (error) => {
+  if (error.code === "EADDRINUSE") {
     console.error(`❌ Port ${PORT} is already in use`);
     process.exit(1);
   } else {

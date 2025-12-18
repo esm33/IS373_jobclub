@@ -1,7 +1,6 @@
 ---
 layout: layouts/post.njk
-title:
-  "AI Is Our Printing Press Moment (And That's Both Exciting and Terrifying)"
+title: "AI Is Our Printing Press Moment (And That's Both Exciting and Terrifying)"
 date: 2025-11-06
 description:
   "Everyone's talking about AI like it's magic. Let me tell you what it actually

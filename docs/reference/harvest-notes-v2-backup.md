@@ -12,23 +12,16 @@
 ## 📋 Master Index
 
 **TIER 1 - CRITICAL (Must Implement)**
+
 1. [Accessibility Patterns](#1-accessibility-patterns-wcag-21-aa)
 2. [Responsive Systems](#2-responsive-systems)
 3. [Performance Optimization](#3-performance-optimization)
 4. [Core Components](#4-core-components)
 5. [Form Patterns](#5-form-patterns)
 
-**TIER 2 - HIGHLY RECOMMENDED**
-6. [Advanced JavaScript](#6-advanced-javascript-patterns)
-7. [Animation & Micro-interactions](#7-animation--micro-interactions)
-8. [Navigation Systems](#8-navigation-systems)
-9. [Data Attributes & Testing](#9-data-attributes--testing)
-10. [Print Optimization](#10-print-optimization)
+**TIER 2 - HIGHLY RECOMMENDED** 6. [Advanced JavaScript](#6-advanced-javascript-patterns) 7. [Animation & Micro-interactions](#7-animation--micro-interactions) 8. [Navigation Systems](#8-navigation-systems) 9. [Data Attributes & Testing](#9-data-attributes--testing) 10. [Print Optimization](#10-print-optimization)
 
-**TIER 3 - JOB CLUB SPECIFIC**
-11. [Student Onboarding Features](#11-student-onboarding-features)
-12. [Analytics & Monitoring](#12-analytics--monitoring)
-13. [SEO & Meta](#13-seo--meta-patterns)
+**TIER 3 - JOB CLUB SPECIFIC** 11. [Student Onboarding Features](#11-student-onboarding-features) 12. [Analytics & Monitoring](#12-analytics--monitoring) 13. [SEO & Meta](#13-seo--meta-patterns)
 
 ---
 
@@ -39,9 +32,13 @@
 ### 1.1 Touch Target Minimum Sizes ✅ MUST HAVE
 
 ### 1.1 Touch Target Sizes ✅ **MUST HAVE**
+
 ```css
 /* Minimum 44x44px for all interactive elements - WCAG 2.1 Guideline 2.5.5 */
-button, a[role="button"], input[type="submit"], input[type="button"] {
+button,
+a[role="button"],
+input[type="submit"],
+input[type="button"] {
   min-height: 44px;
   min-width: 44px;
   padding: 0.75rem 1.5rem;
@@ -49,13 +46,15 @@ button, a[role="button"], input[type="submit"], input[type="button"] {
 ```
 
 **Job Club Application:**
+
 - Join/Register buttons
-- Event RSVP buttons  
+- Event RSVP buttons
 - Form submit buttons
 - Social share buttons
 - Mobile menu toggle
 
 ### 1.2 Keyboard Focus Indicators ✅ **MUST HAVE**
+
 ```css
 /* Modern focus-visible - only shows on keyboard nav */
 *:focus {
@@ -76,6 +75,7 @@ button, a[role="button"], input[type="submit"], input[type="button"] {
 ```
 
 ### 1.3 Screen Reader Only Text ✅ **MUST HAVE**
+
 ```css
 .sr-only {
   position: absolute;
@@ -103,22 +103,25 @@ button, a[role="button"], input[type="submit"], input[type="button"] {
 ```
 
 ### 1.4 ARIA Labels & Attributes ✅ **MUST HAVE**
+
 ```html
 <!-- Mobile menu button -->
-<button 
+<button
   type="button"
   aria-label="Toggle navigation menu"
   aria-expanded="false"
-  aria-controls="main-navigation">
+  aria-controls="main-navigation"
+>
   Menu
 </button>
 
 <!-- Form validation -->
-<input 
+<input
   type="email"
   aria-required="true"
   aria-invalid="false"
-  aria-describedby="email-error">
+  aria-describedby="email-error"
+/>
 <span id="email-error" role="alert"></span>
 
 <!-- Modal/Dialog -->
@@ -128,9 +131,12 @@ button, a[role="button"], input[type="submit"], input[type="button"] {
 ```
 
 ### 1.5 Reduced Motion Support ✅ **MUST HAVE**
+
 ```css
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -140,49 +146,53 @@ button, a[role="button"], input[type="submit"], input[type="button"] {
 ```
 
 ### 1.6 High Contrast Mode ✅ **SHOULD HAVE**
+
 ```css
 @media (prefers-contrast: high) {
   * {
     border-width: 2px !important;
   }
-  
-  .card, .button, .input {
+
+  .card,
+  .button,
+  .input {
     border: 3px solid currentColor !important;
   }
 }
 ```
 
 ### 1.7 Focus Trap for Modals ✅ **MUST HAVE**
+
 ```javascript
 class FocusTrap {
   constructor(containerElement) {
     this.container = containerElement;
-    this.focusableSelectors = 
+    this.focusableSelectors =
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
   }
-  
+
   activate() {
     const focusableElements = Array.from(
-      this.container.querySelectorAll(this.focusableSelectors)
+      this.container.querySelectorAll(this.focusableSelectors),
     );
-    
+
     this.firstFocusable = focusableElements[0];
     this.lastFocusable = focusableElements[focusableElements.length - 1];
-    
+
     // Save previously focused element
     this.previousFocus = document.activeElement;
-    
+
     // Focus first element
     this.firstFocusable?.focus();
-    
+
     // Add keyboard handler
     this.handleKeydown = this.handleKeydown.bind(this);
-    this.container.addEventListener('keydown', this.handleKeydown);
+    this.container.addEventListener("keydown", this.handleKeydown);
   }
-  
+
   handleKeydown(e) {
-    if (e.key !== 'Tab') return;
-    
+    if (e.key !== "Tab") return;
+
     if (e.shiftKey) {
       if (document.activeElement === this.firstFocusable) {
         e.preventDefault();
@@ -195,15 +205,15 @@ class FocusTrap {
       }
     }
   }
-  
+
   deactivate() {
-    this.container.removeEventListener('keydown', this.handleKeydown);
+    this.container.removeEventListener("keydown", this.handleKeydown);
     this.previousFocus?.focus();
   }
 }
 
 // Usage for Job Club modals
-const onboardingModal = document.getElementById('onboarding-modal');
+const onboardingModal = document.getElementById("onboarding-modal");
 const focusTrap = new FocusTrap(onboardingModal);
 focusTrap.activate(); // When modal opens
 focusTrap.deactivate(); // When modal closes
@@ -214,13 +224,14 @@ focusTrap.deactivate(); // When modal closes
 ## 2. Responsive Foundations
 
 ### 2.1 Fluid Typography (No Breakpoints) ✅ **MUST HAVE**
+
 ```css
 :root {
   /* Smooth scaling typography - adapts to any screen size */
-  --font-display: clamp(2rem, 6vw + 1rem, 4rem);      /* 32-64px */
-  --font-h1: clamp(1.75rem, 5vw + 0.5rem, 3rem);     /* 28-48px */
-  --font-h2: clamp(1.5rem, 4vw + 0.5rem, 2.25rem);   /* 24-36px */
-  --font-h3: clamp(1.25rem, 3vw + 0.5rem, 1.75rem);  /* 20-28px */
+  --font-display: clamp(2rem, 6vw + 1rem, 4rem); /* 32-64px */
+  --font-h1: clamp(1.75rem, 5vw + 0.5rem, 3rem); /* 28-48px */
+  --font-h2: clamp(1.5rem, 4vw + 0.5rem, 2.25rem); /* 24-36px */
+  --font-h3: clamp(1.25rem, 3vw + 0.5rem, 1.75rem); /* 20-28px */
   --font-h4: clamp(1.125rem, 2vw + 0.25rem, 1.5rem); /* 18-24px */
   --font-body-lg: clamp(1.125rem, 1vw + 0.5rem, 1.25rem);
   --font-body: clamp(1rem, 0.5vw + 0.75rem, 1.125rem);
@@ -229,29 +240,42 @@ focusTrap.deactivate(); // When modal closes
 }
 
 /* Apply to elements */
-h1 { font-size: var(--font-h1); line-height: 1.1; }
-h2 { font-size: var(--font-h2); line-height: 1.2; }
-h3 { font-size: var(--font-h3); line-height: 1.3; }
-body { font-size: var(--font-body); line-height: 1.6; }
+h1 {
+  font-size: var(--font-h1);
+  line-height: 1.1;
+}
+h2 {
+  font-size: var(--font-h2);
+  line-height: 1.2;
+}
+h3 {
+  font-size: var(--font-h3);
+  line-height: 1.3;
+}
+body {
+  font-size: var(--font-body);
+  line-height: 1.6;
+}
 ```
 
 ### 2.2 Fluid Spacing System ✅ **MUST HAVE**
+
 ```css
 :root {
   /* Static spacing values */
-  --space-xs: 0.25rem;   /* 4px */
-  --space-sm: 0.5rem;    /* 8px */
-  --space-md: 0.75rem;   /* 12px */
-  --space-lg: 1rem;      /* 16px */
-  --space-xl: 1.5rem;    /* 24px */
-  --space-2xl: 2rem;     /* 32px */
-  --space-3xl: 2.5rem;   /* 40px */
-  --space-4xl: 3rem;     /* 48px */
-  --space-5xl: 4rem;     /* 64px */
-  --space-6xl: 5rem;     /* 80px */
-  --space-7xl: 6rem;     /* 96px */
-  --space-8xl: 8rem;     /* 128px */
-  
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 0.75rem; /* 12px */
+  --space-lg: 1rem; /* 16px */
+  --space-xl: 1.5rem; /* 24px */
+  --space-2xl: 2rem; /* 32px */
+  --space-3xl: 2.5rem; /* 40px */
+  --space-4xl: 3rem; /* 48px */
+  --space-5xl: 4rem; /* 64px */
+  --space-6xl: 5rem; /* 80px */
+  --space-7xl: 6rem; /* 96px */
+  --space-8xl: 8rem; /* 128px */
+
   /* Fluid spacing (scales with viewport) */
   --space-section-y: clamp(3rem, 8vw, 8rem);
   --space-section-x: clamp(1rem, 4vw, 3rem);
@@ -261,6 +285,7 @@ body { font-size: var(--font-body); line-height: 1.6; }
 ```
 
 ### 2.3 Universal Grid System ✅ **MUST HAVE**
+
 ```css
 /* 12-column responsive grid */
 .grid-container {
@@ -273,33 +298,68 @@ body { font-size: var(--font-body); line-height: 1.6; }
 }
 
 /* Span utilities */
-.span-1 { grid-column: span 1; }
-.span-2 { grid-column: span 2; }
-.span-3 { grid-column: span 3; }
-.span-4 { grid-column: span 4; }
-.span-5 { grid-column: span 5; }
-.span-6 { grid-column: span 6; }
-.span-7 { grid-column: span 7; }
-.span-8 { grid-column: span 8; }
-.span-9 { grid-column: span 9; }
-.span-10 { grid-column: span 10; }
-.span-11 { grid-column: span 11; }
-.span-12 { grid-column: span 12; }
+.span-1 {
+  grid-column: span 1;
+}
+.span-2 {
+  grid-column: span 2;
+}
+.span-3 {
+  grid-column: span 3;
+}
+.span-4 {
+  grid-column: span 4;
+}
+.span-5 {
+  grid-column: span 5;
+}
+.span-6 {
+  grid-column: span 6;
+}
+.span-7 {
+  grid-column: span 7;
+}
+.span-8 {
+  grid-column: span 8;
+}
+.span-9 {
+  grid-column: span 9;
+}
+.span-10 {
+  grid-column: span 10;
+}
+.span-11 {
+  grid-column: span 11;
+}
+.span-12 {
+  grid-column: span 12;
+}
 
 /* Mobile: collapse to single column */
 @media (max-width: 768px) {
   .grid-container {
     grid-template-columns: 1fr;
   }
-  
-  .span-1, .span-2, .span-3, .span-4, .span-5, .span-6,
-  .span-7, .span-8, .span-9, .span-10, .span-11, .span-12 {
+
+  .span-1,
+  .span-2,
+  .span-3,
+  .span-4,
+  .span-5,
+  .span-6,
+  .span-7,
+  .span-8,
+  .span-9,
+  .span-10,
+  .span-11,
+  .span-12 {
     grid-column: span 1;
   }
 }
 ```
 
 ### 2.4 Auto-Responsive Card Grid ✅ **HIGHLY RECOMMENDED**
+
 ```css
 /* Cards automatically adjust to available space */
 .card-grid {
@@ -319,6 +379,7 @@ body { font-size: var(--font-body); line-height: 1.6; }
 ```
 
 **Job Club Use Cases:**
+
 - Event cards
 - Mentor profiles
 - Resource library
@@ -326,6 +387,7 @@ body { font-size: var(--font-body); line-height: 1.6; }
 - Student showcases
 
 ### 2.5 Content + Sidebar Layout ✅ **RECOMMENDED**
+
 ```css
 /* Main content with sidebar */
 .layout-sidebar {
@@ -349,6 +411,7 @@ body { font-size: var(--font-body); line-height: 1.6; }
 ```
 
 **Job Club Layouts:**
+
 - Dashboard (content + upcoming events)
 - Profile (info + quick actions)
 - Resources (content + categories)
@@ -359,6 +422,7 @@ body { font-size: var(--font-body); line-height: 1.6; }
 ## 3. Performance Optimizations
 
 ### 3.1 Content Visibility API ✅ **HIGHLY RECOMMENDED**
+
 ```css
 /* Massively improves rendering performance on long pages */
 @supports (content-visibility: auto) {
@@ -366,7 +430,7 @@ body { font-size: var(--font-body); line-height: 1.6; }
     content-visibility: auto;
     contain-intrinsic-size: 0 500px;
   }
-  
+
   .card {
     content-visibility: auto;
     contain-intrinsic-size: 0 300px;
@@ -375,11 +439,13 @@ body { font-size: var(--font-body); line-height: 1.6; }
 ```
 
 **Performance Impact:**
+
 - 40-60% faster initial page render
 - Lazy renders off-screen content
 - Critical for Job Club dashboards with many sections
 
 ### 3.2 Hardware Acceleration ✅ **RECOMMENDED**
+
 ```css
 /* Forces GPU acceleration for smooth animations */
 .animated-element {
@@ -395,72 +461,102 @@ body { font-size: var(--font-body); line-height: 1.6; }
 ```
 
 ### 3.3 Image Loading Skeleton ✅ **RECOMMENDED**
+
 ```css
 /* Placeholder while images load */
 .image-skeleton {
-  background: linear-gradient(
-    90deg,
-    #f0f0f0 0%,
-    #f8f8f8 50%,
-    #f0f0f0 100%
-  );
+  background: linear-gradient(90deg, #f0f0f0 0%, #f8f8f8 50%, #f0f0f0 100%);
   background-size: 200% 100%;
   animation: shimmer 2s ease-in-out infinite;
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 ```
 
 ### 3.4 Lazy Loading Images ✅ **MUST HAVE**
+
 ```html
 <!-- Native lazy loading -->
-<img 
-  src="profile.jpg" 
-  loading="lazy" 
+<img
+  src="profile.jpg"
+  loading="lazy"
   decoding="async"
-  alt="Student profile photo">
+  alt="Student profile photo"
+/>
 
 <!-- With skeleton -->
 <div class="image-container">
   <div class="image-skeleton"></div>
-  <img 
-    src="event.jpg" 
+  <img
+    src="event.jpg"
     loading="lazy"
-    onload="this.previousElementSibling.remove()">
+    onload="this.previousElementSibling.remove()"
+  />
 </div>
 ```
 
 ### 3.5 Font Loading Optimization ✅ **MUST HAVE**
+
 ```html
 <!-- Preload critical fonts -->
-<link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
+<link
+  rel="preload"
+  href="/fonts/inter-var.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin
+/>
 
 <!-- Async load Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  as="style"
+/>
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+  media="print"
+  onload="this.media='all'"
+/>
 <noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 </noscript>
 ```
 
 ```css
 /* Font display strategy */
 @font-face {
-  font-family: 'Inter';
-  src: url('/fonts/inter-var.woff2') format('woff2');
+  font-family: "Inter";
+  src: url("/fonts/inter-var.woff2") format("woff2");
   font-display: swap; /* Show fallback immediately, swap when loaded */
   font-weight: 100 900;
 }
 
 /* System font fallback stack */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
-               Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
 }
 ```
 
@@ -469,6 +565,7 @@ body {
 ## 4. Interactive Components
 
 ### 4.1 Button System ✅ **MUST HAVE**
+
 ```css
 /* Base button - accessible & flexible */
 .btn {
@@ -537,6 +634,7 @@ body {
 ```
 
 ### 4.2 Card Component ✅ **MUST HAVE**
+
 ```css
 .card {
   background: white;
@@ -554,7 +652,7 @@ body {
 @media (hover: hover) {
   .card-interactive:hover {
     transform: translateY(-4px);
-    box-shadow: 
+    box-shadow:
       0 10px 30px -10px rgba(0, 0, 0, 0.1),
       0 0 0 1px rgba(0, 0, 0, 0.05);
   }
@@ -582,20 +680,19 @@ body {
 ```
 
 ### 4.3 Modal/Dialog Pattern ✅ **MUST HAVE**
+
 ```html
 <!-- Modal structure -->
 <div class="modal-backdrop" role="presentation">
-  <div 
-    class="modal" 
-    role="dialog" 
-    aria-labelledby="modal-title" 
-    aria-modal="true">
+  <div
+    class="modal"
+    role="dialog"
+    aria-labelledby="modal-title"
+    aria-modal="true"
+  >
     <div class="modal-header">
       <h2 id="modal-title">Complete Your Profile</h2>
-      <button 
-        type="button" 
-        class="modal-close" 
-        aria-label="Close dialog">
+      <button type="button" class="modal-close" aria-label="Close dialog">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -657,42 +754,43 @@ class Modal {
     this.focusTrap = new FocusTrap(modalElement);
     this.isOpen = false;
   }
-  
+
   open() {
     this.isOpen = true;
-    this.modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    
+    this.modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
     // Trap focus
     this.focusTrap.activate();
-    
+
     // Close on backdrop click
-    this.modal.addEventListener('click', (e) => {
+    this.modal.addEventListener("click", (e) => {
       if (e.target === this.modal) this.close();
     });
-    
+
     // Close on ESC key
     this.handleEscape = (e) => {
-      if (e.key === 'Escape') this.close();
+      if (e.key === "Escape") this.close();
     };
-    document.addEventListener('keydown', this.handleEscape);
+    document.addEventListener("keydown", this.handleEscape);
   }
-  
+
   close() {
     this.isOpen = false;
-    this.modal.style.display = 'none';
-    document.body.style.overflow = '';
-    
+    this.modal.style.display = "none";
+    document.body.style.overflow = "";
+
     // Release focus trap
     this.focusTrap.deactivate();
-    
+
     // Remove escape listener
-    document.removeEventListener('keydown', this.handleEscape);
+    document.removeEventListener("keydown", this.handleEscape);
   }
 }
 ```
 
 **Job Club Use Cases:**
+
 - Onboarding wizard
 - Event registration
 - Profile editing
@@ -704,6 +802,7 @@ class Modal {
 ## 5. Form & Input Patterns
 
 ### 5.1 Accessible Form Inputs ✅ **MUST HAVE**
+
 ```html
 <!-- Text input with label -->
 <div class="form-group">
@@ -711,17 +810,16 @@ class Modal {
     Email Address
     <span class="required" aria-label="required">*</span>
   </label>
-  <input 
-    type="email" 
-    id="email" 
+  <input
+    type="email"
+    id="email"
     name="email"
     class="form-input"
     required
     aria-required="true"
-    aria-describedby="email-help email-error">
-  <span id="email-help" class="form-help">
-    We'll never share your email
-  </span>
+    aria-describedby="email-help email-error"
+  />
+  <span id="email-help" class="form-help"> We'll never share your email </span>
   <span id="email-error" class="form-error" role="alert"></span>
 </div>
 
@@ -738,12 +836,13 @@ class Modal {
 
 <!-- Checkbox -->
 <div class="form-check">
-  <input 
-    type="checkbox" 
-    id="terms" 
+  <input
+    type="checkbox"
+    id="terms"
     class="form-checkbox"
     required
-    aria-describedby="terms-label">
+    aria-describedby="terms-label"
+  />
   <label for="terms" id="terms-label" class="form-check-label">
     I agree to the <a href="/terms">Terms of Service</a>
   </label>
@@ -829,91 +928,94 @@ class Modal {
 ```
 
 ### 5.2 Form Validation ✅ **MUST HAVE**
+
 ```javascript
 class FormValidator {
   constructor(formElement) {
     this.form = formElement;
-    this.inputs = Array.from(formElement.querySelectorAll('input, select, textarea'));
+    this.inputs = Array.from(
+      formElement.querySelectorAll("input, select, textarea"),
+    );
     this.init();
   }
-  
+
   init() {
-    this.form.addEventListener('submit', (e) => {
+    this.form.addEventListener("submit", (e) => {
       e.preventDefault();
       if (this.validate()) {
         this.submit();
       }
     });
-    
+
     // Real-time validation
-    this.inputs.forEach(input => {
-      input.addEventListener('blur', () => this.validateField(input));
-      input.addEventListener('input', () => {
-        if (input.classList.contains('invalid')) {
+    this.inputs.forEach((input) => {
+      input.addEventListener("blur", () => this.validateField(input));
+      input.addEventListener("input", () => {
+        if (input.classList.contains("invalid")) {
           this.validateField(input);
         }
       });
     });
   }
-  
+
   validateField(input) {
     const errorElement = document.getElementById(`${input.id}-error`);
-    
+
     // Required check
-    if (input.hasAttribute('required') && !input.value.trim()) {
-      this.showError(input, errorElement, 'This field is required');
+    if (input.hasAttribute("required") && !input.value.trim()) {
+      this.showError(input, errorElement, "This field is required");
       return false;
     }
-    
+
     // Email validation
-    if (input.type === 'email' && input.value) {
+    if (input.type === "email" && input.value) {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(input.value)) {
-        this.showError(input, errorElement, 'Please enter a valid email');
+        this.showError(input, errorElement, "Please enter a valid email");
         return false;
       }
     }
-    
+
     // Clear error
     this.clearError(input, errorElement);
     return true;
   }
-  
+
   validate() {
     let isValid = true;
-    this.inputs.forEach(input => {
+    this.inputs.forEach((input) => {
       if (!this.validateField(input)) {
         isValid = false;
       }
     });
     return isValid;
   }
-  
+
   showError(input, errorElement, message) {
-    input.classList.add('invalid');
-    input.setAttribute('aria-invalid', 'true');
+    input.classList.add("invalid");
+    input.setAttribute("aria-invalid", "true");
     if (errorElement) {
       errorElement.textContent = message;
     }
   }
-  
+
   clearError(input, errorElement) {
-    input.classList.remove('invalid');
-    input.setAttribute('aria-invalid', 'false');
+    input.classList.remove("invalid");
+    input.setAttribute("aria-invalid", "false");
     if (errorElement) {
-      errorElement.textContent = '';
+      errorElement.textContent = "";
     }
   }
-  
+
   submit() {
     // Handle form submission
     const formData = new FormData(this.form);
-    console.log('Form submitted:', Object.fromEntries(formData));
+    console.log("Form submitted:", Object.fromEntries(formData));
   }
 }
 
 // Initialize for Job Club forms
-document.querySelectorAll('form').forEach(form => {
+document.querySelectorAll("form").forEach((form) => {
   new FormValidator(form);
 });
 ```
@@ -923,56 +1025,61 @@ document.querySelectorAll('form').forEach(form => {
 ## 6. Navigation Patterns
 
 ### 6.1 Accessible Mobile Menu ✅ **MUST HAVE**
+
 ```javascript
 class MobileMenu {
   constructor() {
     this.button = document.querySelector('[aria-controls="mobile-menu"]');
-    this.menu = document.getElementById('mobile-menu');
+    this.menu = document.getElementById("mobile-menu");
     this.isOpen = false;
     this.init();
   }
-  
+
   init() {
     if (!this.button || !this.menu) return;
-    
-    this.button.addEventListener('click', () => this.toggle());
-    
+
+    this.button.addEventListener("click", () => this.toggle());
+
     // Close on ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.isOpen) {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && this.isOpen) {
         this.close();
       }
     });
-    
+
     // Close on outside click
-    document.addEventListener('click', (e) => {
-      if (this.isOpen && !this.menu.contains(e.target) && !this.button.contains(e.target)) {
+    document.addEventListener("click", (e) => {
+      if (
+        this.isOpen &&
+        !this.menu.contains(e.target) &&
+        !this.button.contains(e.target)
+      ) {
         this.close();
       }
     });
   }
-  
+
   toggle() {
     this.isOpen ? this.close() : this.open();
   }
-  
+
   open() {
     this.isOpen = true;
-    this.menu.classList.remove('hidden');
-    this.button.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-    
+    this.menu.classList.remove("hidden");
+    this.button.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+
     // Focus first link
-    const firstLink = this.menu.querySelector('a');
+    const firstLink = this.menu.querySelector("a");
     firstLink?.focus();
   }
-  
+
   close() {
     this.isOpen = false;
-    this.menu.classList.add('hidden');
-    this.button.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-    
+    this.menu.classList.add("hidden");
+    this.button.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+
     // Return focus to button
     this.button.focus();
   }
@@ -986,21 +1093,30 @@ new MobileMenu();
 ## 7. Typography Foundations
 
 ### 7.1 Optimal Reading Experience ✅ **RECOMMENDED**
+
 ```css
 /* Prevent orphans in headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
   max-width: 30ch; /* Limit heading width */
 }
 
 /* Optimal line length for body text */
-p, li {
+p,
+li {
   max-width: 65ch;
 }
 
 /* Enable hyphenation on mobile */
 @media (max-width: 640px) {
-  p, li, dd {
+  p,
+  li,
+  dd {
     hyphens: auto;
     hyphenate-limit-chars: 6 3 2;
   }
@@ -1008,25 +1124,29 @@ p, li {
 ```
 
 ### 7.2 Font Loading Strategy ✅ **MUST HAVE**
+
 ```css
 /* System font stack with web font */
 body {
-  font-family: 
-    'Inter', 
-    -apple-system, 
-    BlinkMacSystemFont, 
-    'Segoe UI', 
-    Roboto, 
-    Oxygen, 
-    Ubuntu, 
-    Cantarell, 
-    'Helvetica Neue', 
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
     sans-serif;
 }
 
 /* Enable font features for better readability */
 body {
-  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1037,9 +1157,16 @@ body {
 ## 8. Job Club Specific Features
 
 ### 8.1 Progress Indicator Component ✅ **RECOMMENDED**
+
 ```html
 <!-- For onboarding/profile completion -->
-<div class="progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+<div
+  class="progress"
+  role="progressbar"
+  aria-valuenow="60"
+  aria-valuemin="0"
+  aria-valuemax="100"
+>
   <div class="progress-bar" style="width: 60%">
     <span class="sr-only">60% complete</span>
   </div>
@@ -1081,6 +1208,7 @@ body {
 ```
 
 ### 8.2 Badge/Tag Component ✅ **RECOMMENDED**
+
 ```html
 <!-- Skills, interests, status indicators -->
 <span class="badge badge-primary">AI Consulting</span>
@@ -1122,23 +1250,24 @@ body {
 ```
 
 ### 8.3 Avatar Component ✅ **RECOMMENDED**
+
 ```html
 <!-- User profiles -->
 <div class="avatar">
-  <img src="/api/avatar/123" alt="John Doe">
+  <img src="/api/avatar/123" alt="John Doe" />
 </div>
 
 <!-- With status indicator -->
 <div class="avatar">
-  <img src="/api/avatar/123" alt="Jane Smith">
+  <img src="/api/avatar/123" alt="Jane Smith" />
   <span class="avatar-status avatar-status-online"></span>
 </div>
 
 <!-- Avatar group -->
 <div class="avatar-group">
-  <div class="avatar"><img src="..." alt="User 1"></div>
-  <div class="avatar"><img src="..." alt="User 2"></div>
-  <div class="avatar"><img src="..." alt="User 3"></div>
+  <div class="avatar"><img src="..." alt="User 1" /></div>
+  <div class="avatar"><img src="..." alt="User 2" /></div>
+  <div class="avatar"><img src="..." alt="User 3" /></div>
   <div class="avatar avatar-count">+5</div>
 </div>
 ```
@@ -1203,6 +1332,7 @@ body {
 ```
 
 ### 8.4 Toast Notifications ✅ **RECOMMENDED**
+
 ```html
 <!-- Success notification -->
 <div class="toast toast-success" role="alert" aria-live="polite">
@@ -1290,11 +1420,11 @@ body {
 
 ```javascript
 class Toast {
-  static show(message, type = 'success', duration = 5000) {
-    const toast = document.createElement('div');
+  static show(message, type = "success", duration = 5000) {
+    const toast = document.createElement("div");
     toast.className = `toast toast-${type}`;
-    toast.setAttribute('role', 'alert');
-    toast.setAttribute('aria-live', 'polite');
+    toast.setAttribute("role", "alert");
+    toast.setAttribute("aria-live", "polite");
     toast.innerHTML = `
       <div class="toast-content">
         <strong>${type.charAt(0).toUpperCase() + type.slice(1)}</strong>
@@ -1302,14 +1432,14 @@ class Toast {
       </div>
       <button class="toast-close" aria-label="Close notification">×</button>
     `;
-    
+
     document.body.appendChild(toast);
-    
+
     // Close button
-    toast.querySelector('.toast-close').addEventListener('click', () => {
+    toast.querySelector(".toast-close").addEventListener("click", () => {
       toast.remove();
     });
-    
+
     // Auto dismiss
     if (duration > 0) {
       setTimeout(() => toast.remove(), duration);
@@ -1318,8 +1448,8 @@ class Toast {
 }
 
 // Usage
-Toast.show('Profile updated successfully!', 'success');
-Toast.show('Please complete all required fields', 'error');
+Toast.show("Profile updated successfully!", "success");
+Toast.show("Please complete all required fields", "error");
 ```
 
 ---
@@ -1327,6 +1457,7 @@ Toast.show('Please complete all required fields', 'error');
 ## 9. Implementation Checklist for Job Club
 
 ### Phase 1: Foundation (Week 1) ✅
+
 - [ ] Set up fluid typography system
 - [ ] Implement 12-column grid
 - [ ] Create button component system
@@ -1335,6 +1466,7 @@ Toast.show('Please complete all required fields', 'error');
 - [ ] Add reduced motion support
 
 ### Phase 2: Components (Week 2) ✅
+
 - [ ] Build modal/dialog component
 - [ ] Create card component
 - [ ] Implement mobile menu
@@ -1343,6 +1475,7 @@ Toast.show('Please complete all required fields', 'error');
 - [ ] Build avatar components
 
 ### Phase 3: Forms & Validation (Week 3) ✅
+
 - [ ] Onboarding form wizard
 - [ ] Profile setup forms
 - [ ] Event registration forms
@@ -1351,6 +1484,7 @@ Toast.show('Please complete all required fields', 'error');
 - [ ] Error messaging
 
 ### Phase 4: Polish & Optimization (Week 4) ✅
+
 - [ ] Implement toast notifications
 - [ ] Add loading skeletons
 - [ ] Optimize font loading
@@ -1364,6 +1498,7 @@ Toast.show('Please complete all required fields', 'error');
 ## 10. Testing & Validation
 
 ### Accessibility Testing Checklist ✅
+
 - [ ] Keyboard navigation works throughout
 - [ ] Screen reader announces all content correctly
 - [ ] Focus indicators visible on all interactive elements
@@ -1375,6 +1510,7 @@ Toast.show('Please complete all required fields', 'error');
 - [ ] Reduced motion respected
 
 ### Performance Testing ✅
+
 - [ ] Lighthouse score > 90
 - [ ] First Contentful Paint < 1.8s
 - [ ] Largest Contentful Paint < 2.5s
@@ -1384,6 +1520,7 @@ Toast.show('Please complete all required fields', 'error');
 - [ ] Fonts load asynchronously
 
 ### Responsive Testing ✅
+
 - [ ] Mobile (320px - 767px)
 - [ ] Tablet (768px - 1023px)
 - [ ] Desktop (1024px - 1439px)
@@ -1396,4 +1533,4 @@ Toast.show('Please complete all required fields', 'error');
 
 **End of Harvest Notes v2**
 
-*All patterns are production-ready and have been extracted from a live site with perfect Lighthouse scores (100/100 across all categories). Adapt as needed for Job Club's specific requirements.*
+_All patterns are production-ready and have been extracted from a live site with perfect Lighthouse scores (100/100 across all categories). Adapt as needed for Job Club's specific requirements._

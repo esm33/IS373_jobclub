@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,njk,md}", "./src/_layouts/**/*.njk", "./src/_data/**/*.js"],
+  content: [
+    "./src/**/*.{html,njk,md}",
+    "./src/_layouts/**/*.njk",
+    "./src/_data/**/*.js",
+  ],
   safelist: ["sticky", "top-0", "z-50"],
   theme: {
     extend: {

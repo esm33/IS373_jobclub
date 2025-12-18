@@ -11,6 +11,7 @@
 ### Design System: Material Design 3
 
 **Core Principles:**
+
 - Design tokens (CSS custom properties)
 - Component-based architecture
 - Utility-first with Tailwind CSS
@@ -41,65 +42,69 @@ _site/css/
 ## Design Tokens (CSS Custom Properties)
 
 ### Color Palette
+
 ```css
 :root {
   /* Primary Colors */
-  --primary: #6750A4;              /* Material Purple */
-  --primary-dark: #5E35B1;
-  --primary-light: #E8DEF8;
-  
+  --primary: #6750a4; /* Material Purple */
+  --primary-dark: #5e35b1;
+  --primary-light: #e8def8;
+
   /* Secondary Colors */
-  --secondary: #00BFA5;            /* Teal Accent */
-  --secondary-dark: #00897B;
-  --secondary-light: #B2DFDB;
-  
+  --secondary: #00bfa5; /* Teal Accent */
+  --secondary-dark: #00897b;
+  --secondary-light: #b2dfdb;
+
   /* Semantic Colors */
-  --success: #4CAF50;
-  --warning: #FF9800;
-  --error: #F44336;
-  --info: #2196F3;
-  
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+  --info: #2196f3;
+
   /* Neutral Colors */
-  --text: #1C1B1F;                 /* Near black */
-  --text-secondary: #49454F;
-  --background: #FFFBFE;           /* Warm white */
-  --surface: #FFFFFF;
-  --surface-variant: #E7E0EC;
-  --outline: #79747E;
+  --text: #1c1b1f; /* Near black */
+  --text-secondary: #49454f;
+  --background: #fffbfe; /* Warm white */
+  --surface: #ffffff;
+  --surface-variant: #e7e0ec;
+  --outline: #79747e;
 }
 ```
 
 ### Spacing Scale
+
 ```css
 :root {
-  --space-1: 0.25rem;   /* 4px */
-  --space-2: 0.5rem;    /* 8px */
-  --space-3: 0.75rem;   /* 12px */
-  --space-4: 1rem;      /* 16px */
-  --space-5: 1.25rem;   /* 20px */
-  --space-6: 1.5rem;    /* 24px */
-  --space-8: 2rem;      /* 32px */
-  --space-10: 2.5rem;   /* 40px */
-  --space-12: 3rem;     /* 48px */
-  --space-16: 4rem;     /* 64px */
-  --space-20: 5rem;     /* 80px */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.25rem; /* 20px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-10: 2.5rem; /* 40px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+  --space-20: 5rem; /* 80px */
 }
 ```
 
 ### Typography Scale (Fluid)
+
 ```css
 :root {
   /* Fluid typography using clamp() */
-  --text-display: clamp(2.5rem, 6vw, 4rem);        /* 40-64px */
-  --text-h1: clamp(2rem, 5vw, 3rem);               /* 32-48px */
-  --text-h2: clamp(1.5rem, 4vw, 2.25rem);          /* 24-36px */
-  --text-h3: clamp(1.25rem, 3vw, 1.75rem);         /* 20-28px */
-  --text-body: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);  /* 16-18px */
-  --text-small: clamp(0.875rem, 0.5vw, 1rem);      /* 14-16px */
+  --text-display: clamp(2.5rem, 6vw, 4rem); /* 40-64px */
+  --text-h1: clamp(2rem, 5vw, 3rem); /* 32-48px */
+  --text-h2: clamp(1.5rem, 4vw, 2.25rem); /* 24-36px */
+  --text-h3: clamp(1.25rem, 3vw, 1.75rem); /* 20-28px */
+  --text-body: clamp(1rem, 0.5vw + 0.875rem, 1.125rem); /* 16-18px */
+  --text-small: clamp(0.875rem, 0.5vw, 1rem); /* 14-16px */
 }
 ```
 
 ### Elevation (Shadows)
+
 ```css
 :root {
   --elevation-1: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -115,6 +120,7 @@ _site/css/
 ## Component Architecture
 
 ### Button Components
+
 ```css
 /* Base button */
 .btn {
@@ -122,12 +128,16 @@ _site/css/
   border-radius: 24px;
   font-weight: 500;
   transition: all 0.2s ease;
-  min-height: 44px;  /* WCAG touch target */
+  min-height: 44px; /* WCAG touch target */
 }
 
 /* Primary variant */
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--primary-dark) 100%
+  );
   color: white;
 }
 
@@ -145,6 +155,7 @@ _site/css/
 ```
 
 ### Card Components
+
 ```css
 .card {
   background: var(--surface);
@@ -164,6 +175,7 @@ _site/css/
 ## Responsive Patterns
 
 ### Mobile-First Breakpoints
+
 ```css
 /* Tailwind default breakpoints used */
 /* sm:  640px */
@@ -174,6 +186,7 @@ _site/css/
 ```
 
 ### Container System
+
 ```css
 .container {
   width: 100%;
@@ -190,6 +203,7 @@ _site/css/
 ```
 
 ### Grid System
+
 ```css
 .grid-responsive {
   display: grid;
@@ -215,6 +229,7 @@ _site/css/
 ## Accessibility Features
 
 ### Focus Indicators
+
 ```css
 *:focus-visible {
   outline: 2px solid var(--primary);
@@ -224,6 +239,7 @@ _site/css/
 ```
 
 ### Reduced Motion Support
+
 ```css
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -234,12 +250,13 @@ _site/css/
 ```
 
 ### High Contrast Mode
+
 ```css
 @media (prefers-contrast: high) {
   .card {
     border: 2px solid var(--outline);
   }
-  
+
   .btn {
     border: 2px solid currentColor;
   }
@@ -251,19 +268,18 @@ _site/css/
 ## Performance Optimizations
 
 ### PurgeCSS Configuration
+
 ```javascript
 // tailwind.config.js
 module.exports = {
-  content: [
-    "./src/**/*.{html,njk,md,js}",
-    "./src/_includes/**/*.njk"
-  ],
+  content: ["./src/**/*.{html,njk,md,js}", "./src/_includes/**/*.njk"],
   // Removes unused CSS in production
   // Reduces CSS from ~300KB to ~24KB (92% reduction)
 };
 ```
 
 ### Critical CSS Strategy
+
 1. Inline critical above-the-fold CSS
 2. Defer non-critical CSS loading
 3. Minimize render-blocking resources
@@ -286,7 +302,7 @@ module.exports = {
 
 - Main CSS: [src/css/tailwind.css](../../src/css/tailwind.css)
 - Tailwind Config: [tailwind.config.js](../../tailwind.config.js)
-- Compiled Output: [_site/css/main.css](../../_site/css/main.css)
+- Compiled Output: [\_site/css/main.css](../../_site/css/main.css)
 
 **Document Version:** 1.0  
 **Last Updated:** December 17, 2025

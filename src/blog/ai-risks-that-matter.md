@@ -1,7 +1,6 @@
 ---
 layout: layouts/post.njk
-title:
-  "The AI Risks That Actually Matter (And the Ones Getting All the Attention)"
+title: "The AI Risks That Actually Matter (And the Ones Getting All the Attention)"
 date: 2025-11-07
 description:
   "Everyone's worried about AGI and robot uprisings. Meanwhile, the real

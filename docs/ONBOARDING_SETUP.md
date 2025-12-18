@@ -5,12 +5,14 @@ Complete onboarding workflow with Sanity CMS storage, automated email follow-ups
 ## Features
 
 ### ✅ Onboarding Form
+
 - Collects: Name, Email, Major, Graduation Year, LinkedIn, GitHub, Portfolio, Calendly, Career Goal
 - Real-time URL validation with domain checking
 - Beautiful Material Design UI with smooth animations
 - Loading states and comprehensive error handling
 
 ### ✅ Sanity CMS Storage
+
 - Stores all member profiles with complete data
 - Automatic prerequisite detection (missing LinkedIn/GitHub/Portfolio/Calendly)
 - Status tracking (new/in-progress/completed)
@@ -18,12 +20,14 @@ Complete onboarding workflow with Sanity CMS storage, automated email follow-ups
 - Custom Studio views for filtering members
 
 ### ✅ Automated Email System
+
 - Triggers personalized email via Zapier/Make webhook
 - Includes list of missing prerequisites
 - Sends relevant guides and templates
 - Customizable email templates
 
 ### ✅ Discord Integration
+
 - Posts welcome message to #jobclub-intros channel
 - Rich embed with member details
 - Automatic role assignment (optional)
@@ -50,6 +54,7 @@ npm run dev
 ```
 
 Get a write token:
+
 1. Go to https://sanity.io/manage
 2. Select your project → API → Tokens
 3. Create new token with "Write" permissions
@@ -87,23 +92,24 @@ DISCORD_WEBHOOK_URL=https://discord.com/api/webhooks/123456789/abcdefghijk
 3. Copy the webhook URL to `EMAIL_WEBHOOK_URL`
 4. **Action**: Email (Gmail/Outlook/etc.) → Send Email
 5. Configure email template with:
+
    ```
    Subject: Welcome to Job Club - Next Steps
-   
+
    Hi {{name}},
-   
+
    Welcome to NJIT Job Club! We received your profile.
-   
+
    {% if missingItems %}
    To complete your onboarding, please address these items:
    {{missingItems}}
    {% endif %}
-   
+
    Next Steps:
    1. Complete missing prerequisites
    2. Join our Discord community
    3. Attend the next Town Hall
-   
+
    Best regards,
    Job Club Team
    ```
@@ -161,6 +167,7 @@ Create `netlify.toml`:
 ```
 
 Deploy:
+
 ```bash
 # Install Netlify CLI
 npm i -g netlify-cli
@@ -221,6 +228,7 @@ Access at `http://localhost:3333`:
 Edit the webhook in Zapier/Make to customize:
 
 ### For Complete Profiles:
+
 ```
 Subject: 🎉 Welcome to Job Club!
 
@@ -238,6 +246,7 @@ See you at the next meeting!
 ```
 
 ### For Incomplete Profiles:
+
 ```
 Subject: ⚠️ Action Required: Complete Your Job Club Profile
 
@@ -257,16 +266,19 @@ Once complete, reply to this email and we'll update your status!
 ## Troubleshooting
 
 ### API not receiving data
+
 - Check environment variables are set correctly
 - Verify CORS headers in the API function
 - Check browser console for errors
 
 ### Email not sending
+
 - Verify webhook URL is correct
 - Check Zapier/Make task history for errors
 - Test webhook with a manual trigger
 
 ### Discord message not posting
+
 - Verify webhook URL format
 - Check Discord server permissions
 - Test webhook with curl:
@@ -277,6 +289,7 @@ Once complete, reply to this email and we'll update your status!
   ```
 
 ### Sanity write errors
+
 - Verify write token has correct permissions
 - Check project ID and dataset name
 - Ensure schema is deployed to Studio
@@ -324,6 +337,7 @@ Once complete, reply to this email and we'll update your status!
 ## Support
 
 For issues or questions:
+
 - Check Sanity Studio logs
 - Review Zapier/Make task history
 - Check Discord webhook deliveries

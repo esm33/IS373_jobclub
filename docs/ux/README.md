@@ -5,9 +5,11 @@ This directory contains UX documentation for the Job Club project.
 ## Contents
 
 ### 📋 Sitemap & Information Architecture
+
 [sitemap-information-architecture.md](./sitemap-information-architecture.md)
 
 Complete site structure and navigation design:
+
 - Site map (Home, Resource Library, Events, About, Join Now)
 - Information architecture principles
 - Navigation structure (desktop and mobile)
@@ -16,9 +18,11 @@ Complete site structure and navigation design:
 - Search strategy and content taxonomy
 
 ### 🎨 Brand Guide
+
 [brand-guide.md](./brand-guide.md)
 
 Visual and verbal identity guidelines:
+
 - Material Design 3 color system (Primary Purple #6750A4, Secondary Teal #00BFA5)
 - Typography (Google Sans for headings, Roboto for body text)
 - Material Icons Rounded for UI
@@ -28,9 +32,11 @@ Visual and verbal identity guidelines:
 - Accessibility standards (WCAG 2.1 AA)
 
 ### 🖼️ Wireframes
+
 [wireframes.md](./wireframes.md)
 
 ASCII wireframes for key pages:
+
 - Homepage (hero, stats, resources, events)
 - Onboarding/Join Now (single-page form)
 - Events page (filterable grid)
@@ -39,6 +45,7 @@ ASCII wireframes for key pages:
 - Accessibility notes
 
 ### 📸 Visual Assets
+
 - `images/sitemap-visual.png` - Visual sitemap diagram
 - `../discovery/images/customer-journey-visual.png` - Customer journey map
 
@@ -52,4 +59,4 @@ ASCII wireframes for key pages:
 
 ---
 
-*Last Updated: December 17, 2025*
+_Last Updated: December 17, 2025_

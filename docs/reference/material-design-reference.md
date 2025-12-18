@@ -15,38 +15,43 @@ Material Design is Google's comprehensive design system combining classic design
 ## 🎨 Color System
 
 ### Primary Colors
+
 ```css
---primary: #6750A4;        /* Purple 500 - Primary actions */
---primary-bg: #E8DEF8;     /* Purple 100 - Backgrounds */
---secondary: #03DAC6;      /* Teal 200 - Accents */
+--primary: #6750a4; /* Purple 500 - Primary actions */
+--primary-bg: #e8def8; /* Purple 100 - Backgrounds */
+--secondary: #03dac6; /* Teal 200 - Accents */
 ```
 
 ### Surface & Background
+
 ```css
---surface: #FFFFFF;        /* Cards, elevated surfaces */
---surface-var: #F7F2FA;    /* Alternate surface */
---bg: #FEFBFF;            /* Page background */
---outline: #79747E;        /* Borders, dividers */
+--surface: #ffffff; /* Cards, elevated surfaces */
+--surface-var: #f7f2fa; /* Alternate surface */
+--bg: #fefbff; /* Page background */
+--outline: #79747e; /* Borders, dividers */
 ```
 
 ### Text Colors
+
 ```css
---text: #1C1B1F;          /* Primary text */
---text-secondary: #49454F; /* Secondary text */
+--text: #1c1b1f; /* Primary text */
+--text-secondary: #49454f; /* Secondary text */
 ```
 
 ### Dark Mode
+
 ```css
 body.dark {
-  --bg: #1C1B1F;
-  --surface: #2B2930;
-  --text: #E6E1E5;
-  --text-secondary: #CAC4D0;
-  --primary: #D0BCFF;
+  --bg: #1c1b1f;
+  --surface: #2b2930;
+  --text: #e6e1e5;
+  --text-secondary: #cac4d0;
+  --primary: #d0bcff;
 }
 ```
 
 ### Usage
+
 - **Primary color:** CTAs, links, key actions, FAB
 - **Secondary color:** Accents, highlights, tags
 - **Surface colors:** Cards, modals, elevated components
@@ -57,11 +62,19 @@ body.dark {
 ## 📝 Typography
 
 ### Font Stack
+
 ```css
-font-family: "Google Sans", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+font-family:
+  "Google Sans",
+  "Roboto",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  sans-serif;
 ```
 
 ### Type Scale
+
 ```css
 /* Display - Hero headings */
 .hero-title {
@@ -73,13 +86,13 @@ font-family: "Google Sans", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe 
 }
 
 /* Headlines - Section titles */
-h1 { 
+h1 {
   font-size: clamp(40px, 6vw, 64px);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-h2 { 
+h2 {
   font-size: clamp(32px, 5vw, 48px);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -118,6 +131,7 @@ body {
 ## 🏗️ Layout & Grid
 
 ### Container System
+
 ```css
 .container {
   max-width: 1200px;
@@ -133,6 +147,7 @@ body {
 ```
 
 ### Responsive Grid
+
 ```css
 /* Auto-fit card grid */
 .cards-grid {
@@ -156,6 +171,7 @@ body {
 ```
 
 ### Spacing Scale
+
 ```css
 --space-xs: 4px;
 --space-sm: 8px;
@@ -168,6 +184,7 @@ body {
 ```
 
 ### Section Padding
+
 ```css
 .section {
   padding: 100px 0;
@@ -185,6 +202,7 @@ body {
 ## 🎯 Elevation & Shadows
 
 ### Shadow Levels
+
 ```css
 /* Level 1 - Cards at rest */
 box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
@@ -210,6 +228,7 @@ box-shadow: 0 4px 16px rgba(103, 80, 164, 0.3);
 ## 🧩 Components
 
 ### Navigation Bar
+
 ```css
 .navbar {
   position: fixed;
@@ -289,7 +308,7 @@ box-shadow: 0 4px 16px rgba(103, 80, 164, 0.3);
     transition: right 0.3s;
     box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
   }
-  
+
   .nav-links.active {
     right: 0;
   }
@@ -297,6 +316,7 @@ box-shadow: 0 4px 16px rgba(103, 80, 164, 0.3);
 ```
 
 ### Cards
+
 ```css
 .feature-card {
   position: relative;
@@ -349,6 +369,7 @@ box-shadow: 0 4px 16px rgba(103, 80, 164, 0.3);
 ```
 
 ### Buttons
+
 ```css
 .btn {
   display: inline-flex;
@@ -371,7 +392,7 @@ box-shadow: 0 4px 16px rgba(103, 80, 164, 0.3);
 }
 
 .btn-primary:hover {
-  background: #5A3E96;
+  background: #5a3e96;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(103, 80, 164, 0.4);
 }
@@ -388,6 +409,7 @@ box-shadow: 0 4px 16px rgba(103, 80, 164, 0.3);
 ```
 
 ### Floating Action Button (FAB)
+
 ```css
 .fab {
   position: fixed;
@@ -415,6 +437,7 @@ box-shadow: 0 4px 16px rgba(103, 80, 164, 0.3);
 ```
 
 ### Badges
+
 ```css
 .badge {
   display: inline-flex;
@@ -436,6 +459,7 @@ box-shadow: 0 4px 16px rgba(103, 80, 164, 0.3);
 ## 🎬 Motion & Animation
 
 ### Easing Curves
+
 ```css
 /* Standard easing - Most UI transitions */
 cubic-bezier(0.4, 0, 0.2, 1)
@@ -451,18 +475,24 @@ cubic-bezier(0.4, 0, 0.6, 1)
 ```
 
 ### Duration Tokens
+
 ```css
---duration-short: 200ms;    /* Quick feedback */
---duration-medium: 300ms;   /* Standard transitions */
---duration-long: 500ms;     /* Complex animations */
+--duration-short: 200ms; /* Quick feedback */
+--duration-medium: 300ms; /* Standard transitions */
+--duration-long: 500ms; /* Complex animations */
 ```
 
 ### Common Animations
+
 ```css
 /* Fade in */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Slide up */
@@ -491,7 +521,8 @@ cubic-bezier(0.4, 0, 0.6, 1)
 
 /* Float */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   33% {
@@ -504,6 +535,7 @@ cubic-bezier(0.4, 0, 0.6, 1)
 ```
 
 ### Hover Effects
+
 ```css
 /* Card lift */
 .card:hover {
@@ -529,6 +561,7 @@ cubic-bezier(0.4, 0, 0.6, 1)
 ## 🌈 Background Animations
 
 ### Floating Shapes
+
 ```css
 .bg-animation {
   position: fixed;
@@ -575,14 +608,17 @@ cubic-bezier(0.4, 0, 0.6, 1)
 ```
 
 ### Gradient Backgrounds
+
 ```css
 /* Hero gradient */
 background: linear-gradient(135deg, var(--primary-bg) 0%, var(--surface) 100%);
 
 /* Card gradient overlay */
-background: linear-gradient(135deg, 
-  rgba(255, 255, 255, 0.98) 0%, 
-  rgba(249, 247, 255, 0.98) 100%);
+background: linear-gradient(
+  135deg,
+  rgba(255, 255, 255, 0.98) 0%,
+  rgba(249, 247, 255, 0.98) 100%
+);
 ```
 
 ---
@@ -590,32 +626,48 @@ background: linear-gradient(135deg,
 ## 📱 Responsive Design
 
 ### Breakpoints
+
 ```css
 /* Mobile */
 @media (max-width: 480px) {
-  .hero-title { font-size: 36px; }
-  .section { padding: 60px 0; }
-  .cards-grid { grid-template-columns: 1fr; }
+  .hero-title {
+    font-size: 36px;
+  }
+  .section {
+    padding: 60px 0;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Tablet */
 @media (min-width: 481px) and (max-width: 768px) {
-  .hero-title { font-size: 48px; }
-  .cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-title {
+    font-size: 48px;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Desktop */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .container { max-width: 960px; }
+  .container {
+    max-width: 960px;
+  }
 }
 
 /* Large Desktop */
 @media (min-width: 1025px) {
-  .container { max-width: 1200px; }
+  .container {
+    max-width: 1200px;
+  }
 }
 ```
 
 ### Mobile Navigation
+
 ```css
 .menu-toggle {
   display: none;
@@ -630,11 +682,11 @@ background: linear-gradient(135deg,
   .menu-toggle {
     display: flex;
   }
-  
+
   .nav-links {
     display: none;
   }
-  
+
   .nav-links.active {
     display: flex;
   }
@@ -646,9 +698,13 @@ background: linear-gradient(135deg,
 ## 🎨 Icon System
 
 ### Material Icons Implementation
+
 ```html
 <!-- In <head> -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+  rel="stylesheet"
+/>
 
 <!-- Usage -->
 <i class="material-icons-round">home</i>
@@ -657,6 +713,7 @@ background: linear-gradient(135deg,
 ```
 
 ### Common Icons for Job Club
+
 - `home` - Home page
 - `group` - Community/Members
 - `event` - Events calendar
@@ -673,6 +730,7 @@ background: linear-gradient(135deg,
 ## ♿ Accessibility
 
 ### Focus States
+
 ```css
 :focus-visible {
   outline: 3px solid var(--primary);
@@ -682,6 +740,7 @@ background: linear-gradient(135deg,
 ```
 
 ### Reduced Motion
+
 ```css
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -696,6 +755,7 @@ background: linear-gradient(135deg,
 ```
 
 ### ARIA Labels
+
 ```html
 <button aria-label="Toggle theme">
   <i class="material-icons-round">dark_mode</i>
@@ -711,47 +771,52 @@ background: linear-gradient(135deg,
 ## 🌙 Dark Mode
 
 ### Implementation
+
 ```css
 /* Light mode (default) */
 :root {
-  --bg: #FEFBFF;
-  --surface: #FFFFFF;
-  --text: #1C1B1F;
-  --primary: #6750A4;
+  --bg: #fefbff;
+  --surface: #ffffff;
+  --text: #1c1b1f;
+  --primary: #6750a4;
 }
 
 /* Dark mode */
 body.dark {
-  --bg: #1C1B1F;
-  --surface: #2B2930;
-  --text: #E6E1E5;
-  --text-secondary: #CAC4D0;
-  --primary: #D0BCFF;
-  --primary-bg: #4A4458;
+  --bg: #1c1b1f;
+  --surface: #2b2930;
+  --text: #e6e1e5;
+  --text-secondary: #cac4d0;
+  --primary: #d0bcff;
+  --primary-bg: #4a4458;
 }
 
 /* Toggle implementation */
 body {
   background: var(--bg);
   color: var(--text);
-  transition: background-color 0.5s, color 0.5s;
+  transition:
+    background-color 0.5s,
+    color 0.5s;
 }
 ```
 
 ### JavaScript Toggle
-```javascript
-const themeToggle = document.getElementById('themeToggle');
 
-themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark');
-  localStorage.setItem('theme', 
-    document.body.classList.contains('dark') ? 'dark' : 'light'
+```javascript
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.body.classList.contains("dark") ? "dark" : "light",
   );
 });
 
 // Load saved theme
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark');
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
 }
 ```
 
@@ -760,6 +825,7 @@ if (localStorage.getItem('theme') === 'dark') {
 ## 📐 Page Structure Templates
 
 ### Hero Section
+
 ```html
 <section class="hero">
   <div class="container">
@@ -768,15 +834,15 @@ if (localStorage.getItem('theme') === 'dark') {
       <span>Badge Text</span>
     </div>
     <h1 class="hero-title">Main Headline</h1>
-    <p class="hero-subtitle">Supporting text that explains the value proposition</p>
+    <p class="hero-subtitle">
+      Supporting text that explains the value proposition
+    </p>
     <div class="hero-actions">
       <a href="#" class="btn btn-primary">
         Primary Action
         <i class="material-icons-round">arrow_forward</i>
       </a>
-      <a href="#" class="btn btn-outlined">
-        Secondary Action
-      </a>
+      <a href="#" class="btn btn-outlined"> Secondary Action </a>
     </div>
     <div class="hero-stats">
       <div class="stat-item">
@@ -789,6 +855,7 @@ if (localStorage.getItem('theme') === 'dark') {
 ```
 
 ### Feature Cards Section
+
 ```html
 <section class="section">
   <div class="container">
@@ -797,7 +864,7 @@ if (localStorage.getItem('theme') === 'dark') {
       <h2>Section Title</h2>
       <p class="section-subtitle">Section description text</p>
     </div>
-    
+
     <div class="cards-grid">
       <div class="feature-card">
         <div class="card-icon-wrapper">
@@ -814,6 +881,7 @@ if (localStorage.getItem('theme') === 'dark') {
 ```
 
 ### Footer
+
 ```html
 <footer class="footer">
   <div class="container">
@@ -843,6 +911,7 @@ if (localStorage.getItem('theme') === 'dark') {
 ## 🎯 Job Club Specific Applications
 
 ### Onboarding Form Styling
+
 - Use elevated cards for form sections
 - Material icons for field labels
 - Primary color for submit button
@@ -850,6 +919,7 @@ if (localStorage.getItem('theme') === 'dark') {
 - Progress indicator with primary color
 
 ### Event Cards
+
 - Elevated surface with hover lift
 - Date badge in primary color
 - Location icon with text
@@ -857,12 +927,14 @@ if (localStorage.getItem('theme') === 'dark') {
 - Capacity indicator with progress bar
 
 ### Member Profiles
+
 - Avatar with primary color background
 - Badge system for achievements
 - Card layout for profile sections
 - FAB for quick actions
 
 ### Navigation Structure
+
 - Fixed navbar with blur backdrop
 - Material icons for menu items
 - Active state with primary background
@@ -874,6 +946,7 @@ if (localStorage.getItem('theme') === 'dark') {
 ## ✅ Implementation Checklist
 
 ### Phase 1: Foundation
+
 - [ ] Set up CSS variables for Material Design colors
 - [ ] Implement Google Sans + Roboto font stack
 - [ ] Create container and grid system
@@ -881,6 +954,7 @@ if (localStorage.getItem('theme') === 'dark') {
 - [ ] Set up responsive breakpoints
 
 ### Phase 2: Components
+
 - [ ] Build navigation bar with blur backdrop
 - [ ] Create card component with hover effects
 - [ ] Implement button variants (primary, outlined)
@@ -889,12 +963,14 @@ if (localStorage.getItem('theme') === 'dark') {
 - [ ] Build footer with social links
 
 ### Phase 3: Pages
+
 - [ ] Transform home page with hero section
 - [ ] Update onboarding with Material Design forms
 - [ ] Style events page with elevated cards
 - [ ] Apply Material Design to all navigation
 
 ### Phase 4: Enhancements
+
 - [ ] Add floating shape backgrounds
 - [ ] Implement dark mode toggle
 - [ ] Add smooth scroll animations
@@ -902,6 +978,7 @@ if (localStorage.getItem('theme') === 'dark') {
 - [ ] Test accessibility (keyboard, screen reader)
 
 ### Phase 5: Optimization
+
 - [ ] Optimize animations for performance
 - [ ] Test responsive design on all devices
 - [ ] Validate color contrast (WCAG AA)

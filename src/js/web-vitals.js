@@ -25,14 +25,20 @@ const rateLimiter = {
 
 function sendToAnalytics(metric) {
   // Log to console in development (debug mode only)
-  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+  if (
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1"
+  ) {
     // Development mode - skip analytics
     return;
   }
 
   // Rate limiting check
   if (!rateLimiter.canSend()) {
-    console.warn("[Web Vitals] Rate limit exceeded, skipping metric:", metric.name);
+    console.warn(
+      "[Web Vitals] Rate limit exceeded, skipping metric:",
+      metric.name,
+    );
     return;
   }
 
@@ -51,7 +57,9 @@ function sendToAnalytics(metric) {
   // Example: Send to Google Analytics 4
   if (window.gtag) {
     window.gtag("event", metric.name, {
-      value: Math.round(metric.name === "CLS" ? metric.value * 1000 : metric.value),
+      value: Math.round(
+        metric.name === "CLS" ? metric.value * 1000 : metric.value,
+      ),
       metric_id: metric.id,
       metric_value: metric.value,
       metric_delta: metric.delta,

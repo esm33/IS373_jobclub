@@ -1,11 +1,13 @@
 # Analytics Implementation - Complete ✅
 
 ## Overview
+
 Analytics tracking has been fully implemented for the events system using Google Analytics 4 (GA4). All required event interactions are being tracked with detailed parameters for comprehensive reporting.
 
 ## What's Tracked
 
 ### 1. ✅ Events Page Views
+
 - **Event**: `view_events_page`
 - **Trigger**: When user visits `/events/`
 - **Parameters**:
@@ -16,6 +18,7 @@ Analytics tracking has been fully implemented for the events system using Google
   - `timestamp`: ISO timestamp
 
 ### 2. ✅ Event Detail Page Views
+
 - **Event**: `view_event_detail`
 - **Trigger**: When user visits an individual event page (e.g., `/events/ai-career-workshop/`)
 - **Parameters**:
@@ -28,6 +31,7 @@ Analytics tracking has been fully implemented for the events system using Google
   - `timestamp`: ISO timestamp
 
 ### 3. ✅ Event Clicks (Learn More)
+
 - **Event**: `event_learn_more_click`
 - **Trigger**: When user clicks "Learn More" button on event card
 - **Parameters**:
@@ -39,6 +43,7 @@ Analytics tracking has been fully implemented for the events system using Google
   - `timestamp`: ISO timestamp
 
 ### 4. ✅ Registration Clicks
+
 - **Event**: `event_registration_click`
 - **Trigger**: When user clicks "Register Now" button (both on listing and detail pages)
 - **Parameters**:
@@ -52,6 +57,7 @@ Analytics tracking has been fully implemented for the events system using Google
   - `timestamp`: ISO timestamp
 
 ### 5. ✅ Calendar Downloads
+
 - **Event**: `event_add_to_calendar`
 - **Trigger**: When user clicks "Add to Calendar" button and downloads .ics file
 - **Parameters**:
@@ -63,6 +69,7 @@ Analytics tracking has been fully implemented for the events system using Google
   - `timestamp`: ISO timestamp
 
 ### 6. ✅ Share Button Clicks
+
 - **Event**: `event_share`
 - **Trigger**: When user shares an event via native share or clipboard
 - **Parameters**:
@@ -75,6 +82,7 @@ Analytics tracking has been fully implemented for the events system using Google
   - `timestamp`: ISO timestamp
 
 ### 7. ✅ Event Filter Usage
+
 - **Event**: `event_filter_used`
 - **Trigger**: When user changes event type filter
 - **Parameters**:
@@ -87,6 +95,7 @@ Analytics tracking has been fully implemented for the events system using Google
 ## Files Created/Modified
 
 ### Created Files:
+
 1. **`src/js/analytics.js`** (New)
    - Analytics Manager class
    - Event tracking methods
@@ -95,6 +104,7 @@ Analytics tracking has been fully implemented for the events system using Google
    - Development logging
 
 ### Modified Files:
+
 1. **`src/_includes/layouts/base.njk`**
    - Added Google Analytics 4 script with consent mode
    - Added analytics.js script tag
@@ -127,6 +137,7 @@ Analytics tracking has been fully implemented for the events system using Google
 ### 2. Configure Measurement ID
 
 Edit `src/_data/site.json`:
+
 ```json
 {
   "googleAnalytics": "G-XXXXXXXXXX"
@@ -146,11 +157,13 @@ The analytics script will be automatically included in all pages.
 ### 4. Verify Tracking
 
 #### In Development:
+
 1. Open browser DevTools Console
 2. Navigate to `/events/` or an event detail page
 3. Look for `[Analytics]` log messages showing tracked events
 
 #### In Production:
+
 1. Open Google Analytics → Reports → Real-time
 2. Navigate your site and watch events appear in real-time
 3. Check "Events" section to see custom events being tracked
@@ -158,6 +171,7 @@ The analytics script will be automatically included in all pages.
 ## Privacy & Consent
 
 ### Current Implementation:
+
 - **Default**: Analytics consent is set to "denied" on page load
 - **Consent Check**: Checks `localStorage.getItem('analytics_consent')`
 - **If consent given**: Updates consent to "granted" and enables tracking
@@ -165,24 +179,27 @@ The analytics script will be automatically included in all pages.
 - **Cookie Settings**: SameSite=None;Secure for cross-site compatibility
 
 ### TODO: Cookie Banner Integration
+
 You need to implement a cookie consent banner that:
+
 1. Shows on first visit
 2. Allows user to accept/reject analytics
 3. Stores choice in localStorage as `analytics_consent`
 4. Updates GA4 consent mode dynamically
 
 Example implementation:
+
 ```javascript
 // When user accepts cookies
-localStorage.setItem('analytics_consent', 'true');
-gtag('consent', 'update', {
-  'analytics_storage': 'granted'
+localStorage.setItem("analytics_consent", "true");
+gtag("consent", "update", {
+  analytics_storage: "granted",
 });
 
 // When user rejects cookies
-localStorage.setItem('analytics_consent', 'false');
-gtag('consent', 'update', {
-  'analytics_storage': 'denied'
+localStorage.setItem("analytics_consent", "false");
+gtag("consent", "update", {
+  analytics_storage: "denied",
 });
 ```
 
@@ -191,7 +208,9 @@ gtag('consent', 'update', {
 ### Recommended Custom Reports:
 
 #### 1. Event Performance Report
+
 **Metrics to track:**
+
 - Total views per event
 - Learn More clicks
 - Registration clicks
@@ -200,20 +219,26 @@ gtag('consent', 'update', {
 - Registration conversion rate (clicks / views)
 
 **Dimensions:**
+
 - Event Title (`event_label`)
 - Event Type (`event_type`)
 - Event Slug (`event_slug`)
 
 #### 2. Filter Usage Report
+
 **Metrics:**
+
 - Filter selections
 - Results shown per filter
 
 **Dimensions:**
+
 - Filter Type (`filter_type`)
 
 #### 3. User Journey Report
+
 **Track progression:**
+
 1. Events page view
 2. Event detail view
 3. Registration click
@@ -255,6 +280,7 @@ gtag('consent', 'update', {
 Once data starts flowing, you'll be able to answer:
 
 ### Engagement Questions:
+
 - Which event types are most popular?
 - What's the average conversion rate from view to registration?
 - Which events get shared the most?
@@ -262,12 +288,14 @@ Once data starts flowing, you'll be able to answer:
 - Which filters are used most often?
 
 ### User Behavior:
+
 - Do users browse multiple events before registering?
 - What's the typical user journey?
 - Where do users drop off in the registration funnel?
 - Which events have the highest engagement?
 
 ### Performance:
+
 - Which event titles perform best?
 - What time of day do users browse events?
 - Which traffic sources bring the most registrations?
@@ -275,20 +303,22 @@ Once data starts flowing, you'll be able to answer:
 ## Code Examples
 
 ### Manual Event Tracking
+
 If you need to track additional events:
 
 ```javascript
 // Track custom event
 if (window.analytics) {
-  window.analytics.trackEvent('custom_event_name', {
-    event_category: 'Category',
-    event_label: 'Label',
-    custom_param: 'value'
+  window.analytics.trackEvent("custom_event_name", {
+    event_category: "Category",
+    event_label: "Label",
+    custom_param: "value",
   });
 }
 ```
 
 ### Check if Analytics is Ready
+
 ```javascript
 if (window.analytics && window.analytics.isInitialized) {
   // Analytics is ready
@@ -296,11 +326,12 @@ if (window.analytics && window.analytics.isInitialized) {
 ```
 
 ### Track Errors
+
 ```javascript
 window.analytics.trackError(
-  'api_error',
-  'Failed to load events',
-  'events_page'
+  "api_error",
+  "Failed to load events",
+  "events_page",
 );
 ```
 
@@ -309,6 +340,7 @@ window.analytics.trackError(
 **Implementation Status: 100% Complete ✅**
 
 All 6 required tracking events are implemented:
+
 1. ✅ Events page views
 2. ✅ Event detail page views
 3. ✅ Event clicks (Learn More + Register)
@@ -317,6 +349,7 @@ All 6 required tracking events are implemented:
 6. ✅ Share button clicks
 
 **Ready for Production:** Yes, pending:
+
 - Real GA4 measurement ID configuration
 - Cookie consent banner implementation
 - Production deployment and testing

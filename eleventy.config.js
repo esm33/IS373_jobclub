@@ -2,7 +2,7 @@ import eleventyPluginRss from "@11ty/eleventy-plugin-rss";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 
-export default function(eleventyConfig) {
+export default function (eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
@@ -11,7 +11,7 @@ export default function(eleventyConfig) {
 
   // Configure directories
   eleventyConfig.setLayoutsDirectory("_includes/layouts");
-  
+
   // Add RSS plugin
   eleventyConfig.addPlugin(eleventyPluginRss);
 
@@ -19,12 +19,12 @@ export default function(eleventyConfig) {
   const md = markdownIt({
     html: true,
     breaks: true,
-    linkify: true
+    linkify: true,
   }).use(markdownItAnchor, {
     permalink: markdownItAnchor.permalink.headerLink(),
-    level: [1, 2, 3, 4]
+    level: [1, 2, 3, 4],
   });
-  
+
   eleventyConfig.setLibrary("md", md);
 
   // Add filters
@@ -32,12 +32,12 @@ export default function(eleventyConfig) {
     return new Date(dateObj).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
-      day: "numeric"
+      day: "numeric",
     });
   });
 
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
-    return new Date(dateObj).toISOString().split('T')[0];
+    return new Date(dateObj).toISOString().split("T")[0];
   });
 
   eleventyConfig.addFilter("dateToRfc3339", (dateObj) => {
@@ -45,10 +45,10 @@ export default function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("head", (array, n) => {
-    if(!Array.isArray(array) || array.length === 0) {
+    if (!Array.isArray(array) || array.length === 0) {
       return [];
     }
-    if(n < 0) {
+    if (n < 0) {
       return array.slice(n);
     }
     return array.slice(0, n);
@@ -59,15 +59,17 @@ export default function(eleventyConfig) {
   });
 
   eleventyConfig.addFilter("getAllTags", (collection) => {
-    let tagSet = new Set();
-    collection.forEach(item => {
-      (item.data.tags || []).forEach(tag => tagSet.add(tag));
+    const tagSet = new Set();
+    collection.forEach((item) => {
+      (item.data.tags || []).forEach((tag) => tagSet.add(tag));
     });
     return Array.from(tagSet);
   });
 
   eleventyConfig.addFilter("filterTagList", (tags) => {
-    return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+    return (tags || []).filter(
+      (tag) => ["all", "nav", "post", "posts"].indexOf(tag) === -1,
+    );
   });
 
   // Add time filter for events
@@ -75,27 +77,31 @@ export default function(eleventyConfig) {
     return new Date(dateObj).toLocaleTimeString("en-US", {
       hour: "numeric",
       minute: "2-digit",
-      timeZone: "America/New_York"
+      timeZone: "America/New_York",
     });
   });
 
   // Add truncate filter
   eleventyConfig.addFilter("truncate", (str, length = 150) => {
-    if (!str || str.length <= length) return str;
+    if (!str || str.length <= length) {
+      return str;
+    }
     return str.substring(0, length).trim() + "...";
   });
 
   // Collections
-  eleventyConfig.addCollection("blog", function(collectionApi) {
+  eleventyConfig.addCollection("blog", function (collectionApi) {
     return collectionApi.getFilteredByGlob("src/blog/**/*.md").sort((a, b) => {
       return b.date - a.date;
     });
   });
 
-  eleventyConfig.addCollection("projects", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/projects/**/*.md").sort((a, b) => {
-      return (b.data.order || 0) - (a.data.order || 0);
-    });
+  eleventyConfig.addCollection("projects", function (collectionApi) {
+    return collectionApi
+      .getFilteredByGlob("src/projects/**/*.md")
+      .sort((a, b) => {
+        return (b.data.order || 0) - (a.data.order || 0);
+      });
   });
 
   return {
@@ -103,11 +109,11 @@ export default function(eleventyConfig) {
       input: "src",
       output: "_site",
       includes: "_includes",
-      data: "_data"
+      data: "_data",
     },
     templateFormats: ["md", "njk", "html"],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
-    dataTemplateEngine: "njk"
+    dataTemplateEngine: "njk",
   };
 }

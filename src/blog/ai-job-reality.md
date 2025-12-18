@@ -2,8 +2,7 @@
 layout: layouts/post.njk
 title: "What Actually Happens to Your Job When AI Gets Better"
 date: 2025-11-20
-description:
-  "Everyone's scared AI will take their job. The reality is way more
+description: "Everyone's scared AI will take their job. The reality is way more
   complicated—and way more interesting—than that."
 tags: ["blog", "AI", "Jobs", "Future of Work", "Career Advice"]
 ---

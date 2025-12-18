@@ -5,6 +5,7 @@
 ---
 
 ## Table of Contents
+
 1. AI Literacy Fundamentals
 2. Prompt Engineering Basics
 3. Critical Thinking in AI Era
@@ -20,21 +21,25 @@
 #### Core Concepts:
 
 **Machine Learning (ML)**
+
 - Systems that learn from data without explicit programming
 - Examples: Recommendation systems, fraud detection, image recognition
 - Your role: Understanding inputs, outputs, and limitations
 
 **Large Language Models (LLMs)**
+
 - AI trained on vast text data to understand and generate language
 - Examples: ChatGPT, Claude, GPT-4
 - Key insight: They predict patterns, not think consciously
 
 **Neural Networks**
+
 - Computing systems inspired by biological brains
 - Power LLMs and image generation AI
 - You don't need to understand the math, but understand trade-offs
 
 **Hallucinations**
+
 - When AI generates plausible-sounding but false information
 - Critical limitation to know about
 - Why you verify outputs, don't blindly trust AI
@@ -42,6 +47,7 @@
 ### The Reality Check
 
 **What AI CAN Do:**
+
 - ✓ Generate creative content quickly
 - ✓ Analyze large amounts of data
 - ✓ Automate repetitive tasks
@@ -51,6 +57,7 @@
 - ✓ Generate code
 
 **What AI CANNOT Do:**
+
 - ❌ Replace human judgment
 - ❌ Understand context perfectly
 - ❌ Make ethical decisions
@@ -62,6 +69,7 @@
 ### What This Means For You:
 
 AI is a **tool**, not a replacement. Your job is to:
+
 1. Use AI to amplify your work
 2. Verify and validate AI outputs
 3. Apply human judgment to AI suggestions
@@ -92,23 +100,28 @@ Good prompts = Better results. Simple as that.
 ### Prompt Techniques
 
 #### 1. Specificity
+
 - **Bad**: "Help me with code"
 - **Good**: "Help me write a Python function that takes a list of numbers and returns the sum, with error handling for non-numeric values"
 
 #### 2. Context
+
 - **Bad**: "What should I do?"
 - **Good**: "I'm a computer science student looking to enter tech. I have Python and JavaScript experience. What should I focus on next?"
 
 #### 3. Examples
+
 - Showing the AI what you want helps immensely
 - "Here are 2 examples of the format I want..."
 
 #### 4. Constraints
+
 - Tell AI what NOT to do
 - "Write this in simple language without technical jargon"
 - "Keep it under 200 words"
 
 #### 5. Role Playing
+
 - "Act as a career coach..."
 - "Explain this as you would to a 10-year-old..."
 - "Respond as if you're an expert in X..."
@@ -116,12 +129,13 @@ Good prompts = Better results. Simple as that.
 ### Real-World Prompt Examples
 
 **Example 1: Career Advice**
+
 ```
-I'm a recent graduate in Computer Science with 
-experience in Python and React. I'm uncertain whether 
-to pursue a startup job or a FAANG company role. 
-The startup offers higher equity but lower salary. 
-FAANG offers stability and learning. 
+I'm a recent graduate in Computer Science with
+experience in Python and React. I'm uncertain whether
+to pursue a startup job or a FAANG company role.
+The startup offers higher equity but lower salary.
+FAANG offers stability and learning.
 
 Please analyze the trade-offs considering:
 - Career growth (next 3 years)
@@ -133,8 +147,9 @@ Be realistic, not encouraging either option blindly.
 ```
 
 **Example 2: Code Explanation**
-```
-Explain this JavaScript code to someone who knows 
+
+````
+Explain this JavaScript code to someone who knows
 JavaScript basics but is new to async/await:
 
 ```javascript
@@ -147,10 +162,11 @@ async function fetchUserData(userId) {
     console.error('Failed to fetch user:', error);
   }
 }
-```
+````
 
-Explain what async/await does, why it's better than 
+Explain what async/await does, why it's better than
 callbacks, and what try/catch is doing.
+
 ```
 
 ### Iterating With AI
@@ -412,3 +428,4 @@ Focus on becoming someone who can evaluate, verify, and apply AI thoughtfully. T
 
 Now go build something amazing with AI! 🚀
 
+```

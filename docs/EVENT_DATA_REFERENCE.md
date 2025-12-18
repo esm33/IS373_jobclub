@@ -9,17 +9,21 @@ Copy these field values directly into Sanity Studio when creating events.
 ## Event #2: Office Hours
 
 ### Basic Information
+
 - **Event Title:** `AI Career Office Hours`
 - **URL Slug:** Click "Generate" button (will create: `ai-career-office-hours`)
 - **Event Type:** 💼 Office Hours
 
 ### Descriptions
+
 **Short Description:**
+
 ```
 Drop-in session for career guidance, resume reviews, and AI industry insights. Get personalized advice from mentors working in AI.
 ```
 
 **Full Description:**
+
 ```
 Join our weekly office hours for one-on-one career guidance in AI and tech. Whether you're exploring AI career paths, need resume feedback, preparing for interviews, or want to discuss your projects, our mentors are here to help.
 
@@ -44,23 +48,28 @@ All NJIT students interested in AI careers, from freshmen exploring options to s
 ```
 
 ### Date & Time
+
 - **Start Date & Time:** `January 15, 2026 4:00 PM` (or your preferred date)
 - **End Date & Time:** `January 15, 2026 6:00 PM`
 
 ### Location
+
 - **Virtual Event:** ✅ Yes (check the box)
 - **Venue Name:** `Zoom`
 - **Virtual Link:** `https://zoom.us/j/YOUR_ZOOM_ID` (replace with your actual link)
 
 ### Registration
+
 - **Capacity:** Leave blank (no limit for office hours)
 - **Registration Required:** ❌ No (uncheck the box)
 
 ### Tags & Audience
+
 - **Tags:** `Career`, `Mentoring`, `AI`, `Resume`, `Interview Prep`, `Office Hours`
 - **Target Audience:** All Students, Beginners, Intermediate, Advanced
 
 ### Event Status
+
 - **Featured Event:** ❌ No
 - **Event Status:** 📗 Published (IMPORTANT!)
 
@@ -69,17 +78,21 @@ All NJIT students interested in AI careers, from freshmen exploring options to s
 ## Event #3: Networking Meetup
 
 ### Basic Information
+
 - **Event Title:** `Job Club Networking Social`
 - **URL Slug:** Click "Generate" (will create: `job-club-networking-social`)
 - **Event Type:** 🤝 Meetup
 
 ### Descriptions
+
 **Short Description:**
+
 ```
 Connect with peers, alumni, and industry professionals. Build your network in a casual, supportive environment with structured activities and organic conversations.
 ```
 
 **Full Description:**
+
 ```
 Meet fellow students, alumni working in AI/tech, and industry professionals in a relaxed, friendly setting. This monthly meetup is your chance to expand your network, share experiences, learn about different career paths, and make meaningful connections that can help your career journey.
 
@@ -108,37 +121,45 @@ This is a judgment-free zone focused on building genuine connections and support
 ```
 
 ### Date & Time
+
 - **Start Date & Time:** `January 22, 2026 6:00 PM`
 - **End Date & Time:** `January 22, 2026 8:00 PM`
 
 ### Location
+
 - **Virtual Event:** ❌ No
 - **Venue Name:** `NJIT Campus`
 - **Room/Space:** `GITC Atrium`
 - **Full Address:** `University Heights, Newark, NJ 07102`
 
 ### Registration
+
 - **Capacity:** `50`
 - **Registration Required:** ✅ Yes (check the box)
 - **Registration Link:** `https://forms.gle/YOUR_FORM_ID` (replace with your form)
 - **Registration Deadline:** `January 20, 2026 11:59 PM`
 
 ### Tags & Audience
+
 - **Tags:** `Networking`, `Community`, `Career`, `Alumni`, `Social`
 - **Target Audience:** All Students
 
 ### Additional Details
+
 **Prerequisites:** (leave blank or add:)
+
 ```
 None - all students welcome! Bring positive energy and willingness to meet new people.
 ```
 
 **Materials Provided:**
+
 ```
 Pizza and refreshments, networking prompt cards, name tags, event agenda, alumni contact list, networking tips handout
 ```
 
 ### Event Status
+
 - **Featured Event:** ✅ Yes (check the box - this is a key event!)
 - **Event Status:** 📗 Published
 
@@ -147,17 +168,21 @@ Pizza and refreshments, networking prompt cards, name tags, event agenda, alumni
 ## Event #4: Guest Speaker Panel
 
 ### Basic Information
+
 - **Event Title:** `AI in Industry: Career Paths Panel`
 - **URL Slug:** Click "Generate" (will create: `ai-in-industry-career-paths-panel`)
 - **Event Type:** 🎤 Guest Speaker
 
 ### Descriptions
+
 **Short Description:**
+
 ```
 Hear from AI professionals about their career journeys, current roles, and advice for students. Learn about ML engineering, research, consulting, and more.
 ```
 
 **Full Description:**
+
 ```
 Join us for an inspiring panel discussion featuring AI professionals from leading companies including Google, Microsoft, and local AI startups. Our speakers will share their career journeys - from college to their current roles - discuss emerging opportunities in AI, and answer your burning questions about breaking into the field.
 
@@ -191,46 +216,56 @@ This is a rare opportunity to connect with multiple AI professionals in one sess
 ```
 
 ### Date & Time
+
 - **Start Date & Time:** `February 5, 2026 6:00 PM`
 - **End Date & Time:** `February 5, 2026 8:00 PM`
 
 ### Location
+
 - **Virtual Event:** ❌ No
 - **Venue Name:** `NJIT Campus`
 - **Room/Space:** `GITC 3700`
 - **Full Address:** `University Heights, Newark, NJ 07102`
 
 ### Registration
+
 - **Capacity:** `100`
 - **Registration Required:** ✅ Yes
 - **Registration Link:** `https://forms.gle/YOUR_FORM_ID`
 - **Registration Deadline:** `February 3, 2026 11:59 PM`
 
 ### Speakers
+
 **Add speakers when confirmed. For now, you can skip this section or add placeholder:**
 
 Speaker 1:
+
 - **Name:** `To Be Announced`
 - **Title:** `ML Engineer`
 - **Company:** `Leading Tech Company`
 - **Bio:** `Speaker details coming soon! We're finalizing our incredible lineup of AI professionals.`
 
 ### Tags & Audience
+
 - **Tags:** `Career`, `AI`, `Industry`, `Panel`, `Guest Speaker`, `ML Engineering`, `Research`
 - **Target Audience:** All Students, Juniors, Seniors, Graduate
 
 ### Additional Details
+
 **Prerequisites:**
+
 ```
 None - all levels welcome! Basic familiarity with AI/ML concepts helpful but not required.
 ```
 
 **Materials Provided:**
+
 ```
 Panel Q&A handout, speaker contact information, AI career resources guide, recommended reading list, local AI companies hiring guide
 ```
 
 ### Event Status
+
 - **Featured Event:** ✅ Yes (this is a major event!)
 - **Event Status:** 📗 Published
 
@@ -239,17 +274,21 @@ Panel Q&A handout, speaker contact information, AI career resources guide, recom
 ## Event #5: Hack Night
 
 ### Basic Information
+
 - **Event Title:** `AI Project Hack Night`
 - **URL Slug:** Click "Generate" (will create: `ai-project-hack-night`)
 - **Event Type:** 💻 Hack Night
 
 ### Descriptions
+
 **Short Description:**
+
 ```
 Work on AI projects in a collaborative environment. Get help from peers and mentors while building your portfolio. All skill levels welcome!
 ```
 
 **Full Description:**
+
 ```
 Bring your laptop and work on AI projects alongside other students in a supportive, collaborative environment. Whether you're building a machine learning model, fine-tuning an LLM, creating a data visualization, working on a portfolio website, or exploring AI tools, this is your dedicated time to make progress with help available.
 
@@ -298,35 +337,43 @@ Note: This is a great way to see what others are building, get unblocked on tech
 ```
 
 ### Date & Time
+
 - **Start Date & Time:** `February 12, 2026 5:00 PM`
 - **End Date & Time:** `February 12, 2026 8:00 PM`
 
 ### Location
+
 - **Virtual Event:** ❌ No
 - **Venue Name:** `NJIT Campus`
 - **Room/Space:** `GITC 4th Floor Computer Lab`
 - **Full Address:** `University Heights, Newark, NJ 07102`
 
 ### Registration
+
 - **Capacity:** `30`
 - **Registration Required:** ❌ No (drop-in style)
 
 ### Tags & Audience
+
 - **Tags:** `Projects`, `Coding`, `AI`, `Portfolio`, `Collaboration`, `Hack Night`, `Mentoring`
 - **Target Audience:** All Students, Beginners, Intermediate, Advanced
 
 ### Additional Details
+
 **Prerequisites:**
+
 ```
 Laptop required. Basic programming knowledge helpful but not required - beginners welcome!
 ```
 
 **Materials Provided:**
+
 ```
 WiFi access, power strips, desk space, snacks and drinks, project idea prompts, technical reference guides, portfolio templates
 ```
 
 ### Event Status
+
 - **Featured Event:** ❌ No
 - **Event Status:** 📗 Published
 
@@ -336,7 +383,7 @@ WiFi access, power strips, desk space, snacks and drinks, project idea prompts, 
 
 When adding an event to Sanity:
 
-1. ✅ Fill in all required fields (marked with * in Sanity)
+1. ✅ Fill in all required fields (marked with \* in Sanity)
 2. ✅ Generate slug from title
 3. ✅ Set appropriate dates (future dates for website to display them)
 4. ✅ Choose correct event type
@@ -363,6 +410,7 @@ When adding an event to Sanity:
 ## After Adding All Events
 
 Your events page should show:
+
 - 5 total events
 - All 5 event types represented
 - Filtering working for each type

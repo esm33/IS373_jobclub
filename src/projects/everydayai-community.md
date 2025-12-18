@@ -1,7 +1,6 @@
 ---
 layout: layouts/project-chapters.njk
-title:
-  "The Second Renaissance: A Balanced Look at AI's Transformation of Society"
+title: "The Second Renaissance: A Balanced Look at AI's Transformation of Society"
 description:
   "Just as the printing press sparked the first Renaissance, AI is driving a
   Second Renaissance. But this transformation will unfold over decades, not

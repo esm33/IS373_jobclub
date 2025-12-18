@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+_site/
+
+# Build outputs
+dist/
+build/
+*.log
+
+# Nunjucks templates (no parser available)
+**/*.njk
+
+# Test outputs
+test-results/
+playwright-report/
+coverage/
+
+# Generated files
+package-lock.json
+sanity/package-lock.json

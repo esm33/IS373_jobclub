@@ -70,6 +70,7 @@ The event schema includes:
 ### Display Logic
 
 The events page:
+
 - Shows only **published** events
 - Filters events with `date >= now()` (upcoming events only)
 - Orders by date ascending (soonest first)
@@ -130,6 +131,7 @@ Each event card displays:
 ## Filtering
 
 Users can filter events by:
+
 - All Events (default)
 - Workshops
 - Office Hours
@@ -142,6 +144,7 @@ Filters update instantly with smooth animations.
 ## Styling
 
 The events page uses:
+
 - **Material Design** elevation and shadows
 - **Google Sans** typography
 - **Primary color** (#0072FF) for accents
@@ -217,6 +220,7 @@ The events page uses:
 ## Support
 
 For issues or questions:
+
 - Email: kwilliams@njit.edu
 - Check Sanity logs: `cd sanity && npm run dev`
 - Review browser console for JavaScript errors

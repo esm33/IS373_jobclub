@@ -1,11 +1,10 @@
-/* stylelint-disable declaration-block-trailing-semicolon */
 /* ==========================================================================
    Material Design System for Job Club
    Google's design system with Material Design 3 principles
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
 
 @tailwind base;
 @tailwind components;
@@ -15,81 +14,76 @@
 :root {
   /* ===== COLOR SYSTEM ===== */
   /* Primary Palette */
-  --md-primary: #6750A4;
-  --md-primary-container: #E8DEF8;
-  --md-on-primary: #FFFFFF;
-  --md-on-primary-container: #21005D;
-  
+  --md-primary: #6750a4;
+  --md-primary-container: #e8def8;
+  --md-on-primary: #ffffff;
+  --md-on-primary-container: #21005d;
+
   /* Secondary Palette */
-  --md-secondary: #00BFA5;
-  --md-secondary-container: #D5F5EF;
-  --md-on-secondary: #FFFFFF;
+  --md-secondary: #00bfa5;
+  --md-secondary-container: #d5f5ef;
+  --md-on-secondary: #ffffff;
   --md-on-secondary-container: #003731;
-  
+
   /* Tertiary Palette */
-  --md-tertiary: #FF6F00;
-  --md-tertiary-container: #FFE0B2;
-  --md-on-tertiary: #FFFFFF;
+  --md-tertiary: #ff6f00;
+  --md-tertiary-container: #ffe0b2;
+  --md-on-tertiary: #ffffff;
   --md-on-tertiary-container: #331300;
-  
+
   /* Error Palette */
-  --md-error: #BA1A1A;
-  --md-error-container: #FFDAD6;
-  --md-on-error: #FFFFFF;
+  --md-error: #ba1a1a;
+  --md-error-container: #ffdad6;
+  --md-on-error: #ffffff;
   --md-on-error-container: #410002;
-  
+
   /* Surface & Background */
-  --md-surface: #FFFFFF;
-  --md-surface-variant: #F7F2FA;
-  --md-surface-container-lowest: #FFFFFF;
-  --md-surface-container-low: #F8F4F9;
-  --md-surface-container: #F3EDF7;
-  --md-surface-container-high: #EDE8F2;
-  --md-surface-container-highest: #E7E2EC;
-  --md-background: #FEFBFF;
-  
+  --md-surface: #ffffff;
+  --md-surface-variant: #f7f2fa;
+  --md-surface-container-lowest: #ffffff;
+  --md-surface-container-low: #f8f4f9;
+  --md-surface-container: #f3edf7;
+  --md-surface-container-high: #ede8f2;
+  --md-surface-container-highest: #e7e2ec;
+  --md-background: #fefbff;
+
   /* Text & Icons */
-  --md-on-surface: #1C1B1F;
-  --md-on-surface-variant: #49454F;
-  --md-on-background: #1C1B1F;
-  --md-outline: #79747E;
-  --md-outline-variant: #CAC4D0;
-  
+  --md-on-surface: #1c1b1f;
+  --md-on-surface-variant: #49454f;
+  --md-on-background: #1c1b1f;
+  --md-outline: #79747e;
+  --md-outline-variant: #cac4d0;
+
   /* State Layers (for interactive elements) */
   --md-state-hover-opacity: 0.08;
   --md-state-focus-opacity: 0.12;
   --md-state-press-opacity: 0.12;
   --md-state-drag-opacity: 0.16;
-  
+
   /* ===== ELEVATION SYSTEM ===== */
   /* Level 0 - On surface */
   --md-elevation-0: none;
-  
+
   /* Level 1 - Raised slightly (cards at rest) */
-  --md-elevation-1: 
-    0px 1px 2px 0px rgba(0, 0, 0, 0.05),
-    0px 1px 3px 1px rgba(0, 0, 0, 0.04);
-  
+  --md-elevation-1:
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05), 0px 1px 3px 1px rgba(0, 0, 0, 0.04);
+
   /* Level 2 - Elevated (cards on hover, floating buttons) */
-  --md-elevation-2: 
-    0px 2px 6px 2px rgba(0, 0, 0, 0.04),
-    0px 1px 2px 0px rgba(0, 0, 0, 0.06);
-  
+  --md-elevation-2:
+    0px 2px 6px 2px rgba(0, 0, 0, 0.04), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+
   /* Level 3 - High elevation (dialogs, bottom sheets) */
-  --md-elevation-3: 
-    0px 4px 8px 3px rgba(0, 0, 0, 0.04),
-    0px 1px 3px 0px rgba(0, 0, 0, 0.08);
-  
+  --md-elevation-3:
+    0px 4px 8px 3px rgba(0, 0, 0, 0.04), 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+
   /* Level 4 - Very high (navigation drawer) */
-  --md-elevation-4: 
-    0px 6px 10px 4px rgba(0, 0, 0, 0.04),
-    0px 2px 3px 0px rgba(0, 0, 0, 0.08);
-  
+  --md-elevation-4:
+    0px 6px 10px 4px rgba(0, 0, 0, 0.04), 0px 2px 3px 0px rgba(0, 0, 0, 0.08);
+
   /* Level 5 - Maximum (modal scrims) */
-  --md-elevation-5: 
-    0px 8px 12px 6px rgba(0, 0, 0, 0.04),
-    0px 4px 4px 0px rgba(0, 0, 0, 0.08);
-  
+  --md-elevation-5:
+    0px 8px 12px 6px rgba(0, 0, 0, 0.04), 0px 4px 4px 0px rgba(0, 0, 0, 0.08);
+
   /* ===== SHAPE SYSTEM ===== */
   --md-shape-corner-none: 0px;
   --md-shape-corner-extra-small: 8px;
@@ -98,7 +92,7 @@
   --md-shape-corner-large: 28px;
   --md-shape-corner-extra-large: 32px;
   --md-shape-corner-full: 9999px;
-  
+
   /* ===== SPACING SYSTEM (8px grid) ===== */
   --md-spacing-0: 0px;
   --md-spacing-1: 4px;
@@ -114,88 +108,88 @@
   --md-spacing-16: 64px;
   --md-spacing-20: 80px;
   --md-spacing-24: 96px;
-  
+
   /* ===== TYPOGRAPHY SCALE ===== */
   /* Display - Large expressive text */
   --md-display-large-size: 57px;
   --md-display-large-line-height: 64px;
   --md-display-large-weight: 400;
   --md-display-large-tracking: -0.25px;
-  
+
   --md-display-medium-size: 45px;
   --md-display-medium-line-height: 52px;
   --md-display-medium-weight: 400;
   --md-display-medium-tracking: 0px;
-  
+
   --md-display-small-size: 36px;
   --md-display-small-line-height: 44px;
   --md-display-small-weight: 400;
   --md-display-small-tracking: 0px;
-  
+
   /* Headline - High-emphasis text */
   --md-headline-large-size: 32px;
   --md-headline-large-line-height: 40px;
   --md-headline-large-weight: 400;
   --md-headline-large-tracking: 0px;
-  
+
   --md-headline-medium-size: 28px;
   --md-headline-medium-line-height: 36px;
   --md-headline-medium-weight: 400;
   --md-headline-medium-tracking: 0px;
-  
+
   --md-headline-small-size: 24px;
   --md-headline-small-line-height: 32px;
   --md-headline-small-weight: 400;
   --md-headline-small-tracking: 0px;
-  
+
   /* Title - Medium-emphasis text */
   --md-title-large-size: 22px;
   --md-title-large-line-height: 28px;
   --md-title-large-weight: 400;
   --md-title-large-tracking: 0px;
-  
+
   --md-title-medium-size: 16px;
   --md-title-medium-line-height: 24px;
   --md-title-medium-weight: 500;
   --md-title-medium-tracking: 0.15px;
-  
+
   --md-title-small-size: 14px;
   --md-title-small-line-height: 20px;
   --md-title-small-weight: 500;
   --md-title-small-tracking: 0.1px;
-  
+
   /* Body - Default text */
   --md-body-large-size: 16px;
   --md-body-large-line-height: 24px;
   --md-body-large-weight: 400;
   --md-body-large-tracking: 0.5px;
-  
+
   --md-body-medium-size: 14px;
   --md-body-medium-line-height: 20px;
   --md-body-medium-weight: 400;
   --md-body-medium-tracking: 0.25px;
-  
+
   --md-body-small-size: 12px;
   --md-body-small-line-height: 16px;
   --md-body-small-weight: 400;
   --md-body-small-tracking: 0.4px;
-  
+
   /* Label - Buttons, badges, tabs */
   --md-label-large-size: 14px;
   --md-label-large-line-height: 20px;
   --md-label-large-weight: 500;
   --md-label-large-tracking: 0.1px;
-  
+
   --md-label-medium-size: 12px;
   --md-label-medium-line-height: 16px;
   --md-label-medium-weight: 500;
   --md-label-medium-tracking: 0.5px;
-  
+
   --md-label-small-size: 11px;
   --md-label-small-line-height: 16px;
   --md-label-small-weight: 500;
   --md-label-small-tracking: 0.5px;
-  
+
   /* ===== MOTION SYSTEM ===== */
   /* Duration */
   --md-duration-short1: 50ms;
@@ -214,7 +208,7 @@
   --md-duration-extra-long2: 800ms;
   --md-duration-extra-long3: 900ms;
   --md-duration-extra-long4: 1000ms;
-  
+
   /* Easing Curves */
   --md-easing-standard: cubic-bezier(0.2, 0, 0, 1);
   --md-easing-standard-accelerate: cubic-bezier(0.3, 0, 1, 1);
@@ -226,7 +220,7 @@
   --md-easing-legacy-accelerate: cubic-bezier(0.4, 0, 1, 1);
   --md-easing-legacy-decelerate: cubic-bezier(0, 0, 0.2, 1);
   --md-easing-linear: cubic-bezier(0, 0, 1, 1);
-  
+
   /* ===== LEGACY COMPATIBILITY ===== */
   --primary: var(--md-primary);
   --primary-bg: var(--md-primary-container);
@@ -246,15 +240,15 @@
 
 /* Dark Mode Variables */
 body.dark {
-  --bg: #1C1B1F;
-  --surface: #2B2930;
-  --surface-var: #3A3640;
-  --text: #E6E1E5;
-  --text-secondary: #CAC4D0;
-  --primary: #D0BCFF;
-  --primary-bg: #4A4458;
-  --primary-hover: #E0D0FF;
-  --outline: #938F99;
+  --bg: #1c1b1f;
+  --surface: #2b2930;
+  --surface-var: #3a3640;
+  --text: #e6e1e5;
+  --text-secondary: #cac4d0;
+  --primary: #d0bcff;
+  --primary-bg: #4a4458;
+  --primary-hover: #e0d0ff;
+  --outline: #938f99;
   --shadow: rgba(0, 0, 0, 0.3);
   --shadow-md: rgba(0, 0, 0, 0.4);
 }
@@ -266,16 +260,28 @@ html {
 }
 
 body {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    "Roboto",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  transition: background-color 0.5s var(--ease-standard), color 0.5s var(--ease-standard);
+  transition:
+    background-color 0.5s var(--ease-standard),
+    color 0.5s var(--ease-standard);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Google Sans", "Roboto", sans-serif;
   font-weight: 700;
 }
@@ -300,26 +306,26 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     padding: 0 var(--space-lg);
   }
-  
+
   @media (max-width: 768px) {
     .container {
       padding: 0 var(--space-md);
     }
   }
-  
+
   /* Material Grid */
   .material-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--space-xl);
   }
-  
+
   .two-column {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-2xl);
   }
-  
+
   @media (max-width: 768px) {
     .two-column {
       grid-template-columns: 1fr;
@@ -345,10 +351,10 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     border: none;
   }
-  
+
   /* Button state layer */
   .btn::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -358,53 +364,53 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transition: opacity var(--md-duration-short4) var(--md-easing-standard);
   }
-  
+
   .btn:hover::before {
     opacity: var(--md-state-hover-opacity);
   }
-  
+
   .btn:focus::before {
     opacity: var(--md-state-focus-opacity);
   }
-  
+
   .btn:active::before {
     opacity: var(--md-state-press-opacity);
   }
-  
+
   .btn-primary {
     background-color: var(--md-primary);
     color: var(--md-on-primary);
     box-shadow: var(--md-elevation-1);
   }
-  
+
   .btn-primary:hover {
     box-shadow: var(--md-elevation-2);
   }
-  
+
   .btn-primary:active {
     box-shadow: var(--md-elevation-1);
   }
-  
+
   .btn-outlined {
     background-color: transparent;
     color: var(--md-primary);
     border: 1px solid var(--md-outline);
   }
-  
+
   .btn-outlined:hover {
     background-color: rgba(103, 80, 164, 0.08);
   }
-  
+
   .btn-text {
     background-color: transparent;
     color: var(--md-primary);
     padding: var(--md-spacing-2) var(--md-spacing-4);
   }
-  
+
   .btn-text:hover {
     background-color: rgba(103, 80, 164, 0.08);
   }
-  
+
   /* FAB - Floating Action Button (Material Design 3) */
   .fab {
     @apply fixed flex items-center justify-center;
@@ -421,17 +427,17 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     z-index: 1000;
   }
-  
+
   .fab:hover {
     box-shadow: var(--md-elevation-4);
     transform: scale(1.05);
   }
-  
+
   .fab:active {
     box-shadow: var(--md-elevation-2);
     transform: scale(0.98);
   }
-  
+
   /* Material Design 3 Cards */
   .card {
     background-color: var(--md-surface-container);
@@ -443,10 +449,10 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     overflow: hidden;
   }
-  
+
   /* Card hover state with overlay */
   .card::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -457,33 +463,33 @@ h1, h2, h3, h4, h5, h6 {
     transition: opacity var(--md-duration-short4) var(--md-easing-standard);
     pointer-events: none;
   }
-  
+
   .card:hover::before {
     opacity: var(--md-state-hover-opacity);
   }
-  
+
   .card:hover {
     box-shadow: var(--md-elevation-2);
     transform: translateY(-2px);
   }
-  
+
   .card-elevated {
     background-color: var(--md-surface-container-high);
     box-shadow: var(--md-elevation-2);
     border: none;
   }
-  
+
   .card-elevated:hover {
     box-shadow: var(--md-elevation-3);
     transform: translateY(-4px);
   }
-  
+
   .card-filled {
     background-color: var(--md-surface-container-highest);
     box-shadow: none;
     border: none;
   }
-  
+
   /* Badge Component */
   .badge {
     display: inline-block;
@@ -494,12 +500,12 @@ h1, h2, h3, h4, h5, h6 {
     background-color: var(--primary-bg);
     color: var(--primary);
   }
-  
+
   .badge-secondary {
     background-color: var(--secondary-bg);
     color: var(--secondary);
   }
-  
+
   /* Divider */
   .divider {
     border-top: 1px solid rgba(0, 0, 0, 0.12);
@@ -517,7 +523,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Roboto", sans-serif;
     transition-duration: var(--duration-medium);
   }
-  
+
   .form-input:focus,
   .form-textarea:focus,
   .form-select:focus {
@@ -525,7 +531,7 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(103, 80, 164, 0.1);
   }
-  
+
   .form-label {
     display: block;
     margin-bottom: 0.5rem;
@@ -533,15 +539,23 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text);
     font-size: 0.875rem;
   }
-  
+
   /* Responsive Typography */
   @media (max-width: 640px) {
-    h1 { font-size: clamp(2rem, 8vw, 3rem); }
-    h2 { font-size: clamp(1.75rem, 6vw, 2.5rem); }
-    h3 { font-size: clamp(1.5rem, 5vw, 2rem); }
-    h4 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
+    h1 {
+      font-size: clamp(2rem, 8vw, 3rem);
+    }
+    h2 {
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+    }
+    h3 {
+      font-size: clamp(1.5rem, 5vw, 2rem);
+    }
+    h4 {
+      font-size: clamp(1.25rem, 4vw, 1.5rem);
+    }
   }
-  
+
   /* Navigation Bar - Material Design */
   .navbar {
     position: fixed;
@@ -555,7 +569,7 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     transition: all var(--duration-medium) var(--ease-standard);
   }
-  
+
   .navbar-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -565,13 +579,13 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     height: 64px;
   }
-  
+
   .nav-links {
     display: flex;
     gap: var(--space-md);
     align-items: center;
   }
-  
+
   .nav-link {
     color: var(--text);
     font-weight: 500;
@@ -580,41 +594,58 @@ h1, h2, h3, h4, h5, h6 {
     transition: all var(--duration-short) var(--ease-standard);
     text-decoration: none;
   }
-  
+
   .nav-link:hover {
     background-color: var(--primary-bg);
     color: var(--primary);
   }
-  
+
   .nav-link.active {
     background-color: var(--primary-bg);
     color: var(--primary);
   }
-  
+
   /* Animations */
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  
+
   @keyframes slideUp {
-    from { transform: translateY(100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
-  
+
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
-  
+
   .animate-fade-in {
     animation: fadeIn var(--duration-medium) var(--ease-decelerate);
   }
-  
+
   .animate-slide-up {
     animation: slideUp var(--duration-long) var(--ease-decelerate);
   }
-  
+
   .animate-float {
     animation: float 6s var(--ease-standard) infinite;
   }
@@ -625,9 +656,13 @@ h1, h2, h3, h4, h5, h6 {
   .section-padding {
     @apply py-16 md:py-20;
   }
-  
+
   .text-gradient {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--primary) 0%,
+      var(--secondary) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -638,27 +673,27 @@ h1, h2, h3, h4, h5, h6 {
   .md-elevation-0 {
     box-shadow: var(--md-elevation-0);
   }
-  
+
   .md-elevation-1 {
     box-shadow: var(--md-elevation-1);
   }
-  
+
   .md-elevation-2 {
     box-shadow: var(--md-elevation-2);
   }
-  
+
   .md-elevation-3 {
     box-shadow: var(--md-elevation-3);
   }
-  
+
   .md-elevation-4 {
     box-shadow: var(--md-elevation-4);
   }
-  
+
   .md-elevation-5 {
     box-shadow: var(--md-elevation-5);
   }
-  
+
   /* Typography Utilities */
   .md-display-large {
     font-size: var(--md-display-large-size);
@@ -667,7 +702,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: var(--md-display-large-tracking);
     font-family: "Google Sans", sans-serif;
   }
-  
+
   .md-display-medium {
     font-size: var(--md-display-medium-size);
     line-height: var(--md-display-medium-line-height);
@@ -675,7 +710,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: var(--md-display-medium-tracking);
     font-family: "Google Sans", sans-serif;
   }
-  
+
   .md-display-small {
     font-size: var(--md-display-small-size);
     line-height: var(--md-display-small-line-height);
@@ -683,7 +718,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: var(--md-display-small-tracking);
     font-family: "Google Sans", sans-serif;
   }
-  
+
   .md-headline-large {
     font-size: var(--md-headline-large-size);
     line-height: var(--md-headline-large-line-height);
@@ -691,7 +726,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: var(--md-headline-large-tracking);
     font-family: "Google Sans", sans-serif;
   }
-  
+
   .md-headline-medium {
     font-size: var(--md-headline-medium-size);
     line-height: var(--md-headline-medium-line-height);
@@ -699,7 +734,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: var(--md-headline-medium-tracking);
     font-family: "Google Sans", sans-serif;
   }
-  
+
   .md-headline-small {
     font-size: var(--md-headline-small-size);
     line-height: var(--md-headline-small-line-height);
@@ -707,7 +742,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: var(--md-headline-small-tracking);
     font-family: "Google Sans", sans-serif;
   }
-  
+
   .md-title-large {
     font-size: var(--md-title-large-size);
     line-height: var(--md-title-large-line-height);
@@ -715,7 +750,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: var(--md-title-large-tracking);
     font-family: "Google Sans", sans-serif;
   }
-  
+
   .md-title-medium {
     font-size: var(--md-title-medium-size);
     line-height: var(--md-title-medium-line-height);
@@ -723,7 +758,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: var(--md-title-medium-tracking);
     font-family: "Google Sans", sans-serif;
   }
-  
+
   .md-title-small {
     font-size: var(--md-title-small-size);
     line-height: var(--md-title-small-line-height);
@@ -731,49 +766,49 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: var(--md-title-small-tracking);
     font-family: "Google Sans", sans-serif;
   }
-  
+
   .md-body-large {
     font-size: var(--md-body-large-size);
     line-height: var(--md-body-large-line-height);
     font-weight: var(--md-body-large-weight);
     letter-spacing: var(--md-body-large-tracking);
   }
-  
+
   .md-body-medium {
     font-size: var(--md-body-medium-size);
     line-height: var(--md-body-medium-line-height);
     font-weight: var(--md-body-medium-weight);
     letter-spacing: var(--md-body-medium-tracking);
   }
-  
+
   .md-body-small {
     font-size: var(--md-body-small-size);
     line-height: var(--md-body-small-line-height);
     font-weight: var(--md-body-small-weight);
     letter-spacing: var(--md-body-small-tracking);
   }
-  
+
   .md-label-large {
     font-size: var(--md-label-large-size);
     line-height: var(--md-label-large-line-height);
     font-weight: var(--md-label-large-weight);
     letter-spacing: var(--md-label-large-tracking);
   }
-  
+
   .md-label-medium {
     font-size: var(--md-label-medium-size);
     line-height: var(--md-label-medium-line-height);
     font-weight: var(--md-label-medium-weight);
     letter-spacing: var(--md-label-medium-tracking);
   }
-  
+
   .md-label-small {
     font-size: var(--md-label-small-size);
     line-height: var(--md-label-small-line-height);
     font-weight: var(--md-label-small-weight);
     letter-spacing: var(--md-label-small-tracking);
   }
-  
+
   /* Spacing Utilities */
   .space-y-material > * + * {
     margin-top: var(--md-spacing-8);
@@ -826,10 +861,12 @@ body.dark .card {
 
 /* Print Styles */
 @media print {
-  .no-print, .fab, .navbar {
+  .no-print,
+  .fab,
+  .navbar {
     display: none !important;
   }
-  
+
   * {
     background: white !important;
     color: black !important;

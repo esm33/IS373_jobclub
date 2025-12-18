@@ -5,6 +5,7 @@
 ---
 
 ## Table of Contents
+
 1. README.md Template & Best Practices
 2. Pinned Repositories Strategy
 3. Profile Customization Tips
@@ -18,6 +19,7 @@
 Your README is the first thing people see. Make it count.
 
 ### Avoid This:
+
 ❌ Empty or minimal README
 ❌ "No description"
 ❌ Just code with no context
@@ -49,6 +51,7 @@ Your README is the first thing people see. Make it count.
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js 16+
 - npm or yarn
 
@@ -107,6 +110,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Questions?
 
 Feel free to reach out:
+
 - **Email**: your.email@example.com
 - **LinkedIn**: linkedin.com/in/yourprofile
 - **Twitter**: @yourhandle
@@ -131,6 +135,7 @@ You get 6 pinned repositories. Make them count.
 ### Selection Criteria:
 
 Choose projects that:
+
 - ✓ Are **complete and polished** (not work-in-progress)
 - ✓ **Demonstrate range** (different languages, frameworks, or problem domains)
 - ✓ Have **clear purpose** (recruiters understand immediately what it does)
@@ -138,6 +143,7 @@ Choose projects that:
 - ✓ Show **impact** (solve a real problem or showcase important skills)
 
 ### Don't Pin:
+
 - ❌ Incomplete projects
 - ❌ University assignments without context
 - ❌ Tutorial clones without modification
@@ -147,21 +153,25 @@ Choose projects that:
 ### Strategy Example:
 
 **Pin 1: Flagship Project**
+
 - Your best/most complex project
 - Demonstrates full-stack or deep technical skills
 - Shows collaboration (if team project)
 
 **Pin 2-3: Diverse Skills**
+
 - Frontend example (React, Vue, etc.)
 - Backend or data project (Python, Node, databases)
 - Optional: Full-stack or mobile app
 
 **Pin 4-5: Impact/Creativity**
+
 - Hackathon winner or prize project
 - Tool that solves a real problem
 - Personal project you're proud of
 
 **Pin 6: Contribution**
+
 - Open source contribution
 - Community project
 - Collaborative project
@@ -171,12 +181,14 @@ Choose projects that:
 ## 3. Profile Customization Tips
 
 ### Profile Picture
+
 - Professional headshot
 - Clear, well-lit
 - Consistent with LinkedIn photo
 - Shows your actual appearance
 
 ### Bio/About Section
+
 **Format**: [Role/Goal] | [Key Skills] | Passionate about [Focus Area]
 
 **Examples:**
@@ -185,19 +197,23 @@ Choose projects that:
 "Full-Stack Developer | JavaScript, Python | Open source enthusiast | Always learning"
 
 ### Social Links
+
 Add:
+
 - ✓ Personal website/portfolio
 - ✓ LinkedIn
 - ✓ Twitter (if professional)
 - ✓ Live demo of projects
 
 Don't add:
+
 - ❌ Inactive social media accounts
 - ❌ Personal/non-professional accounts
 
 ### GitHub Statistics
 
 Make your profile stats visible by:
+
 1. Using GitHub's built-in "Contribution Settings"
 2. Creating a README.md in your username repo (shows on profile)
 3. Maintaining consistent commits (shows activity)
@@ -209,17 +225,20 @@ Make your profile stats visible by:
 ### For Each Project, Include:
 
 **In Code Comments:**
+
 - Why you chose specific approaches
 - Complex logic explanations
 - Known issues or limitations
 
 **In README:**
+
 - What the project does
 - How to run it
 - How to use it
 - What you learned
 
 **In Commits:**
+
 - Clear, descriptive commit messages
 - "Fix" vs "Add" vs "Refactor" clarity
 - Related issue numbers (e.g., "Closes #42")
@@ -245,7 +264,9 @@ Avoid:
 ## 5. Contribution Graph Optimization
 
 ### Why It Matters:
+
 Recruiters use contribution activity to gauge:
+
 - Your coding frequency
 - Consistency and reliability
 - Interest in development
@@ -288,6 +309,7 @@ Recruiters use contribution activity to gauge:
 ## Setup Checklist
 
 ### Initial Setup:
+
 - [ ] Complete profile picture
 - [ ] Write compelling bio
 - [ ] Fill out all profile sections
@@ -295,6 +317,7 @@ Recruiters use contribution activity to gauge:
 - [ ] Make profile public
 
 ### Repository Setup:
+
 - [ ] Select 6 best projects
 - [ ] Pin them in strategic order
 - [ ] Write quality READMEs for each
@@ -302,12 +325,14 @@ Recruiters use contribution activity to gauge:
 - [ ] Add topics (tags) to repos
 
 ### Documentation:
+
 - [ ] Add meaningful commit messages going forward
 - [ ] Comment complex code
 - [ ] Include code examples in READMEs
 - [ ] Add screenshots/GIFs where helpful
 
 ### Engagement:
+
 - [ ] Star projects that inspire you (shows interests)
 - [ ] Follow developers in your field
 - [ ] Engage with projects through issues/PRs
@@ -318,23 +343,27 @@ Recruiters use contribution activity to gauge:
 ## Profile Optimization Timeline
 
 ### Week 1:
+
 - [ ] Update profile photo and bio
 - [ ] Write READMEs for top 6 projects
 - [ ] Pin best projects
 
 ### Week 2:
+
 - [ ] Add descriptions to all repos
 - [ ] Add topics (tags) to repos
 - [ ] Clean up old/incomplete projects
 - [ ] Update contributions from different email if needed
 
 ### Week 3:
+
 - [ ] Create a personal README (username repo)
 - [ ] Add portfolio links
 - [ ] Commit to a small project daily
 - [ ] Follow 10 developers in your field
 
 ### Ongoing:
+
 - [ ] Commit 4+ days per week
 - [ ] Update README when project evolves
 - [ ] Contribute to open source monthly
@@ -371,4 +400,3 @@ Recruiters use contribution activity to gauge:
 5. **Be Discoverable** - Use keywords people search for
 
 Your GitHub profile is your digital resume. Make it reflect your best work and your growth as a developer!
-

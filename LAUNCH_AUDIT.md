@@ -23,11 +23,13 @@
 ### Status: COMPLETE
 
 #### Domain Setup
+
 - ✅ **CNAME File:** `www.eaikw.com` configured
 - ✅ **Custom Domain:** Set up for GitHub Pages
 - ✅ **URL Updates:** All references updated from `kaw393939.github.io/218_portfolio` to `www.eaikw.com`
 
 #### DNS Requirements (Client Action Required)
+
 To complete the launch, you must configure DNS with your domain registrar:
 
 1. **Add CNAME Record:**
@@ -36,6 +38,7 @@ To complete the launch, you must configure DNS with your domain registrar:
    - **TTL:** 3600 (or default)
 
 2. **Add A Records (for apex domain eaikw.com):**
+
    ```
    185.199.108.153
    185.199.109.153
@@ -50,6 +53,7 @@ To complete the launch, you must configure DNS with your domain registrar:
    - Enable "Enforce HTTPS" once DNS propagates
 
 #### Verification
+
 - ✅ CNAME file present in repository root
 - ✅ All internal links use relative paths (domain-agnostic)
 - ✅ All canonical URLs updated to `www.eaikw.com`
@@ -64,6 +68,7 @@ To complete the launch, you must configure DNS with your domain registrar:
 ### Status: 100/100 - EXCELLENT
 
 #### Meta Tags & Headers
+
 - ✅ **Title Tags:** Unique, descriptive titles on all 35 pages
 - ✅ **Meta Descriptions:** Compelling descriptions (homepage enhanced: "Director of Enterprise AI at NJIT...")
 - ✅ **Canonical URLs:** Properly configured on all pages
@@ -72,6 +77,7 @@ To complete the launch, you must configure DNS with your domain registrar:
 - ✅ **Robots Meta:** Proper indexing directives
 
 #### Structured Data (Schema.org)
+
 - ✅ **Person Schema:** Complete with social profiles (LinkedIn, GitHub, Twitter, YouTube)
 - ✅ **Organization Schema:** EverydayAI Community
 - ✅ **WebSite Schema:** Site metadata
@@ -80,6 +86,7 @@ To complete the launch, you must configure DNS with your domain registrar:
 - ✅ **All schemas validated:** No errors in Google Rich Results Test
 
 #### Site Architecture
+
 - ✅ **Sitemap:** `/sitemap.xml` - 35 pages, proper priority/changefreq
 - ✅ **Robots.txt:** `/robots.txt` - Allows all crawling, points to sitemap
 - ✅ **RSS Feed:** `/feed.xml` - Valid Atom feed for blog posts
@@ -87,6 +94,7 @@ To complete the launch, you must configure DNS with your domain registrar:
 - ✅ **URL Structure:** Clean, semantic URLs (no dates, clean hierarchy)
 
 #### Internal Linking
+
 - ✅ **Homepage:** 51+ internal links to key pages
 - ✅ **Navigation:** Consistent 6-item menu across all pages
 - ✅ **Breadcrumbs:** Schema-based breadcrumbs on blog posts
@@ -100,16 +108,18 @@ To complete the launch, you must configure DNS with your domain registrar:
 ### Status: 99-100/100 - EXCELLENT
 
 #### Lighthouse Scores (Latest Audit)
-| Page | Performance | Accessibility | Best Practices | SEO |
-|------|-------------|--------------|----------------|-----|
-| Homepage | 99% | 91% | 100% | 100% |
-| Blog Index | 100% | 96% | 100% | 100% |
-| Blog Posts | 99% | 96% | 100% | 100% |
-| Projects | 99% | 100% | 100% | 100% |
+
+| Page       | Performance | Accessibility | Best Practices | SEO  |
+| ---------- | ----------- | ------------- | -------------- | ---- |
+| Homepage   | 99%         | 91%           | 100%           | 100% |
+| Blog Index | 100%        | 96%           | 100%           | 100% |
+| Blog Posts | 99%         | 96%           | 100%           | 100% |
+| Projects   | 99%         | 100%          | 100%           | 100% |
 
 **Average:** 99.25% Performance, 95.75% Accessibility, 100% Best Practices, 100% SEO
 
 #### Optimizations Implemented
+
 - ✅ **CSS Minification:** Tailwind CSS minified (production build)
 - ✅ **JavaScript Bundling:** 4 optimized bundles (mobile-menu, path-cards, stakeholder, about)
 - ✅ **Font Loading:** Google Fonts with preconnect, preload, async loading
@@ -118,6 +128,7 @@ To complete the launch, you must configure DNS with your domain registrar:
 - ✅ **Caching:** Static site with CDN (GitHub Pages)
 
 #### Build Performance
+
 - ✅ **Build Time:** 0.32-0.35 seconds (35 pages)
 - ✅ **Total Pages:** 35 HTML files
 - ✅ **Static Assets:** 4 JS bundles, 1 CSS file
@@ -130,6 +141,7 @@ To complete the launch, you must configure DNS with your domain registrar:
 ### Status: 96/100 - GOOD (Minor improvements available)
 
 #### WCAG 2.1 Compliance
+
 - ✅ **Color Contrast:** Passes WCAG AA (Swiss Design palette)
 - ✅ **Keyboard Navigation:** Full keyboard accessibility
 - ✅ **ARIA Labels:** Proper labels on interactive elements
@@ -138,12 +150,14 @@ To complete the launch, you must configure DNS with your domain registrar:
 - ⚠️ **Form Labels:** Contact forms need explicit labels (if added)
 
 #### Screen Reader Support
+
 - ✅ **Landmarks:** Proper nav, main, footer landmarks
 - ✅ **Skip Links:** Skip to main content functionality
 - ✅ **Focus Indicators:** Visible focus states
 - ✅ **Button Labels:** All buttons have descriptive text
 
 #### Future Improvements
+
 - 📋 Add explicit form labels when contact forms are implemented
 - 📋 Ensure all future images have descriptive alt text (use guide)
 - 📋 Test with NVDA/JAWS screen readers for comprehensive validation
@@ -155,12 +169,14 @@ To complete the launch, you must configure DNS with your domain registrar:
 ### Status: EXCELLENT
 
 #### Homepage
+
 - ✅ **Hero Section:** Clear value proposition
 - ✅ **About:** Compelling personal story
 - ✅ **Featured Work:** 3 highlight projects
 - ✅ **CTA:** Clear call-to-action buttons
 
 #### Blog (17 Posts)
+
 - ✅ **Content Length:** 800-2,000+ words per post
 - ✅ **Keywords:** Strategic keyword usage in frontmatter
 - ✅ **Topics:** Focused on AI education, critical thinking, career impact
@@ -169,11 +185,13 @@ To complete the launch, you must configure DNS with your domain registrar:
 - ✅ **Dates:** Recent content (2024-2025)
 
 #### Projects (3 Showcases)
+
 - ✅ **Portfolio Website:** Meta self-documentation
 - ✅ **Swiss Portfolio:** Design system showcase
 - ✅ **EverydayAI Community:** Impact-focused project
 
 #### Key Pages
+
 - ✅ **About:** Personal background, expertise, philosophy
 - ✅ **Town Hall:** Community engagement program
 - ✅ **Enterprise AI:** Service offerings
@@ -186,18 +204,21 @@ To complete the launch, you must configure DNS with your domain registrar:
 ### Status: EXCELLENT
 
 #### Viewport Configuration
+
 - ✅ **Meta Viewport:** Properly configured
 - ✅ **Responsive Breakpoints:** sm, md, lg, xl, 2xl (Tailwind)
 - ✅ **Touch Targets:** 44x44px minimum (WCAG compliance)
 - ✅ **Font Sizing:** Fluid typography (clamp-based)
 
 #### Mobile-First Design
+
 - ✅ **Mobile Menu:** Full-screen overlay with smooth animations
 - ✅ **Layout:** Single column on mobile, multi-column on desktop
 - ✅ **Images:** Responsive images (guidelines provided)
 - ✅ **Typography:** Readable font sizes on all devices
 
 #### Testing Recommendations
+
 - 📋 Test on iPhone (Safari, Chrome)
 - 📋 Test on Android (Chrome, Samsung Browser)
 - 📋 Test on iPad (Safari)
@@ -210,17 +231,20 @@ To complete the launch, you must configure DNS with your domain registrar:
 ### Status: EXCELLENT
 
 #### HTTPS/SSL
+
 - ✅ **GitHub Pages HTTPS:** Automatic SSL certificate
 - ⏳ **Custom Domain HTTPS:** Will enable after DNS propagates
 - ✅ **Mixed Content:** No HTTP resources (all HTTPS or relative)
 
 #### Content Security
+
 - ✅ **CSP-Safe JavaScript:** No inline scripts with eval
 - ✅ **External Resources:** Trusted CDNs only (Google Fonts)
 - ✅ **XSS Protection:** Static site (no user input forms yet)
 - ✅ **CSRF Protection:** Not applicable (static site)
 
 #### Best Practices
+
 - ✅ **No Passwords:** No authentication system
 - ✅ **No User Data:** No data collection or storage
 - ✅ **Privacy:** No cookies, no tracking (intentional)
@@ -233,18 +257,21 @@ To complete the launch, you must configure DNS with your domain registrar:
 ### Status: NOT CONFIGURED (Intentional)
 
 #### Current State
+
 - ❌ **Google Analytics:** Not installed
 - ❌ **Google Search Console:** Not set up
 - ❌ **Conversion Tracking:** Not implemented
 - ❌ **Event Tracking:** Not implemented
 
 #### Client Decision
+
 Per client directive: "We haven't done anything with analytics"  
 **Action:** Deferred to post-launch phase
 
 #### Recommendations for Post-Launch (When Ready)
 
 **Phase 1: Basic Analytics (Week 1)**
+
 1. **Google Search Console**
    - Verify domain ownership
    - Submit sitemap: `https://www.eaikw.com/sitemap.xml`
@@ -259,13 +286,13 @@ Per client directive: "We haven't done anything with analytics"
    - Configure enhanced measurement (scrolling, outbound links)
    - **Time:** 1 hour
 
-**Phase 2: Enhanced Tracking (Month 1)**
-3. **Event Tracking**
-   - Blog post reads (scroll depth)
-   - CTA button clicks
-   - Social link clicks
-   - Project views
-   - **Time:** 2 hours
+**Phase 2: Enhanced Tracking (Month 1)** 3. **Event Tracking**
+
+- Blog post reads (scroll depth)
+- CTA button clicks
+- Social link clicks
+- Project views
+- **Time:** 2 hours
 
 4. **Conversion Goals**
    - "Work With Me" page visits
@@ -274,13 +301,13 @@ Per client directive: "We haven't done anything with analytics"
    - PDF downloads (if added)
    - **Time:** 1 hour
 
-**Phase 3: Advanced Analytics (Month 2-3)**
-5. **Plausible Analytics** (Privacy-focused alternative)
-   - Lightweight, GDPR-compliant
-   - No cookie banners needed
-   - Public dashboard option
-   - **Time:** 30 minutes
-   - **Cost:** $9/month
+**Phase 3: Advanced Analytics (Month 2-3)** 5. **Plausible Analytics** (Privacy-focused alternative)
+
+- Lightweight, GDPR-compliant
+- No cookie banners needed
+- Public dashboard option
+- **Time:** 30 minutes
+- **Cost:** $9/month
 
 6. **Heatmaps & Session Recording** (Optional)
    - Hotjar or Microsoft Clarity
@@ -290,6 +317,7 @@ Per client directive: "We haven't done anything with analytics"
    - **Cost:** Free tier available
 
 #### Implementation Checklist (When Ready)
+
 ```javascript
 // Google Analytics 4 - Add to base.njk <head>
 <!-- Google tag (gtag.js) -->
@@ -309,12 +337,14 @@ Per client directive: "We haven't done anything with analytics"
 ### Status: COMPLETE
 
 #### Profiles Configured
+
 - ✅ **LinkedIn:** https://www.linkedin.com/in/keithwilliams5/
 - ✅ **Twitter/X:** @everydayaikw (https://twitter.com/everydayaikw)
 - ✅ **GitHub:** https://github.com/kaw393939
 - ✅ **YouTube:** https://www.youtube.com/@EAIKW
 
 #### Integration Points
+
 - ✅ **Footer Icons:** All 4 social profiles with SVG icons
 - ✅ **About Page:** Large clickable buttons for each profile
 - ✅ **Meta Tags:** Twitter Card with @everydayaikw
@@ -322,6 +352,7 @@ Per client directive: "We haven't done anything with analytics"
 - ✅ **Open Graph:** og:image configured for social sharing
 
 #### Social Sharing
+
 - ✅ **OG Image:** Default image at `/images/og-default.png`
 - 📋 **Future:** Create custom OG images for top 10 blog posts (Priority 2)
 - ✅ **Twitter Cards:** summary_large_image format
@@ -334,18 +365,21 @@ Per client directive: "We haven't done anything with analytics"
 ### Status: EXCELLENT
 
 #### Modern Browsers (Full Support)
+
 - ✅ Chrome 90+
 - ✅ Firefox 88+
 - ✅ Safari 14+
 - ✅ Edge 90+
 
 #### Progressive Enhancement
+
 - ✅ **CSS Grid:** Fallbacks for older browsers
 - ✅ **Flexbox:** Widely supported
 - ✅ **Custom Properties:** CSS variables used throughout
 - ✅ **JavaScript:** ES6+ with graceful degradation
 
 #### Testing Performed
+
 - ✅ **Chrome DevTools:** All devices tested
 - ✅ **Mobile Emulation:** iPhone, Android tested
 - 📋 **BrowserStack:** Recommended for comprehensive testing
@@ -358,18 +392,21 @@ Per client directive: "We haven't done anything with analytics"
 ### Status: DEVELOPER-FRIENDLY
 
 #### Static Site Generation
+
 - ✅ **Eleventy 3.1.2:** Modern, fast SSG
 - ✅ **Nunjucks Templates:** Clean, maintainable
 - ✅ **Markdown Content:** Easy-to-edit blog posts
 - ✅ **YAML Frontmatter:** Structured metadata
 
 #### Development Workflow
+
 - ✅ **Local Development:** `npm run dev` (live reload)
 - ✅ **Production Build:** `npm run build` (0.32s build time)
 - ✅ **GitHub Actions:** Automated deployment on push
 - ✅ **Version Control:** Git with clear commit history
 
 #### Content Guidelines
+
 - ✅ **IMAGE_ALT_TEXT_GUIDE.md:** 400+ line comprehensive guide
 - ✅ **Blog Post Template:** Consistent frontmatter structure
 - ✅ **Style Guide:** Swiss Design principles documented
@@ -382,23 +419,27 @@ Per client directive: "We haven't done anything with analytics"
 ### Status: COMPLIANT
 
 #### Privacy
+
 - ✅ **No Cookies:** Site doesn't use cookies currently
 - ✅ **No Tracking:** No analytics = no tracking
 - ✅ **No User Data:** No forms collecting personal information
 - ✅ **No Third-Party Scripts:** Minimal external dependencies (Google Fonts only)
 
 #### Future Considerations (When Analytics Added)
+
 - 📋 **Privacy Policy:** Add when implementing analytics
 - 📋 **Cookie Consent:** May be required for GA4 (check jurisdiction)
 - 📋 **GDPR Compliance:** EU visitor considerations
 - 📋 **CCPA Compliance:** California visitor considerations
 
 #### Accessibility
+
 - ✅ **WCAG 2.1 AA:** Substantial compliance
 - ⏳ **WCAG 2.1 AAA:** Aspirational goal
 - ✅ **Section 508:** Meets basic requirements
 
 #### Copyright
+
 - ✅ **Footer Copyright:** © 2025 Keith Williams
 - ✅ **Original Content:** All blog posts are original
 - ✅ **License:** Clarify in README if needed
@@ -411,25 +452,29 @@ Per client directive: "We haven't done anything with analytics"
 ### Status: FULLY AUTOMATED
 
 #### GitHub Actions Workflow
+
 - ✅ **Build Job:** Installs dependencies, builds site, uploads artifact
 - ✅ **Deploy Job:** Deploys to GitHub Pages on main branch push
 - ✅ **Concurrency Control:** Prevents deployment conflicts
 - ✅ **Permissions:** Proper read/write/id-token setup
 
 #### Deployment Process
+
 ```yaml
 on:
   push:
-    branches: [main]  # Auto-deploy on push to main
+    branches: [main] # Auto-deploy on push to main
 ```
 
 #### Verification
+
 - ✅ **Build Time:** ~45-60 seconds (GitHub Actions)
 - ✅ **Deploy Time:** ~30-45 seconds
 - ✅ **Total Time:** ~2 minutes from push to live
 - ✅ **Success Rate:** 100% (recent deployments)
 
 #### Rollback Plan
+
 - ✅ **Git History:** Easy to revert commits
 - ✅ **GitHub Pages:** Automatic versioning
 - ✅ **Local Backup:** Repository cloned locally
@@ -443,6 +488,7 @@ on:
 #### Recommended Monitoring (Post-Launch)
 
 **Week 1: Critical Monitoring**
+
 1. **Uptime Monitoring**
    - Use: UptimeRobot (free tier)
    - Check: Every 5 minutes
@@ -461,12 +507,12 @@ on:
    - GitHub Pages: Auto-renews Let's Encrypt
    - **Action:** Enable "Enforce HTTPS" in repo settings
 
-**Month 1: Search Engine Monitoring**
-4. **Google Search Console**
-   - Monitor: Crawl errors
-   - Track: Indexing status (target: 35 pages)
-   - Review: Search queries and impressions
-   - **Check:** Weekly
+**Month 1: Search Engine Monitoring** 4. **Google Search Console**
+
+- Monitor: Crawl errors
+- Track: Indexing status (target: 35 pages)
+- Review: Search queries and impressions
+- **Check:** Weekly
 
 5. **Lighthouse Audits**
    - Run: Monthly performance checks
@@ -474,12 +520,12 @@ on:
    - Tool: Chrome DevTools or CLI
    - **Time:** 15 minutes/month
 
-**Ongoing: Content & Security**
-6. **Content Freshness**
-   - Publish: 1-2 blog posts per month
-   - Update: Refresh top 10 posts quarterly
-   - Review: Remove outdated content
-   - **Time:** Variable
+**Ongoing: Content & Security** 6. **Content Freshness**
+
+- Publish: 1-2 blog posts per month
+- Update: Refresh top 10 posts quarterly
+- Review: Remove outdated content
+- **Time:** Variable
 
 7. **Dependency Updates**
    - Run: `npm audit` monthly
@@ -500,18 +546,20 @@ on:
 ### Status: WITHIN BUDGET
 
 #### Current Metrics
-| Metric | Budget | Current | Status |
-|--------|--------|---------|--------|
-| First Contentful Paint | <1.8s | 0.5-0.8s | ✅ |
-| Largest Contentful Paint | <2.5s | 1.2-1.6s | ✅ |
-| Total Blocking Time | <300ms | 20-40ms | ✅ |
-| Cumulative Layout Shift | <0.1 | 0.001 | ✅ |
-| Speed Index | <3.4s | 1.0-1.5s | ✅ |
-| Time to Interactive | <3.8s | 0.8-1.2s | ✅ |
-| Page Size | <1MB | ~150-200KB | ✅ |
-| Requests | <50 | 10-15 | ✅ |
+
+| Metric                   | Budget | Current    | Status |
+| ------------------------ | ------ | ---------- | ------ |
+| First Contentful Paint   | <1.8s  | 0.5-0.8s   | ✅     |
+| Largest Contentful Paint | <2.5s  | 1.2-1.6s   | ✅     |
+| Total Blocking Time      | <300ms | 20-40ms    | ✅     |
+| Cumulative Layout Shift  | <0.1   | 0.001      | ✅     |
+| Speed Index              | <3.4s  | 1.0-1.5s   | ✅     |
+| Time to Interactive      | <3.8s  | 0.8-1.2s   | ✅     |
+| Page Size                | <1MB   | ~150-200KB | ✅     |
+| Requests                 | <50    | 10-15      | ✅     |
 
 #### Core Web Vitals (Excellent)
+
 - **LCP:** 1.2-1.6s (target: <2.5s) ✅
 - **FID:** <10ms (target: <100ms) ✅
 - **CLS:** 0.001 (target: <0.1) ✅
@@ -523,6 +571,7 @@ on:
 ### Pre-Launch (Complete Before Going Live)
 
 #### Critical (Must Complete) ✅
+
 - [x] Update domain to www.eaikw.com in all files
 - [x] Configure CNAME file
 - [x] Update sitemap URLs
@@ -538,6 +587,7 @@ on:
 - [x] Verify social media links work
 
 #### Important (Should Complete) ✅
+
 - [x] SEO meta tags complete
 - [x] Structured data validated
 - [x] Image alt text guidelines created
@@ -549,6 +599,7 @@ on:
 - [x] Deployment workflow tested
 
 #### DNS Configuration (Action Required) ⏳
+
 - [ ] **Add CNAME record** (www → kaw393939.github.io)
 - [ ] **Add A records** (apex domain → GitHub IPs)
 - [ ] **Wait for DNS propagation** (24-48 hours)
@@ -559,6 +610,7 @@ on:
 ### Post-Launch (Complete After DNS Propagates)
 
 #### Week 1 - Critical Setup
+
 - [ ] Verify site loads at www.eaikw.com
 - [ ] Verify HTTPS works (green lock icon)
 - [ ] Test all pages load correctly
@@ -569,6 +621,7 @@ on:
 - [ ] Social media announcement (share site launch)
 
 #### Month 1 - Analytics & Monitoring
+
 - [ ] Set up Google Analytics 4 (when ready)
 - [ ] Configure Google Search Console
 - [ ] Review initial traffic patterns
@@ -579,6 +632,7 @@ on:
 - [ ] Create performance dashboard
 
 #### Ongoing - Maintenance
+
 - [ ] Publish 1-2 blog posts per month
 - [ ] Run monthly Lighthouse audits
 - [ ] Update dependencies (npm audit)
@@ -593,9 +647,11 @@ on:
 ## Risk Assessment
 
 ### High Risk (Immediate Attention) 🔴
+
 **None identified** - Site is ready for launch
 
 ### Medium Risk (Post-Launch) 🟡
+
 1. **DNS Configuration Delay**
    - **Risk:** DNS takes longer than 48 hours to propagate
    - **Impact:** Site inaccessible at www.eaikw.com temporarily
@@ -609,6 +665,7 @@ on:
    - **Action:** Enable "Enforce HTTPS" in repo settings once cert is active
 
 ### Low Risk (Long-Term) 🟢
+
 1. **Content Freshness**
    - **Risk:** Site appears stale if not updated regularly
    - **Impact:** Lower search rankings, reduced engagement
@@ -629,21 +686,25 @@ on:
 ## Recommendations Summary
 
 ### Immediate (Before Launch) ✅
+
 All critical items completed. Ready to launch once DNS is configured.
 
 ### Week 1 Post-Launch 🎯
+
 1. **DNS Configuration** - Add CNAME and A records (30 min)
 2. **HTTPS Verification** - Enable enforcement, test (15 min)
 3. **Uptime Monitoring** - Set up UptimeRobot (10 min)
 4. **Social Announcement** - Share site launch on LinkedIn, Twitter (30 min)
 
 ### Month 1 Post-Launch 📊
+
 1. **Google Search Console** - Verify domain, submit sitemap (30 min)
 2. **Google Analytics 4** - Set up tracking (when ready - 1 hour)
 3. **Content Planning** - Schedule 2 blog posts for Month 2 (1 hour)
 4. **Performance Audit** - Run Lighthouse, address any new issues (30 min)
 
 ### Quarter 1 Post-Launch 🚀
+
 1. **Custom OG Images** - Create for top 10 blog posts (5-7 hours)
 2. **FAQ Schema** - Add to key posts for featured snippets (2 hours)
 3. **Content Hub** - Organize posts into topic clusters (2-3 days)
@@ -654,22 +715,26 @@ All critical items completed. Ready to launch once DNS is configured.
 ## Success Metrics (6 Month Goals)
 
 ### Traffic Goals
+
 - **Month 1:** 100-300 visitors
 - **Month 3:** 500-1,000 visitors
 - **Month 6:** 1,500-3,000 visitors
 
 ### SEO Goals
+
 - **Month 1:** 20-30 pages indexed
 - **Month 3:** 50+ search queries driving traffic
 - **Month 6:** 3-5 keywords in top 10 Google results
 
 ### Engagement Goals
+
 - **Bounce Rate:** <60%
 - **Time on Site:** >2 minutes
 - **Pages per Session:** >2
 - **Repeat Visitors:** >20% by Month 6
 
 ### Content Goals
+
 - **Blog Posts:** 12-24 new posts (2-4 per month)
 - **Social Shares:** 50+ shares across platforms
 - **Backlinks:** 5-10 quality backlinks
@@ -679,12 +744,14 @@ All critical items completed. Ready to launch once DNS is configured.
 ## Technical Specifications
 
 ### Infrastructure
+
 - **Hosting:** GitHub Pages (Free)
 - **SSL:** Let's Encrypt (Auto-provisioned)
 - **CDN:** GitHub's global CDN
 - **DNS:** Client's registrar (action required)
 
 ### Build Stack
+
 - **SSG:** Eleventy 3.1.2
 - **CSS:** Tailwind CSS (production minified)
 - **JavaScript:** Vanilla JS, esbuild bundling
@@ -692,6 +759,7 @@ All critical items completed. Ready to launch once DNS is configured.
 - **Content:** Markdown with YAML frontmatter
 
 ### Performance
+
 - **Build Time:** 0.32 seconds (35 pages)
 - **Deploy Time:** ~2 minutes (GitHub Actions)
 - **Page Load:** <1 second (LCP 1.2-1.6s)
@@ -702,6 +770,7 @@ All critical items completed. Ready to launch once DNS is configured.
 ## Appendices
 
 ### A. Related Documentation
+
 1. **GOOGLE_SEO_AUDIT_REPORT.md** - Comprehensive SEO audit (98/100 → 100/100)
 2. **LIGHTHOUSE_AUDIT_REPORT.md** - Performance audit (99-100% scores)
 3. **IMAGE_ALT_TEXT_GUIDE.md** - Image optimization guidelines
@@ -709,6 +778,7 @@ All critical items completed. Ready to launch once DNS is configured.
 5. **SEO_QUICK_WIN_COMPLETE.md** - Priority 1 optimizations completed
 
 ### B. External Tools Used
+
 - **Lighthouse:** Chrome DevTools / CLI
 - **Google Search Console:** (Setup pending)
 - **Google Analytics:** (Setup pending)
@@ -717,6 +787,7 @@ All critical items completed. Ready to launch once DNS is configured.
 - **GTmetrix:** Performance monitoring (optional)
 
 ### C. Contact for Issues
+
 - **Repository:** https://github.com/kaw393939/eaikw
 - **Site URL:** https://www.eaikw.com (after DNS)
 - **GitHub Pages:** https://kaw393939.github.io/218_portfolio (current)
@@ -730,6 +801,7 @@ All critical items completed. Ready to launch once DNS is configured.
 The site has passed all critical pre-launch checks with excellent scores across performance (99-100%), SEO (100/100), and accessibility (96%). All content is optimized, URLs are updated to the custom domain, and the deployment pipeline is tested and working.
 
 **Next Steps:**
+
 1. Configure DNS with your domain registrar (CNAME + A records)
 2. Wait 24-48 hours for DNS propagation
 3. Enable HTTPS enforcement in GitHub Pages settings
