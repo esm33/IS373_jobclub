@@ -47,27 +47,28 @@
     
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6SWLKGFWZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       
-      // Default consent mode
+      // Default consent mode - GRANTED for testing/initial launch
+      // Change to 'denied' for strict GDPR compliance
       gtag('consent', 'default', {
-        'analytics_storage': 'denied',
+        'analytics_storage': 'granted',
         'ad_storage': 'denied'
       });
       
-      // Check for consent
+      // Check for explicit user rejection
       const analyticsConsent = localStorage.getItem('analytics_consent');
-      if (analyticsConsent === 'true') {
+      if (analyticsConsent === 'false') {
         gtag('consent', 'update', {
-          'analytics_storage': 'granted'
+          'analytics_storage': 'denied'
         });
       }
       
-      gtag('config', 'G-XXXXXXXXXX', {
+      gtag('config', 'G-N6SWLKGFWZ', {
         'anonymize_ip': true,
         'cookie_flags': 'SameSite=None;Secure'
       });

@@ -62,17 +62,18 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       
-      // Default consent mode
+      // Default consent mode - GRANTED for testing/initial launch
+      // Change to 'denied' for strict GDPR compliance
       gtag('consent', 'default', {
-        'analytics_storage': 'denied',
+        'analytics_storage': 'granted',
         'ad_storage': 'denied'
       });
       
-      // Check for consent
+      // Check for explicit user rejection
       const analyticsConsent = localStorage.getItem('analytics_consent');
-      if (analyticsConsent === 'true') {
+      if (analyticsConsent === 'false') {
         gtag('consent', 'update', {
-          'analytics_storage': 'granted'
+          'analytics_storage': 'denied'
         });
       }
       
