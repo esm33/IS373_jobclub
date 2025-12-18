@@ -5,72 +5,18 @@ This brand guide establishes the visual and verbal identity for Job Club. It ens
 
 ---
 
-## 1. Logo
-
-### Primary Logo
+## 1. Logo: Briefcase
 
 ```
-┌─────────────────────────────────────┐
-│                                     │
-│     ┌───┐                           │
-│     │ J │  JOB CLUB                 │
-│     └─┬─┘                           │
-│       │    AI Career Preparation    │
-│      ┌┴┐                            │
-│      └─┘                            │
-│                                     │
-└─────────────────────────────────────┘
-```
 
-**Concept**: The logo features a stylized "J" that connects to abstract nodes below, representing:
-- Individual growth (top)
-- Community connection (middle)
-- Career foundation (bottom)
 
-### Logo Variations
-
-**Full Logo** (Primary)
-- Use: Website header, marketing materials, presentations
-- Includes icon + wordmark + tagline
-
-**Logo Mark Only** (Icon)
-- Use: Social media avatars, app icons, favicons
-- Icon alone when space is limited
-
-**Wordmark Only**
-- Use: Branded merchandise, minimal contexts
-- "JOB CLUB" text without icon
-
-### Clear Space
-Maintain minimum clear space equal to the height of the "J" on all sides.
-
-### Minimum Size
-- Digital: 120px width minimum
-- Print: 0.75 inches width minimum
-
-### Usage Guidelines
-
-**✅ DO:**
-- Use approved logo files
-- Maintain proper proportions
-- Ensure adequate clear space
-- Use on approved background colors
-
-**❌ DON'T:**
-- Distort or stretch the logo
-- Change logo colors outside brand palette
-- Add effects (shadows, gradients, outlines)
-- Rotate or tilt the logo
-- Place on busy backgrounds
-
----
 
 ## 2. Color Palette
 
 ### Material Design 3 Color System
 
 **Primary Purple** (Brand Primary)
-- Hex: `#6750A4`
+- Hex: `#6750A4
 - RGB: `103, 80, 164`
 - Usage: Primary buttons, brand elements, key interactive components
 - Meaning: Innovation, creativity, premium quality

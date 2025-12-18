@@ -43,27 +43,28 @@
     
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6SWLKGFWZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       
-      // Default consent mode
+      // Default consent mode - GRANTED for testing/initial launch
+      // Change to 'denied' for strict GDPR compliance
       gtag('consent', 'default', {
-        'analytics_storage': 'denied',
+        'analytics_storage': 'granted',
         'ad_storage': 'denied'
       });
       
-      // Check for consent
+      // Check for explicit user rejection
       const analyticsConsent = localStorage.getItem('analytics_consent');
-      if (analyticsConsent === 'true') {
+      if (analyticsConsent === 'false') {
         gtag('consent', 'update', {
-          'analytics_storage': 'granted'
+          'analytics_storage': 'denied'
         });
       }
       
-      gtag('config', 'G-XXXXXXXXXX', {
+      gtag('config', 'G-N6SWLKGFWZ', {
         'anonymize_ip': true,
         'cookie_flags': 'SameSite=None;Secure'
       });
@@ -142,46 +143,47 @@
             </a>
 
             <!-- Desktop Navigation -->
-            <ul class="hidden lg:flex nav-links">
+            <ul class="hidden lg:flex nav-links" style="gap: 8px;">
                 <li>
-                    <a href="/" class="nav-link ">
+                    <a href="/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="/resources/" class="nav-link ">
+                    <a href="/resources/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Resource Library
                     </a>
                 </li>
                 <li>
-                    <a href="/events/" class="nav-link ">
+                    <a href="/events/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Events
                     </a>
                 </li>
                 <li>
-                    <a href="/about/" class="nav-link ">
+                    <a href="/about/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         About
                     </a>
                 </li>
                 <li>
-                    <a href="/onboarding/" class="btn btn-primary">
+                    <a href="/onboarding/" class="btn btn-primary" style="min-height: 48px; display: inline-flex; align-items: center; padding: 12px 24px;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Join Now
                     </a>
                 </li>
             </ul>
-                            
-                        </a>
-                    </li>
-                </ul>
 
             <!-- Mobile Menu Button -->
             <button 
                 type="button" 
                 data-testid="mobile-menu-button"
-                class="lg:hidden w-12 h-12 flex items-center justify-center menu-button"
+                class="lg:hidden flex items-center justify-center menu-button"
+                style="min-width: 48px; min-height: 48px; border-radius: 50%; transition: all 0.3s;"
                 aria-expanded="false"
                 aria-controls="mobile-menu"
                 aria-label="Toggle navigation menu"
+                onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'; this.style.backgroundColor='rgba(103, 80, 164, 0.08)'"
+                onblur="this.style.outline='none'; this.style.backgroundColor='transparent'"
+                onmouseover="this.style.backgroundColor='rgba(103, 80, 164, 0.08)'"
+                onmouseout="this.style.backgroundColor='transparent'"
             >
                 <span class="material-icons-round text-3xl" style="color: var(--text);">menu</span>
             </button>
@@ -193,32 +195,32 @@
         data-testid="mobile-menu"
         id="mobile-menu"
         class="lg:hidden fixed inset-0 z-40 hidden"
-        style="background-color: var(--surface); top: 64px; padding: var(--space-xl);"
+        style="background-color: var(--surface); top: 64px; padding: 24px;"
     >
         <nav>
-            <ul class="space-y-4">
+            <ul class="space-y-3">
                 <li>
-                    <a href="/" class="block nav-link text-lg ">
+                    <a href="/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="/resources/" class="block nav-link text-lg ">
+                    <a href="/resources/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Resource Library
                     </a>
                 </li>
                 <li>
-                    <a href="/events/" class="block nav-link text-lg ">
+                    <a href="/events/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Events
                     </a>
                 </li>
                 <li>
-                    <a href="/about/" class="block nav-link text-lg ">
+                    <a href="/about/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         About
                     </a>
                 </li>
-                <li>
-                    <a href="/onboarding/" class="btn btn-primary w-full">
+                <li style="margin-top: 16px;">
+                    <a href="/onboarding/" class="btn btn-primary w-full" style="min-height: 48px; display: flex; align-items: center; justify-content: center; padding: 14px 24px;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Join Now
                     </a>
                 </li>
@@ -448,27 +450,67 @@
             transition: all 0.2s ease;
             display: inline-block;
             position: relative;
+            padding: 6px 0;
+            min-height: 32px;
+            line-height: 20px;
         }
         .footer-link:hover {
             color: var(--primary);
         }
+        .footer-link:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
         
         .social-icon-minimal {
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background-color: #F8F9FA;
             color: #5F6368;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .social-icon-minimal:hover {
-            background-color: #E8DEF8;
+            background-color: rgba(103, 80, 164, 0.08);
             color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(103, 80, 164, 0.15);
+            transform: translateY(-2px);
+        }
+        .social-icon-minimal:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            background-color: rgba(103, 80, 164, 0.08);
+        }
+        
+        .copyright-link {
+            color: var(--primary);
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .copyright-link:hover {
+            text-decoration: underline;
+        }
+        .copyright-link:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        
+        button[data-cookie-preferences]:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        .scroll-top-fab:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(103, 80, 164, 0.4);
+        }
+        .scroll-top-fab:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
         }
         
         .copyright-link {

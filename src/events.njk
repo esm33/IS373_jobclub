@@ -36,28 +36,28 @@ description: "Join our workshops, meetups, and networking events to accelerate y
         </div>
       </div>
       
-      <!-- Material Design 3 Filter Chips -->
-      <div class="flex flex-wrap gap-3" id="eventFilters" style="margin-bottom: 0;">
-        <button class="filter-chip active" data-filter="all" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); color: white; border: none; padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px; box-shadow: 0 2px 8px rgba(103, 80, 164, 0.25);">
+      <!-- Material Design 3 Filter Chips - Accessible -->
+      <div class="flex flex-wrap gap-3" id="eventFilters" style="margin-bottom: 0;" role="group" aria-label="Filter events by type">
+        <button class="filter-chip active" data-filter="all" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%); color: white; border: none; padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px; box-shadow: 0 2px 8px rgba(103, 80, 164, 0.25);" onfocus="this.style.outline='2px solid #FFFFFF'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="true">
           All Events
         </button>
-        <button class="filter-chip" data-filter="workshop" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="workshop" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">🛠️</span>
           Workshops
         </button>
-        <button class="filter-chip" data-filter="office-hours" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="office-hours" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">💼</span>
           Office Hours
         </button>
-        <button class="filter-chip" data-filter="meetup" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="meetup" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">🤝</span>
           Meetups
         </button>
-        <button class="filter-chip" data-filter="guest-speaker" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="guest-speaker" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">🎤</span>
           Guest Speakers
         </button>
-        <button class="filter-chip" data-filter="hack-night" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 8px 20px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; height: 40px;">
+        <button class="filter-chip" data-filter="hack-night" style="background: white; color: var(--primary); border: 2px solid rgba(103, 80, 164, 0.2); padding: 10px 24px; border-radius: 100px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; gap: 8px; min-height: 44px;" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'" aria-pressed="false">
           <span style="font-size: 16px;">💻</span>
           Hack Nights
         </button>
@@ -81,7 +81,12 @@ description: "Join our workshops, meetups, and networking events to accelerate y
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="eventsGrid">
         {% for event in events %}
-        <article class="event-card" data-event-type="{{ event.eventType }}" data-title="{{ event.title | lower }}" data-description="{{ event.description | lower }}" data-date="{{ event.date }}" data-slug="{{ event.slug }}" style="background: var(--bg-secondary); border-radius: 12px; overflow: hidden; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border); box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
+        <article class="event-card" data-event-type="{{ event.eventType }}" data-title="{{ event.title | lower }}" data-description="{{ event.description | lower }}" data-date="{{ event.date }}" data-slug="{{ event.slug }}" style="background: var(--bg-secondary); border-radius: 12px; overflow: hidden; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border); box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); position: relative;">
+          <!-- Share Button (Top Right) -->
+          <button class="share-event-btn" data-event-slug="{{ event.slug }}" data-event-title="{{ event.title }}" data-event-description="{{ event.description }}" style="position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(103, 80, 164, 0.2); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);" aria-label="Share event">
+            <span class="material-icons-round" style="font-size: 18px; color: var(--primary);">share</span>
+          </button>
+          
           <!-- Event Type Badge -->
           <div style="padding: 16px 16px 0;">
             <span class="event-type-badge" style="background: var(--primary); color: white; padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; line-height: 1.67; letter-spacing: 0.4px; font-weight: 500; display: inline-flex; align-items: center; gap: 6px;">
@@ -160,11 +165,9 @@ description: "Join our workshops, meetups, and networking events to accelerate y
               <a href="/events/{{ event.slug }}/" class="event-btn event-btn-filled" style="flex: 1; background: var(--primary); color: white; padding: 10px 24px; border-radius: 20px; text-align: center; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; text-decoration: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);">
                 Learn More
               </a>
-              {% if event.registrationRequired and event.registrationLink %}
-              <a href="{{ event.registrationLink }}" target="_blank" class="event-btn event-btn-outlined" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 24px; border-radius: 20px; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; text-decoration: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);">
+              <a href="{% if event.registrationLink %}{{ event.registrationLink }}{% else %}/events/{{ event.slug }}/{% endif %}" {% if event.registrationLink %}target="_blank"{% endif %} class="event-btn event-btn-outlined" style="flex: 1; background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 10px 24px; border-radius: 20px; text-align: center; font-weight: 500; font-size: 0.875rem; line-height: 1.43; letter-spacing: 0.1px; text-decoration: none; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);">
                 Register
               </a>
-              {% endif %}
             </div>
           </div>
         </article>
@@ -270,6 +273,15 @@ description: "Join our workshops, meetups, and networking events to accelerate y
     box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.15), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   }
   
+  .event-btn-outlined:hover {
+    background: rgba(103, 80, 164, 0.08);
+  }
+  
+  .event-btn-icon:hover {
+    background: rgba(103, 80, 164, 0.08);
+    border-color: var(--primary);
+  }
+  
   .event-btn-filled::before {
     content: '';
     position: absolute;
@@ -280,9 +292,15 @@ description: "Join our workshops, meetups, and networking events to accelerate y
     transition: opacity 0.2s;
     pointer-events: none;
   }
+  share-event-btn:hover {
+    background: rgba(103, 80, 164, 0.1);
+    border-color: var(--primary);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
   
-  .event-btn-filled:hover::before {
-    opacity: 1;
+  .share-event-btn:active {
+    transform: scale(0.95
   }
   
   .event-btn-outlined:hover {
@@ -374,7 +392,6 @@ description: "Join our workshops, meetups, and networking events to accelerate y
   }
 </style>
 
-<script src="/js/analytics.js"></script>
 <script>
   // Event Filtering, Search, and Analytics
   document.addEventListener('DOMContentLoaded', function() {
@@ -401,8 +418,12 @@ description: "Join our workshops, meetups, and networking events to accelerate y
     const now = new Date();
     const allEventCards = document.querySelectorAll('.event-card');
     
+    console.log('Total event cards found:', allEventCards.length);
+    console.log('Current date:', now);
+    
     allEventCards.forEach(card => {
       const eventDate = new Date(card.getAttribute('data-date'));
+      console.log('Event date:', eventDate, 'Is upcoming?', eventDate >= now);
       
       if (eventDate >= now) {
         // Upcoming event - keep in main grid
@@ -440,8 +461,12 @@ description: "Join our workshops, meetups, and networking events to accelerate y
     });
     
     // Show past events section only if there are past events
+    console.log('Past events count:', pastCards.length);
     if (pastCards.length > 0) {
       pastEventsSection.style.display = 'block';
+      console.log('Past events section displayed');
+    } else {
+      console.log('No past events found');
     }
     
     // Function to apply all filters
@@ -577,7 +602,7 @@ description: "Join our workshops, meetups, and networking events to accelerate y
           const card = this.closest('.event-card');
           if (card && window.analytics) {
             const eventType = card.getAttribute('data-event-type');
-            const eventTitle = card.querySelector('h2').textContent.trim();
+            const eventTitle = card.querySelector('h3').textContent.trim();
             const eventSlug = this.getAttribute('href').replace('/events/', '').replace('/', '');
             
             window.analytics.trackEventLearnMore(eventSlug, eventTitle, eventType);
@@ -585,6 +610,211 @@ description: "Join our workshops, meetups, and networking events to accelerate y
         });
       }
     });
+    
+    // Share functionality for event cards
+    const shareButtons = document.querySelectorAll('.share-event-btn');
+    console.log('Found share buttons:', shareButtons.length);
+    
+    shareButtons.forEach(btn => {
+      btn.addEventListener('click', async function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log('Share button clicked');
+        
+        const slug = this.getAttribute('data-event-slug');
+        const title = this.getAttribute('data-event-title');
+        const description = this.getAttribute('data-event-description');
+        const url = window.location.origin + '/events/' + slug + '/';
+        
+        const shareData = {
+          title: title,
+          text: description,
+          url: url
+        };
+        
+        if (navigator.share) {
+          try {
+            await navigator.share(shareData);
+          } catch (err) {
+            if (err.name !== 'AbortError') {
+              console.log('Share failed:', err);
+              copyToClipboard(url);
+            }
+          }
+        } else {
+          copyToClipboard(url);
+        }
+      });
+    });
+    
+    // Helper function to show calendar dropdown
+    function showCalendarDropdown(button, eventData) {
+      // Remove existing dropdown
+      const existingMenu = document.getElementById('calendarDropdown');
+      if (existingMenu) {
+        existingMenu.remove();
+        return;
+      }
+      
+      const startDate = new Date(eventData.date);
+      const endDate = eventData.endDate ? new Date(eventData.endDate) : new Date(startDate.getTime() + 60 * 60 * 1000);
+      
+      const formatDateForGoogle = (date) => {
+        return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+      };
+      
+      const location = eventData.location.isVirtual 
+        ? 'Virtual Event' 
+        : `${eventData.location.venue || ''}${eventData.location.room ? ', ' + eventData.location.room : ''}`;
+      
+      const dropdown = document.createElement('div');
+      dropdown.id = 'calendarDropdown';
+      dropdown.style.cssText = `
+        position: fixed;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        padding: 8px;
+        min-width: 200px;
+        z-index: 1000;
+      `;
+      
+      // Calendar service URLs
+      const googleStart = formatDateForGoogle(startDate);
+      const googleEnd = formatDateForGoogle(endDate);
+      const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventData.title)}&dates=${googleStart}/${googleEnd}&details=${encodeURIComponent(eventData.description)}&location=${encodeURIComponent(location)}`;
+      const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(eventData.title)}&startdt=${startDate.toISOString()}&enddt=${endDate.toISOString()}&body=${encodeURIComponent(eventData.description)}&location=${encodeURIComponent(location)}`;
+      const office365Url = `https://outlook.office.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(eventData.title)}&startdt=${startDate.toISOString()}&enddt=${endDate.toISOString()}&body=${encodeURIComponent(eventData.description)}&location=${encodeURIComponent(location)}`;
+      const yahooStart = formatDateForGoogle(startDate);
+      const yahooEnd = formatDateForGoogle(endDate);
+      const yahooUrl = `https://calendar.yahoo.com/?v=60&title=${encodeURIComponent(eventData.title)}&st=${yahooStart}&et=${yahooEnd}&desc=${encodeURIComponent(eventData.description)}&in_loc=${encodeURIComponent(location)}`;
+      
+      const menuItems = [
+        { name: 'Google Calendar', url: googleUrl, icon: '📅' },
+        { name: 'Outlook.com', url: outlookUrl, icon: '📧' },
+        { name: 'Office 365', url: office365Url, icon: '🏢' },
+        { name: 'Yahoo Calendar', url: yahooUrl, icon: '📆' },
+        { name: 'Download .ics', action: 'download', icon: '💾' }
+      ];
+      
+      menuItems.forEach(item => {
+        const menuItem = document.createElement('a');
+        menuItem.style.cssText = `
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 12px 16px;
+          color: #1f2937;
+          text-decoration: none;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: background 0.2s;
+        `;
+        menuItem.innerHTML = `<span>${item.icon}</span><span>${item.name}</span>`;
+        
+        if (item.action === 'download') {
+          menuItem.addEventListener('click', (e) => {
+            e.preventDefault();
+            downloadICS(eventData, startDate, endDate, location);
+            dropdown.remove();
+          });
+        } else {
+          menuItem.href = item.url;
+          menuItem.target = '_blank';
+          menuItem.addEventListener('click', () => {
+            setTimeout(() => dropdown.remove(), 100);
+          });
+        }
+        
+        menuItem.addEventListener('mouseenter', () => {
+          menuItem.style.background = '#f3f4f6';
+        });
+        menuItem.addEventListener('mouseleave', () => {
+          menuItem.style.background = 'transparent';
+        });
+        
+        dropdown.appendChild(menuItem);
+      });
+      
+      // Position dropdown
+      const btnRect = button.getBoundingClientRect();
+      dropdown.style.left = btnRect.left + 'px';
+      dropdown.style.top = (btnRect.bottom + window.scrollY) + 'px';
+      
+      document.body.appendChild(dropdown);
+      
+      // Close on outside click
+      setTimeout(() => {
+        document.addEventListener('click', function closeDropdown(e) {
+          if (!dropdown.contains(e.target) && e.target !== button) {
+            dropdown.remove();
+            document.removeEventListener('click', closeDropdown);
+          }
+        });
+      }, 0);
+    }
+    
+    // Helper function to download ICS file
+    function downloadICS(eventData, startDate, endDate, location) {
+      const formatDate = (date) => {
+        return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+      };
+      
+      const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Job Club NJIT//Events//EN
+BEGIN:VEVENT
+UID:${Date.now()}@jobclub.njit.edu
+DTSTAMP:${formatDate(new Date())}
+DTSTART:${formatDate(startDate)}
+DTEND:${formatDate(endDate)}
+SUMMARY:${eventData.title}
+DESCRIPTION:${eventData.description}
+LOCATION:${location}
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+      
+      const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = window.URL.createObjectURL(blob);
+      link.download = `${eventData.title.replace(/[^a-z0-9]/gi, '-').toLowerCase()}.ics`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+    
+    // Helper function to copy to clipboard
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        // Show a temporary notification
+        const notification = document.createElement('div');
+        notification.textContent = 'Link copied to clipboard!';
+        notification.style.cssText = `
+          position: fixed;
+          bottom: 24px;
+          left: 50%;
+          transform: translateX(-50%);
+          background: #1f2937;
+          color: white;
+          padding: 12px 24px;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 500;
+          z-index: 10000;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        `;
+        document.body.appendChild(notification);
+        setTimeout(() => {
+          notification.remove();
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+      });
+    }
     
     // Track registration clicks
     document.querySelectorAll('a[target="_blank"]').forEach(link => {

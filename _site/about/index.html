@@ -43,27 +43,28 @@
     
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N6SWLKGFWZ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       
-      // Default consent mode
+      // Default consent mode - GRANTED for testing/initial launch
+      // Change to 'denied' for strict GDPR compliance
       gtag('consent', 'default', {
-        'analytics_storage': 'denied',
+        'analytics_storage': 'granted',
         'ad_storage': 'denied'
       });
       
-      // Check for consent
+      // Check for explicit user rejection
       const analyticsConsent = localStorage.getItem('analytics_consent');
-      if (analyticsConsent === 'true') {
+      if (analyticsConsent === 'false') {
         gtag('consent', 'update', {
-          'analytics_storage': 'granted'
+          'analytics_storage': 'denied'
         });
       }
       
-      gtag('config', 'G-XXXXXXXXXX', {
+      gtag('config', 'G-N6SWLKGFWZ', {
         'anonymize_ip': true,
         'cookie_flags': 'SameSite=None;Secure'
       });
@@ -142,46 +143,47 @@
             </a>
 
             <!-- Desktop Navigation -->
-            <ul class="hidden lg:flex nav-links">
+            <ul class="hidden lg:flex nav-links" style="gap: 8px;">
                 <li>
-                    <a href="/" class="nav-link ">
+                    <a href="/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="/resources/" class="nav-link ">
+                    <a href="/resources/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Resource Library
                     </a>
                 </li>
                 <li>
-                    <a href="/events/" class="nav-link ">
+                    <a href="/events/" class="nav-link " style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Events
                     </a>
                 </li>
                 <li>
-                    <a href="/about/" class="nav-link active">
+                    <a href="/about/" class="nav-link active" style="min-height: 44px; display: inline-flex; align-items: center; padding: 10px 16px; border-radius: 9999px; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         About
                     </a>
                 </li>
                 <li>
-                    <a href="/onboarding/" class="btn btn-primary">
+                    <a href="/onboarding/" class="btn btn-primary" style="min-height: 48px; display: inline-flex; align-items: center; padding: 12px 24px;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Join Now
                     </a>
                 </li>
             </ul>
-                            
-                        </a>
-                    </li>
-                </ul>
 
             <!-- Mobile Menu Button -->
             <button 
                 type="button" 
                 data-testid="mobile-menu-button"
-                class="lg:hidden w-12 h-12 flex items-center justify-center menu-button"
+                class="lg:hidden flex items-center justify-center menu-button"
+                style="min-width: 48px; min-height: 48px; border-radius: 50%; transition: all 0.3s;"
                 aria-expanded="false"
                 aria-controls="mobile-menu"
                 aria-label="Toggle navigation menu"
+                onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'; this.style.backgroundColor='rgba(103, 80, 164, 0.08)'"
+                onblur="this.style.outline='none'; this.style.backgroundColor='transparent'"
+                onmouseover="this.style.backgroundColor='rgba(103, 80, 164, 0.08)'"
+                onmouseout="this.style.backgroundColor='transparent'"
             >
                 <span class="material-icons-round text-3xl" style="color: var(--text);">menu</span>
             </button>
@@ -193,32 +195,32 @@
         data-testid="mobile-menu"
         id="mobile-menu"
         class="lg:hidden fixed inset-0 z-40 hidden"
-        style="background-color: var(--surface); top: 64px; padding: var(--space-xl);"
+        style="background-color: var(--surface); top: 64px; padding: 24px;"
     >
         <nav>
-            <ul class="space-y-4">
+            <ul class="space-y-3">
                 <li>
-                    <a href="/" class="block nav-link text-lg ">
+                    <a href="/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="/resources/" class="block nav-link text-lg ">
+                    <a href="/resources/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Resource Library
                     </a>
                 </li>
                 <li>
-                    <a href="/events/" class="block nav-link text-lg ">
+                    <a href="/events/" class="block nav-link " style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Events
                     </a>
                 </li>
                 <li>
-                    <a href="/about/" class="block nav-link text-lg active">
+                    <a href="/about/" class="block nav-link active" style="font-size: 1.125rem; padding: 12px 16px; border-radius: 12px; min-height: 48px; display: flex; align-items: center; transition: all 0.3s;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         About
                     </a>
                 </li>
-                <li>
-                    <a href="/onboarding/" class="btn btn-primary w-full">
+                <li style="margin-top: 16px;">
+                    <a href="/onboarding/" class="btn btn-primary w-full" style="min-height: 48px; display: flex; align-items: center; justify-content: center; padding: 14px 24px;" onfocus="this.style.outline='2px solid var(--primary)'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
                         Join Now
                     </a>
                 </li>
@@ -231,49 +233,281 @@
     <main class="flex-1">
         
 
-<section class="bg-gradient-to-br from-blue-50 to-white" style="padding: clamp(64px, 12vw, 96px) 1.5rem;">
-  <div class="max-w-5xl mx-auto">
-    <div class="text-center mb-12 md:mb-14">
-      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-3 text-gray-900 font-google-sans">About Job Club</h1>
-      <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto font-google-sans">Empowering students and Newark residents to launch meaningful tech careers—bridging the gap between talent and opportunity.</p>
+<section style="padding-top: 120px; padding-bottom: 80px; background: var(--bg);">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+    
+    <div style="margin-bottom: 64px; text-align: center;">
+      <h1 style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; color: var(--text);">
+        About
+      </h1>
+      <p style="font-size: 1.25rem; color: var(--text); opacity: 0.7; max-width: 600px; margin: 0 auto;">
+        Learn more about my background, skills, and experience
+      </p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Job Club Card -->
-      <div class="rounded-3xl bg-white shadow-xl p-8 flex flex-col items-start border border-gray-200">
-        <span class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4 font-google-sans">
-          <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          Our Mission
-        </span>
-        <h2 class="text-xl font-bold mb-2 text-gray-900 font-google-sans">What is Job Club?</h2>
-        <p class="text-gray-800 mb-4 font-google-sans">Job Club is a community-driven initiative dedicated to helping students and Newark residents break into technology careers. We provide mentorship, hands-on workshops, and direct connections to hiring managers—turning potential into real-world impact.</p>
-        <ul class="list-disc pl-5 text-gray-700 text-base space-y-1 mb-2 font-google-sans">
-          <li>Career coaching & interview prep</li>
-          <li>Resume and LinkedIn workshops</li>
-          <li>Direct introductions to employers</li>
-          <li>Support for all backgrounds and experience levels</li>
-        </ul>
-        <div class="mt-auto pt-4">
-          <a href="/onboarding/" class="inline-flex items-center gap-2 bg-blue-600 text-white font-bold px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition font-google-sans">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            Join Now
-          </a>
+    
+    <div style="margin-bottom: 48px;">
+      <article style="
+        background: var(--surface);
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+      ">
+        <h2 style="font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; line-height: 1.2; margin-bottom: 32px; color: var(--text);">
+          Twenty-Three Years. Ten Thousand Students.
+        </h2>
+        
+        <div style="columns: 1; gap: 32px; column-gap: 48px;">
+          <div style="break-inside: avoid; margin-bottom: 24px;">
+            <p style="font-size: 1.125rem; line-height: 1.7; color: var(--text); opacity: 0.9; margin-bottom: 24px;">
+              For over two decades, I've been teaching at New Jersey Institute of Technology (NJIT), working with students from Newark and the broader region. My role has evolved from adjunct instructor to building the Enterprise AI program, but the core mission has remained constant: helping students from all backgrounds build careers in technology.
+            </p>
+            <p style="font-size: 1.125rem; line-height: 1.7; color: var(--text); opacity: 0.9; margin-bottom: 24px;">
+              My technology journey started early—my father was a mainframe systems lead operator for Alcoa, and I grew up in a data center surrounded by various computers. In 1983, I received a Tandy TRS-80 Color Computer 2 for Christmas and taught myself to program. Since then, I've been continuously building systems and evolving with technology: early internet adopter on AOL, first iPhone owner, developer of one of the first MEAN stack frameworks that became Showedme.net (a SaaS application framework and learning management system), and creator of the iOS collaboration app Wrkbench.
+            </p>
+          </div>
+          
+          <div style="break-inside: avoid; margin-bottom: 24px;">
+            <p style="font-size: 1.125rem; line-height: 1.7; color: var(--text); opacity: 0.9; margin-bottom: 24px;">
+              I started as an adjunct instructor in 2002, and founded the Web Systems (WIS) program at NJIT. Over 23 years, I've created 8 regularly offered undergraduate and graduate courses, taught more than 10,000 students across 15 sections annually, and built curricula that Fortune 100 companies recruited from.
+            </p>
+            <p style="font-size: 1.125rem; line-height: 1.7; color: var(--text); opacity: 0.9; margin-bottom: 24px;">
+              My teaching experience extends beyond higher education—I've worked with high schools, served as an AmeriCorps member at an urban after-school youth center in Pittsburgh teaching computers to children, and taught software engineering internationally to government employees in Zambia, Africa, implementing the e-government system and improving their development process by introducing UX design practices using Axure prototyping.
+            </p>
+          </div>
+          
+          <div style="break-inside: avoid; margin-bottom: 24px;">
+            <p style="font-size: 1.125rem; line-height: 1.7; color: var(--text); opacity: 0.9; margin-bottom: 24px;">
+              <strong>When ChatGPT launched, I started using it within days—and immediately recognized that everything had changed.</strong> Since then, I've immersed myself in studying LLM and vector embedding technology, building a series of research projects through NJIT capstone courses that implement advanced ETL pipelines combining LLM and machine learning techniques for NLP and knowledge graph construction to support RAG workflows for personalized knowledge product production.
+            </p>
+            <p style="font-size: 1.125rem; line-height: 1.7; color: var(--text); opacity: 0.9; margin-bottom: 24px;">
+              As an early adopter of Vibe coding, I've combined my deep knowledge of enterprise software engineering and product development processes to develop innovative uses of Generative AI in enterprise software development—including AI-augmented QA review and advanced techniques to leverage AI in the day-to-day workflows of software engineers.
+            </p>
+          </div>
+          
+          <div style="break-inside: avoid;">
+            <p style="font-size: 1.125rem; line-height: 1.7; color: var(--text); opacity: 0.9; margin-bottom: 24px;">
+              I'm now evolving the WIS program into the Enterprise AI degree—a natural progression driven by my research work and industry projects using Generative AI to train, augment, and automate software engineering and product development processes. This evolution reflects both market demand and my commitment to preparing students for emerging technology careers.
+            </p>
+            <p style="font-size: 1.125rem; line-height: 1.7; color: var(--text); opacity: 0.9;">
+              My students aren't just names on a roster. They're working at Amazon, Google, JPMorgan, Goldman Sachs, and hundreds of other companies. They're CTOs, senior engineers, data scientists. Many are building their own companies right here in Newark. But I'm done watching qualified students ghost companies and talented Newark residents get overlooked. So I'm building bridges—real ones. Between students and hiring managers. Between AI hype and practical reality. Between Newark's untapped potential and New Jersey's tech ecosystem.
+            </p>
+          </div>
         </div>
+      </article>
+    </div>
+
+    
+    <div style="margin-bottom: 48px;">
+      <h2 style="font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.2; margin-bottom: 32px; color: var(--text);">
+        What I Actually Do
+      </h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        
+        <article style="
+          background: var(--surface);
+          border-radius: 16px;
+          padding: 32px;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        " 
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)';"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)';">
+          <h3 style="font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 16px;">
+            Education & Leadership
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">Founded Web Systems Program @ NJIT</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">Building Enterprise AI Degree</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">8 Courses Created (UG + Grad)</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">23 Years at NJIT (2002-Present)</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">10,000+ Students (15 Sections/Year)</li>
+            <li style="padding: 12px 0; color: var(--text); opacity: 0.9;">Fortune 100 Recruiting Pipeline</li>
+          </ul>
+        </article>
+        
+        
+        <article style="
+          background: var(--surface);
+          border-radius: 16px;
+          padding: 32px;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        "
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)';"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)';">
+          <h3 style="font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 16px;">
+            AI & Technology
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">Early AI Adopter (ChatGPT Day 1)</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">Advanced ETL Pipelines (LLM + ML)</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">Knowledge Graphs for RAG</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">AI-Augmented QA Systems</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">MEAN Stack Pioneer (Showedme.net)</li>
+            <li style="padding: 12px 0; color: var(--text); opacity: 0.9;">Programming Since 1983 (TRS-80)</li>
+          </ul>
+        </article>
+        
+        
+        <article style="
+          background: var(--surface);
+          border-radius: 16px;
+          padding: 32px;
+          box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        "
+        onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 12px 4px rgba(0, 0, 0, 0.15)';"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15)';">
+          <h3 style="font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 16px;">
+            Real-World Impact
+          </h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">CTO, Anthiem Ventures</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">Zambia eGovernment Implementation</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">AmeriCorps (Pittsburgh Youth Center)</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">900+ LinkedIn Network</li>
+            <li style="padding: 12px 0; border-bottom: 1px solid rgba(128, 128, 128, 0.2); color: var(--text); opacity: 0.9;">Community Bridge Building</li>
+            <li style="padding: 12px 0; color: var(--text); opacity: 0.9;">Students → FAANG Pipeline</li>
+          </ul>
+        </article>
       </div>
-      <!-- Keith Williams Card -->
-      <div class="rounded-3xl bg-white shadow-xl p-8 flex flex-col items-start border border-gray-200">
-        <span class="inline-flex items-center gap-2 bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full mb-4 font-google-sans">
-          <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          Meet the Founder
-        </span>
-        <h2 class="text-xl font-bold mb-2 text-gray-900 font-google-sans">Keith Williams</h2>
-        <p class="text-gray-800 mb-4 font-google-sans">Keith Williams is an educator and technologist with 23 years of experience at NJIT, where he’s helped over 10,000 students launch tech careers. He founded Job Club to bridge the gap between Newark’s talent and the tech industry, combining deep industry knowledge with a passion for mentorship and community impact.</p>
-        <ul class="list-disc pl-5 text-gray-700 text-base space-y-1 mb-2 font-google-sans">
-          <li>23 years teaching at NJIT</li>
-          <li>Founder of Web Systems & Enterprise AI programs</li>
-          <li>Mentor to students working at Amazon, Google, JPMorgan, and more</li>
-          <li>Dedicated to building real bridges between talent and opportunity</li>
-        </ul>
-      </div>
+    </div>
+
+    
+    <div style="margin-top: 64px;">
+      <article style="
+        background: var(--surface);
+        border-radius: 16px;
+        padding: 48px 40px;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+      ">
+        <h2 style="font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; line-height: 1.2; margin-bottom: 16px; color: var(--text);">
+          Let's Talk
+        </h2>
+        <p style="font-size: 1.125rem; line-height: 1.7; color: var(--text); opacity: 0.7; margin-bottom: 32px; max-width: 600px;">
+          Whether you're a student looking for guidance, a company seeking talent, or someone who wants to discuss AI's real impact—reach out. I'm here for honest conversations, not sales pitches.
+        </p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 800px;">
+          
+          <a
+            href="https://github.com/kaw393939"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              padding: 16px 24px;
+              background: transparent;
+              color: var(--primary);
+              border: 2px solid var(--primary);
+              border-radius: 24px;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 0.9375rem;
+              transition: all 0.2s ease;
+            "
+            onmouseover="this.style.background='var(--primary)'; this.style.color='white';"
+            onmouseout="this.style.background='transparent'; this.style.color='var(--primary)';"
+          >
+            <span>GitHub</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </a>
+          
+          
+          <a
+            href="https://www.linkedin.com/in/keithwilliams5/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              padding: 16px 24px;
+              background: transparent;
+              color: var(--primary);
+              border: 2px solid var(--primary);
+              border-radius: 24px;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 0.9375rem;
+              transition: all 0.2s ease;
+            "
+            onmouseover="this.style.background='var(--primary)'; this.style.color='white';"
+            onmouseout="this.style.background='transparent'; this.style.color='var(--primary)';"
+          >
+            <span>LinkedIn</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </a>
+          
+          
+          <a
+            href="https://twitter.com/everydayaikw"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              padding: 16px 24px;
+              background: transparent;
+              color: var(--primary);
+              border: 2px solid var(--primary);
+              border-radius: 24px;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 0.9375rem;
+              transition: all 0.2s ease;
+            "
+            onmouseover="this.style.background='var(--primary)'; this.style.color='white';"
+            onmouseout="this.style.background='transparent'; this.style.color='var(--primary)';"
+          >
+            <span>Twitter</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </a>
+          
+          
+          <a
+            href="https://www.youtube.com/@EAIKW"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              padding: 16px 24px;
+              background: transparent;
+              color: var(--primary);
+              border: 2px solid var(--primary);
+              border-radius: 24px;
+              text-decoration: none;
+              font-weight: 600;
+              font-size: 0.9375rem;
+              transition: all 0.2s ease;
+            "
+            onmouseover="this.style.background='var(--primary)'; this.style.color='white';"
+            onmouseout="this.style.background='transparent'; this.style.color='var(--primary)';"
+          >
+            <span>YouTube</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
+          </a>
+          
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -391,27 +625,67 @@
             transition: all 0.2s ease;
             display: inline-block;
             position: relative;
+            padding: 6px 0;
+            min-height: 32px;
+            line-height: 20px;
         }
         .footer-link:hover {
             color: var(--primary);
         }
+        .footer-link:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
         
         .social-icon-minimal {
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background-color: #F8F9FA;
             color: #5F6368;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .social-icon-minimal:hover {
-            background-color: #E8DEF8;
+            background-color: rgba(103, 80, 164, 0.08);
             color: var(--primary);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(103, 80, 164, 0.15);
+            transform: translateY(-2px);
+        }
+        .social-icon-minimal:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            background-color: rgba(103, 80, 164, 0.08);
+        }
+        
+        .copyright-link {
+            color: var(--primary);
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .copyright-link:hover {
+            text-decoration: underline;
+        }
+        .copyright-link:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        
+        button[data-cookie-preferences]:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        
+        .scroll-top-fab:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(103, 80, 164, 0.4);
+        }
+        .scroll-top-fab:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
         }
         
         .copyright-link {

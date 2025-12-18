@@ -222,6 +222,16 @@
     >
   </url>
   <url>
+    <loc>https://www.eaikw.com/</loc>
+    <lastmod>2025-12-14T01:35:08.264Z</lastmod>
+    <changefreq
+      >weekly</changefreq
+    >
+    <priority
+      >1.0</priority
+    >
+  </url>
+  <url>
     <loc>https://www.eaikw.com/onboarding/</loc>
     <lastmod>2025-12-14T01:35:08.266Z</lastmod>
     <changefreq
@@ -239,6 +249,26 @@
     >
     <priority
       >0.5</priority
+    >
+  </url>
+  <url>
+    <loc>https://www.eaikw.com/about/</loc>
+    <lastmod>2025-12-16T16:12:01.109Z</lastmod>
+    <changefreq
+      >monthly</changefreq
+    >
+    <priority
+      >0.5</priority
+    >
+  </url>
+  <url>
+    <loc>https://www.eaikw.com/blog/</loc>
+    <lastmod>2025-12-16T16:12:01.110Z</lastmod>
+    <changefreq
+      >monthly</changefreq
+    >
+    <priority
+      >0.8</priority
     >
   </url>
   <url>
@@ -332,28 +362,8 @@
     >
   </url>
   <url>
-    <loc>https://www.eaikw.com/about/</loc>
-    <lastmod>2025-12-18T02:11:38.422Z</lastmod>
-    <changefreq
-      >monthly</changefreq
-    >
-    <priority
-      >0.5</priority
-    >
-  </url>
-  <url>
-    <loc>https://www.eaikw.com/blog/</loc>
-    <lastmod>2025-12-18T02:11:38.422Z</lastmod>
-    <changefreq
-      >monthly</changefreq
-    >
-    <priority
-      >0.8</priority
-    >
-  </url>
-  <url>
     <loc>https://www.eaikw.com/events/python-data-science-workshop/</loc>
-    <lastmod>2025-12-18T02:11:38.424Z</lastmod>
+    <lastmod>2025-12-17T19:59:55.575Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
@@ -363,22 +373,12 @@
   </url>
   <url>
     <loc>https://www.eaikw.com/events/</loc>
-    <lastmod>2025-12-18T02:11:38.424Z</lastmod>
+    <lastmod>2025-12-17T19:59:55.575Z</lastmod>
     <changefreq
       >monthly</changefreq
     >
     <priority
       >0.5</priority
-    >
-  </url>
-  <url>
-    <loc>https://www.eaikw.com/</loc>
-    <lastmod>2025-12-18T02:11:38.424Z</lastmod>
-    <changefreq
-      >weekly</changefreq
-    >
-    <priority
-      >1.0</priority
     >
   </url>
   <url>
