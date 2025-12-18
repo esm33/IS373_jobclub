@@ -62,83 +62,75 @@ layout: layouts/base.njk
   }
 </script>
 
-<article class="py-6 md:py-8 lg:py-10" style="padding-top: 120px !important;">
-  <div class="swiss-container">
-    {# Swiss header with asymmetric layout #}
-    <header class="swiss-grid mb-6" style="border-left: 4px solid var(--swiss-red); padding-left: var(--space-md); padding-right: var(--space-md);">
-      <div class="swiss-col-8 md:swiss-col-8">
-        {# Meta information as definition list #}
-        <dl class="mb-4" style="display: flex; gap: var(--space-lg); flex-wrap: wrap;">
-          <div>
-            <dt class="text-xs font-bold uppercase tracking-wider mb-1" style="color: var(--swiss-gray-600);">Published</dt>
-            <dd>
-              <time datetime="{{ date | dateToISO }}" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-black);">
-                {{ date | readableDate }}
-              </time>
-            </dd>
-          </div>
-          {% if tags %}
-          <div>
-            <dt class="text-xs font-bold uppercase tracking-wider mb-1" style="color: var(--swiss-gray-600);">Topics</dt>
-            <dd class="flex gap-2">
-              {% for tag in tags %}{% if tag != "blog" %}
-              <span style="background-color: var(--swiss-gray-100); color: var(--swiss-black); padding: 0.25rem 0.75rem; font-size: 0.875rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">
-                {{ tag }}
-              </span>
-              {% endif %}{% endfor %}
-            </dd>
-          </div>
-          {% endif %}
-        </dl>
-        
-        {# Title with Swiss typography #}
-        <h1 class="font-bold mb-3" style="font-size: var(--fluid-h1); line-height: 1.1; letter-spacing: -0.02em;">
-          {{ title }}
-        </h1>
-        
-        {% if description %}
-        <p style="color: var(--swiss-gray-700); max-width: 60ch; border-top: 2px solid var(--swiss-red); padding-top: var(--space-sm); font-size: var(--fluid-body-lg);">
-          {{ description }}
-        </p>
-        {% endif %}
+<article style="padding: clamp(60px, 10vw, 100px) 1.5rem;">
+  <div style="max-width: 900px; margin: 0 auto;">
+    
+    {# Header #}
+    <header style="margin-bottom: 3rem;">
+      {% if tags and tags | length > 1 %}
+      <div style="margin-bottom: 1.5rem;">
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          {% for tag in tags %}{% if tag != "blog" %}
+          <span style="background-color: rgba(103, 80, 164, 0.1); color: var(--md-primary); padding: 0.375rem 0.75rem; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 6px;">
+            {{ tag | upper }}
+          </span>
+          {% endif %}{% endfor %}
+        </div>
       </div>
+      {% endif %}
+      
+      <h1 class="font-bold" style="font-family: 'Google Sans', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; color: #1a1a1a;">
+        {{ title }}
+      </h1>
+      
+      <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+        <div>
+          <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 0.25rem;">Published</div>
+          <time datetime="{{ date | dateToISO }}" style="font-size: 0.95rem; font-weight: 600; color: #666;">
+            {{ date | readableDate }}
+          </time>
+        </div>
+      </div>
+      
+      {% if description %}
+      <p style="font-size: 1.125rem; line-height: 1.6; color: #666; max-width: 70ch; margin-bottom: 0;">
+        {{ description }}
+      </p>
+      {% endif %}
     </header>
 
-    {# Structural divider #}
-    <div class="swiss-divider mb-6"></div>
+    {# Divider #}
+    <div style="height: 1px; background: #e0e0e0; margin: 2.5rem 0;"></div>
 
-    {# Swiss content layout - asymmetric #}
-    <div class="swiss-grid">
-      <div class="swiss-col-12 md:swiss-col-8">
-        <div class="prose-swiss">
-          {{ content | safe }}
-        </div>
-        
-        {# Social Sharing Component #}
-        {% include "components/social-share.njk" %}
-      </div>
+    {# Main content #}
+    <div style="font-size: 1.0625rem; line-height: 1.75; color: #333; max-width: 70ch;">
+      {{ content | safe }}
     </div>
 
-    {# Navigation footer with Swiss styling #}
+    {# Social Sharing Component #}
+    {% include "components/social-share.njk" %}
+
+    {# Navigation footer #}
     {% if collections.blog %}
     {% set previousPost = collections.blog | getPreviousCollectionItem(page) %}
     {% set nextPost = collections.blog | getNextCollectionItem(page) %}
     {% if previousPost or nextPost %}
-    <footer class="mt-10">
-      <div class="swiss-divider mb-6"></div>
-      <nav class="swiss-grid gap-6" aria-label="Post navigation">
+    <footer style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
+      <nav style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 2rem;" aria-label="Post navigation">
         {% if previousPost %}
-        <div class="swiss-col-12 md:swiss-col-6" style="border-left: 2px solid var(--swiss-black); padding-left: var(--space-md); margin-bottom: var(--space-md);">
-          <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--swiss-gray-600);">← Previous Article</p>
-          <a href="{{ previousPost.url }}" class="font-bold hover:underline" style="font-size: 1rem; color: var(--swiss-black); text-decoration: none;">
+        <div style="padding: 1.5rem; border-radius: 12px; border: 1px solid #e0e0e0; background: white;">
+          <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 0.75rem;">← Previous Article</p>
+          <a href="{{ previousPost.url }}" style="font-weight: 600; font-size: 1.05rem; color: var(--md-primary); text-decoration: none;">
             {{ previousPost.data.title }}
           </a>
         </div>
+        {% else %}
+        <div></div>
         {% endif %}
         {% if nextPost %}
-        <div class="swiss-col-12 md:swiss-col-6" style="border-left: 2px solid var(--swiss-black); padding-left: var(--space-md);">
-          <p class="text-xs font-bold uppercase tracking-wider mb-2" style="color: var(--swiss-gray-600);">Next Article →</p>
-          <a href="{{ nextPost.url }}" class="font-bold hover:underline" style="font-size: 1rem; color: var(--swiss-black); text-decoration: none;">
+        <div style="padding: 1.5rem; border-radius: 12px; border: 1px solid #e0e0e0; background: white;">
+          <p style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 0.75rem;">Next Article →</p>
+          <a href="{{ nextPost.url }}" style="font-weight: 600; font-size: 1.05rem; color: var(--md-primary); text-decoration: none;">
             {{ nextPost.data.title }}
           </a>
         </div>
@@ -146,11 +138,12 @@ layout: layouts/base.njk
       </nav>
       
       {# Back to blog link #}
-      <div class="mt-6">
-        <a href="/blog/" class="btn-swiss-primary">← BACK TO ARTICLES</a>
-      </div>
+      <a href="/blog/" style="display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--md-primary); color: white; font-weight: 600; border-radius: 8px; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border: none; cursor: pointer;">
+        ← Back to Articles
+      </a>
     </footer>
     {% endif %}
     {% endif %}
+
   </div>
 </article>
