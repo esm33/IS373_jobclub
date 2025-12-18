@@ -4,9 +4,20 @@ title: Resource Library
 description: Guides, templates, and resources to help you build your career in the AI era
 ---
 
+{# Critical Styles to Reduce Cumulative Layout Shift #}
+<style>
+  /* Prevent font shift by setting explicit line-height and sizing early */
+  .resources-section { font-size: 1rem; line-height: 1.5; }
+  .resources-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  @media (min-width: 1024px) { .resources-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
+  .resource-card { padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
+  .resource-header { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+  .resource-icon { width: 3.5rem; height: 3.5rem; border-radius: 0.5rem; flex-shrink: 0; }
+</style>
+
 {% import "components/card.njk" as card %}
 
-<section style="padding: clamp(80px, 15vw, 120px) 1.5rem clamp(60px, 10vw, 80px);">
+<section class="resources-section" style="padding: clamp(80px, 15vw, 120px) 1.5rem clamp(60px, 10vw, 80px);">
   <div style="max-width: 1200px; margin: 0 auto;">
     
     {# Material Design Header #}
@@ -20,10 +31,10 @@ description: Guides, templates, and resources to help you build your career in t
     </div>
     
     {# Resources Grid #}
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+    <div class="resources-grid">
       
       {# Resource 1: LinkedIn Optimization Guide #}
-      <article class="card" style="padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+      <article class="resource-card">>
         <div class="flex items-start gap-4 mb-6">
           <div class="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #6750A4 0%, #9575CD 100%);">
             <span class="material-icons-round text-white" style="font-size: 1.5rem;">person</span>
