@@ -6,23 +6,21 @@ description: Guides, templates, and resources to help you build your career in t
 
 {% import "components/card.njk" as card %}
 
-<section style="padding-top: 120px; padding-bottom: var(--space-5xl);">
-  <div style="max-width: 1440px; margin: 0 auto; padding-left: var(--swiss-grid-margin); padding-right: var(--swiss-grid-margin);">
+<section style="padding: clamp(80px, 15vw, 120px) 1.5rem clamp(60px, 10vw, 80px);">
+  <div style="max-width: 1200px; margin: 0 auto;">
     
-    {# Section Header #}
-    <div class="swiss-grid mb-12" style="border-left: 4px solid var(--swiss-red); padding-left: var(--space-md);">
-      <div class="swiss-col-8">
-        <p class="text-sm font-bold uppercase tracking-wider mb-2" style="color: var(--swiss-gray-600);">RESOURCES</p>
-        <h1 class="font-bold mb-4" style="font-size: var(--fluid-h1); line-height: 1.1; letter-spacing: -0.02em;">{{ title }}</h1>
-        <p class="text-lg" style="color: var(--swiss-gray-700); max-width: 60ch;">{{ description }}</p>
+    {# Material Design Header #}
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background: rgba(103, 80, 164, 0.1);">
+        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--primary);">library_books</span>
+        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--primary);">RESOURCES</span>
       </div>
+      <h1 class="font-bold mb-4" style="font-family: 'Google Sans', sans-serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--text);">{{ title }}</h1>
+      <p style="font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text); opacity: 0.7; max-width: 60ch; margin: 0 auto;">{{ description }}</p>
     </div>
     
-    {# Structural divider #}
-    <div class="swiss-divider mb-12"></div>
-    
     {# Resources Grid #}
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
       
       {# Resource 1: LinkedIn Optimization Guide #}
       <article class="card" style="padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">

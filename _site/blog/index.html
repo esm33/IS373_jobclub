@@ -232,271 +232,219 @@
         
 
 
-<section class="py-12 md:py-16 lg:py-20" style="padding-top: 120px !important;">
-  <div style="max-width: 1440px; margin: 0 auto; padding-left: var(--swiss-grid-margin); padding-right: var(--swiss-grid-margin);">
+<section style="padding: clamp(80px, 15vw, 120px) 1.5rem clamp(60px, 10vw, 80px);">
+  <div style="max-width: 1200px; margin: 0 auto;">
     
-    <div class="swiss-grid mb-12" style="border-left: 4px solid var(--swiss-red); padding-left: var(--space-md);">
-      <div class="swiss-col-7">
-        <p class="text-sm font-bold uppercase tracking-wider mb-2" style="color: var(--swiss-gray-600);">03 — ARTICLES</p>
-        <h1 class="font-bold mb-4" style="font-size: var(--fluid-h1); line-height: 1.1; letter-spacing: -0.02em;">Blog</h1>
-        <p class="text-lg" style="color: var(--swiss-gray-700); max-width: 60ch;">Articles, tutorials, and insights about web development</p>
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full" style="background: rgba(103, 80, 164, 0.1);">
+        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--primary);">article</span>
+        <span style="font-size: 0.9375rem; font-weight: 500; color: var(--primary);">ARTICLES</span>
       </div>
+      <h1 class="font-bold mb-4" style="font-family: 'Google Sans', sans-serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--text);">Blog</h1>
+      <p style="font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text); opacity: 0.7; max-width: 60ch; margin: 0 auto;">Articles, tutorials, and insights about web development</p>
     </div>
     
     
-    <div class="swiss-divider mb-12"></div>
     
-    
-    
-    <div class="space-y-0">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-01-01" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          December 31, 2024
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-01-01" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            December 31, 2024
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/welcome/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">How I Built This Site in 10 Hours (And What That Means for You)</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">You&#39;re reading this on a Swiss design system I built with AI in one evening. If I can do this—what can you do with AI tools in your field?</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/welcome/" style="text-decoration: none; color: inherit;">How I Built This Site in 10 Hours (And What That Means for You)</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/welcome/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">You&#39;re reading this on a Swiss design system I built with AI in one evening. If I can do this—what can you do with AI tools in your field?</p>
+        
+        
+        <a href="/blog/welcome/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-11-06" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          November 5, 2025
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-11-06" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            November 5, 2025
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/ai-printing-press/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">AI Is Our Printing Press Moment (And That&#39;s Both Exciting and Terrifying)</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">Everyone&#39;s talking about AI like it&#39;s magic. Let me tell you what it actually is—and why the printing press comparison matters more than you think.</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/ai-printing-press/" style="text-decoration: none; color: inherit;">AI Is Our Printing Press Moment (And That&#39;s Both Exciting and Terrifying)</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/ai-printing-press/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">Everyone&#39;s talking about AI like it&#39;s magic. Let me tell you what it actually is—and why the printing press comparison matters more than you think.</p>
+        
+        
+        <a href="/blog/ai-printing-press/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-11-07" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          November 6, 2025
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-11-07" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            November 6, 2025
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/ai-risks-that-matter/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">The AI Risks That Actually Matter (And the Ones Getting All the Attention)</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">Everyone&#39;s worried about AGI and robot uprisings. Meanwhile, the real risks—job displacement, algorithmic bias, and privacy erosion—are happening right now. Let&#39;s talk about what actually keeps me up at night.</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/ai-risks-that-matter/" style="text-decoration: none; color: inherit;">The AI Risks That Actually Matter (And the Ones Getting All the Attention)</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/ai-risks-that-matter/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">Everyone&#39;s worried about AGI and robot uprisings. Meanwhile, the real risks—job displacement, algorithmic bias, and privacy erosion—are happening right now. Let&#39;s talk about what actually keeps me up at night.</p>
+        
+        
+        <a href="/blog/ai-risks-that-matter/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-11-08" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          November 7, 2025
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-11-08" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            November 7, 2025
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/what-2035-looks-like/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">What 2035 Actually Looks Like: Three Realistic AI Scenarios</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">Forget the utopia/dystopia extremes. Here are three grounded predictions for how AI will actually reshape work, education, and opportunity over the next decade—based on history, not hype.</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/what-2035-looks-like/" style="text-decoration: none; color: inherit;">What 2035 Actually Looks Like: Three Realistic AI Scenarios</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/what-2035-looks-like/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">Forget the utopia/dystopia extremes. Here are three grounded predictions for how AI will actually reshape work, education, and opportunity over the next decade—based on history, not hype.</p>
+        
+        
+        <a href="/blog/what-2035-looks-like/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-11-09" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          November 8, 2025
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-11-09" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            November 8, 2025
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/how-to-think-about-ai/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">How to Think About AI Long-Term: A Framework That Actually Works</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">AGI by 2027? Self-driving cars everywhere? Don&#39;t trust predictions—trust principles. Here&#39;s a mental model for evaluating AI hype based on history, not hope.</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/how-to-think-about-ai/" style="text-decoration: none; color: inherit;">How to Think About AI Long-Term: A Framework That Actually Works</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/how-to-think-about-ai/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">AGI by 2027? Self-driving cars everywhere? Don&#39;t trust predictions—trust principles. Here&#39;s a mental model for evaluating AI hype based on history, not hope.</p>
+        
+        
+        <a href="/blog/how-to-think-about-ai/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-11-13" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          November 12, 2025
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-11-13" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            November 12, 2025
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/agi-hype-cycle/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">Everyone Says AGI Is Coming in 5 Years. They&#39;re Probably Wrong.</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">AI leaders keep predicting AGI by 2028. Let me show you why you should take those predictions with a massive grain of salt.</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/agi-hype-cycle/" style="text-decoration: none; color: inherit;">Everyone Says AGI Is Coming in 5 Years. They&#39;re Probably Wrong.</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/agi-hype-cycle/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">AI leaders keep predicting AGI by 2028. Let me show you why you should take those predictions with a massive grain of salt.</p>
+        
+        
+        <a href="/blog/agi-hype-cycle/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-11-20" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          November 19, 2025
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-11-20" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            November 19, 2025
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/ai-job-reality/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">What Actually Happens to Your Job When AI Gets Better</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">Everyone&#39;s scared AI will take their job. The reality is way more complicated—and way more interesting—than that.</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/ai-job-reality/" style="text-decoration: none; color: inherit;">What Actually Happens to Your Job When AI Gets Better</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/ai-job-reality/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">Everyone&#39;s scared AI will take their job. The reality is way more complicated—and way more interesting—than that.</p>
+        
+        
+        <a href="/blog/ai-job-reality/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-11-27" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          November 26, 2025
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-11-27" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            November 26, 2025
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/education-ai-reality/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">How Education Needs to Change (And Why It Won&#39;t Happen Overnight)</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">I gave my class an impossible assignment: build custom Shopify themes in 7 days. Every single student delivered. Here&#39;s what that means for education.</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/education-ai-reality/" style="text-decoration: none; color: inherit;">How Education Needs to Change (And Why It Won&#39;t Happen Overnight)</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/education-ai-reality/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">I gave my class an impossible assignment: build custom Shopify themes in 7 days. Every single student delivered. Here&#39;s what that means for education.</p>
+        
+        
+        <a href="/blog/education-ai-reality/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-12-04" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          December 3, 2025
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-12-04" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            December 3, 2025
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/ai-productivity-reality/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">The AI Productivity Gains Are Real (Just Smaller Than the Headlines)</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">Goldman Sachs says AI will add $7 trillion to the global economy. McKinsey says $4.4 trillion. Here&#39;s what those numbers actually mean for you.</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/ai-productivity-reality/" style="text-decoration: none; color: inherit;">The AI Productivity Gains Are Real (Just Smaller Than the Headlines)</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/ai-productivity-reality/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">Goldman Sachs says AI will add $7 trillion to the global economy. McKinsey says $4.4 trillion. Here&#39;s what those numbers actually mean for you.</p>
+        
+        
+        <a href="/blog/ai-productivity-reality/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     
       
-      <article class="swiss-grid py-6" style="border-bottom: 1px solid var(--swiss-gray-300);">
+      <article class="card" style="padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(0, 0, 0, 0.08); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); transition: all 0.3s; background: white;">
+        <time datetime="2025-12-11" class="text-xs font-semibold uppercase tracking-wider mb-3 block" style="color: var(--primary);">
+          December 10, 2025
+        </time>
         
-        <div class="swiss-col-2">
-          <time datetime="2025-12-11" class="text-sm font-bold uppercase tracking-wider" style="color: var(--swiss-gray-600);">
-            December 10, 2025
-          </time>
-        </div>
-        
-        
-        <div class="swiss-col-7">
-          <h2 class="font-bold mb-2" style="font-size: var(--fluid-h3); line-height: 1.2;">
-            <a href="/blog/skills-that-matter/" class="hover:underline" style="text-decoration: none; color: var(--swiss-black);">What You Should Actually Learn Right Now (It&#39;s Not What You Think)</a>
-          </h2>
-          
-          <p style="color: var(--swiss-gray-700);">Everyone&#39;s rushing to learn prompt engineering and AI tools. That&#39;s fine. But it&#39;s not what will make you valuable long-term.</p>
-          
-        </div>
+        <h2 class="font-bold mb-3" style="font-size: clamp(1.125rem, 2vw, 1.25rem); line-height: 1.3; color: var(--text);">
+          <a href="/blog/skills-that-matter/" style="text-decoration: none; color: inherit;">What You Should Actually Learn Right Now (It&#39;s Not What You Think)</a>
+        </h2>
         
         
-        <div class="swiss-col-3 flex items-center justify-end">
-          <a href="/blog/skills-that-matter/" class="btn-swiss-primary">READ ARTICLE</a>
-        </div>
+        <p class="mb-4" style="color: var(--text); opacity: 0.7; font-size: 0.875rem; line-height: 1.6;">Everyone&#39;s rushing to learn prompt engineering and AI tools. That&#39;s fine. But it&#39;s not what will make you valuable long-term.</p>
+        
+        
+        <a href="/blog/skills-that-matter/" class="inline-flex items-center gap-2 font-semibold text-sm" style="color: var(--primary); margin-top: auto;">
+          <span>Read Article</span>
+          <span class="material-icons-round" style="font-size: 1.125rem;">arrow_forward</span>
+        </a>
       </article>
     </div>
 
