@@ -240,7 +240,7 @@
   data-section="home"
   data-testid="hero-section"
   class="relative overflow-hidden"
-  style="background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%); padding-top: 160px; padding-bottom: 140px; min-height: 650px;"
+  style="background: linear-gradient(135deg, rgba(227, 195, 255, 0.3) 0%, rgba(255, 251, 255, 1) 25%, rgba(224, 242, 254, 0.4) 50%, rgba(255, 245, 245, 0.3) 75%, rgba(255, 251, 255, 1) 100%); padding: clamp(80px, 15vw, 160px) 1.5rem clamp(60px, 12vw, 140px); min-height: clamp(500px, 80vh, 650px);"
 >
   
   <div class="container relative z-10">
@@ -263,32 +263,32 @@
       
       
       <div class="flex flex-wrap gap-4 justify-center mb-16">
-        <a href="/townhall/" class="btn btn-primary inline-flex items-center gap-2" style="padding: 14px 32px; min-height: 48px; font-size: 1rem; border-radius: 100px; box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3); transition: all 0.2s ease;" onmouseover="this.style.boxShadow='0 6px 16px rgba(103, 80, 164, 0.4)'" onmouseout="this.style.boxShadow='0 4px 12px rgba(103, 80, 164, 0.3)'" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
+        <a href="/townhall/" class="btn btn-primary inline-flex items-center gap-2" style="padding: 1rem 2.5rem; font-size: 1rem; border-radius: 100px; box-shadow: 0 4px 12px rgba(103, 80, 164, 0.3);">
           <span>Join Town Hall</span>
           <span class="material-icons-round" style="font-size: 1.25rem;">arrow_forward</span>
         </a>
-        <a href="/about/" class="btn btn-outlined inline-flex items-center gap-2" style="padding: 14px 32px; min-height: 48px; font-size: 1rem; border-radius: 100px; border-width: 2px; transition: all 0.2s ease;" onmouseover="this.style.background='rgba(103, 80, 164, 0.08)'" onmouseout="this.style.background='transparent'" onfocus="this.style.outline='2px solid #6750A4'; this.style.outlineOffset='2px'" onblur="this.style.outline='none'">
+        <a href="/about/" class="btn btn-outlined inline-flex items-center gap-2" style="padding: 1rem 2.5rem; font-size: 1rem; border-radius: 100px; border-width: 2px;">
           <span class="material-icons-round" style="font-size: 1.25rem;">description</span>
           <span>Learn More</span>
         </a>
       </div>
       
       
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 max-w-3xl mx-auto">
-        <div class="animate-slide-up text-center" style="animation-delay: 0.1s;">
-          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1;">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 max-w-3xl mx-auto text-center">
+        <div class="animate-slide-up" style="animation-delay: 0.1s;">
+          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;">
             23+
           </div>
           <p class="text-sm uppercase tracking-wide" style="color: var(--text); opacity: 0.6; font-weight: 600; letter-spacing: 0.1em;">Years at NJIT</p>
         </div>
-        <div class="animate-slide-up text-center" style="animation-delay: 0.2s;">
-          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #00BFA5; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1;">
+        <div class="animate-slide-up" style="animation-delay: 0.2s;">
+          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #00BFA5; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;">
             10k+
           </div>
           <p class="text-sm uppercase tracking-wide" style="color: var(--text); opacity: 0.6; font-weight: 600; letter-spacing: 0.1em;">Students Taught</p>
         </div>
-        <div class="animate-slide-up text-center" style="animation-delay: 0.3s;">
-          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1;">
+        <div class="animate-slide-up" style="animation-delay: 0.3s;">
+          <div class="font-bold mb-2" style="font-family: 'Google Sans', sans-serif; color: #5E35B1; font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1;">
             100+
           </div>
           <p class="text-sm uppercase tracking-wide" style="color: var(--text); opacity: 0.6; font-weight: 600; letter-spacing: 0.1em;">Companies</p>
@@ -303,7 +303,7 @@
   data-component="reading-paths"
   data-section="navigation"
   class="section-padding"
-  style="background-color: #FEFBFF; padding-top: 120px; padding-bottom: 120px;"
+  style="background-color: #FEFBFF; padding: clamp(60px, 10vw, 120px) 1.5rem;"
 >
   <div class="container">
     
@@ -512,7 +512,7 @@
   </section>
 
 
-<section class="section-padding" style="background-color: #FEFBFF; padding-top: 120px; padding-bottom: 120px;">
+<section class="section-padding" style="background-color: #FEFBFF; padding: clamp(60px, 10vw, 120px) 1.5rem;">
   <div class="container">
     
     <div class="text-center mb-20">
@@ -574,7 +574,7 @@
 </section>
 
 
-<section class="section-padding" style="background: linear-gradient(180deg, #F3E5F5 0%, #FEFBFF 100%); padding-top: 120px; padding-bottom: 120px;">
+<section class="section-padding" style="background: linear-gradient(180deg, #F3E5F5 0%, #FEFBFF 100%); padding: clamp(60px, 10vw, 120px) 1.5rem;">
   <div class="container">
     
     <div class="text-center mb-20">
@@ -683,7 +683,7 @@
 </section>
 
 
-<section class="section-padding" style="background-color: #FFFFFF; padding-top: 120px; padding-bottom: 120px;">
+<section class="section-padding" style="background-color: #FFFFFF; padding: clamp(60px, 10vw, 120px) 1.5rem;">
   <div class="container">
     
     <div class="text-center mb-20">
