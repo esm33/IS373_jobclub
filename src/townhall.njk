@@ -1,103 +1,198 @@
 ---
 layout: layouts/base.njk
-title: The AI Reality Check Town Hall
-description: Monthly conversations about AI, jobs, and Newark's tech future. Free and open to all.
+title: Job Club - Community Events
+description: Monthly town halls, workshops, and community events connecting students with industry leaders and career opportunities.
 ---
 
 {# Hero Section - Town Hall #}
-<section class="relative" style="padding-top: 120px !important; padding-bottom: var(--space-3xl); background-color: var(--swiss-black); color: var(--swiss-white);">
-  <div class="swiss-container" style="max-width: 1440px; margin: 0 auto;">
-    <div class="swiss-grid">
-      <div class="swiss-col-12">
-      <div style="border-left: 3px solid var(--swiss-red); padding-left: var(--space-lg); margin-bottom: var(--space-lg);">
-        <p class="text-xs uppercase tracking-widest font-bold" style="color: var(--swiss-gray-400); letter-spacing: 0.2em;">
-          Monthly Event Series
-        </p>
+<section style="padding: 120px 1.5rem 80px; background: linear-gradient(135deg, var(--md-primary) 0%, #7c5fb8 100%); color: white;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    
+    <div style="margin-bottom: 2rem;">
+      <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 24px; margin-bottom: 1.5rem;">
+        <span class="material-icons-round" style="font-size: 1.25rem; color: #fff;">event</span>
+        <span style="font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;">Community Events</span>
       </div>
-      
-      <h1 class="font-bold leading-none" style="font-size: var(--fluid-display); letter-spacing: -0.03em; line-height: 0.95; margin-bottom: var(--space-lg);">
-        The AI Reality<br>Check Town Hall
-      </h1>
-      
-      <div style="width: 80px; height: 3px; background-color: var(--swiss-red); margin-bottom: var(--space-xl);"></div>
-      
-      <div class="swiss-col-12 md:swiss-col-8">
-        <p class="leading-relaxed" style="font-size: var(--fluid-body-lg); margin-bottom: var(--space-xl);">
-          Real conversations about AI, jobs, and the future of work. <br class="hidden sm:block">
-          No hype. No jargon. Just honest dialogue between students, industry, and community.
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#register" class="btn-swiss-accent">
-            REGISTER FOR NEXT EVENT
-          </a>
-          <a href="#about" class="btn-swiss" style="background-color: transparent; border-color: var(--swiss-white); color: var(--swiss-white);">
-            LEARN MORE
-          </a>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
-
-{# Quick Stats Section #}
-<section style="padding: var(--space-3xl) 0; background-color: var(--swiss-red); color: var(--swiss-white);">
-  <div class="swiss-container" style="max-width: 1440px; margin: 0 auto; padding: 0 var(--space-lg);">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {# Stat 1 #}
-      <div class="text-center" style="padding: var(--space-xl) var(--space-md);">
-        <div class="font-black uppercase" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: var(--space-md);">
-          FREE
-        </div>
-        <div style="width: 50px; height: 2px; background-color: var(--swiss-white); margin: 0 auto var(--space-md);"></div>
-        <p class="uppercase font-bold" style="font-size: 0.75rem; letter-spacing: 0.1em; line-height: 1.5; opacity: 0.95;">
-          Always Free<br>& Open to All
-        </p>
-      </div>
-      
-      {# Stat 2 #}
-      <div class="text-center" style="padding: var(--space-xl) var(--space-md);">
-        <div class="font-black uppercase" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: var(--space-md);">
-          HYBRID
-        </div>
-        <div style="width: 50px; height: 2px; background-color: var(--swiss-white); margin: 0 auto var(--space-md);"></div>
-        <p class="uppercase font-bold" style="font-size: 0.75rem; letter-spacing: 0.1em; line-height: 1.5; opacity: 0.95;">
-          In-Person @ NJIT<br>+ LinkedIn Live
-        </p>
-      </div>
-      
-      {# Stat 3 #}
-      <div class="text-center" style="padding: var(--space-xl) var(--space-md);">
-        <div class="font-black uppercase" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1; letter-spacing: 0.02em; margin-bottom: var(--space-md);">
-          MONTHLY
-        </div>
-        <div style="width: 50px; height: 2px; background-color: var(--swiss-white); margin: 0 auto var(--space-md);"></div>
-        <p class="uppercase font-bold" style="font-size: 0.75rem; letter-spacing: 0.1em; line-height: 1.5; opacity: 0.95;">
-          First Thursday<br>Every Month
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-{# Next Event Section #}
-<section id="register" style="padding: var(--space-4xl) var(--space-lg); background-color: var(--swiss-gray-100);">
-  <div class="swiss-grid">
-    <div class="swiss-col-12 md:swiss-col-6" style="margin-bottom: var(--space-2xl);">
-      <p class="text-xs uppercase tracking-widest font-bold" style="color: var(--swiss-gray-600); margin-bottom: var(--space-md); letter-spacing: 0.15em;">
-        01 — Next Event
-      </p>
-      <h2 class="font-black" style="font-size: var(--fluid-h1); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: var(--space-lg);">
-        Town Hall #1:<br>The Job Market<br>Reality Check
-      </h2>
-      <div style="width: 60px; height: 3px; background-color: var(--swiss-red);"></div>
     </div>
     
-    <div class="swiss-col-12">
-      <div style="border: 2px solid var(--swiss-black); padding: var(--space-2xl); background-color: var(--swiss-white);">
-        {# Event Details Grid #}
-        <dl class="grid grid-cols-1 md:grid-cols-2 gap-6" style="margin-bottom: var(--space-2xl);">
+    <h1 style="font-family: 'Google Sans', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.02em;">
+      Connect. Learn. Grow.
+    </h1>
+    
+    <p style="font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.6; margin-bottom: 2rem; max-width: 600px; opacity: 0.95;">
+      Join Job Club for monthly town halls, workshops, and networking events designed to help you succeed in your AI career journey.
+    </p>
+    
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+      <a href="#upcoming" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 2rem; background: #fff; color: var(--md-primary); font-weight: 600; border-radius: 24px; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border: none; cursor: pointer;">
+        View Events
+      </a>
+      <a href="#about" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 2rem; background: transparent; color: #fff; font-weight: 600; border-radius: 24px; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border: 2px solid #fff; cursor: pointer;">
+        Learn More
+      </a>
+    </div>
+  </div>
+</section>
+
+{# Quick Stats #}
+<section style="padding: 4rem 1.5rem; background: #f5f5f5;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+      
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 2.5rem; font-weight: 700; color: var(--md-primary); margin-bottom: 0.5rem;">FREE</div>
+        <div style="width: 50px; height: 2px; background: var(--md-primary); margin: 0.5rem auto 1rem;"></div>
+        <p style="font-size: 0.9rem; font-weight: 600; color: #666;">Always free & open to all students</p>
+      </div>
+      
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 2.5rem; font-weight: 700; color: var(--md-primary); margin-bottom: 0.5rem;">MONTHLY</div>
+        <div style="width: 50px; height: 2px; background: var(--md-primary); margin: 0.5rem auto 1rem;"></div>
+        <p style="font-size: 0.9rem; font-weight: 600; color: #666;">Regular events throughout the year</p>
+      </div>
+      
+      <div style="text-align: center; padding: 1.5rem;">
+        <div style="font-size: 2.5rem; font-weight: 700; color: var(--md-primary); margin-bottom: 0.5rem;">HYBRID</div>
+        <div style="width: 50px; height: 2px; background: var(--md-primary); margin: 0.5rem auto 1rem;"></div>
+        <p style="font-size: 0.9rem; font-weight: 600; color: #666;">In-person & virtual options</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{# Upcoming Events #}
+<section id="upcoming" style="padding: 4rem 1.5rem; background: white;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    
+    <div style="margin-bottom: 3rem;">
+      <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(103, 80, 164, 0.1); padding: 0.5rem 1rem; border-radius: 24px; margin-bottom: 1rem;">
+        <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--md-primary);">Upcoming</span>
+      </div>
+      <h2 style="font-family: 'Google Sans', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem;">Featured Events</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      
+      {# Event Card Template #}
+      <div style="border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <div style="background: linear-gradient(135deg, var(--md-primary) 0%, #7c5fb8 100%); color: white; padding: 2rem;">
+          <div style="font-size: 0.85rem; text-transform: uppercase; font-weight: 600; opacity: 0.9; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Workshop</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3;">LinkedIn Profile Optimization</h3>
+        </div>
+        <div style="padding: 1.5rem;">
+          <div style="margin-bottom: 1rem;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: #999; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Date & Time</div>
+            <p style="font-size: 0.95rem; font-weight: 600; color: #333;">TBD - Register to get details</p>
+          </div>
+          <div style="margin-bottom: 1.5rem;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: #999; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Format</div>
+            <p style="font-size: 0.95rem; font-weight: 600; color: #333;">Hybrid - In-person at NJIT + Virtual</p>
+          </div>
+          <a href="mailto:jobclub@njit.edu?subject=Event Registration" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 0.75rem; background: var(--md-primary); color: white; font-weight: 600; border-radius: 8px; text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer;">
+            Register Interest
+          </a>
+        </div>
+      </div>
+      
+      <div style="border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <div style="background: linear-gradient(135deg, var(--md-secondary) 0%, #33c9a3 100%); color: white; padding: 2rem;">
+          <div style="font-size: 0.85rem; text-transform: uppercase; font-weight: 600; opacity: 0.9; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Networking</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3;">AI Career Panel</h3>
+        </div>
+        <div style="padding: 1.5rem;">
+          <div style="margin-bottom: 1rem;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: #999; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Date & Time</div>
+            <p style="font-size: 0.95rem; font-weight: 600; color: #333;">TBD - Register to get details</p>
+          </div>
+          <div style="margin-bottom: 1.5rem;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: #999; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Format</div>
+            <p style="font-size: 0.95rem; font-weight: 600; color: #333;">Hybrid - In-person at NJIT + Virtual</p>
+          </div>
+          <a href="mailto:jobclub@njit.edu?subject=Event Registration" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 0.75rem; background: var(--md-secondary); color: white; font-weight: 600; border-radius: 8px; text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer;">
+            Register Interest
+          </a>
+        </div>
+      </div>
+      
+      <div style="border: 1px solid #e0e0e0; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.08); transition: all 0.3s ease;">
+        <div style="background: linear-gradient(135deg, var(--md-tertiary) 0%, #ffb74d 100%); color: white; padding: 2rem;">
+          <div style="font-size: 0.85rem; text-transform: uppercase; font-weight: 600; opacity: 0.9; margin-bottom: 0.5rem; letter-spacing: 0.05em;">Mentoring</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; line-height: 1.3;">1-on-1 Career Coaching</h3>
+        </div>
+        <div style="padding: 1.5rem;">
+          <div style="margin-bottom: 1rem;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: #999; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Format</div>
+            <p style="font-size: 0.95rem; font-weight: 600; color: #333;">By appointment - Schedule now</p>
+          </div>
+          <div style="margin-bottom: 1.5rem;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; font-weight: 600; color: #999; margin-bottom: 0.25rem; letter-spacing: 0.05em;">Topics</div>
+            <p style="font-size: 0.95rem; font-weight: 600; color: #333;">Resume, Interview Prep, Career Strategy</p>
+          </div>
+          <a href="mailto:jobclub@njit.edu?subject=Coaching Request" style="display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 0.75rem; background: var(--md-tertiary); color: white; font-weight: 600; border-radius: 8px; text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer;">
+            Schedule Session
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{# About Section #}
+<section id="about" style="padding: 4rem 1.5rem; background: linear-gradient(180deg, #f5f5f5 0%, #fff 100%);">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(103, 80, 164, 0.1); padding: 0.5rem 1rem; border-radius: 24px; margin-bottom: 1rem;">
+        <span class="material-icons-round" style="font-size: 1.125rem; color: var(--md-primary);">info</span>
+        <span style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--md-primary);">About</span>
+      </div>
+      <h2 style="font-family: 'Google Sans', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.2;">Why Job Club Events Matter</h2>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+      
+      <div style="padding: 2rem; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(103, 80, 164, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <span class="material-icons-round" style="color: var(--md-primary);">trending_up</span>
+        </div>
+        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem;">Build Your Network</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #666;">Connect with industry leaders, fellow students, and mentors who can help guide your career path.</p>
+      </div>
+      
+      <div style="padding: 2rem; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(0, 191, 165, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <span class="material-icons-round" style="color: var(--md-secondary);">school</span>
+        </div>
+        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem;">Learn Skills</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #666;">Develop practical skills through workshops, coaching, and real-world experience from seasoned professionals.</p>
+      </div>
+      
+      <div style="padding: 2rem; border-radius: 12px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(255, 111, 0, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+          <span class="material-icons-round" style="color: var(--md-tertiary);">rocket_launch</span>
+        </div>
+        <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.75rem;">Launch Your Career</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6; color: #666;">Get the tools, knowledge, and connections you need to land your dream job in AI and tech.</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+{# CTA Section #}
+<section style="padding: 4rem 1.5rem; background: linear-gradient(135deg, var(--md-primary) 0%, #7c5fb8 100%); color: white;">
+  <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+    <h2 style="font-family: 'Google Sans', sans-serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem;">Ready to Join Job Club?</h2>
+    <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.95;">
+      Register your interest in upcoming events and get notifications when the next session is scheduled.
+    </p>
+    <a href="#upcoming" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 2rem; background: white; color: var(--md-primary); font-weight: 600; border-radius: 24px; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; border: none; cursor: pointer;">
+      View Upcoming Events
+    </a>
+  </div>
+</section>
           <div>
             <dt class="text-xs uppercase tracking-widest font-bold" style="color: var(--swiss-gray-600); margin-bottom: var(--space-sm); letter-spacing: 0.15em;">
               DATE & TIME
