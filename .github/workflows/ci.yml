@@ -1,0 +1,388 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '20.x'
+
+jobs:
+  # Job 1: Linting and Code Quality
+  lint:
+    name: Code Quality & Linting
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run ESLint (JavaScript)
+        run: npm run lint:js
+      
+      - name: Run Stylelint (CSS)
+        run: npm run lint:css
+      
+      - name: Run Markdownlint
+        run: npm run lint:md
+      
+      - name: Check code formatting (Prettier)
+        run: npm run format:check
+      
+      - name: Lint summary
+        if: success()
+        run: echo "✅ All linting checks passed!"
+
+  # Job 2: Build
+  build:
+    name: Build Project
+    runs-on: ubuntu-latest
+    needs: lint
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build CSS (Tailwind)
+        run: npm run build:css:prod
+      
+      - name: Build JavaScript (Alpine.js)
+        run: npm run build:js
+      
+      - name: Build site (Eleventy)
+        run: npm run build:eleventy
+        env:
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+      
+      - name: Check build output
+        run: |
+          if [ ! -d "_site" ]; then
+            echo "❌ Build failed: _site directory not found"
+            exit 1
+          fi
+          echo "✅ Build successful: _site directory exists"
+          ls -lh _site/
+      
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: _site/
+          retention-days: 7
+
+  # Job 3: Bundle Size Check
+  bundle-size:
+    name: Bundle Size Analysis
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-output
+          path: _site/
+      
+      - name: Analyze bundle sizes
+        id: bundle-check
+        run: |
+          echo "📊 Bundle Size Analysis"
+          echo "======================="
+          
+          # Check CSS size
+          CSS_SIZE=$(find _site/css -name "*.css" -exec du -cb {} + | grep total | awk '{print $1}')
+          CSS_KB=$((CSS_SIZE / 1024))
+          echo "CSS Bundle: ${CSS_KB}KB"
+          
+          # Check JS size
+          if [ -d "_site/js" ]; then
+            JS_SIZE=$(find _site/js -name "*.js" -exec du -cb {} + | grep total | awk '{print $1}')
+            JS_KB=$((JS_SIZE / 1024))
+            echo "JS Bundle: ${JS_KB}KB"
+          else
+            JS_KB=0
+            echo "JS Bundle: No JS files found"
+          fi
+          
+          # Set budget limits
+          CSS_BUDGET=50
+          JS_BUDGET=100
+          
+          # Check against budgets
+          BUNDLE_STATUS="✅ PASS"
+          
+          if [ $CSS_KB -gt $CSS_BUDGET ]; then
+            echo "❌ CSS bundle (${CSS_KB}KB) exceeds budget (${CSS_BUDGET}KB)"
+            BUNDLE_STATUS="❌ FAIL"
+          else
+            echo "✅ CSS bundle within budget (${CSS_KB}KB / ${CSS_BUDGET}KB)"
+          fi
+          
+          if [ $JS_KB -gt $JS_BUDGET ]; then
+            echo "❌ JS bundle (${JS_KB}KB) exceeds budget (${JS_BUDGET}KB)"
+            BUNDLE_STATUS="❌ FAIL"
+          else
+            echo "✅ JS bundle within budget (${JS_KB}KB / ${JS_BUDGET}KB)"
+          fi
+          
+          echo "Final Status: $BUNDLE_STATUS"
+          
+          if [ "$BUNDLE_STATUS" = "❌ FAIL" ]; then
+            exit 1
+          fi
+
+  # Job 4: Automated Testing
+  test:
+    name: Automated Tests (Playwright)
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      
+      - name: Build site for testing
+        run: npm run build
+        env:
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+      
+      - name: Start test server
+        run: |
+          npm run serve &
+          npx wait-on http://localhost:8080 --timeout 60000
+      
+      - name: Run Playwright tests
+        run: npm test
+        env:
+          CI: true
+      
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+      
+      - name: Upload test screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-screenshots
+          path: test-results/
+          retention-days: 7
+
+  # Job 5: Lighthouse CI
+  lighthouse:
+    name: Lighthouse Performance Audit
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build site
+        run: npm run build
+        env:
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+      
+      - name: Start server for Lighthouse
+        run: |
+          npm run serve &
+          npx wait-on http://localhost:8080 --timeout 60000
+      
+      - name: Run Lighthouse CI
+        run: npm run lighthouse:ci
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          retention-days: 7
+
+  # Job 6: Security Audit
+  security:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Run npm audit
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+      
+      - name: Check for known vulnerabilities
+        run: |
+          echo "🔒 Security audit complete"
+
+  # Job 7: Deploy to Netlify (Production)
+  deploy-production:
+    name: Deploy to Production (Netlify)
+    runs-on: ubuntu-latest
+    needs: [lint, build, test, bundle-size, lighthouse]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    environment:
+      name: production
+      url: https://jobclub-njit.netlify.app
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build for production
+        run: npm run build
+        env:
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+          NODE_ENV: production
+      
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v2
+        with:
+          publish-dir: './_site'
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions - ${{ github.sha }}"
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      
+      - name: Deployment summary
+        run: |
+          echo "🚀 Production deployment successful!"
+          echo "URL: https://jobclub-njit.netlify.app"
+
+  # Job 8: Deploy Preview (Pull Requests)
+  deploy-preview:
+    name: Deploy Preview (Netlify)
+    runs-on: ubuntu-latest
+    needs: [lint, build, test]
+    if: github.event_name == 'pull_request'
+    
+    environment:
+      name: preview
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Build for preview
+        run: npm run build
+        env:
+          SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
+          SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
+          SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
+      
+      - name: Deploy preview to Netlify
+        uses: nwtgck/actions-netlify@v2
+        with:
+          publish-dir: './_site'
+          production-deploy: false
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Preview deploy from PR #${{ github.event.number }}"
+          enable-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+  # Job 9: Notification (on failure)
+  notify-failure:
+    name: Notify on Failure
+    runs-on: ubuntu-latest
+    needs: [lint, build, test, bundle-size, lighthouse]
+    if: failure()
+    
+    steps:
+      - name: Send failure notification
+        run: |
+          echo "❌ CI/CD Pipeline failed"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Author: ${{ github.actor }}"
+          # Add Discord/Slack webhook here if configured

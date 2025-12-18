@@ -1,7 +1,38 @@
 # Wireframes
 
 ## Overview
-This document contains wireframes for key pages and flows in the Job Club platform. Wireframes are presented in ASCII/text format for easy version control and collaboration.
+This document contains wireframes for key pages and flows in the Job Club platform. Wireframes are presented in ASCII/text format for easy version control and collaboration, with visual wireframe screenshots provided for reference.
+
+---
+
+## Visual Wireframes
+
+### Homepage Wireframes
+
+![Homepage Hero Section](./images/wireframe-homepage-hero.png)
+*Homepage hero section with personal branding*
+
+![Homepage Stats Row](./images/wireframe-homepage-stats.png)
+*Stats section showing teaching experience metrics*
+
+![Homepage How It Works](./images/wireframe-homepage-howitworks.png)
+*Four-step process visualization*
+
+![Homepage Resource Highlights](./images/wireframe-homepage-resources.png)
+*Free downloadable career guides section*
+
+### Onboarding Wireframe
+
+![Onboarding Form](./images/wireframe-onboarding-form.png)
+*Single-page member registration form*
+
+### Events Page Wireframes
+
+![Events Page Header](./images/wireframe-events-page.png)
+*Events page with filters and hero section*
+
+![Events Grid](./images/wireframe-events-grid.png)
+*Event cards in three-column grid layout*
 
 ---
 
@@ -17,7 +48,7 @@ This document contains wireframes for key pages and flows in the Job Club platfo
 ┌─────────────────────────────────────────────────────────────────────┐
 │                         HERO SECTION                                 │
 │                                                                      │
-│         Eriberto S. Marte                                           │
+│         Keith Williams                                           │
 │         Director of Enterprise AI at NJIT                           │
 │                                                                      │
 │    [   Join Town Hall   ]  [ Learn More ]                           │
